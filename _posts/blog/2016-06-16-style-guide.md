@@ -3,7 +3,7 @@ layout: styleGuide
 
 permalink: /blog/style-guide/
 
-title: "Style Guide - HTML, CSS, and Markdown"
+title: "Style Guide"
 
 subtitle: "Style Guide"
 
