@@ -149,14 +149,21 @@
 
 .overlayMenuCol-1 {
   @include breakpoint($small) {
-    flex: 3;
-    margin-right: 3em;
+    flex: 2;
+    margin-right: 2em;
   }
 }
 
 .overlayMenuCol-2 {
   @include breakpoint($small) {
-    flex: 2;
+    flex: 4;
+		margin-right: 2em;
+  }
+}
+
+.overlayMenuCol-3 {
+  @include breakpoint($small) {
+    flex: 4;
   }
 }
 
