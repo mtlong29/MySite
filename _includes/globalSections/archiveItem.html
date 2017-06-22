@@ -1,0 +1,34 @@
+<article>
+  <a class="archive__item" href="{{ site.url }}{{ post.url }}">
+
+    <div class="archive__item-body">
+        
+        <h1 class="archive__item-title" itemprop="headline">{{ post.title | markdownify | remove: '<p>' | remove: '</p>'}}</h1>
+        
+        <div class="archive__item-meta">
+          
+        <span class="date published" itemprop="datePublished">
+            
+            <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
+            {{ post.date | date: "%B %d, %Y" }}
+            </time>
+            
+        </span>
+          
+        {% assign readtime = post.content | strip_html | number_of_words | divided_by:site.words_per_minute %}
+          
+        <span class="archive__item-time">
+					{% include svgIcons/stopwatch.html %}
+            {% if readtime <= 1 %}1{% else %}{{ readtime }}{% endif %} min read
+        </span>
+            
+      </div>
+          
+        <p class="archive__item-excerpt" itemprop="text">{{ post.excerpt markdownify | strip_html | strip_newlines | escape_once }}</p>
+   
+    </div>
+
+    <div class="archive__item-thumb" {% if post.image.teaser %}style="background-image: url('{{ site.url }}/images/teaser/{{ post.image.teaser }}');"{% endif %}></div>
+
+  </a>
+</article>

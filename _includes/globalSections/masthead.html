@@ -1,0 +1,58 @@
+{% assign page_slug = page.url | remove_first: '/' | split: '/' %}
+{% assign slug_first = page_slug[0] %}
+{% assign slug = site.data.slugs[slug_first] %}
+
+<!-- Navigation bar -->
+<header class="masthead">
+  <div class="container">
+    <a class="mastheadTitle" href="{{ site.url }}/">{{ site.title }}</a>
+    <nav id="nav-primary" class="mastheadMenuWrapper">
+      
+      <ul class="mastheadMenu">
+          
+        {% if page_slug[1] and (slug_first == 'blog' or slug_first == 'portfolio') %}
+          <li><a href="{{ site.url }}/{{ slug_first }}/" class="mastheadMenuItem">← {{ slug.name }}</a></li>
+        {% else %}
+          <li><a href="{{ site.url }}/" class="mastheadMenuItem">← Home</a></li>
+        {% endif %}
+
+        {% assign counter = 0 %}
+
+            {% assign counter = counter | plus:1 %}
+				
+            <li><a href="{{ site.url }}/about/" class="mastheadMenuItem {% if counter > 1 %}is--hidden{% endif %}">About</a></li>
+            <li><a href="{{ site.url }}/resume/" class="mastheadMenuItem {% if counter > 1 %}is--hidden{% endif %}">Resume</a></li>
+            <li><a href="{{ site.url }}/portfolio/" class="mastheadMenuItem {% if counter > 1 %}is--hidden{% endif %}">Portfolio</a></li>
+            <li><a href="{{ site.url }}/blog/" class="mastheadMenuItem {% if counter > 1 %}is--hidden{% endif %}">Blog</a></li>
+                  
+        <!-- Button for large dropdown menu. -->
+        <li><a href="#0" class="overlayMenuTrigger mastheadMenuItem" aria-label="Navigation Menu" title="Navigation Menu">•&nbsp;•&nbsp;•</a></li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+<!-- Large dropdown menu -->
+<nav class="overlayMenu">
+  <div class="overlayMenuWrapper container">
+    <ul class="overlayMenuCol-1">
+      <li class="overlayMenuLabel">Of Interest</li>
+        <li class="overlayMenuItem"><a href="{{ site.url }}/about/">About</a></li>
+        <li class="overlayMenuItem"><a href="{{ site.url }}/resume/">Resume</a></li>
+        <li class="overlayMenuItem"><a href="{{ site.url }}/portfolio/">Portfolio</a></li>
+        <li class="overlayMenuItem"><a href="{{ site.url }}/blog/">Blog</a></li>
+        <li class="overlayMenuItem"><a href="{{ site.url }}/sitemap/">Sitemap</a></li>
+    </ul>
+    <ul class="overlayMenuCol-2">
+      <li class="overlayMenuLabel">Everything Else</li>
+      {% for link in site.data.navigation.secondary %}
+        <li class="overlayMenuItemSecondary"><a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <button class="overlayMenuClose btn">[ESC] Close Menu</button>
+</nav>
+
+<div id="screen"></div>

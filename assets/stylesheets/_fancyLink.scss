@@ -1,0 +1,10 @@
+a.fancyLink {
+	text-decoration: none;
+	color: $gray;
+	border-bottom: 2px solid $gray;
+	font-weight: bold;
+	&:hover {
+		color: $black;
+		border-bottom: 4px solid $black;
+	}
+}

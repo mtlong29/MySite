@@ -1,0 +1,71 @@
+/* taxonomy */
+
+.postTaxonomy {
+  margin-top: 2em;
+  font-size: 0.8rem;
+  order: 1;
+}
+
+/* tag boxes */
+
+.tagItem {
+  display: block;
+  text-decoration: none;
+  font-family: $sans-serif;
+  font-weight: bold;
+  white-space: nowrap;
+  border-bottom-width: 0 !important; // override
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.tagName {
+  float: left;
+  padding-right: 0.125em;
+  font-weight: normal;
+  font-family: $serif;
+  background: $background-color;
+}
+
+.tagCount {
+  float: right;
+  padding-left: 0.125em;
+  background: $background-color;
+}
+
+.tagList {
+  margin: 0;
+  padding: 0;
+  column-gap: 3em;
+  @include breakpoint($small) {
+    column-count: 2;
+    column-width: 150px;
+  }
+  @include breakpoint($medium) {
+    column-count: 3;
+  }
+  li {
+    list-style-type: none;
+    font-size: 0.8rem;
+    line-height: 2;
+    @include breakpoint($medium) {
+      line-height: 1.75;
+    }
+  }
+  li + li {
+    margin-top: 0 !important; // override
+  }
+  .tagItem {
+    @include clearfix();
+    padding-bottom: 4px;
+    overflow: hidden;
+    &:before {
+      float: left;
+      width: 0;
+      content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+      white-space: nowrap;
+      color: $gray;
+    }
+  }
+}

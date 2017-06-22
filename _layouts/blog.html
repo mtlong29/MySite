@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div id="main" role="main">
+
+  <header class="container post__header"> 
+    {% include /globalSections/pageHeader.html %}
+  </header>
+
+  <div class="container post__content">
+
+    {% unless page.fullwidth == true %}
+      <div class="post__inner-wrapper-archive">
+    {% endunless %}
+
+    {{ content }}
+    {% for post in site.categories.blog %} 
+      {% include /globalSections/archiveItem.html %}
+    {% endfor %}
+
+    {% unless page.fullwidth == true %}
+      </div>
+    {% endunless %}
+
+  </div>
+
+</div>

@@ -1,0 +1,40 @@
+<div class="featured">
+    
+  <h3 class="tile__header">Portfolio Preview</h3>
+  
+  <p>Below are a few examples of my work. Click <a href="{{ site.ur l}}/portfolio" class="fancyLink">here</a> to see even more, or you can click <a href="{{ site.url }}/resume" class="fancyLink">here</a> to see my resume.</p>
+    
+  <div class="tiles">
+    {% assign features = site.categories[page.feature-portfolio.category] | where:"featured", true %}
+    
+      {% for post in features limit:3 %}
+      
+      <article class="tile__item">
+        <meta itemprop="text" content="{{ post.excerpt | strip_html }}">
+        
+          <a href="{{ site.url }}{{ post.url }}">
+              
+            <img src="{{ site.url }}/images/teaser/{{ post.image.teaser }}" itemprop="image" alt="{{ post.title }}">
+            
+            <h3 class="tile__header__gray">{{ post.subtitle }}</h3>
+              
+            <h3 class="tile__title" itemprop="headline">{{ post.title }}</h3>
+              
+                  <div class="archive__item-meta">
+                    <span class="date published" itemprop="datePublished">
+                        <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
+                        {{ post.date | date: "%B %d, %Y" }}
+                        </time>
+                    </span>
+                  </div>
+                        
+            <p class="excerpt__text">{{ post.excerpt }}</p>    
+              
+          </a>
+
+      </article>
+          
+    {% endfor %}
+          
+  </div>
+</div>

@@ -1,0 +1,33 @@
+@function em($target, $context: $doc-font-size) {
+  @return ($target / $context) * 1em;
+}
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+@mixin font-size($size, $margin: yes, $line-height: $doc-line-height) {
+  font-size: 0px + $size;
+  @if $line-height != $doc-line-height and $line-height != 1 {
+    line-height: ceil($size / $line-height) * ($line-height / $size);
+  }
+  @else if $line-height == 1 {
+    line-height: 1;
+  }
+  @else {
+    line-height: ceil($size / $doc-line-height) * ($doc-line-height / $size);
+  }
+  @if $margin == no {
+    margin-bottom: 0;
+  }
+  @else if $margin != yes and $margin != no {
+    margin-bottom: 0px + $margin;
+  }
+  @else {
+    margin-bottom: 0px + $doc-line-height;
+  }
+}
