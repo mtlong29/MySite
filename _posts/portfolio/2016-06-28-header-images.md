@@ -26,19 +26,19 @@ featured: false
 I create header images (the images at the top of every page on this site) using photoshop. Here are some of my favorites.  They are sorted from most recent at the top to oldest at the bottom.
 
 ## Formatting: Images - (07/11/2016)
-The post the following image was created for can be found at <a class="fancyLink" href="{{site.url}}/blog/style-guide/images/">Style Guide: Images</a>. As you can see I decided to use this image for this post as I felt it was a nice fit.
+The "Formatting: Images" header image is from a blog post I removed.
 <figure class="full">
 	<a href="/images/header/images-videos.jpg" title="Formatting: Images"><img src="/images/header/images-videos.jpg" alt="Formatting: Images" /></a>
 </figure>
 
 ## Formatting: Text - (07/10/2016)
-The post the following image was created for can be found at <a class="fancyLink" href="{{site.url}}/blog/style-guide/text/">Style Guide: Text</a>.
+The "Formatting: Text" header image is from a blog post I removed..
 <figure class="full">
 	<a href="/images/header/text.jpg" title="Formatting: Text"><img src="/images/header/text.jpg" alt="Formatting: Text" /></a>
 </figure>
 
 ## Formatting: Horizontal Rule - (07/10/2016)
-The post the following image was created for can be found at <a class="fancyLink" href="{{site.url}}/blog/style-guide/horizontal-rule/">Style Guide: Horizontal Rule</a>.
+The "Formatting: Horizontal Rule" header image is from a blog post I removed.
 <figure class="full">
 	<a href="/images/header/horizontal-rule.jpg" title="Formatting: Horizontal Rule"><img src="/images/header/horizontal-rule.jpg" alt="Formatting: Horizontal Rule" /></a>
 </figure>

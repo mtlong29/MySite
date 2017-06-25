@@ -53,7 +53,7 @@ bundle exec jekyll serve
 
 In order to build the site so that it's ready to go live (likely by FTP or <a class="fancyLink" href="https://jekyllrb.com/docs/github-pages/" target="_blank">GitHub pages</a>) instead of "building" a server using `serve` (or `s`) you would use `build` (or `b`). This (both do) generates a `_site` folder found inside your Jekyll directory that you would then place in the appropriate web root directory for your web server. The only real difference between `build` and `serve` is that everywhere you have linked to pages within your site using <a class="fancyLink" href="https://shopify.github.io/liquid/" target="_blank">Liquid</a> syntax for `site.url` for example, will go to localhost instead of your live site url creating many broken links. Broken links to stylesheets and scripts will without a doubt break your site or at least make it so that it's pure HTML. I also have a tendency of deleting the `_site` folder before executing `jekyll build`.
 
-Jekyll is highly customizable. Additional information can be found at <a class="fancyLink" href="{{site.url}}/blog/using-jekyll/">Building and Maintaining a Jekyll Site</a> and <a class="fancyLink" href="{{site.url}}/blog/style-guide/">Style Guide - HTML, CSS, and Markdown</a>.
+Jekyll is highly customizable. Additional information can be found at <a class="fancyLink" href="{{site.url}}/blog/using-jekyll/">Building and Maintaining a Jekyll Site.
 
 ### Sass
 
