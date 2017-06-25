@@ -69,6 +69,6 @@ hr {
   display: block;
   margin: 1em 0;
   border: 0;
-  border-top: 5px solid $pale-blue;
+  border-top: 5px solid $accentColor;
 }
 {% endhighlight %}

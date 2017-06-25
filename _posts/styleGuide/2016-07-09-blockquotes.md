@@ -60,7 +60,7 @@ blockquote {
   padding-left: 1em;
   padding-right: 1em;
   font-style: italic;
-  border-left: 0.4em solid $pale-blue;
+  border-left: 0.4em solid $accentColor;
   a {
     color: inherit;
   }
