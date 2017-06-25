@@ -36,30 +36,6 @@ $headline-color: $gray;
 
 $background-color: $lightGray;
 
-$primary-color: mix($black, $gray, 35%);
-$success-color: mix($gray, #2ecc71, 15%);
-$warning-color: mix($gray, #f3bc15, 15%);
-$danger-color: mix($gray, #dc081d, 15%);
-$info-color: mix($gray, #427ab8, 15%);
-
-$border-color: mix($white, $gray, 80%);
-
-$table-border-color: $border-color;
-$table-border: 1px solid $table-border-color;
-$table-background: $white;
-$table-header-color: $white;
-$table-hover-color: mix($gray, $table-background, 10%);
-$table-stripe-color: mix($gray, $table-background, 10%);
-$table-stripe-color-hover: mix($gray, $table-background, 10%);
-
-$badge-background: $primary-color;
-$badge-dark-color: $black;
-$badge-danger-color: $danger-color;
-$badge-info-color: $info-color;
-$badge-warning-color: $warning-color;
-$badge-success-color: $success-color;
-$badge-font-color: $white;
-
 // Screen Sizes for Breakpoints
 
 $small: 600px;

@@ -52,34 +52,6 @@
 		border: 1px solid #fff !important; // override
 		background-color: transparent;
 	}
-	/* information */
-	&--info {
-		background-color: $info-color;
-		&:hover {
-			background-color: mix(#000, $info-color, 20%);
-		}
-	}
-	/* warning */
-	&--warning {
-		background-color: $warning-color;
-		&:hover {
-			background-color: mix(#000, $warning-color, 20%);
-		}
-	}
-	/* success */
-	&--success {
-		background-color: $success-color;
-		&:hover {
-			background-color: mix(#000, $success-color, 20%);
-		}
-	}
-	/* danger */
-	&--danger {
-		background-color: $danger-color;
-		&:hover {
-			background-color: mix(#000, $danger-color, 20%);
-		}
-	}
 	/* disabled */
 	&--disabled {
 		pointer-events: none;
