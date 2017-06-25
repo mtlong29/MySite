@@ -19,9 +19,8 @@ $white: #fff;
 $black: #000;
 
 $gray: #4c4c4c;
-$dark-gray: #191413;
-$light-gray: #e2e2e2;
-$lighter-gray: #f9f9f9;
+$darkGray: darken($gray, 75%);
+$lightGray: lighten($gray, 65%);
 
 $pale-green: #51C2A9;
 $pale-blue: #5C88C4;
@@ -31,7 +30,7 @@ $pale-red: #FFA36B;
 $text-color: $gray;
 $headline-color: $gray;
 
-$background-color: $lighter-gray;
+$background-color: $lightGray;
 
 $highlighter-color: #f3bc15;
 
