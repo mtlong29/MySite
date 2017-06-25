@@ -1,28 +1,23 @@
-<script type="text/javascript" src="{{ site.url }}/assets/javascripts/vendor/jquery.min.js"></script>
+<!--jQuery-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<script type="text/javascript" src="{{ site.url }}/assets/javascripts/plugins/jquery.fitvids.min.js"></script>
+<!--fitvids.js -- http://fitvidsjs.com/ -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.2.0/jquery.fitvids.min.js"></script>
 
-<script type="text/javascript" src="{{ site.url }}/assets/javascripts/plugins/jquery.lazyload.min.js"></script>
+<!--lazyload.js -- holds off loading images until scrolled to -- https://appelsiini.net/projects/lazyload/-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
 
-<script type="text/javascript" src="{{ site.url }}/assets/javascripts/plugins/jquery.magnific-popup.min.js"></script>
+<!--magnificient-popup.js -- responsive lightbox -- http://dimsemenov.com/plugins/magnific-popup/-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
+<!--smooth-scroll.js -- automatically enables scrolling for links on same page -- https://github.com/kswedberg/jquery-smooth-scroll-->
 <script type="text/javascript" src="{{ site.url }}/assets/javascripts/plugins/jquery.smooth-scroll.min.js"></script>
 
-<script type="text/javascript" src="{{ site.url }}/assets/javascripts/plugins/jquery.typed.min.js"></script>
+<!--stickyfill.js -- makes object stick when scrolling past its top border -- https://github.com/wilddeer/stickyfill-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/1.1.4/stickyfill.min.js"></script>
 
-<script type="text/javascript" src="{{ site.url }}/assets/javascripts/plugins/stickyfill.min.js"></script>
+<!--picturefill.js -- resizes images accordingly -- https://github.com/wilddeer/stickyfill-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.min.js"></script>
 
-<script type="text/javascript" src="{{ site.url }}/assets/javascripts/vendor/picturefill.min.js"></script>
-
+<!--primary javascript file-->
 <script type="text/javascript" src="{{ site.url }}/assets/javascripts/main.js"></script>
-
-<!-- Google Universal Analytics -->
-<script async>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', '{{ site.owner.google.analytics }}');
-  ga('send', 'pageview');
-</script>

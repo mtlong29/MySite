@@ -3,9 +3,10 @@
 ---
 
 @import "variables";
+@import "mixins";
+
 @import "fourOhFour";
 @import "breakpoint";
-@import "mixins";
 @import "reset";
 @import "base";
 @import "animations";
@@ -25,4 +26,3 @@
 @import "colophon";
 @import "vendor/magnific-popup/magnific-popup";
 @import "fancyLink";
-@import "print";

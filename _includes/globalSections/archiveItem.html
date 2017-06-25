@@ -18,7 +18,7 @@
         {% assign readtime = post.content | strip_html | number_of_words | divided_by:site.words_per_minute %}
           
         <span class="archive__item-time">
-					{% include svgIcons/stopwatch.html %}
+					{% include /svgIcons/stopwatch.html %}
             {% if readtime <= 1 %}1{% else %}{{ readtime }}{% endif %} min read
         </span>
             
