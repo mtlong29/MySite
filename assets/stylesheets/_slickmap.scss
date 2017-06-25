@@ -195,7 +195,7 @@
   text-align: center;
   color: black;
   border-radius: 5px;
-  box-shadow: 0 0 5px mix($black, $lightGray, 30%);
+	@include boxShadow(0, 0, 5px, mix($black, $lightGray, 30%));
   @include breakpoint($medium) {
     background: mix($white, $accentColor, 90%) url('../../images/slickmapConnectorLines/white-highlight.png') top left repeat-x; /* bg on >= medium screens */
   }

@@ -83,7 +83,7 @@
 	}
 	&:hover {
 		img {
-			box-shadow: 0 0 10px rgba(#000, 0.5);
+			@include boxShadow(0, 0, 10px, rgba(#000, 0.5));
 		}
 		.tile__title {
 			color: #000;

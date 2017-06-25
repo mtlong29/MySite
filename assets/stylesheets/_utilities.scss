@@ -70,7 +70,7 @@ body:hover .visually-hidden button {
   background: #fff;
   z-index: 100000;
   text-decoration: none;
-  box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
+	@include boxShadow(0, 0, 2px, rgba(#000, 0.6));
 }
 
 
@@ -90,7 +90,6 @@ body:hover .visually-hidden button {
   list-style: none;
 }
 
-// Clear fixed positioned masthead
 h1, h2, h3, h4, h5, h6 {
   &[id]:before {
     display: block;
@@ -101,17 +100,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
-/* Type */
-
-/* center align */
-
 .center {
   text-align: center;
 }
-
-
-/* Alignment */
 
 .float-right {
   clear: left;
@@ -121,12 +112,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* clearfix */
-
 .cf { clear: both; }
-
-
-/* Images */
 
 .scroll-box {
     border: 2px solid $gray;
@@ -148,8 +134,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Icons */
-
 .icon {
   display: inline-block;
   fill: currentColor;
@@ -160,8 +144,6 @@ h1, h2, h3, h4, h5, h6 {
   top: -0.1em;
   vertical-align: middle;
 }
-
-/* Sticky, fixed to top content */
 
 .sticky {
   @include clearfix();

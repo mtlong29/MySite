@@ -10,7 +10,7 @@
 	border-bottom: 4px solid $accentColor;
 	z-index: 11;
 	animation: fade-in 3s;
-	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.125);
+	@include boxShadow(0, 0, 8px, rgba(#000, 0.125));
 	.container {
 		display: flex;
 		justify-content: space-between;
@@ -120,9 +120,10 @@
 	backface-visibility: hidden;
 	overflow: hidden;
 	-webkit-overflow-scrolling: touch;
-	transform: translateY(-100%);
+	@include translateY(-100%);
 	transition: transform 0.4s cubic-bezier(.86, .01, .77, .78);
-	box-shadow: 0 0 10px rgba(#000, 0.5);
+	@include boxShadow(0, 0, 10px, rgba(#000, 0.5));
+	
 	ul {
 		display: flex;
 		align-items: flex-start;
@@ -142,7 +143,7 @@
 		}
 	}
 	&.is--visible {
-		transform: translateY(0);
+		@include translateY(0);
 	}
 }
 
@@ -232,7 +233,7 @@
 	text-transform: uppercase;
 	border-radius: 0;
 	&:active {
-		transform: translateY(0);
+		@include translateY(0);
 	}
 }
 
@@ -273,8 +274,7 @@
 	* {
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
-		-webkit-transition: all 0.25s ease;
-		transition: all 0.25s ease;
+		@include transition(.25s, ease, all);
 	}
 	&:before {
 		position: absolute;
@@ -287,10 +287,8 @@
 		background-color: $gray;
 		border-radius: $border-radius;
 		opacity: 0.5;
-		-webkit-transition: all 0.25s ease;
-		transition: all 0.25s ease;
-		-webkit-transition-delay: 0.25s;
-		transition-delay: 0.25s;
+		@include transition(.25s, ease, all);
+		@include transitionDelay(0.25s);
 	}
 	img {
 		vertical-align: top;
@@ -318,12 +316,10 @@
 	}
 	h3 {
 		margin: 0 1em;
-		-webkit-transform: translateY(-100%);
-		transform: translateY(-100%);
+		@include translateY(-100%);
 		text-transform: uppercase;
 		font-weight: 400;
-		-webkit-transition-delay: 0.05s;
-		transition-delay: 0.05s;
+		@include transitionDelay(0.05s);
 		margin-bottom: 5px;
 	}
 	h5 {
@@ -331,10 +327,8 @@
 		background-color: $accentColor;
 		border-radius: $border-radius;
 		padding: 3px 10px;
-		-webkit-transform: translateY(-100%);
-		transform: translateY(-100%);
-		-webkit-transition-delay: 0s;
-		transition-delay: 0s;
+		@include translateY(-100%);
+		@include transitionDelay(0s);
 	}
 	a {
 		position: absolute;
@@ -347,25 +341,21 @@
 	&:hover:before,
 	&.hover:before {
 		top: 10px;
-		-webkit-transition-delay: 0s;
-		transition-delay: 0s;
+		@include transitionDelay(0s);
 	}
 	&:hover h3,
 	&.hover h3,
 	&:hover h5,
 	&.hover h5 {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
+		@include translateY(0);
 		opacity: 1;
 	}
 	&:hover h3,
 	&.hover h3 {
-		-webkit-transition-delay: 0.3s;
-		transition-delay: 0.3s;
+		@include transitionDelay(0.3s);
 	}
 	&:hover h5,
 	&.hover h5 {
-		-webkit-transition-delay: 0.2s;
-		transition-delay: 0.2s;
+		@include transitionDelay(0.2s);
 	}
 }

@@ -18,13 +18,13 @@
   /* start state */
   .mfp-with-anim {
     opacity: 0;
-    transition: all 0.2s ease-in-out;
+		@include transition(.25s, ease-in-out, all);
     transform: scale(0.8);
   }
 
   &.mfp-bg {
     opacity: 0;
-    transition: all 0.3s ease-out;
+    @include transition(.25s, ease-out, all);
   }
 
   /* animate in */

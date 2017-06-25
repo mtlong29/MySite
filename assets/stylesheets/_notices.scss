@@ -1,48 +1,36 @@
-/* NOTICE TEXT BLOCKS */
-
-/**
- * Default Kramdown usage (no indents!):
- * <div class="notice" markdown="1">
- * #### Headline for the Notice
- * Text for the notice
- * </div>
- */
-
 @mixin notice($accentColor) {
-  margin: 2em 0;
-  padding: 1em;
-  background-color: mix(#fff, $accentColor, 90%);
-  border-top: 0.25em solid mix(#fff, $accentColor, 50%);
-  border-bottom: 0.25em solid mix(#fff, $accentColor, 50%);
-  h4 {
-    margin-top: 0 !important; // override
-    margin-bottom: 0.75em;
-    line-height: 1 !important; // override
-  }
-  @at-root .page-content #{&} h4 {
-    // using at-root to override .page-content h4 font size
-    margin-bottom: 0;
-    font-size: 1rem;
-  }
-  @at-root .page-content #{&} a {
-    border-bottom-width: 2px;
-    box-shadow: none !important; // override
-    &:hover {
-      background-color: transparent !important; // override
-    }
-  }
-  p {
-    margin-bottom: 0;
-    a {
-      border-bottom: 1px solid mix(#fff, $accentColor, 50%) !important; // override
-    }
-  }
-  h4 + p {
-    // remove space above paragraphs that appear directly after notice headline
-    margin-top: 0;
-    padding-top: 0;
-  }
-  code {
-    background-color: mix(#fff, $accentColor, 70%)
-  }
+	margin: 2em 0;
+	padding: 1em;
+	background-color: mix(#fff, $accentColor, 90%);
+	border-top: 0.25em solid mix(#fff, $accentColor, 50%);
+	border-bottom: 0.25em solid mix(#fff, $accentColor, 50%);
+	h4 {
+		margin-top: 0;
+		margin-bottom: 0.75em;
+		line-height: 1;
+	}
+	@at-root .page-content #{&} h4 {
+		margin-bottom: 0;
+		font-size: 1rem;
+	}
+	@at-root .page-content #{&} a {
+		border-bottom-width: 2px;
+		box-shadow: none;
+		&:hover {
+			background-color: transparent;
+		}
+	}
+	p {
+		margin-bottom: 0;
+		a {
+			border-bottom: 1px solid mix(#fff, $accentColor, 50%);
+		}
+	}
+	h4+p {
+		margin-top: 0;
+		padding-top: 0;
+	}
+	code {
+		background-color: mix(#fff, $accentColor, 70%)
+	}
 }

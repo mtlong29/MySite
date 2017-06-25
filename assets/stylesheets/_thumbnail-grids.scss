@@ -2,13 +2,13 @@
   display: flex;
   margin-left: -0.5vw;
   margin-right: -0.5vw;
-  padding-left: 0; // reset
+  padding-left: 0;
   flex-wrap: wrap;
 
   li {
     list-style: none;
     flex: auto;
-    margin: 0.5vw !important; // override
+    margin: 0.5vw;
     width: 100px;
     @include breakpoint($small) {
       max-width: 250px;
@@ -16,11 +16,10 @@
   }
 
   a {
-    border-bottom-width: 0 !important; // override
+    border-bottom-width: 0;
     img {
-      // hover state
       &:hover {
-        box-shadow: 0 0 10px rgba(#000, 0.5);
+				@include boxShadow(0, 0, 10px, rgba(#000, 0.5));
       }
     }
   }

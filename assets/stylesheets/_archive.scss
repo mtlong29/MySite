@@ -13,7 +13,7 @@
       text-decoration: underline;
     }
     .archive__item-thumb {
-      box-shadow: 0 0 10px rgba(#000, 0.5);
+			@include boxShadow(0, 0, 10px, rgba(#000, 0.5));
     }
   }
 }

@@ -48,25 +48,29 @@
     <ul class="overlayMenuCol-2">
       <li class="overlayMenuLabel">Latest Blog Item</li>
 			{% for post in site.categories.blog limit:1 %}
-				<div class="mastheadPosts">
-					<img src="{{site.url}}/images/teaser/{{post.image.teaser}}" alt="{{post.title}}" title="{{post.title}}">
-					<div class="caption">
-						<h3>{{post.title}}</h3>
-						<h5>{{post.subtitle}}</h5>
-					</div><a href="#"></a>
-				</div>
+				<a href="{{post.url}}">
+					<div class="mastheadPosts">
+						<img src="{{site.url}}/images/teaser/{{post.image.teaser}}" alt="{{post.title}}" title="{{post.title}}">
+						<div class="caption">
+							<h3>{{post.title}}</h3>
+							<h5>{{post.subtitle}}</h5>
+						</div>
+					</div>
+				</a>
 			{% endfor %}
     </ul>
 		<ul class="overlayMenuCol-3">
       <li class="overlayMenuLabel">Latest Portfolio Item</li>
 			{% for post in site.categories.portfolio limit:1 %}
-        <div class="mastheadPosts">
-					<img src="{{site.url}}/images/teaser/{{post.image.teaser}}" alt="{{post.title}}" title="{{post.title}}">
-					<div class="caption">
-						<h3>{{post.title}}</h3>
-						<h5>{{post.subtitle}}</h5>
-					</div><a href="#"></a>
-				</div>
+				<a href="{{post.url}}">
+					<div class="mastheadPosts">
+						<img src="{{site.url}}/images/teaser/{{post.image.teaser}}" alt="{{post.title}}" title="{{post.title}}">
+						<div class="caption">
+							<h3>{{post.title}}</h3>
+							<h5>{{post.subtitle}}</h5>
+						</div>
+					</div>
+				</a>
       {% endfor %}
     </ul>
   </div>

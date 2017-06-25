@@ -133,14 +133,14 @@ figure {
   img {
     width: 100%;
     border-radius: $border-radius;
-    transition: box-shadow 0.3s;
+		@include transition(.3s, ease-in-out, box-shadow);
   }
   > a {
     display: block;
     // image hover animation
     &:hover {
       img {
-        box-shadow: 0 0 10px rgba($black, 0.20);
+				@include boxShadow(0, 0, 10px, rgba(#000, 0.2));
       }
     }
   }
@@ -184,7 +184,7 @@ figcaption {
     color: inherit;
     text-decoration: none;
     border-bottom: 1px solid $lightGray;
-    transition: border 0.4s ease-in-out;
+		@include transition(.25s, ease-in-out, border);
     &:hover {
       color: #000;
       border-bottom-color: #000;
@@ -212,5 +212,5 @@ nav {
 /* Global animation transition */
 
 b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, tr, td, input[type="submit"], .btn, .highlight, .archive__item, .archive__item-thumb, .archive__item-body, .palette__swatch {
-  transition: all 0.2s ease-in-out;
+	@include transition(.2s, ease-in-out, all);
 }

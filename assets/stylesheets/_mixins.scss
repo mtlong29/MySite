@@ -1,33 +1,68 @@
+// Transition Webkits
+
+@mixin transition($time, $type, $selector) {
+	-webkit-transition: $time $type $selector;
+	-moz-transition: $time $type $selector;
+	-o-transition: $time $type $selector;
+	transition: $time $type $selector;
+}
+
+// Transition Delays Webkits
+
+@mixin transitionDelay($time) {
+	-webkit-transition-delay: $time;
+	transition-delay: $time;
+}
+
+// Translations Webkits
+
+@mixin translateY($amount) {
+	-webkit-transform: translateY($amount);
+	transform: translateY($amount);
+}
+
+// Box Shadow Webkits
+
+@mixin boxShadow($top, $left, $blur, $color, $inset:"") {
+	-webkit-box-shadow: $top $left $blur $color #{$inset};
+	-moz-box-shadow: $top $left $blur $color #{$inset};
+	box-shadow: $top $left $blur $color #{$inset};
+}
+
+// Font Size Calculator
+
 @function em($target, $context: $doc-font-size) {
-  @return ($target / $context) * 1em;
+	@return ($target / $context) * 1em;
 }
 
 @mixin clearfix {
-  &::after {
-    clear: both;
-    content: "";
-    display: table;
-  }
+	&::after {
+		clear: both;
+		content: "";
+		display: table;
+	}
 }
 
+// Font Size Calculator
+
 @mixin font-size($size, $margin: yes, $line-height: $doc-line-height) {
-  font-size: 0px + $size;
-  @if $line-height != $doc-line-height and $line-height != 1 {
-    line-height: ceil($size / $line-height) * ($line-height / $size);
-  }
-  @else if $line-height == 1 {
-    line-height: 1;
-  }
-  @else {
-    line-height: ceil($size / $doc-line-height) * ($doc-line-height / $size);
-  }
-  @if $margin == no {
-    margin-bottom: 0;
-  }
-  @else if $margin != yes and $margin != no {
-    margin-bottom: 0px + $margin;
-  }
-  @else {
-    margin-bottom: 0px + $doc-line-height;
-  }
+	font-size: 0px + $size;
+	@if $line-height !=$doc-line-height and $line-height !=1 {
+		line-height: ceil($size / $line-height) * ($line-height / $size);
+	}
+	@else if $line-height==1 {
+		line-height: 1;
+	}
+	@else {
+		line-height: ceil($size / $doc-line-height) * ($doc-line-height / $size);
+	}
+	@if $margin==no {
+		margin-bottom: 0;
+	}
+	@else if $margin !=yes and $margin !=no {
+		margin-bottom: 0px + $margin;
+	}
+	@else {
+		margin-bottom: 0px + $doc-line-height;
+	}
 }
