@@ -14,7 +14,6 @@ owner:
   github-repo: https://github.com/mtlong29/MySite
 
 # Jekyll configuration
-permalink: /:categories/:title/
 lsi: true
 markdown: kramdown
 kramdown:
