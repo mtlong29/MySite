@@ -16,7 +16,7 @@ layout: default
 
     {{ content }}
     {% for post in site.categories.blog %} 
-      {% include /globalSections/archiveItem.html %}
+      {% include /globalSections/tileHorizontal.html %}
     {% endfor %}
 
     {% unless page.fullwidth == true %}
