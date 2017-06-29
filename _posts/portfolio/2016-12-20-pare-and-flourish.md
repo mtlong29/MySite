@@ -1,6 +1,8 @@
 ---
 layout: article
 
+permalink: /portfolio/pare-and-flourish/
+
 categories: portfolio
 
 title: "Pare and Flourish"

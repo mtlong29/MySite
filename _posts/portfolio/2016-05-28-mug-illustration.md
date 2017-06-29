@@ -1,6 +1,8 @@
 ---
 layout: article
 
+permalink: /portfolio/mug-illustration/
+
 categories: portfolio
 
 title: "Mug Illustration"

@@ -1,6 +1,8 @@
 ---
 layout: article
 
+permalink: /portfolio/homemade-computer-desk/
+
 categories: portfolio
 
 title: "Homemade Computer Desk"

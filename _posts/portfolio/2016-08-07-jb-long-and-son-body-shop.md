@@ -1,6 +1,8 @@
 ---
 layout: article
 
+permalink: /portfolio/jb-long-and-son-body-shop/
+
 categories: portfolio
 
 title: "JB Long and Son Body Shop"

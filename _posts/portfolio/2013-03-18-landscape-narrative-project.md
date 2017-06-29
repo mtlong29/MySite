@@ -1,6 +1,8 @@
 ---
 layout: article
 
+permalink: /portfolio/landscape-narrative/
+
 categories: portfolio
 
 title: "Landscape Narrative"

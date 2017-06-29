@@ -1,6 +1,8 @@
 ---
 layout: article
 
+permalink: /portfolio/gis-analysis-project/
+
 categories: portfolio
 
 title: "GIS Analysis Project"

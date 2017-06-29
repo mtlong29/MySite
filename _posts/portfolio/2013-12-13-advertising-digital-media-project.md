@@ -1,6 +1,8 @@
 ---
 Layout: article
 
+permalink: /portfolio/advertising-digital-media/
+
 categories: portfolio
 
 title: "Advertising - Digital Media"

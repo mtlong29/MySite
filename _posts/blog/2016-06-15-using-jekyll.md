@@ -1,6 +1,8 @@
 ---
 layout: article
 
+permalink: /blog/building-and-maintaining-a-jekyll-site/
+
 title: "Building and Maintaining a Jekyll Site"
 
 subtitle: "Jekyll"
@@ -59,22 +61,19 @@ An architecture like this helps centralize the content so you're not poking arou
 {% highlight bash %}
     project-name/
     ├── _assets/
-    ├── _data/
-    ├── _drafts/
     ├── _includes/
     ├── _layouts/
     ├── _pages/
-    |   ├── 404.md               # custom 404 page
-    |   ├── about.md             # about page
-    |   ├── blog.md              # page containing all blog posts
-    |   ├── home.md              # home page (eg. <root>/index.html)
-    |   ├── portfolio.md         # page containing a portfolio posts
-    |   ├── resume.md            # resume page
-    |   ├── sitemap.md           # map of the site
-    |   └── tag.md               # page sorting all posts by tag
+    |   ├── 404.md
+    |   ├── about.md
+    |   ├── blog.md
+    |   ├── home.md
+    |   ├── portfolio.md
+    |   ├── resume.md
+    |   ├── sitemap.md
+    |   └── tag.md
     ├── _posts/
     ├── images
-    ├── _config.yml
     ├── _config.yml
     └── Gemfile
 {% endhighlight %}
@@ -86,15 +85,15 @@ Installing Ruby, Bundler, and Ruby Gems are essential to getting this site runni
 
 ### Bundler
 
-It didn't take long to fully embrace [Bundler](http://bundler.io/) but mainly because its what everyone else is doing. Bundler is the official way to install Jekyll it wasn't that big of a leap for me to start using a `Gemfile` to manage all dependencies. To do that:
+It didn't take long to fully embrace [Bundler](http://bundler.io/) but mainly because its what everyone else is doing. Bundler is the official way to install Jekyll. Tt wasn't that big of a leap for me to start using a `Gemfile` to manage all dependencies. To do that:
 
 1. Run `bundle init` to create an empty `Gemfile`
 2. Add `gem 'jekyll'` and any other gems to the `Gemfile`.
 
-Below is what the gemfile for this site looked like as of 6/15/2016.
+Below is what the gemfile for this site looked like as of 6/29/2017.
 
 {% highlight ruby %}
-# Gemfile
+#Gemfile
 source 'https://rubygems.org'
 
 gem 'breakpoint'
@@ -107,10 +106,7 @@ gem 'uglifier'
 gem 'jekyll'
 gem 'jekyll-archives'
 gem 'jekyll-tagging-related_posts'
-group :jekyll_plugins do
-  gem 'jekyll-assets', github: 'jekyll/jekyll-assets'
-  gem 'jekyll-sitemap', github: 'jekyll/jekyll-sitemap'
-end
+gem 'jekyll-sitemap'
 {% endhighlight %}
 
 Now when running `bundle install` each of the gems specified above are installed and a `Gemfile.lock` is created listing all of the dependencies.
@@ -118,9 +114,9 @@ Now when running `bundle install` each of the gems specified above are installed
 In my experience it is extremely easy to break a gem resulting in the entire site to stop working. In other words (I know it's obvious) but backup this file before installing a new update.
 
 {% highlight bash %}
-bundle exec jekyll serve --config _config.yml,_config.dev.yml
+bundle exec jekyll serve
 {% endhighlight %}
 
 {% highlight bash %}
-JEKYLL_ENV=production bundle exec jekyll build
+bundle exec jekyll build
 {% endhighlight %}

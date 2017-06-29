@@ -1,6 +1,8 @@
 ---
 layout: article
 
+permalink: /portfolio/artsy-jordan-dunk/
+
 categories: portfolio
 
 title: "Artsy Jordan Dunk"

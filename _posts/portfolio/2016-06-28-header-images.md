@@ -1,6 +1,8 @@
 ---
 layout: article
 
+permalink: /portfolio/header-images/
+
 categories: portfolio
 
 title: "Header Images"

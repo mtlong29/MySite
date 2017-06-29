@@ -1,6 +1,8 @@
 ---
 layout: article
 
+permalink: /portfolio/random-collages/
+
 categories: portfolio
 
 title: "Random Collages"

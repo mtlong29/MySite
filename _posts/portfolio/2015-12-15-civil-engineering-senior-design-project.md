@@ -1,6 +1,8 @@
 ---
 layout: article
 
+permalink: /portfolio/senior-design/
+
 categories: portfolio
 
 title: "Senior Design"
