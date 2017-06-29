@@ -11,9 +11,9 @@
       <ul class="mastheadMenu">
           
         {% if page_slug[1] and (slug_first == 'blog' or slug_first == 'portfolio') %}
-          <li><a href="{{site.url}}/{{ slug_first }}/" class="mastheadMenuItem">← {{ slug.name }}</a></li>
+          <li><a href="{{site.url}}/{{ slug_first }}/" class="mastheadMenuItem">{{ slug.name }}</a></li>
         {% else %}
-          <li><a href="{{site.url}}/" class="mastheadMenuItem">← Home</a></li>
+          <li><a href="{{site.url}}/" class="mastheadMenuItem">Home</a></li>
         {% endif %}
 
         {% assign counter = 0 %}
