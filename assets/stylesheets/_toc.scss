@@ -27,7 +27,7 @@
         width: 20px;
       }
       &:not(:last-child) {
-        border-bottom: 1px solid $lightGray;
+        border-bottom: 1px solid #e2e2e2;
       }
     }
   }
@@ -52,6 +52,6 @@
   }
   > li {
     padding: 5px 0;
-    border-top: 2px solid $lightGray;
+    border-top: 2px solid #e2e2e2;
   }
 }
