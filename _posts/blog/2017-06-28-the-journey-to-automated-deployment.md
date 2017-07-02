@@ -17,11 +17,11 @@ image:
   header: using-jekyll.jpg
   teaser: using-jekyll.jpg
 
-published: false
-
 modified: 2017-06-28
 
 featured: true
+
+published: false
 ---
 
 {% include /globalSections/toc.html %}
