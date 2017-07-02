@@ -79,8 +79,21 @@ a {
 /* Remove outline from links */
 
 a:hover,
-a:active {
+a:active,
+a:focus {
   outline: 0;
+}
+
+/* Remove outline from embededded flash objects */
+
+object,
+embed {
+  outline: 0;
+}
+
+/* Remove dotted line from input type=image for firefox browsers */
+input::-moz-focus-inner { 
+  border: 0; 
 }
 
 /* Prevent sub and sup affecting line-height in all browsers */
