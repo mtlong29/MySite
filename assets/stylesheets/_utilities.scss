@@ -1,5 +1,3 @@
-/* UTILITY CLASSES */
-
 /* Container */
 
 .container {
@@ -19,7 +17,6 @@
     margin-right: auto;
   }
 }
-
 
 /* Visibility  */
 
@@ -73,7 +70,6 @@ body:hover .visually-hidden button {
 	@include boxShadow(0, 0, 2px, rgba(#000, 0.6));
 }
 
-
 /* Skip links */
 
 .skip-link {
@@ -102,14 +98,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .center {
   text-align: center;
-}
-
-.float-right {
-  clear: left;
-  @include breakpoint($large) {
-    float: right;
-    clear: none;
-  }
 }
 
 .cf { clear: both; }
@@ -151,4 +139,3 @@ h1, h2, h3, h4, h5, h6 {
   position: sticky;
   top: 80px;
 }
-
