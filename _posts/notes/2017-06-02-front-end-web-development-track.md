@@ -121,9 +121,51 @@ If our stylesheet isnt more specific than the browser the browsers default styli
 ## clear: both;
 The clear property specifies on which sides of an element floating elements are not allowed to float.
 
+## Media Queries
+
+### Breakpoints
+Each media query added is referred to as a break point. In other words, layouts can only be stretched so far before it doesn't look good anymore. Sometimes these break points may even be based on the screen resolution of popular devices.
+
+## Pseudo Class Selector
+A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). For example, :hover can be used to apply a style when the user hovers over a button.
+
+For more on pseudo-classes go <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">here</a>
+
+
+## Viewport
+{% highlight html %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endhighlight %}
+
+The above meta tag is necessary for telling a mobile phone how to view your webpage.
+
+## Website Testing
+Check that site still looks good in grayscale (strong contrast) to decide whether site will look good to the visually impaired.
+
+Flipping a site upsidedown. Doing this will check that one side of your site isn't heavier than the other.
+
+Blurring a website. This allows you to examin design details such as arrangement. This will also check the legibility of the site.
+
+### Check whether HTML and CSS are Valid
+Copy and paste your HTML source into sites such as <a href="http://validator.w3.org" target="_blank">validator.w3.org</a> to test sites HTML.
+
+Copy and paste your CSS source into sites such as <a href="http://jigsaw.w3.org" target="_blank">jigsaw.w3.org</a> to test sites CSS.
+
+## Finding a Domain
+<ul>
+  <li>Protocol - A system of rules for the exchange of digital information. On the web, the Hyper Text Transfer Protocol (HTTP) allows for the exchange of websites.</li>
+  <li>Subdomain - A smaller domain that is part of a larger domain. For example, "www" is a common subdomain.</li>
+  <li>Domain - A unique identifying string that defines a realm of authority or control on the web.</li>
+  <li>TLD - TLD stands for Top Level Domain and it is the highest level domain in the Domaain Name System (DNS). This is the part of the domain such as .com, .net, and .org, that comes at the end.</li>
+</ul>
+
+## Pick a Web Host
+Web hosting gives us space on the web to upload our site so that it can be served to site visitors.
+
 ## Things I've learned
 <ol>
   <li>The reason the work document is still used for webpages.</li>
   <li>I do not use the section tags enough.</li>
   <li>Never leave off charset=utf-8" from your website.</li>
+  <li>I don't approach website design with a mobile first attitude enough. After all.. it's easier to take a simple layout (mobile) and make it more complex (desktop) rather than tryign to reduce a complex layout to its simplest form.</li>
 </ol>
