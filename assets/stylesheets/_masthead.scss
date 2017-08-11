@@ -235,6 +235,7 @@
   padding: 1rem;
   color: $white;
   background: $black;
+  cursor: pointer;
   &:active {
     @include translateY(0);
   }
