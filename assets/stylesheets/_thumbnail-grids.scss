@@ -19,7 +19,7 @@
     border-bottom-width: 0;
     img {
       &:hover {
-				@include boxShadow(0, 0, 10px, rgba(#000, 0.5));
+        @include boxShadow(0, 0, 10px, rgba(#000, 0.5));
       }
     }
   }
