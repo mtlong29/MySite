@@ -21,7 +21,6 @@ image:
   
 tags: [school work, photoshop, graphic design]
 
-
 featured: false
 ---
 
