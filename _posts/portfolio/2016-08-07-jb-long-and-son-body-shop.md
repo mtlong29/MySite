@@ -7,7 +7,7 @@ categories: portfolio
 
 title: "JB Long and Son Body Shop"
 
-subtitle: "Web Design"
+subtitle: "Web Development"
 
 excerpt: "I was tasked with creating a website for JB Long and Son Body Shop. This post documents the journey."
 
