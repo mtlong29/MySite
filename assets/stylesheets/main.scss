@@ -1,13 +1,18 @@
 ---
 
 ---
+@import "vendor/normalize/normalize";
 
 @import "variables";
 @import "mixins";
 
-@import "fourOhFour";
 @import "breakpoint";
-@import "reset";
+
+@import "vendor/magnific-popup/magnific-popup";
+@import "vendor/slickmap/slickmap";
+@import "vendor/syntax-highlighting/syntax-highlighting";
+
+@import "fourOhFour";
 @import "base";
 @import "animations";
 @import "utilities";
@@ -15,11 +20,7 @@
 @import "page";
 @import "tags";
 @import "toc";
-@import "notices";
 @import "thumbnail-grids";
-@import "syntax-highlighting";
 @import "tiles";
-@import "slickmap";
 @import "colophon";
-@import "vendor/magnific-popup/magnific-popup";
 @import "fancyLink";
