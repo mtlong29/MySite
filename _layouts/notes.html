@@ -16,7 +16,7 @@ layout: default
 
     {{ content }}
     {% for post in site.categories.notes %} 
-      {% include /globalSections/tileHorizontal.html %}
+      {% include /globalSections/tile.html %}
     {% endfor %}
 
     {% unless page.fullwidth == true %}

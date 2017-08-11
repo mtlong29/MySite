@@ -4,25 +4,21 @@ layout: default
 
 <div id="main" role="main">
 
-  <header class="container post__header"> 
+  <header class="container post__header">  
     {% include /globalSections/pageHeader.html %}
   </header>
 
-  <div class="container post__content">
-
-    {% unless page.fullwidth == true %}
-      <div class="post__inner-wrapper-archive">
-    {% endunless %}
-
+  <div class="container">
+    
     {{ content }}
-    {% for post in site.categories.blog %} 
-      {% include /globalSections/tileHorizontal.html %}
-    {% endfor %}
-
-    {% unless page.fullwidth == true %}
-      </div>
-    {% endunless %}
-
-  </div>
+		
+    <div class="tilesContainer horizontal">
+      {% for post in site.categories.blog %} 
+        {% include /globalSections/tile.html %}
+      {% endfor %}
+    </div>
+		
+	</div>
 
 </div>
+

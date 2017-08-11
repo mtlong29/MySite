@@ -28,9 +28,15 @@ layout: default
     <div class="post__inner-wrapper-archive">
 
       <section class="post__body">
-        {% for post in page.posts %}
-          {% include /globalSections/tileHorizontal.html %}
-        {% endfor %}
+        <div class="tilesContainer horizontal">
+
+          {% for post in page.posts %}
+
+            {% include /globalSections/tile.html %}
+
+          {% endfor %}
+          
+        </div>
       </section>
 
     </div>

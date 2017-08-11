@@ -12,9 +12,9 @@ layout: default
     
     {{ content }}
 		
-		<div class="tiles">
+		<div class="tilesContainer vertical">
 			{% for post in site.categories.portfolio %} 
-				{% include /globalSections/tileVertical.html %}
+				{% include /globalSections/tile.html %}
 			{% endfor %}
 		</div>
 		

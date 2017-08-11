@@ -1,17 +1,19 @@
-<div class="featured">
+<section id="featuredPortfolio">
     
-  <h3 class="tile__header">Portfolio Preview</h3>
+  <h3 class="tileHeader">Portfolio Preview</h3>
   
-  <p>Below are a few examples of my work. Click <a href="{{ site.ur l}}/portfolio" class="fancyLink">here</a> to see even more, or you can click <a href="{{ site.url }}/resume" class="fancyLink">here</a> to see my resume.</p>
+  <p>Below are a few examples of my work. Click <a href="{{site.url}}/portfolio" class="fancyLink">here</a> to see even more, or you can click <a href="{{site.url}}/resume" class="fancyLink">here</a> to see my resume.</p>
     
-  <div class="tiles">
+  <div class="tilesContainer vertical">
+    
     {% assign features = site.categories[page.feature-portfolio.category] | where:"featured", true %}
     
       {% for post in features limit:3 %}
       
-      {% include /globalSections/tileVertical.html %}
+      {% include /globalSections/tile.html %}
           
     {% endfor %}
           
   </div>
-</div>
+
+</section>

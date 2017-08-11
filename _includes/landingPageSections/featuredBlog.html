@@ -1,18 +1,19 @@
-<div class="featured">
-    
-  <h3 class="tile__header">Blog Preview</h3>
+<section id="featuredBlog">
+  
+  <h3 class="tileHeader">Blog Preview</h3>
   
   <p>This attempt at “blogging” is actually a method of keeping notes mainly for myself. However, others are more than welcome to see these notes. Below are a few of not necessarily most recent, but most relevant. Click <a href="{{site.url}}/blog" class="fancyLink">here</a> to see all blog posts.</p>
-  
-  <div class="tiles">
-      
-    {% assign features = site.categories[page.feature-blog.category] | where:"featured", true %}
-    
-      {% for post in features limit:3 %}
-				
-				{% include /globalSections/tileHorizontal.html %}
 
-			{% endfor %}
-          
+  <div class="tilesContainer horizontal">
+    
+    {% assign features = site.categories[page.feature-blog.category] | where:"featured", true %}
+
+    {% for post in features limit:3 %}
+
+      {% include /globalSections/tile.html %}
+
+    {% endfor %}   
+    
   </div>
-</div>
+  
+</section>
