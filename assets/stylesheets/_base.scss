@@ -1,11 +1,65 @@
 /* BASE ELEMENTS */
 
+
 /* Breakpoint-Sass */
 
 @include breakpoint-set('to ems', true);
 
-
 /* Typography */
+
+html {
+  /* apply a natural box layout model to all elements */
+  box-sizing: border-box;
+  background-color: $lightGray;
+  font-size: 15px;
+  @include breakpoint($medium) {
+    font-size: 16px;
+  }
+  @include breakpoint($large) {
+    font-size: 18px;
+  }
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* apply a natural box layout model to all elements */
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+/* Remove margin */
+
+body {
+  margin: 0;
+}
+
+
+/* Selected elements */
+
+::selection {
+  color: $white;
+  background: $black;
+}
+
+/* Display HTML5 elements in IE6-9 and FF3 */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
 
 body {
   margin: 0;
@@ -19,8 +73,28 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.25;
+}
+
+
+/* img border in anchor's and image quality */
+
+
+/* Ensures images dont stretch past their parent container */
+
+img {
+  max-width: 100%;
+  width: auto\9;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
 }
 
 small {
@@ -36,11 +110,38 @@ ins {
   }
 }
 
+
+/* Remove blue color */
+
+a {
+  color: inherit;
+}
+
+
+/* Remove outline from links */
+
+a:hover,
+a:active,
+a:focus {
+  outline: 0;
+}
+
+
 /* reduce orphans and widows when printing */
-p, pre, blockquote, ul, ol, dl, figure, table, fieldset {
+
+p,
+pre,
+blockquote,
+ul,
+ol,
+dl,
+figure,
+table,
+fieldset {
   orphans: 3;
   widows: 3;
 }
+
 
 /* Abbreviations */
 
@@ -50,6 +151,7 @@ abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted $gray;
 }
+
 
 /* Blockquotes */
 
@@ -73,27 +175,37 @@ blockquote {
   }
 }
 
+
 /* Lists */
 
-ol, ul {
+ol,
+ul {
   @include breakpoint($small) {
     padding-left: 0;
-    ol, ul {
+    ol,
+    ul {
       padding: 0em 0em;
       margin-top: 0rem;
     }
   }
 }
 
+
 /* Code */
 
-tt, code, kbd, samp, pre {
+tt,
+code,
+kbd,
+samp,
+pre {
   font-family: $monospace;
   font-size: 0.8rem;
 }
+
 pre {
   overflow-x: auto; // add scrollbars to wide code blocks
 }
+
 p code,
 li code,
 figcaption code {
@@ -102,11 +214,13 @@ figcaption code {
   background: mix(#fff, $lightGray, 40%);
   border: 1px solid $lightGray;
   border-radius: $border-radius;
-  &:before, &:after {
+  &:before,
+  &:after {
     letter-spacing: 0em;
     content: "\00a0"; // non-breaking space
   }
 }
+
 
 /* Horizontal rule */
 
@@ -116,6 +230,7 @@ hr {
   border: 0;
   border-top: 5px solid $accentColor;
 }
+
 
 /* Figures and images */
 
@@ -133,20 +248,20 @@ figure {
   img {
     width: 100%;
     border-radius: $border-radius;
-		@include transition(.3s, ease-in-out, box-shadow);
+    @include transition(.3s, ease-in-out, box-shadow);
   }
-  > a {
+  >a {
     display: block;
     // image hover animation
     &:hover {
       img {
-				@include boxShadow(0, 0, 10px, rgba(#000, 0.2));
+        @include boxShadow(0, 0, 10px, rgba(#000, 0.2));
       }
     }
   }
   &.half {
-    > a,
-    > img {
+    >a,
+    >img {
       @include breakpoint($small) {
         width: calc(50% - 0.5em);
       }
@@ -158,8 +273,8 @@ figure {
     }
   }
   &.third {
-    > a,
-    > img {
+    >a,
+    >img {
       @include breakpoint($small) {
         width: calc(33.3333% - 0.5em);
       }
@@ -167,10 +282,11 @@ figure {
     figcaption {
       width: 100%;
       margin-top: 0rem;
-      margin-bottom: 0rem;        
+      margin-bottom: 0rem;
     }
   }
 }
+
 
 /* Figure captions */
 
@@ -184,7 +300,7 @@ figcaption {
     color: inherit;
     text-decoration: none;
     border-bottom: 1px solid $lightGray;
-		@include transition(.25s, ease-in-out, border);
+    @include transition(.25s, ease-in-out, border);
     &:hover {
       color: #000;
       border-bottom-color: #000;
@@ -195,7 +311,9 @@ figcaption {
   }
 }
 
+
 /* Hide bullets from navbar */
+
 nav {
   ul {
     margin: 0;
@@ -209,8 +327,32 @@ nav {
   }
 }
 
+
 /* Global animation transition */
 
-b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, tr, td, input[type="submit"], .btn, .highlight, .archive__item, .archive__item-thumb, .archive__item-body, .palette__swatch {
-	@include transition(.2s, ease-in-out, all);
+b,
+i,
+strong,
+em,
+blockquote,
+p,
+q,
+span,
+figure,
+img,
+h1,
+h2,
+header,
+input,
+a,
+tr,
+td,
+input[type="submit"],
+.btn,
+.highlight,
+.archive__item,
+.archive__item-thumb,
+.archive__item-body,
+.palette__swatch {
+  @include transition(.2s, ease-in-out, all);
 }
