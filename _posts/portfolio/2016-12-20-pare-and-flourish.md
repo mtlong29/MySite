@@ -7,13 +7,13 @@ categories: portfolio
 
 title: "Pare and Flourish"
 
-subtitle: "Web Design"
+subtitle: "Web Development"
 
 excerpt: "It has been a dream of two friends of mine, Katie and Skylar, to create a blog. This post documents the journey."
 
 date: 2016-12-20
 
-modified: 2016-12-20
+modified: 2017-08-11
 
 image: 
   header: pandf-site.jpg
@@ -86,6 +86,20 @@ $(document).ready(function () {
 
 <div class="scroll-box">
     <img src="/images/post-pare-and-flourish-site-evo/evo3.jpg">
+</div>
+
+### Evolution Four (May 13, 2017)
+Both a lot and not a lot has happened since the last evolution. The main changes are removal of color during our identiy crisis, new images (used all over the site now), and removal of that ugly dark footer. Functionality of the site hasn't changed much either. Therefore, the only updates are styling related.
+
+<div class="scroll-box">
+    <img src="/images/post-pare-and-flourish-site-evo/evo4.jpg">
+</div>
+
+### Evolution Five (July 9, 2017)
+My life had calmed down around this period so I had plenty of time to make changes to the site. As you can see it has gone through drastic changes. Changes such as a new blog tile layout and styling, adding content to the homepage other than said blog tiles such as a reading list and services (more to come), new fully responsive navigation bar, and a new banner image. Oh, and say hello to our new light purple color #e7dff0!
+
+<div class="scroll-box">
+    <img src="/images/post-pare-and-flourish-site-evo/evo5.jpg">
 </div>
 
 ## Development (CSS and HTML)
