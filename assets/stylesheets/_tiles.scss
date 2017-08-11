@@ -14,7 +14,7 @@
       border-radius: $border-radius;
     }
     .tileContent {
-//      padding: 1rem;
+      //      padding: 1rem;
       h2 {
         margin-top: 0;
         margin-bottom: .25rem;
@@ -96,6 +96,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding: 1rem;
       flex: 5;
       .subTitle {
         display: none;
@@ -117,19 +118,27 @@
 }
 
 @media screen and (max-width: $medium-wide) {
+  article {
+    width: 100%;
+  }
   .horizontal {
     justify-content: center;
     flex-wrap: wrap;
     .individualTile {
       flex-direction: column;
       .tileImage {
+        margin-right: 0;
         min-height: 200px;
+      }
+      .tileContent {
+        padding: 0;
       }
     }
   }
   .vertical {
+    justify-content: center;
     .individualTile {
-      max-width: 400px;
+      max-width: 100%;
     }
   }
 }
