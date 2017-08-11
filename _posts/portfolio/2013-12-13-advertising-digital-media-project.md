@@ -1,5 +1,5 @@
 ---
-Layout: article
+layout: article
 
 permalink: /portfolio/advertising-digital-media/
 
@@ -17,7 +17,7 @@ modified: 2016-02-13
 
 image: 
   header: adm-project.jpg
-  teaser: adm project.jpg
+  teaser: adm-project.jpg
 
 tags: [school work, photoshop, poster, graphic design]
 
