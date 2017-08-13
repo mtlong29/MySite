@@ -2,6 +2,7 @@
 
 .masthead {
   @include boxShadow(0, 0, 8px, rgba(#000, 0.125));
+  @include userSelect(none);
   position: fixed;
   top: 0;
   width: 100%;
@@ -110,6 +111,7 @@
 
 .overlayMenu {
   @include boxShadow(0, 0, 10px, rgba(#000, 0.5));
+  @include userSelect(none);
   position: absolute;
   width: 100%;
   left: 0;
