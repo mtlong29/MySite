@@ -7,7 +7,7 @@ title: "Resume"
 
 date: 2014-06-01
 
-modified: 2016-06-20
+modified: 2017-08-13
 
 excerpt:
 
@@ -22,11 +22,11 @@ You can contact me in a number of ways. The easiest is by email at <a class="fan
 
 ## Objective
 
-Seeking position in which I can further develop skills learned at the University of Kentucky. I plan to expand my Bachelor of Science in Civil Engineering to the fields that require problem solving, design, and development.
+Seeking web developer position in which I can advance skills learned independently, from the University of Kentucky, and during my experience working with a team; while benefiting and helping a company grow.
 
 ## Qualifications
 
-While studying Civil Engineering and Mathematics I developed transferable skills, shown below, that can and will benefit me in a variety of technical design and development positions.
+While studying Civil Engineering and Mathematics at the University of Kentucky I gained transferable skills, shown below, that can and will benefit me in a variety of web development positions. Furthermore, my experience as a web developer, both as an independent freelancer and in a team, has prepared me. Some of these experiences are shown below the skills section.
 
 ## Education
 
@@ -40,7 +40,7 @@ University of Kentucky, December 2015. Bachelor’s Degree in Civil Engineering.
 
 <p>Operating Systems - Windows and Mac OSX</p>
 <p>Microsoft Office - Excel, PowerPoint, and Word</p>
-<p>Programming - <a class="fancyLink" href="{{site.url}}/tag/javascript/">JavaScript</a>, <a class="fancyLink" href="{{site.url}}/tag/jquery/">jQuery</a>, Python, VBScript, and RubyGems</p>
+<p>Programming - <a class="fancyLink" href="{{site.url}}/tag/javascript/">JavaScript</a>, <a class="fancyLink" href="{{site.url}}/tag/jquery/">jQuery</a>, Python, VBScript, and Ruby</p>
 
 ### Communication
 
