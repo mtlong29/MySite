@@ -1,6 +1,7 @@
 /* MASTHEAD */
 
 .masthead {
+  @include boxShadow(0, 0, 8px, rgba(#000, 0.125));
   position: fixed;
   top: 0;
   width: 100%;
@@ -10,7 +11,6 @@
   border-bottom: 4px solid $accentColor;
   z-index: 11;
   animation: fade-in 1s;
-  @include boxShadow(0, 0, 8px, rgba(#000, 0.125));
   .container {
     display: flex;
     justify-content: space-between;
@@ -109,6 +109,7 @@
 /* Overlay menu */
 
 .overlayMenu {
+  @include boxShadow(0, 0, 10px, rgba(#000, 0.5));
   position: absolute;
   width: 100%;
   left: 0;
@@ -122,7 +123,6 @@
   -webkit-overflow-scrolling: touch;
   @include translateY(-100%);
   transition: transform 0.4s cubic-bezier(.86, .01, .77, .78);
-  @include boxShadow(0, 0, 10px, rgba(#000, 0.5));
   ul {
     display: flex;
     align-items: flex-start;
@@ -269,6 +269,7 @@
 }
 
 .mastheadPosts {
+  @include userSelect(none);
   font-family: $monospace;
   position: relative;
   display: inline-block;
@@ -279,11 +280,13 @@
   font-size: 16px;
   text-align: left;
   * {
+    @include transition(.25s, ease, all);
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    @include transition(.25s, ease, all);
   }
   &:before {
+    @include transition(.25s, ease, all);
+    @include transitionDelay(0.25s);
     position: absolute;
     top: 10px;
     bottom: 10px;
@@ -294,8 +297,6 @@
     background-color: $gray;
     border-radius: $border-radius;
     opacity: 0.5;
-    @include transition(.25s, ease, all);
-    @include transitionDelay(0.25s);
   }
   img {
     vertical-align: top;
@@ -322,20 +323,20 @@
     text-align: center;
   }
   h3 {
+    @include transitionDelay(0.05s);
     margin: 0 1em;
     @include translateY(-100%);
     text-transform: uppercase;
     font-weight: 400;
-    @include transitionDelay(0.05s);
     margin-bottom: 5px;
   }
   h5 {
+    @include translateY(-100%);
+    @include transitionDelay(0s);
     font-weight: normal;
     background-color: $accentColor;
     border-radius: $border-radius;
     padding: 3px 10px;
-    @include translateY(-100%);
-    @include transitionDelay(0s);
   }
   a {
     position: absolute;
@@ -347,8 +348,8 @@
   }
   &:hover:before,
   &.hover:before {
-    top: 10px;
     @include transitionDelay(0s);
+    top: 10px;
   }
   &:hover h3,
   &.hover h3,

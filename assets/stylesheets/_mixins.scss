@@ -29,18 +29,27 @@
 	box-shadow: $top $left $blur $color #{$inset};
 }
 
-// Font Size Calculator
-
-@function em($target, $context: $doc-font-size) {
-	@return ($target / $context) * 1em;
-}
-
 @mixin clearfix {
 	&::after {
 		clear: both;
 		content: "";
 		display: table;
 	}
+}
+
+// User select 
+
+@mixin userSelect ($arg) {
+  -webkit-user-select: $arg;
+  -moz-user-select: $arg;
+  -ms-user-select: $arg;
+  user-select: $arg;
+}
+
+// Font Size Calculator
+
+@function em($target, $context: $doc-font-size) {
+	@return ($target / $context) * 1em;
 }
 
 // Font Size Calculator

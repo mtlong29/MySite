@@ -9,6 +9,7 @@
 /* Hero */
 
 .page__hero {
+  @include userSelect(none);
   position: relative;
   margin: 0 -1rem 1em;
   order: 2;
