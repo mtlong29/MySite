@@ -1,6 +1,7 @@
 /* TABLE OF CONTENTS */
 
 .toc {
+  @include userSelect(none);
   padding: 0 1em 1em;
   font-family: $sans-serif-narrow;
   border-top: 8px solid $accentColor;
