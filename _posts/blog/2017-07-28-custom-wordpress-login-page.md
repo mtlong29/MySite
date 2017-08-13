@@ -34,10 +34,12 @@ There are many reasons why someone would want to create a custom wordpress login
 
 1. Create a new folder (inside your theme) and name it login (for example..)
 2. In that folder create the css file that your login page will use
-3. Tell wordpress to load this css file by editing your themes functions.php file
-4. Add optional php functions to your functions.php file
+3. Tell wordpress to load this css file by editing your theme's `functions.php` file
+4. Add optional php functions to your `functions.php` file
 
 ## Folder Structure
+
+Your folder structure should looks like the following.
 
 {% highlight bash %}
     wordpress/
@@ -51,6 +53,8 @@ There are many reasons why someone would want to create a custom wordpress login
 {% endhighlight%}
 
 ## CSS
+
+You can use whatever styling you wish for your custom login page. The below `CSS` will result in a login page like the shown on this page.
 
 {% highlight css linenos %}
 /* Change Background Image */
@@ -150,6 +154,8 @@ p#backtoblog {
 {% endhighlight %}
 
 ## PHP
+
+Each block of code in the following `PHP` file is commented enough for you to understand its purpose.
 
 {% highlight php linenos %}
 /**
