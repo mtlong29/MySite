@@ -211,7 +211,7 @@ li code,
 figcaption code {
   padding-top: 0rem;
   padding-bottom: 0rem;
-  background: mix(#fff, $lightGray, 40%);
+  background: lighten($gray, 55%);
   border: 1px solid $lightGray;
   border-radius: $border-radius;
   &:before,
