@@ -30,20 +30,20 @@ If you host your site somewhere other than <a href="fancyLink" href="https://pag
 
 ## Methods 
 
-Most approaches have you create a JSON file that compiles the content from your pages at build time. However, this causes issues if your site is extremely large, because the page will have to query a large JSON file before it loads. Therefore, this isn't ideal if you already have a very large site. In other words if you have a very large site it might be more reasonable to use server side search. The methods (client and server side) I've discovered are shown below.
+Most approaches have you create a JSON file that compiles the content from your pages at build time. However, this causes issues if your site is extremely large, because the page will have to query a large JSON file before it loads the results. Therefore, this isn't ideal if you already have a very large site. In other words if you have a very large site it might be more reasonable to use server side searching. The methods (client and server side) I've discovered are shown below.
 
 <ol>
   <li><a class="fancyLink" href="http://www.tipue.com/search/" target="_blank">Tipue Search</a> - jQuery plugin. Tipue basically reads a JavaScript file and displays the results based on the JSON object.</li>
-  <li><a class="fancyLink" href="https://lunrjs.com/" target="_blank">lunr.js</a> - client side search made simple. For web applications with all their data already sitting in the client. Lunr is a bit like Solr, which is an open source search platform built on Apache, but much lighter.</li>
-  <li><a class="fancyLink" href="https://azure.microsoft.com/en-us/services/search/" target="_blank">Azure Search</a> - Cloud search service for web and mobile app development. Create your JSON object using liquid just like you would with other methods in this list. Create a <code class="highlighter-rouge">Node.js</code> app to create an index in the Azure Search Service and insert the JSON data. Finally, create a search form using JavaScript that queries the Azure Search Service and displays the results.</li>
-  <li><a class="fancyLink" href="https://cse.google.com/cse/" target="_blank">Google Custom Search</a>. With Google Custom Search, add a search box to your site. This search form will basically open a new window at google.com that performs your search based solely on that site.</li>
+  <li><a class="fancyLink" href="https://lunrjs.com/" target="_blank">lunr.js</a> - Client side search made simple. Designed for web applications with all their data already sitting in the client. Lunr is a bit like <a class="fancyLink" href="http://lucene.apache.org/solr/" target="_blank">Solr</a>, which is an open source search platform built on Apache, but much lighter.</li>
+  <li><a class="fancyLink" href="https://azure.microsoft.com/en-us/services/search/" target="_blank">Azure Search</a> - Cloud search service for web and mobile app development. First, create your JSON object using liquid just like you would with other methods in this list. Then create a <code class="highlighter-rouge">Node.js</code> app to create an index in the Azure Search Service and insert the JSON data. Finally, create a search form using JavaScript that queries the Azure Search Service and displays the results.</li>
+  <li><a class="fancyLink" href="https://cse.google.com/cse/" target="_blank">Google Custom Search</a>. With Google Custom Search, add a search box to your site. This search form will basically open a new tab at google.com that performs your search based solely on that site.</li>
 </ol>
 
 ## Example - lunr.js
 
 `lunr.js` is a small, full-text search library for use in the browser. It indexes JSON documents and provides a simple search interface for retrieving documents that best match text queries.
 
-As of August 16th, 2017 I have a working demo using the `lunr.js` method on <a class="fancyLink" href="http://www.pareandflourish.com/">Pare and Flourish</a>. The files below are what make it work.
+As of August 16th, 2017 I have a working demo using the `lunr.js` method on <a class="fancyLink" href="http://www.pareandflourish.com/" target="_blank">Pare and Flourish</a>. The files below, as well as the `lunr.min.js` script, are what make it work.
 
 ### search.html
 
