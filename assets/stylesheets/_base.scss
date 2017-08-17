@@ -264,6 +264,7 @@ figure {
     >img {
       @include breakpoint($small) {
         width: calc(50% - 0.5em);
+        margin-bottom: 1em;
       }
     }
     figcaption {
@@ -342,6 +343,8 @@ figure,
 img,
 h1,
 h2,
+h3,
+h4,
 header,
 input,
 a,
