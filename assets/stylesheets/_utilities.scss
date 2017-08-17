@@ -25,6 +25,12 @@
   visibility: hidden;
 }
 
+/* Remove selection of lines in code snipits */
+
+.lineno {
+  @include userSelect(none);
+}
+
 /* for preloading images */
 
 .load {
