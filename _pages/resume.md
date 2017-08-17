@@ -16,8 +16,6 @@ image:
 ---
 {% include /globalSections/toc.html %}
 
-## Contact
-
 You can contact me in a number of ways. The easiest is by email at <a class="fancyLink" href="mailto:long.matthew29@gmail.com" target="_blank">long.matthew29@gmail.com</a>. You can find me on twitter at <a class="fancyLink" href="https://www.twitter.com/MaLong29" target="_blank">@MaLong29</a> and LinkedIn at <a class="fancyLink" href="https://www.linkedin.com/in/mtlong29" target="_blank">mtlong29</a>.
 
 ## Objective

@@ -17,8 +17,6 @@ image:
 
 {% include /globalSections/toc.html %}
 
-## Who Am I?
-
 Hello, my name is Matthew Long, and I don't update this page near as often as I would like. I graduated from the University of Kentucky with an engineering degree and now work as a web developer.
 
 ## Contact
