@@ -7,7 +7,7 @@ categories: portfolio
 
 title: "Random Collages"
 
-subtitle: "Photoshop"
+subtitle: "Graphic Design"
 
 excerpt: "I have created an absurd amount of collages using photoshop. This post contains some of them."
 

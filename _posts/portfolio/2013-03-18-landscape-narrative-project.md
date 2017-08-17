@@ -7,7 +7,7 @@ categories: portfolio
 
 title: "Landscape Narrative"
 
-subtitle: "Photoshop"
+subtitle: "Graphic Design"
 
 excerpt: "AS 200 is a course on using digital media (photoshop and video). This post is one of my projects."
 

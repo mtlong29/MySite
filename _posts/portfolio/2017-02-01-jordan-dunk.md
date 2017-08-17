@@ -7,7 +7,7 @@ categories: portfolio
 
 title: "Artsy Jordan Dunk"
 
-subtitle: "Photoshop"
+subtitle: "Graphic Design"
 
 excerpt: "This very simple collage of three images turned out nicely so I decided to include it in my portfolio."
 

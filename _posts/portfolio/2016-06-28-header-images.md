@@ -7,7 +7,7 @@ categories: portfolio
 
 title: "Header Images"
 
-subtitle: "Photoshop"
+subtitle: "Graphic Design"
 
 excerpt: "I create header images (top of every page) using photoshop. Here are some of my favorites."
 
