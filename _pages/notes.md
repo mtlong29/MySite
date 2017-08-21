@@ -13,6 +13,8 @@ excerpt: ""
 
 image:
   header: filler.jpg
+
+published: false
 ---
 
 These notes are for me. They are notes from various development courses I have taken in the past.

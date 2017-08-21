@@ -20,6 +20,8 @@ image:
 modified: 2017-08-21
 
 featured: true
+
+published: false
 ---
 
 {% include /globalSections/toc.html %}
