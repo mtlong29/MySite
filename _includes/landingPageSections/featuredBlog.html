@@ -8,7 +8,7 @@
     
     {% assign features = site.categories[page.feature-blog.category] | where:"featured", true %}
 
-    {% for post in features limit:3 %}
+    {% for post in features limit:9 %}
 
       {% include /globalSections/tile.html %}
 
