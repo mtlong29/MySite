@@ -14,14 +14,14 @@ categories: notes
 tags: []
 
 image:
-  header: https://static.pexels.com/photos/47447/pexels-photo-47447.jpeg
-  teaser: https://static.pexels.com/photos/47447/pexels-photo-47447.jpeg
+  header: filler.jpg
+  teaser: filler.jpg
 
 modified: 2017-06-02
 
 featured: true
 
-published: false
+published: true
 ---
 
 {% include /globalSections/toc.html %}

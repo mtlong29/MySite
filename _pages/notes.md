@@ -13,8 +13,6 @@ excerpt: ""
 
 image:
   header: filler.jpg
-
-published: false
 ---
 
-These notes are for me. They are notes from various development courses I have taken in the past.
+These notes are for me. They are notes from various development courses I have taken in the past. Think of these as unfinished blog posts.

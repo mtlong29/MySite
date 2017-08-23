@@ -42,27 +42,22 @@ The most basic default media player (note that the audio player would look simil
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.5/mediaelementplayer.min.css">
 
 <style>
-  .videoWrapper video {
+  #basicExample video {
     width: 100%;
     height: 100%;
   }
 </style>
 
-<div class="videoWrapper">
-  <video id="mediaplayer" class="mejs__player" width="100%" height="100%" data-mejsoptions autoplay>
-    <source type="video/mp4" src="{{site.url}}/images/post-use-mediaelementjs/stock-video-drawing-layout.mp4">
-  </video>
-</div>
+<video style="width:100%;height:100%;" id="basicExample">
+  <source type="video/mp4" src="{{site.url}}/images/post-use-mediaelementjs/stock-video-drawing-layout.mp4">
+</video>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.5/mediaelement-and-player.min.js"></script>
 
 <script>
-  $(document).ready(function(){
-    $("video").mediaelementplayer({
-      features: ["playpause"]
-    });
+  $(document).ready(function($) {
+    $("#basicExample").mediaelementplayer();
   });
 </script>
 
@@ -73,11 +68,9 @@ The basic HTML needed can be seen below. As you can see, MediaPlayer.js comes wi
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.5/mediaelementplayer.min.css">
 <link rel="stylesheet" href="main.css">
 
-<div class="videoWrapper">
-  <video id="mediaplayer" class="mejs__player" width="100%" height="100%" data-mejsoptions autoplay>
-    <source type="video/mp4" src="{{site.url}}/images/post-use-mediaelementjs/stock-video-drawing-layout.mp4">
-  </video>
-</div>
+<video style="width:100%;height:100%;" id="basicExample">
+  <source type="video/mp4" src="{{site.url}}/images/post-use-mediaelementjs/stock-video-drawing-layout.mp4">
+</video>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.5/mediaelement-and-player.min.js"></script>
@@ -88,7 +81,7 @@ The basic HTML needed can be seen below. As you can see, MediaPlayer.js comes wi
 It is very easy to style any element on the video player. For example, you can change the play button in the middle of the player by changing the background-image of the class `.mejs__overlay-button` to the image of your choice. The below is there to make sure the video stays within the parent element.
 
 {% highlight css linenos %}
-.videoWrapper video {
+#basicExample video {
   width: 100%;
   height: 100%;
 }
@@ -98,9 +91,7 @@ It is very easy to style any element on the video player. For example, you can c
 JavaScript is used for many purposes with MediaElement.js. For example, it is used below to show a list of features/plugins to use in the player. For more see the api documentation <a class="fancyLink" href="https://github.com/mediaelement/mediaelement/blob/master/docs/api.md" target="_blank">here</a>.
 
 {% highlight javascript linenos %}
-$(document).ready(function(){
-  $("video").mediaelementplayer({
-    features: ["playpause"]
-  });
+$(document).ready(function($) {
+  $("#basicExample").mediaelementplayer();
 });
 {% endhighlight %}
