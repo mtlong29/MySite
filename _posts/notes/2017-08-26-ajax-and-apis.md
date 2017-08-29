@@ -11,8 +11,6 @@ excerpt: "AJAX and APIs"
 
 categories: notes
 
-tags: []
-
 image:
   header: filler.jpg
   teaser: filler.jpg

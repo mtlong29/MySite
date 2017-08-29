@@ -11,8 +11,6 @@ excerpt: "Programming AJAX"
 
 categories: notes
 
-tags: []
-
 image:
   header: filler.jpg
   teaser: filler.jpg

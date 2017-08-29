@@ -11,8 +11,6 @@ excerpt: "Sorting Tables"
 
 categories: notes
 
-tags: []
-
 image:
   header: filler.jpg
   teaser: filler.jpg

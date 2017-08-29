@@ -11,8 +11,6 @@ excerpt: "Personal notes from treehouse"
 
 categories: notes
 
-tags: []
-
 image:
   header: filler.jpg
   teaser: filler.jpg

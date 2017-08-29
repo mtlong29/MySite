@@ -11,8 +11,6 @@ excerpt: "jQuery and AJAX"
 
 categories: notes
 
-tags: []
-
 image:
   header: filler.jpg
   teaser: filler.jpg
