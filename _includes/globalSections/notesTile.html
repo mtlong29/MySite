@@ -1,0 +1,27 @@
+<article>
+  <a href="{{ site.url }}{{ post.url }}">
+    <div class="individualTile">
+      <div class="tileContent">
+        <div class="subTitle">
+          <h3>{{ post.subtitle | markdownify | remove: '<p>' | remove: '</p>'}}</h3>
+        </div>
+        <h2>{{ post.title | markdownify | remove: '<p>' | remove: '</p>'}}</h2>
+        <div class="metaData">
+          <span class="date">
+            {{ post.date | date: "%B %d, %Y" }}
+          </span>
+          <span class="stopwatch">
+            {% include /svgIcons/stopwatch.html %}
+          </span>
+          <span class="readTime">
+            {% assign readtime = post.content | strip_html | number_of_words | divided_by:site.words_per_minute %}
+            {% if readtime <= 1 %}1{% else %}{{ readtime }}{% endif %} min read
+          </span>
+        </div>
+        <div class="excerpt">
+          <p>{{ post.content markdownify | strip_html | truncatewords: 60 | strip_newlines | escape_once }}.. <span class="readMore">click to read more.</span></p>
+        </div>
+      </div>
+    </div>
+  </a>
+</article>
