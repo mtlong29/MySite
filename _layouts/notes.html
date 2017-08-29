@@ -4,17 +4,13 @@ layout: default
 
 <div id="main" role="main">
 
-  <header class="container post__header">  
-    {% include /globalSections/pageHeader.html %}
-  </header>
-
   <div class="container">
     
     {{ content }}
 		
     <div class="tilesContainer horizontal">
       {% for post in site.categories.notes %} 
-        {% include /globalSections/tile.html %}
+        {% include /globalSections/notesTile.html %}
       {% endfor %}
     </div>
 		
