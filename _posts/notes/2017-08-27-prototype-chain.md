@@ -5,15 +5,7 @@ permalink: /notes/prototype-chain/
 
 title: "Prototype Chain"
 
-subtitle: "Notes"
-
-excerpt: "Prototype Chain"
-
 categories: notes
-
-image:
-  header: filler.jpg
-  teaser: filler.jpg
 
 modified: 2017-08-27
 

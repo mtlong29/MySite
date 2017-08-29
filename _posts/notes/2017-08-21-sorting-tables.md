@@ -5,15 +5,7 @@ permalink: /notes/sorting-tables/
 
 title: "Sorting Tables"
 
-subtitle: "Notes"
-
-excerpt: "Sorting Tables"
-
 categories: notes
-
-image:
-  header: filler.jpg
-  teaser: filler.jpg
 
 modified: 2017-08-21
 

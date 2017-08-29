@@ -5,15 +5,7 @@ permalink: /notes/quiz-example-construction-function/
 
 title: "Quiz Example Constructor Function"
 
-subtitle: "Notes"
-
-excerpt: "Quiz Example Constructor Function"
-
 categories: notes
-
-image:
-  header: filler.jpg
-  teaser: filler.jpg
 
 modified: 2017-08-27
 

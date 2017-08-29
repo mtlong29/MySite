@@ -5,15 +5,7 @@ permalink: /notes/front-end-web-development-foundation/
 
 title: "Front End Web Development Foundation"
 
-subtitle: "Notes"
-
-excerpt: "Personal notes from treehouse"
-
 categories: notes
-
-image:
-  header: filler.jpg
-  teaser: filler.jpg
 
 modified: 2017-06-02
 

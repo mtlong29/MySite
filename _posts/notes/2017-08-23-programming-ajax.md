@@ -5,15 +5,7 @@ permalink: /notes/programming-ajax/
 
 title: "Programming AJAX"
 
-subtitle: "Notes"
-
-excerpt: "Programming AJAX"
-
 categories: notes
-
-image:
-  header: filler.jpg
-  teaser: filler.jpg
 
 modified: 2017-08-23
 

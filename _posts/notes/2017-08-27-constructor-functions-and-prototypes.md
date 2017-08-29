@@ -5,15 +5,7 @@ permalink: /notes/constructor-functions-and-prototypes/
 
 title: "Constructor Functions and Prototypes"
 
-subtitle: "Notes"
-
-excerpt: "Constructor Functions and Prototypes"
-
 categories: notes
-
-image:
-  header: filler.jpg
-  teaser: filler.jpg
 
 modified: 2017-08-27
 

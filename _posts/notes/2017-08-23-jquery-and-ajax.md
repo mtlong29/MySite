@@ -5,15 +5,7 @@ permalink: /notes/jquery-and-ajax/
 
 title: "jQuery and AJAX"
 
-subtitle: "Notes"
-
-excerpt: "jQuery and AJAX"
-
 categories: notes
-
-image:
-  header: filler.jpg
-  teaser: filler.jpg
 
 modified: 2017-08-23
 

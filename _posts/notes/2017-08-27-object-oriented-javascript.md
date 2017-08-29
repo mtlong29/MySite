@@ -5,15 +5,7 @@ permalink: /notes/object-oriented-javascript/
 
 title: "Object Oriented JavaScript"
 
-subtitle: "Notes"
-
-excerpt: "Object Oriented JavaScript"
-
 categories: notes
-
-image:
-  header: filler.jpg
-  teaser: filler.jpg
 
 modified: 2017-08-27
 

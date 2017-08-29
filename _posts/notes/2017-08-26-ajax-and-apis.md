@@ -5,15 +5,7 @@ permalink: /notes/ajax-and-apis/
 
 title: "AJAX and APIs"
 
-subtitle: "Notes"
-
-excerpt: "AJAX and APIs"
-
 categories: notes
-
-image:
-  header: filler.jpg
-  teaser: filler.jpg
 
 modified: 2017-08-26
 

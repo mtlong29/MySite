@@ -5,15 +5,7 @@ permalink: /notes/ajax-basics/
 
 title: "AJAX Basics"
 
-subtitle: "Notes"
-
-excerpt: "AJAX Basics"
-
 categories: notes
-
-image:
-  header: filler.jpg
-  teaser: filler.jpg
 
 modified: 2017-08-21
 

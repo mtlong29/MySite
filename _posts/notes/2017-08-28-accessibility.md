@@ -5,15 +5,7 @@ permalink: /notes/accessibility/
 
 title: "Accessibility"
 
-subtitle: "Notes"
-
-excerpt: "Accessibility"
-
 categories: notes
-
-image:
-  header: filler.jpg
-  teaser: filler.jpg
 
 modified: 2017-08-27
 
