@@ -75,3 +75,78 @@ Use the command `git commit` to commit all added files to the repository as a ch
 If you want to make configuration changes to Git such as changing your user name or email address you would type `git config --local user.name "Your Name"`. The `--local` flag changes it only for your working repository. The `--global` flag changes it across your entire system.
 
 A faster way to commit changes is by using the command `git commit -a -m "Your commit message."`. The `-a` flag commits all changes to all tracked files. The `-m` flag allows you to inset the message in the same command line.
+
+## The Staging Area
+
+The command `git status` shows the current status of the git repository, including if there are any uncommitted changes and whether or not any of our changes have been put in the staging area.
+
+The command `git add` also adds changes to the staging area.
+
+The command `git commit` without any flags will default to committing everything that's currently in the staging area.
+
+## Looking Back on What We've Done
+
+`git log` will show us a chronological log of all of our commits to the current repository.
+
+`git checkout` checks out a different version of the code from the one you're currently looking at.
+
+`git diff` will create a "diff" view to demonstrate what has changed between two different versions of your repository.
+
+## Branching Out
+
+One of the most powerful features that version control systems have to offer is the concept of branching.
+
+Branches are like alternate realities for your project. You can work on different versions that are branched off of the main branch.
+
+`git branch branchname` creates a new branch named branchname. `git checkout branchname` switches to the branch named branchname. `git checkout -b branchname` creates a new branch named branchname and switches to that branch.
+
+The master branch can be thought of as the trunk.
+
+Don't be confused by the use of `checkout`. It's basically the same, because we are still checking out different version of the project.
+
+### Managing Our Branches
+
+`git branch` lists all branches in the current repository and indicate which branch you're currently in. `git branch -D branchname` will delete the branch named branchname from the repository.
+
+## Introduction to Merging
+
+Branching may be one of the most powerful features that version control has to offer, but it really shines in conjunction with another concept: mergin.
+
+Mergins can be thought of as the opposite of branching. It combines the changes and all their respective commits into one cohesive timeline.
+
+## Merge Conflicts
+
+Git does everything it can to resolve merge conflicts for you. There are some occasions when it cannot merge things on it own so you will have to do it manually from time to time.
+
+If you don't have any changes in the same files in different branches merging is typically very smooth. If you do have changes in different branches for the same file Git can often times resolve these merges on their own.
+
+`git merge branchname` merges the history from branchname into the current branch.
+
+If Git can't handle a merge for us automatically, it generates what we call a "merge conflict" that we have to resolve on our own.
+
+When a conflit appears it will look something like the following.
+
+{% highlight text linenos %}
+<<<<<<< HEAD
+your conflicting code here..
+=======
+your conflicting code here too..
+>>>>>>> branchname
+{% endhighlight %}
+
+This is when you manually fix the code. You can start by removing the `<<<<<<<HEAD`, `=======`, and the `>>>>>>> branchname` portions of the code. Those basically show you where the conflicting code is. You then either write new code or choose between the two or use a combination of both. It is up to you. Once the changes have been made you have to commit these changes. Git will name the commit merge etc by default.
+
+## Working With Remotes
+
+If you're managing a personal project you have everything you need in Git. 
+However, remote repositories are useful when working with multiple versions of a repository. You can add remotes to a remote repository such as GitHub. People pushing and pulling each others work as needed. The officialy version of the code is placed on the remote repository. This is how you can make it so that everyone is working on the most up to date version of a project.
+
+## Cloning
+
+The first step in working with a remote repository is often to create a local copy of it. In Git, this is called "cloning".
+
+`git clone` creates a new repository that is a clone of a remote repository. `git remote` lists all the repositories associated with the current repository. `git remote add` adds a new remote repository to the current repository.
+
+## Pushing and Pulling
+
+Once we've got a clone of a remote repository, you can send changes back and forth to keep everyone in sync using push and pull. `git push` pushes your latest changes to a remote repository. `git pull` pulls the latest changes from a remote repository to your repository.
