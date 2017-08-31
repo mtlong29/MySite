@@ -5,6 +5,8 @@ permalink: /notes/accessibility/
 
 title: "Accessibility"
 
+excerpt: "Notes on web accessibility. Web accessibillity is typically defined as making web content usable for people with disabilities. This is the definition focused on in this notes."
+
 categories: notes
 
 modified: 2017-08-27

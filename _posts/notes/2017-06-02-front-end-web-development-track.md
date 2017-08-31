@@ -5,6 +5,8 @@ permalink: /notes/front-end-web-development-foundation/
 
 title: "Front End Web Development Foundation"
 
+excerpt: "Very basic notes on the history of web based programming. Information on how to structure an HTML document, normalize.css, website testing, and finding a domain etc."
+
 categories: notes
 
 modified: 2017-06-02

@@ -5,6 +5,8 @@ permalink: /notes/jquery-and-ajax/
 
 title: "jQuery and AJAX"
 
+excerpt: "How to greatly simplify the use of AJAX with jQuery."
+
 categories: notes
 
 modified: 2017-08-23

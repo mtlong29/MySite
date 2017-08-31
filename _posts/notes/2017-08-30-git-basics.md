@@ -5,6 +5,8 @@ permalink: /notes/git-basics/
 
 title: "Git Basics"
 
+excerpt: "Introduction to Git and GitHub. Notes on how to use Git from the command line."
+
 categories: notes
 
 modified: 2017-08-30

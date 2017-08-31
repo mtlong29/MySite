@@ -1,9 +1,11 @@
 ---
 layout: article
 
-permalink: /notes/quiz-example-construction-function/
+permalink: /notes/quiz-example-constructior-function/
 
 title: "Quiz Example Constructor Function"
+
+excerpt: "Example of a quicz constructor function. There isn't a working example in this post, but all the necessary HTML, and JavaScript is here."
 
 categories: notes
 

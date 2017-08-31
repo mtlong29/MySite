@@ -5,6 +5,8 @@ permalink: /notes/console-foundations/
 
 title: "Console Foundations"
 
+excerpt: "Notes on using the console. The console is a text-based interface on your computer. It allows you to interact with files, folders, and programs using text commands instead of windows, buttons, and menus."
+
 categories: notes
 
 modified: 2017-08-29

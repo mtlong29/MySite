@@ -5,6 +5,8 @@ permalink: /notes/ajax-and-apis/
 
 title: "AJAX and APIs"
 
+excerpt: "Using APIs, or Application Programming Interfaces. Notes on what APIs generally are. And that an API defines what you can get from a web server and how to use it. This post beiefly documents the API Flickr offers."
+
 categories: notes
 
 modified: 2017-08-26
