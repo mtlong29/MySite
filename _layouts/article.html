@@ -32,7 +32,7 @@ layout: default
           {{ content }}
         </section>
 
-        {% if page.path contains '_posts' and page.tags %}
+        {% if page.path contains '_posts/blog' or page.path contains '_posts/portfolio' %}
         <div class="postTaxonomy">
           {% include /articleSections/postTaxonomy.html %}
         </div>
