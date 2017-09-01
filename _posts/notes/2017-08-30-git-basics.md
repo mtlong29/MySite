@@ -151,6 +151,8 @@ The first step in working with a remote repository is often to create a local co
 
 Once we've got a clone of a remote repository, you can send changes back and forth to keep everyone in sync using push and pull. `git push` pushes your latest changes to a remote repository. `git pull` pulls the latest changes from a remote repository to your repository.
 
+If you have enabled the two step verification you will need to generte an access token instead of using you password. See <a class="fancyLink" href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/" target="_blank">https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/</a> for more information.
+
 ## Git-Flow
 
 <a class="fancyLink" href="https://github.com/nvie/gitflow" target="_blank">Git-Flow</a> is a collection of Git extensions to provide high-level repository operations. 
