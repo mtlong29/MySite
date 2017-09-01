@@ -5,15 +5,13 @@ permalink: /notes/front-end-development-performance-optimization/
 
 title: "Front End Development Performance Optimization"
 
+subtitle: "Treehouse - Front End Web Development"
+
 excerpt: "Notes on tactics used when optimizing the performance of a website. Focused on reducing the page weight and the number of HTTP requests."
 
 categories: notes
 
 modified: 2017-08-30
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}

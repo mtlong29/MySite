@@ -5,15 +5,13 @@ permalink: /notes/template-literals/
 
 title: "Introducing Template Literals"
 
+subtitle: "Treehouse - Beginner JavaScript"
+
 excerpt: "Template literals offer a lot of convenience when creating strings in JavaScript. These notes document some of the main features."
 
 categories: notes
 
 modified: 2017-08-31
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}

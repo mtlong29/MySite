@@ -5,15 +5,13 @@ permalink: /notes/git-basics/
 
 title: "Git Basics"
 
+subtitle: "Treehouse - Front End Web Development"
+
 excerpt: "Introduction to Git and GitHub. Notes on how to use Git from the command line."
 
 categories: notes
 
 modified: 2017-08-30
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}

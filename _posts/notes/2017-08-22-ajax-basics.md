@@ -5,15 +5,13 @@ permalink: /notes/ajax-basics/
 
 title: "AJAX Basics"
 
+subtitle: "Treehouse - Front End Web Development"
+
 excerpt: "AJAX is an important front-end web technology that lets JavaScript communicate with a web server. It lets you load new content without leaving the current page, creating a better, faster experience for your website's visitors."
 
 categories: notes
 
 modified: 2017-08-21
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}

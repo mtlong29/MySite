@@ -5,15 +5,13 @@ permalink: /notes/constructor-functions-and-prototypes/
 
 title: "Constructor Functions and Prototypes"
 
+subtitle: "Treehouse - Front End Web Development"
+
 excerpt: "These notes discuss what a constructor function is. It explains that object literals aren't the only way to create objects. If you're making a lot of similar objects you can use a constructor function to generate new objects of the same kind. A constructor functions describes how an object should be created, create similar objects, and each object created is known as an instance of that object type."
 
 categories: notes
 
 modified: 2017-08-27
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}

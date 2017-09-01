@@ -5,15 +5,13 @@ permalink: /notes/prototype-chain/
 
 title: "Prototype Chain"
 
+subtitle: "Treehouse - Front End Web Development"
+
 excerpt: "Notes on JavaScript prototypes. All JavaScript objects inherit the properties and methods from their prototype. Objects created using an object literal, or with new Object(), inherit from a rptotype called Object.prototype."
 
 categories: notes
 
 modified: 2017-08-27
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}

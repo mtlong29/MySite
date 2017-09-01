@@ -5,15 +5,13 @@ permalink: /notes/object-oriented-javascript/
 
 title: "Object Oriented JavaScript"
 
+subtitle: "Treehouse - Front End Web Development"
+
 excerpt: "An object is a container for values in the form of properties and functionality in the form of methods. Functionality encapsulated by an object is known as a method. These notes discuss this among other object oriented JavaScript details."
 
 categories: notes
 
 modified: 2017-08-27
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}

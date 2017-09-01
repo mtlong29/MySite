@@ -5,15 +5,13 @@ permalink: /notes/arrow-function-syntax/
 
 title: "Introducing Arrow Function Syntax"
 
+subtitle: "Treehouse - Beginner JavaScript"
+
 excerpt: "ECMAScript 2015 has been widely adopted by all modern browsers. This means we can use a more concise way to write functions. These notes show how to convert some traditional functions into a more modern syntax."
 
 categories: notes
 
 modified: 2017-08-31
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}

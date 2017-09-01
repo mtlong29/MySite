@@ -5,15 +5,13 @@ permalink: /notes/sorting-tables/
 
 title: "Sorting Tables"
 
+subtitle: "Treehouse - Front End Web Development"
+
 excerpt: "Example of how to sort tables using the jQuery dataTables.js plugin. This doesn't include a working example in this post, but all the required HTML, CSS, and jQuery are available here."
 
 categories: notes
 
 modified: 2017-08-21
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}

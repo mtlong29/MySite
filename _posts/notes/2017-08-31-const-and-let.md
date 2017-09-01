@@ -5,15 +5,13 @@ permalink: /notes/const-and-let/
 
 title: "Defining Variables with let and const"
 
+subtitle: "Treehouse - Beginner JavaScript"
+
 excerpt: "Notes on new ways to declare a variable in JavaScript. The var declaration is no longer recrommended due to undesirable behaviors. Therefore, use const if the variable isn't going to be reassigned. Use let if the variable will be reassigned."
 
 categories: notes
 
 modified: 2017-08-31
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}

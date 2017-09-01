@@ -5,15 +5,13 @@ permalink: /notes/quiz-example-constructior-function/
 
 title: "Quiz Example Constructor Function"
 
+subtitle: "Treehouse - Front End Web Development"
+
 excerpt: "Example of a quicz constructor function. There isn't a working example in this post, but all the necessary HTML, and JavaScript is here."
 
 categories: notes
 
 modified: 2017-08-27
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}

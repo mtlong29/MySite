@@ -5,15 +5,13 @@ permalink: /notes/programming-ajax/
 
 title: "Programming AJAX"
 
+subtitle: "Treehouse - Front End Web Development"
+
 excerpt: "Learn to use callback functions to respond to server responses, how the JSON format worls and how to use JavaScript to parse JSON data. Also in this post is a simple employee status widget for a company."
 
 categories: notes
 
 modified: 2017-08-23
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}

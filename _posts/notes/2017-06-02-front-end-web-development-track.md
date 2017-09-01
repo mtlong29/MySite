@@ -5,15 +5,13 @@ permalink: /notes/front-end-web-development-foundation/
 
 title: "Front End Web Development Foundation"
 
+subtitle: "Treehouse - Front End Web Development"
+
 excerpt: "Very basic notes on the history of web based programming. Information on how to structure an HTML document, normalize.css, website testing, and finding a domain etc."
 
 categories: notes
 
 modified: 2017-06-02
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}
