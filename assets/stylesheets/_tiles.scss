@@ -21,7 +21,8 @@
         padding: 0;
         font-size: 1.25rem;
       }
-      .subTitle {
+      .subTitle,
+      .lesson {
         display: flex;
         align-content: center;
         h3 {
@@ -100,6 +101,9 @@
       flex: 5;
       .subTitle {
         display: none;
+      }
+      .lesson {
+        
       }
     }
   }
