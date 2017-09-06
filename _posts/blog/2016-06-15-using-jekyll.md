@@ -24,7 +24,7 @@ featured: true
 
 {% include /globalSections/toc.html %}
 
-I first started using <a class="fancyLink" href="http://jekyllrb.com/" target="_blank">Jekyll</a> a static site generator, early 2016.
+I first started using <a href="http://jekyllrb.com/">Jekyll</a> a static site generator, early 2016.
 
 The following isn't a guide for how to use Jekyll, but instead almost a guide for me to quickly make updates to this site, and learn/document things on the way.
 
@@ -34,7 +34,7 @@ To learn how Jekyll works I read, or more realistically skimmed over tutorials. 
 
 ## Posts for Nearly Everything
 
-Within each blog post there is a <a class="fancyLink" href="http://yaml.org/" target="_blank">YAML</a> front matter block that will be processed by Jekyll as a special file. In order to communicate to Jekyll add three dashes before and after the front matter. Below is an example:
+Within each blog post there is a <a href="http://yaml.org/">YAML</a> front matter block that will be processed by Jekyll as a special file. In order to communicate to Jekyll add three dashes before and after the front matter. Below is an example:
 
 {% highlight bash %}
 ---

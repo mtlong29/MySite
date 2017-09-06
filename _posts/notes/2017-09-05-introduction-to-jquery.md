@@ -43,7 +43,7 @@ $([name='newsletter'])
 
 There are also methods such as `.first()`, `.has()`, `.last()`, `.not()`, etc. That can be used to further narrow a set of matched elements. This can be based off of position, hierarchy, form state, and content.
 
-See <a class="fancyLink" href="https://api.jquery.com/category/traversing/filtering/" target="_blank">jQuery filtering methods</a> for more information.
+See <a href="https://api.jquery.com/category/traversing/filtering/">jQuery filtering methods</a> for more information.
 
 ## Accessing and Modifying Attributes
 
@@ -117,7 +117,7 @@ $('#awesomeBtn').on('click', function(e) {
 });
 {% endhighlight %}
 
-See the MDN page for event.target for more information <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target" target="_blank">here</a>.
+See the MDN page for event.target for more information <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target">here</a>.
 
 ## Using the hover() Method
 
@@ -169,7 +169,7 @@ $('.card').on('click', function(){
 
 Sometimes, you'll want to completely remove an element from the page, not just hide it away. To do this you can use the `.remove()` element. You can also use the `.empty()` method. 
 
-To learn more about these two methods see the <a class="fancyLink" href="http://api.jquery.com/remove/" target="_blank">jQuery docs for remove</a> and the <a class="fancyLink" href="http://api.jquery.com/empty/" target="_blank">jQuery docs for empty</a>.
+To learn more about these two methods see the <a href="http://api.jquery.com/remove/">jQuery docs for remove</a> and the <a href="http://api.jquery.com/empty/">jQuery docs for empty</a>.
 
 ## Why We Traverse the DOM
 
@@ -193,7 +193,7 @@ The `.find()`, `.prev()`, and `.next()` methods can clean up our code by reducin
 
 The `.siblings()` method is used to grab all siblings (elements that share a parent within the DOM) of the selected element. We can then act on that new set of selected elements.
 
-There are many other methods that jQuery provides. For those methods, see the <a class="fancyLink" href="http://api.jquery.com/" target="_blank">jQuery documentation</a>.
+There are many other methods that jQuery provides. For those methods, see the <a href="http://api.jquery.com/">jQuery documentation</a>.
 
 ## The map() Method
 

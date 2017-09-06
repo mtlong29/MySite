@@ -55,7 +55,7 @@ This retro style advertisement collage combines 10 individual pictures.
 
 ## GMM #TakeAndMake
 
-<a class="fancyLink" href="https://www.youtube.com/user/rhettandlink2" target="_blank">Good Mythical Morning</a> is a YouTube channel that has a daily morning talk show. At the end of every episode they spin a wheel and sometimes the wheel lands on something called take and make. Take and make is when you take a still from that episode and make it into something else. This time you were to make them into aliens. Below is one that I made.
+<a href="https://www.youtube.com/user/rhettandlink2">Good Mythical Morning</a> is a YouTube channel that has a daily morning talk show. At the end of every episode they spin a wheel and sometimes the wheel lands on something called take and make. Take and make is when you take a still from that episode and make it into something else. This time you were to make them into aliens. Below is one that I made.
 
 <figure class="full">
   <a href="{{ site.url }}/images/post-photoshop-collage/gmm-takeandmake.jpg" title="Good Mythical Morning #TakeAndMake"><img src="{{ site.url }}/images/post-photoshop-collage/gmm-takeandmake.jpg" alt="Good Mythical Morning #TakeAndMake"></a>

@@ -26,10 +26,10 @@ published: false
 
 {% include /globalSections/toc.html %}
 
-There is a very indepth <a class="fancyLink" href="https://github.com/mediaelement/mediaelement/blob/master/docs/installation.md" target="_blank">installation guide</a> found on their <a class="fancyLink" href="https://github.com/mediaelement" target="_blank">GitHub</a>. In this article I will go over the basics of getting up and running using MediaElement.js. 
+There is a very indepth <a href="https://github.com/mediaelement/mediaelement/blob/master/docs/installation.md">installation guide</a> found on their <a href="https://github.com/mediaelement">GitHub</a>. In this article I will go over the basics of getting up and running using MediaElement.js. 
 
 ## Why Use MediaElement.js?
-First, why bother using MediaElement.js when there is a `<video>` tag introduced in HTML5? The <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video" target="_blank">video</a> tag is very limited; see the reasons to use MediaElement.js instead below.
+First, why bother using MediaElement.js when there is a `<video>` tag introduced in HTML5? The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video">video</a> tag is very limited; see the reasons to use MediaElement.js instead below.
 
 <ul>
   <li>Your videos will look different across browsers due to inconsistent browser styling if you choose to just use the video tag. In other words, MediaElement.js provides a consistent experience across browsers.</li>
@@ -90,7 +90,7 @@ It is very easy to style any element on the video player. For example, you can c
 {% endhighlight %}
 
 ### JavaScript
-JavaScript is used for many purposes with MediaElement.js. For example, it is used below to show a list of features/plugins to use in the player. For more see the api documentation <a class="fancyLink" href="https://github.com/mediaelement/mediaelement/blob/master/docs/api.md" target="_blank">here</a>.
+JavaScript is used for many purposes with MediaElement.js. For example, it is used below to show a list of features/plugins to use in the player. For more see the api documentation <a href="https://github.com/mediaelement/mediaelement/blob/master/docs/api.md">here</a>.
 
 {% highlight javascript linenos %}
 $(document).ready(function($) {

@@ -46,8 +46,8 @@ form.addEventListener('submit', (e) => {
 See the following links for more information:
 
 <ul>
-  <li><a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/Events/submit" target="_blank">The submit event</a></li>
-  <li><a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault" target="_blank">preventDefault()</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/submit">The submit event</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault">preventDefault()</a></li>
 </ul>
 
 ## RSVP Checkbox
@@ -834,7 +834,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 There will always be additional changes that can be made, but refactoring your code as much as possible will make it so that this is easier.
 
-You can also look into local storage. You can learn more about local storage <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank">here</a>.
+You can also look into local storage. You can learn more about local storage <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">here</a>.
 
 ## Final Project
 

@@ -28,8 +28,8 @@ There are many tools that can be used for wireframing such as the following:
   <li>Pen and paper</li>
   <li>Whiteboard</li>
   <li>Photoshop</li>
-  <li><a href="https://balsamiq.com/products/mockups/" target="_blank">Balsamiq Mockups</a></li>
-  <li><a href="http://www.sketchapp.com/" target="_blank">Sketch</a></li>
+  <li><a href="https://balsamiq.com/products/mockups/">Balsamiq Mockups</a></li>
+  <li><a href="http://www.sketchapp.com/">Sketch</a></li>
 </ul>
 
 ## HTML5
@@ -42,7 +42,7 @@ This tag basically tells the browser that this is an HTML document and should AL
 Universal character set transformation format, eight bit. This simply describes how the page is formatted and is necessary in the < head > of every webpage.
 
 ## HTML Entities
-HTML entities are ampersand codes such as &copy; or & copy; without the space. More can be found <a href="http://dev.w3.org/html5/html-author/charref" target="_blank">here</a>.
+HTML entities are ampersand codes such as &copy; or & copy; without the space. More can be found <a href="http://dev.w3.org/html5/html-author/charref">here</a>.
 
 ## Basic HTML Structure
 {% highlight html %}
@@ -121,7 +121,7 @@ Each media query added is referred to as a break point. In other words, layouts 
 ## Pseudo Class Selector
 A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). For example, :hover can be used to apply a style when the user hovers over a button.
 
-For more on pseudo-classes go <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">here</a>
+For more on pseudo-classes go <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">here</a>
 
 
 ## Viewport
@@ -139,9 +139,9 @@ Flipping a site upsidedown. Doing this will check that one side of your site isn
 Blurring a website. This allows you to examin design details such as arrangement. This will also check the legibility of the site.
 
 ### Check whether HTML and CSS are Valid
-Copy and paste your HTML source into sites such as <a href="http://validator.w3.org" target="_blank">validator.w3.org</a> to test sites HTML.
+Copy and paste your HTML source into sites such as <a href="http://validator.w3.org">validator.w3.org</a> to test sites HTML.
 
-Copy and paste your CSS source into sites such as <a href="http://jigsaw.w3.org" target="_blank">jigsaw.w3.org</a> to test sites CSS.
+Copy and paste your CSS source into sites such as <a href="http://jigsaw.w3.org">jigsaw.w3.org</a> to test sites CSS.
 
 ## Finding a Domain
 <ul>

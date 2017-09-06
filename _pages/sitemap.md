@@ -12,7 +12,7 @@ modified: 2016-08-07
 excerpt: "A visual sitemap of all the pages on mtlong.me"
 ---
 
-A hierarchical breakdown of all the sections and pages (except the secret ones.. <a class="fancyLink" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">of course</a>) found on the site.
+A hierarchical breakdown of all the sections and pages (except the secret ones.. <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">of course</a>) found on the site.
 
 <div class="sitemap">
 

@@ -26,7 +26,7 @@ Flickr is one of the most popular photo-sharing sites on the web. Flickr offers 
 
 To use this API you need to apply for an API key. During your application it will request information about yourself and your project and/or reason for needing to use an api.
 
-There is a trimmed down version of their API as well. You can view the JSON data at <a href="https://api.flickr.com/services/feeds/photos_public.gne?format=json" target="_blank">https://api.flickr.com/services/feeds/photos_public.gne?format=json</a>.
+There is a trimmed down version of their API as well. You can view the JSON data at <a href="https://api.flickr.com/services/feeds/photos_public.gne?format=json">https://api.flickr.com/services/feeds/photos_public.gne?format=json</a>.
 
 ### JSONP
 

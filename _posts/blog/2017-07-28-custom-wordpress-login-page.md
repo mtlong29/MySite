@@ -24,7 +24,7 @@ featured: true
 
 {% include /globalSections/toc.html %}
 
-There are many reasons why someone would want to create a custom wordpress login page. I decided to design a custom login page for a new theme I was working on based off of the <a class="fancyLink" href="http://underscores.me/">underscores</a> starter. Upon briefly researching the current standards of doing this I noticed the top search results were all plugin based. Yuck.. Using a plugin is often a gross approach to things in my opinion. This post documents how I changed my login page such as the example below.
+There are many reasons why someone would want to create a custom wordpress login page. I decided to design a custom login page for a new theme I was working on based off of the <a href="http://underscores.me/">underscores</a> starter. Upon briefly researching the current standards of doing this I noticed the top search results were all plugin based. Yuck.. Using a plugin is often a gross approach to things in my opinion. This post documents how I changed my login page such as the example below.
 
 <figure class="full">
 	<a href="/images/post-custom-wordpress-login/customWordpressLogin.jpg" title="Custom Wordpress Login"><img src="/images/post-custom-wordpress-login/customWordpressLogin.jpg" alt="Custom Wordpress Login" /></a>

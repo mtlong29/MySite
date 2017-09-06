@@ -51,8 +51,8 @@ parent.removeChild(removeMe);
 
 You can reference a previous sibling with the `previousElementSibling` property, and to insert a node before an element, with `insertBefore`.
 
-For some background on why `previousSibling` and other similar properties don't always refer to element nodes, check out <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace_in_the_DOM" target="_blank">this MDN article on Whitespace in the DOM</a>. There is also the <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling" target="_blank">MDN page for previousElementSibling</a> and the <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore" target="_blank">MDN page for insertBefore</a>
+For some background on why `previousSibling` and other similar properties don't always refer to element nodes, check out <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace_in_the_DOM">this MDN article on Whitespace in the DOM</a>. There is also the <a href="https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling">MDN page for previousElementSibling</a> and the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore">MDN page for insertBefore</a>
 
 ## Getting the First and Last Child
 
-See the <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild" target="_blank">MCN page for firstElementChild</a> and the <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild" target="_blank">MDN page for lastElementChild</a> for more information.
+See the <a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild">MCN page for firstElementChild</a> and the <a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild">MDN page for lastElementChild</a> for more information.

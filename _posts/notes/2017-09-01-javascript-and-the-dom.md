@@ -20,7 +20,7 @@ JavaScript is an exciting all purpose language. You can use it to power web serv
 
 ## Interactivity Examples
 
-Interactivity means that when the page loads JavaScript makes the page more engaging for users. Some great examples are <a class="fancyLink" href="http://www.thestlbrowns.com" target="_blank">thestlbrowns.com</a>, online calculators, and Google Sheets. Google Sheets is a full blown application within a web page. All the interactivity within these examples done using JavaScript.
+Interactivity means that when the page loads JavaScript makes the page more engaging for users. Some great examples are <a href="http://www.thestlbrowns.com">thestlbrowns.com</a>, online calculators, and Google Sheets. Google Sheets is a full blown application within a web page. All the interactivity within these examples done using JavaScript.
 
 ## Thinking Globally
 
@@ -102,7 +102,7 @@ You can also select elements by class name using `document.getElementsByClassNam
 
 `querySelector` and `querySelectorAll` are the most flexible of the selectors looked at so far in these notes. They will accept ID's classes, tag names, and more.
 
-CSS selectors are a powerful way to select DOM elements. See the <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">MDN page for querySelector</a> or the <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll" target="_blank">MDN page for querySelectorAll</a> for more information.
+CSS selectors are a powerful way to select DOM elements. See the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">MDN page for querySelector</a> or the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll">MDN page for querySelectorAll</a> for more information.
 
 Typing `document.querySelectorAll('li')` into the browsers console will give you an HTML collection of all list items on the page. And typing `document.querySelector('li')` will give you the first matching list item. You can also type `document.querySelector('#myHeading')` to have the element with the ID myHeading returned. 
 
@@ -152,8 +152,8 @@ for(var i = 0; i < colors.length; i ++) {
 
 ## Checking Whether a JavaScript Feature is Available
 
-Many JavaScript developers turn to tools like <a class="fancyLink" href="https://babeljs.io/" target="_blank">Babel</a> to manage the varying stages of browser support for new JavaScript features. Babel can be used for other environments besides browsers too.
+Many JavaScript developers turn to tools like <a href="https://babeljs.io/">Babel</a> to manage the varying stages of browser support for new JavaScript features. Babel can be used for other environments besides browsers too.
 
-<a class="fancyLink" href="https://developer.mozilla.org/en-US/" target="_blank">Mozilla Developer Network</a> is a great reference site for JavaScript, as well as the browser environment.
+<a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a> is a great reference site for JavaScript, as well as the browser environment.
 
-<a class="fancyLink" href="http://caniuse.com/#" target="_blank">Can I use</a> is also a good reference to check cross-browser support for features you want to use.
+<a href="http://caniuse.com/#">Can I use</a> is also a good reference to check cross-browser support for features you want to use.

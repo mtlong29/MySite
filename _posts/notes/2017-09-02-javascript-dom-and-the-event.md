@@ -37,7 +37,7 @@ When you enteract with a webpage you may trigger thousands of events. Nothing wi
   <li>etc.</li>
 </ul>
 
-MDN has a thorough list of DOM events <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">here</a>.
+MDN has a thorough list of DOM events <a href="https://developer.mozilla.org/en-US/docs/Web/Events">here</a>.
 
 ## Functions as Parameters
 
@@ -56,13 +56,13 @@ exec((something) => {
 
 ### Learn More
 
-Learn more on the MDN pages: <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function" target="_blank">Function statements</a> and <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function" target="_blank">Function expressions</a>
+Learn more on the MDN pages: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function statements</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function">Function expressions</a>
 
 ## Delaying Execution of a Function with setTimeout()
 
 The window object has a `setTimeout()` function we can use to delay the execution of a function.
 
-The below javascript executes the function after 3 seconds have passed. To learn more about the `setTimeout()` function see the <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout" target="_blank">MDN page for setTimeout()</a>
+The below javascript executes the function after 3 seconds have passed. To learn more about the `setTimeout()` function see the <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout">MDN page for setTimeout()</a>
 
 {% highlight javascript linenos %}
 window.setTimeout((something) => {
@@ -91,7 +91,7 @@ There are three basic concepts to making a site interactive.
 
 ### Learn More
 
-For more on addEventListener() see the MDN page for addEventListener <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank">here</a>.
+For more on addEventListener() see the MDN page for addEventListener <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">here</a>.
 
 ## Event Bubbling and Delegations
 
@@ -190,4 +190,4 @@ section.addEventListener('click', (e) => {
 
 ### Learn More
 
-To learn more about the event property ad the tagName property see their MDN pages: <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/Event" target="_blank">Event Object</a> and <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName" target="_blank">tagName property</a>.
+To learn more about the event property ad the tagName property see their MDN pages: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event Object</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName">tagName property</a>.

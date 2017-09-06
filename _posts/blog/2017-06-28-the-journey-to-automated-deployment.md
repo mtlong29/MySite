@@ -38,17 +38,17 @@ Manual deployment of websites seems like a waste of time. Actually, it is a wast
 
 ## The Documentation
 
-When "learning" or approaching something new the first place I go is <a class="fancyLink" href="http://lmgtfy.com/?q=jekyll+documentation+deployment" target="_blank">google</a>, but this time I went to the <a class="fancyLink" href="https://jekyllrb.com/docs/deployment-methods/" target="_blank">Jekyll documentation</a> due to the fact that the repository I have on github isn't exactly the content of the site that's going into the appropriate web root directory, as you likely know. That would be the generated `_site` folder using `jekyll build`.
+When "learning" or approaching something new the first place I go is <a href="http://lmgtfy.com/?q=jekyll+documentation+deployment">google</a>, but this time I went to the <a href="https://jekyllrb.com/docs/deployment-methods/">Jekyll documentation</a> due to the fact that the repository I have on github isn't exactly the content of the site that's going into the appropriate web root directory, as you likely know. That would be the generated `_site` folder using `jekyll build`.
 
-There are many options. Obviously the easiest is <a href="https://jekyllrb.com/docs/github-pages/" target="_blank">GitHub Pages</a>. However, let's do something slightly more fancy. This leaves many many options such as the following:
+There are many options. Obviously the easiest is <a href="https://jekyllrb.com/docs/github-pages/">GitHub Pages</a>. However, let's do something slightly more fancy. This leaves many many options such as the following:
 
 <ol>
-	<li><a class="fancyLinks" href="http://githooks.com/" target="_blank">Git Hooks</a></li>
-	<li><a class="fancyLinks" href="https://ruby.github.io/rake/" target="_blank">Rake</a></li>
-	<li><a class="fancyLinks" href="https://rsync.samba.org/" target="_blank">rsync</a></li>
-	<li><a class="fancyLinks" href="https://www.aerobatic.com/" target="_blank">Aerobatic</a></li>
-	<li><a class="fancyLinks" href="https://travis-ci.org/" target="_blank">Travis CI</a></li>
-	<li><a class="fancyLinks" href="https://jenkins.io/" target="_blank">Jenkins</a></li>
+	<li><a href="http://githooks.com/">Git Hooks</a></li>
+	<li><a href="https://ruby.github.io/rake/">Rake</a></li>
+	<li><a href="https://rsync.samba.org/">rsync</a></li>
+	<li><a href="https://www.aerobatic.com/">Aerobatic</a></li>
+	<li><a href="https://travis-ci.org/">Travis CI</a></li>
+	<li><a href="https://jenkins.io/">Jenkins</a></li>
 </ol>
 
 ## And the Winner is... Git Hooks..

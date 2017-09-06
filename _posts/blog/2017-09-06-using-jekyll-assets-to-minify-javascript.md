@@ -1,23 +1,23 @@
 ---
 layout: article
 
-permalink: /blog/how-to-use-mediaelementjs/
+permalink: /blog/how-to-minify-javascript-using-jekyll-assets/
 
-title: "How to Use MediaElement.js"
+title: "How to Minify JavaScript Using Jekyll Assets"
 
 subtitle: "JavaScript"
 
-excerpt: "MediaElement.js is a dependable HTML media framework."
+excerpt: ""
 
 categories: blog
 
-tags: [css, web development, javascript, html, jquery]
+tags: [web development, javascript, html, jekyll, ruby gems]
 
 image:
-  header: media-elements.jpg
-  teaser: media-elements.jpg
+  header: 
+  teaser: 
 
-modified: 2017-08-22
+modified: 2017-09-46
 
 featured: true
 

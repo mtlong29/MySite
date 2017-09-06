@@ -23,17 +23,17 @@ jQuery plugins let you add interactive page elements like sliders, popup photo g
 There are MANY useul jQuery Plugins. Some examples are as follows:
 
 <ul>
-  <li><a class="fancyLink" href="http://codepen.io/mariusbalaj/pen/bGqhI" target="_blank">jCalculator</a></li>
-  <li><a class="fancyLink" href="http://www.thepetedesign.com/demos/adaptive-modal_demo.html" target="_blank">jQuery Adaptive Modal</a></li>
-  <li><a class="fancyLink" href="http://ericsteinborn.com/jquery-listnav" target="_blank">jQuery ListNav</a></li>
-  <li><a class="fancyLink" href="http://vodkabears.github.io/vide/" target="_blank">Vide</a></li>
-  <li><a class="fancyLink" href="http://lokeshdhakar.com/projects/lightbox2/" target="_blank">Lightbox 2</a></li>
-  <li><a class="fancyLink" href="https://jqueryui.com/" target="_blank">jQuery UI</a></li>
+  <li><a href="http://codepen.io/mariusbalaj/pen/bGqhI">jCalculator</a></li>
+  <li><a href="http://www.thepetedesign.com/demos/adaptive-modal_demo.html">jQuery Adaptive Modal</a></li>
+  <li><a href="http://ericsteinborn.com/jquery-listnav">jQuery ListNav</a></li>
+  <li><a href="http://vodkabears.github.io/vide/">Vide</a></li>
+  <li><a href="http://lokeshdhakar.com/projects/lightbox2/">Lightbox 2</a></li>
+  <li><a href="https://jqueryui.com/">jQuery UI</a></li>
 </ul>
 
 It can be difficult finding a good plugin and is still maintained by the person who made it.
 
-<a class="fancyLink" href="http://plugins.jquery.com/" target="blank">The jQuery Plugin Registry</a> is a good place to look for plugins. However, they are shutting it down. The places to go now are <a class="fancyLink" href="http://www.sitepoint.com/jquery-popular-plugins-list/" target="_blank">sitepoint</a> and <a class="fancyLink" href="http://www.unheap.com/" target="_blank">unheap</a>. They provide the source and a demo. 
+<a href="http://plugins.jquery.com/">The jQuery Plugin Registry</a> is a good place to look for plugins. However, they are shutting it down. The places to go now are <a href="http://www.sitepoint.com/jquery-popular-plugins-list/">sitepoint</a> and <a href="http://www.unheap.com/">unheap</a>. They provide the source and a demo. 
 
 ### Is This Plugin Any Good?
 
@@ -57,7 +57,7 @@ However, this is obviously not the only way a project is organized.
 
 ## Animsition (.. or The Animated Transition jQuery Plugin)
 
-<a class="fancyLink" href="http://git.blivesta.com/animsition/" target="_blank">Animisition</a> is a simple and easy jQuery plugin for CSS animated page transitions. It contains many different styles such as flip in, flip out, zoom, rotate, fade, etc. 
+<a href="http://git.blivesta.com/animsition/">Animisition</a> is a simple and easy jQuery plugin for CSS animated page transitions. It contains many different styles such as flip in, flip out, zoom, rotate, fade, etc. 
 
 The process of getting this up and running is extremely simple. See below:
 
@@ -100,7 +100,7 @@ A large majority of jQuery plugins will require a JavaScript object similar to t
 
 ## Sticky Navigation Bar
 
-Adding a "sticky" navigation bar to a site can be done in a number of ways. This method uses the jQuery plugin <a class="fancyLink" href="http://stickyjs.com/" target="_blank">stickjs</a>.
+Adding a "sticky" navigation bar to a site can be done in a number of ways. This method uses the jQuery plugin <a href="http://stickyjs.com/">stickjs</a>.
 
 Stickyjs will let you stick any HTML element to the top of the browser window.
 
@@ -122,4 +122,4 @@ $('.header').on('sticky-end', function(){
 
 ## Carousel Plugin - Slick
 
-<a class="fancyLink" href="http://kenwheeler.github.io/slick/" target="_blank">Slick</a> is an interactive carousel jQuery plugin that has tons of customization possibilities.
+<a href="http://kenwheeler.github.io/slick/">Slick</a> is an interactive carousel jQuery plugin that has tons of customization possibilities.

@@ -64,19 +64,19 @@ The post the following image was created for another post that was removed.
 </figure>
 
 ## Using Jekyll - (06/15/2016)
-The post the following image was created for can be found at <a class="fancyLink" href="{{site.url}}/blog/using-jekyll/">Building and Maintaining a Jekyll Site</a>.
+The post the following image was created for can be found at <a href="{{site.url}}/blog/using-jekyll/">Building and Maintaining a Jekyll Site</a>.
 <figure class="full">
 	<a href="/images/header/using-jekyll.jpg" title="Using Jekyll to Build and Maintain this Site"><img src="/images/header/using-jekyll.jpg" alt="Using Jekyll to Build and Maintain this Site" /></a>
 </figure>
 
 ## AutoCAD: Mug Illustration - (05/28/2016)
-The post the following image was created for can be found at <a class="fancyLink" href="{{site.url}}/portfolio/mug-illustration/">AutoCAD: Mug Illustration</a>.
+The post the following image was created for can be found at <a href="{{site.url}}/portfolio/mug-illustration/">AutoCAD: Mug Illustration</a>.
 <figure class="full">
 	<a href="/images/header/mug.jpg" title="AutoCAD: Mug Illustration"><img src="/images/header/mug.jpg" alt="AutoCAD: Mug Illustration" /></a>
 </figure>
 
 ## AutoCAD: Homemade Computer Desk - (05/19/2016)
-The post the following image was created for can be found at <a class="fancyLink" href="{{site.url}}/portfolio/homemade-computer-desk/">AutoCAD: Homemade Computer Desk</a>.
+The post the following image was created for can be found at <a href="{{site.url}}/portfolio/homemade-computer-desk/">AutoCAD: Homemade Computer Desk</a>.
 <figure class="full">
 	<a href="/images/header/comp-desk.jpg" title="AutoCAD: Homemade Computer Desk"><img src="/images/header/comp-desk.jpg" alt="AutoCAD: Homemade Computer Desk" /></a>
 </figure>

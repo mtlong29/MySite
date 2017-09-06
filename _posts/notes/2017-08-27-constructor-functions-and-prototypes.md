@@ -85,7 +85,7 @@ button.onclick = function() {
 
 ## Methods with Prototypes
 
-Further reading: <a class="fancyLink" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype">Object Prototypes</a>
+Further reading: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype">Object Prototypes</a>
 
 So far we've been adding methods as we've been creating or instantiating them in our constructor function which can have negative effects. There is another more efficient way of doing it, using Prototypes.
 

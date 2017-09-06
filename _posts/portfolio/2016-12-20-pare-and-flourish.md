@@ -25,7 +25,7 @@ featured: true
 ---
 {% include /globalSections/toc.html %}
 
-<a class="fancyLink" href="http://www.pareandflourish.com/" target="_blank">Pare and Flourish</a> is a personal and professional growth blog dedicated to living an authentic lifestyle. Ready to take a realistic approach to self-improvement? Flourish with us!
+<a href="http://www.pareandflourish.com/">Pare and Flourish</a> is a personal and professional growth blog dedicated to living an authentic lifestyle. Ready to take a realistic approach to self-improvement? Flourish with us!
 
 ## Design
 Design and development of this site began mid september. Below are screenshots of the site at the times listed.
@@ -103,13 +103,13 @@ My life had calmed down around this period so I had plenty of time to make chang
 </div>
 
 ## Development (CSS and HTML)
-The source code of www.pareandflourish.com can be found <a class="fancyLink" href="https://github.com/mtlong29/pareandflourish_site" target="_blank">here</a>.
+The source code of www.pareandflourish.com can be found <a href="https://github.com/mtlong29/pareandflourish_site">here</a>.
 
 ## What I learned
 This site uses Bootstrap, Jekyll, Sass, and others.
 
-<a class="fancyLink" href="http://getbootstrap.com/" target="_blank">Bootstrap</a> is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web. Basically makes front-end web development faster and easier. In other words bootstrap is meant for web developers of all skill levels. I decided it would be a good idea to gain some more experience using this framework.
+<a href="http://getbootstrap.com/">Bootstrap</a> is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web. Basically makes front-end web development faster and easier. In other words bootstrap is meant for web developers of all skill levels. I decided it would be a good idea to gain some more experience using this framework.
 
-<a class="fancyLink" href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a tool that builds static websites from dynamic components. One of my favorite features is the development environment.
+<a href="https://jekyllrb.com/">Jekyll</a> is a tool that builds static websites from dynamic components. One of my favorite features is the development environment.
 
-<a class="fancyLink" href="http://sass-lang.com/" target="_blank">Sass</a>, or Syntactically Awesome StyleSheets,is an extension of CSS. Sass takes what would be a complicated stylesheet and makes it readable. This is mainly done by partials, nesting, and inline imports. In the end of the day you can compile your Sass files to a basic CSS file making it compatible everywhere CSS is.
+<a href="http://sass-lang.com/">Sass</a>, or Syntactically Awesome StyleSheets,is an extension of CSS. Sass takes what would be a complicated stylesheet and makes it readable. This is mainly done by partials, nesting, and inline imports. In the end of the day you can compile your Sass files to a basic CSS file making it compatible everywhere CSS is.

@@ -46,7 +46,7 @@ The Chrome DevTools in the Google Chrome web browser include a number of tools f
 
 Google PageSpeed is a family of tools that can help you analyze the performance of a website. PageSpeed can be installed to Chrome in the form of a plugin and used via Chrome DevTools.
 
-You can also simply enter a website at <a class="fancyLink" href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">https://developers.google.com/speed/pagespeed/insights/</a> and run an analysis.
+You can also simply enter a website at <a href="https://developers.google.com/speed/pagespeed/insights/">https://developers.google.com/speed/pagespeed/insights/</a> and run an analysis.
 
 ## HTTP Requests
 
@@ -84,7 +84,7 @@ Only use a sprite map for small images. Large images would make the sprite map t
 
 An improvement is to use the `symbol` element in SVG instead of directly referencing shapes (or a `g`), because you can define the viewBox directly on the symbol and then not need one when you `use` it later in an svg.
 
-See <a class="fancyLink" href="https://css-tricks.com/svg-symbol-good-choice-icons/" target="_blank">https://css-tricks.com/svg-symbol-good-choice-icons/</a> for more.
+See <a href="https://css-tricks.com/svg-symbol-good-choice-icons/">https://css-tricks.com/svg-symbol-good-choice-icons/</a> for more.
 
 ## Optimize JavaScript
 
@@ -104,6 +104,6 @@ Minification reduuces the file size of JavaScripts and CSS by removes spaces, li
 
 Combining CSS into one file reduces HTTP requests as well.
 
-Use <a class="fancyLink" href="http://closure-compiler.appspot.com/home" target="_blank">Google Closure Complier Service</a> to minimize JavaScript.
+Use <a href="http://closure-compiler.appspot.com/home">Google Closure Complier Service</a> to minimize JavaScript.
 
-Use <a class="fancyLink" href="http://cssminifier.com/" target="_blank">CSS Minifier</a> to minify your CSS.
+Use <a href="http://cssminifier.com/">CSS Minifier</a> to minify your CSS.
