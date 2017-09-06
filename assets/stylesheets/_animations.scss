@@ -18,7 +18,7 @@
   /* start state */
   .mfp-with-anim {
     opacity: 0;
-		@include transition(.25s, ease-in-out, all);
+    @include transition(.25s, ease-in-out, all);
     transform: scale(0.8);
   }
 
