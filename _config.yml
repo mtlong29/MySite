@@ -34,11 +34,13 @@ exclude:
   - .asset-cache
   - .sass-cache
 
-gems:
+plugins:
   - jekyll-archives
   - jekyll/tagging
   - jekyll-tagging-related_posts
   - jekyll-assets
+  - breakpoint
+  - uglifier
 
 # Collections
 collections:
@@ -54,6 +56,8 @@ compress_html:
     envs: development
 
 assets:
+compress:
+  js: true
   sources:
     - assets/javascripts
     - assets/stylesheets
