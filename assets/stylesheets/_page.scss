@@ -43,15 +43,6 @@
     flex-direction: row;
     align-items: flex-start;
   }
-  a {
-    text-decoration: none;
-    border-bottom: none;
-    font-weight: normal;
-    &:hover,
-    &:active {
-      border-bottom: none;
-    }
-  }
 }
 
 .post__inner-wrapper {

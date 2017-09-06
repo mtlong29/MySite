@@ -8,7 +8,7 @@
 }
 
 .toc__title {
-  margin: 1em 0;
+  margin: .75em 0;
   font-family: $serif;
   font-size: 1.25rem;
   color: $gray;
@@ -46,8 +46,11 @@
     }
     a {
       display: block;
+      border-bottom: 0;
+      font-weight: normal;
       &:hover {
         text-decoration: underline;
+        border-bottom: 0;
       }
     }
   }
