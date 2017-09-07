@@ -71,7 +71,6 @@ $(document).ready(() => {
   // Add Lightbox Class to All Image Links
   $('a[href$=".jpg"],a[href$=".png"],a[href$=".gif"]').addClass('image-popup');
 
-
   // Magnific-Popup Settings
   $('.image-popup').magnificPopup({
     disableOn: () => {
@@ -106,5 +105,110 @@ $(document).ready(() => {
     effect: 'fadeIn',
     skip_invisible: false
   }); // End Lazy Load Settings
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  // Array of All Courses
+  const courses = [
+    'Treehouse - Front End Web Development',
+    'Treehouse - Beginner JavaScript'
+  ]
+  
+  // Push Value of .course h3 Into Courses Instead of Adding Them Manually
+//  for () {
+//    
+//  }
+  
+  // Select courseTags ID
+  const $courseTags = $('#courseTags');
+  
+  // Get The Number of Courses
+  const numberOfCourses = courses.length;
+  
+  // Initialize HTML String
+  let html = '';
+  
+  // Generate Course Tag Buttons
+  for (let i = 0; i < numberOfCourses; i++) {
+    html += '<button>' + courses[i] + '</button>';
+  }
+  
+  // Append Course Tag Buttons To DOM
+  $courseTags.append(html);
+  
+  // Select Now Generated Course Tag Buttons
+  const $courseTagButton = $('#courseTags button');
+  
+  // Add Click Event for Buttons
+  $courseTagButton.on('click', (e) => {
+    console.log(`Showing results for ${e.target.innerHTML}`);
+    if (e.target.innerHTML === courses[1]) {
+      $('.course h3:contains(' + e.target.innerHTML + ')').parentsUntil('.individualTile').show();
+    } else {
+      $('.course h3:not(:contains(' + e.target.innerHTML + '))').parentsUntil('.individualTile').hide();
+    }
+  });
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
 
 });
