@@ -325,6 +325,14 @@ figcaption {
   }
 }
 
+/* Remove Anchor Stylings From Images */
+
+.image-popup {
+  border-bottom: 0;
+  &:hover {
+    border-bottom: 0;
+  }
+}
 
 /* Hide bullets from navbar */
 
