@@ -92,9 +92,10 @@ DEPENDENCIES
   jekyll-archives
   jekyll-assets
   jekyll-sitemap
+  jekyll-tagging
   jekyll-tagging-related_posts
   mini_magick
   uglifier
 
 BUNDLED WITH
-   1.15.3
+   1.15.4

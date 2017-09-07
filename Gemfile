@@ -10,6 +10,7 @@ gem 'autoprefixer-rails'
 # Jekyll
 gem 'jekyll'
 gem 'jekyll-archives'
+gem 'jekyll-tagging'
 gem 'jekyll-tagging-related_posts'
 gem 'jekyll-sitemap'
 gem 'jekyll-assets'

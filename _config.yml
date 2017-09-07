@@ -34,7 +34,7 @@ exclude:
   - .asset-cache
   - .sass-cache
 
-plugins:
+gems:
   - jekyll-archives
   - jekyll/tagging
   - jekyll-tagging-related_posts
@@ -67,8 +67,11 @@ compress:
 sass:
   sass_dir: assets/stylesheets
   style: compressed
-  
-# Plugin: jekyll-archives
+
+tag_page_layout: tag_index
+tag_page_dir: tag
+
+#Plugin: jekyll-archives
 jekyll-archives:
   enabled:
     - tags
