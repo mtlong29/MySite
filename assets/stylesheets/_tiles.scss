@@ -7,7 +7,6 @@
   }
   .individualTile {
     display: flex;
-    margin-bottom: 2rem;
     flex: 1 calc(100%/3);
     .tileImage {
       background-size: cover;
@@ -82,6 +81,9 @@
         }
       }
     }
+  }
+  .tileBottom {
+    margin-bottom: 2rem;
   }
 }
 

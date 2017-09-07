@@ -1,9 +1,12 @@
 <article>
   <a href="{{ site.url }}{{ post.url }}">
-    <div class="individualTile">
-      {% unless page.layout == 'notes' %}
+    {% if page.layout == 'notes' %}
+      <div class="individualTile">
+    {% endif %}
+    {% unless page.layout == 'notes' %}
+    <div class="individualTile tileBottom">
         <div class="tileImage" style="background-image: url({{site.url}}/images/teaser/{{post.image.teaser}})"></div>
-      {% endunless%}
+      {% endunless %}
       <div class="tileContent">
         <div class="subTitle">
           <h3>{{ post.subtitle | markdownify | remove: '<p>' | remove: '</p>'}}</h3>
