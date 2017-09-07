@@ -106,109 +106,41 @@ $(document).ready(() => {
     skip_invisible: false
   }); // End Lazy Load Settings
 
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    
+  // Button Sorting For Courses On Notes Page
   // Array of All Courses
   const courses = [
     'Treehouse - Front End Web Development',
     'Treehouse - Beginner JavaScript'
-  ]
-  
-  // Push Value of .course h3 Into Courses Instead of Adding Them Manually
-//  for () {
-//    
-//  }
-  
+  ];
+  // Sort courses Array By Name
+  courses.sort()
   // Select courseTags ID
   const $courseTags = $('#courseTags');
-  
   // Get The Number of Courses
   const numberOfCourses = courses.length;
-  
-  // Initialize HTML String
-  let html = '';
-  
-  // Generate Course Tag Buttons
+  // Initialize HTML Button String Including The All Button
+  let html = '<button>All</button>';
+  // Iterate Over Courses
   for (let i = 0; i < numberOfCourses; i++) {
+    // Generate Course Tag Buttons
     html += '<button>' + courses[i] + '</button>';
   }
-  
   // Append Course Tag Buttons To DOM
   $courseTags.append(html);
-  
   // Select Now Generated Course Tag Buttons
   const $courseTagButton = $('#courseTags button');
-  
-  // Add Click Event for Buttons
-  $courseTagButton.on('click', (e) => {
-    console.log(`Showing results for ${e.target.innerHTML}`);
-    if (e.target.innerHTML === courses[1]) {
-      $('.course h3:contains(' + e.target.innerHTML + ')').parentsUntil('.individualTile').show();
-    } else {
-      $('.course h3:not(:contains(' + e.target.innerHTML + '))').parentsUntil('.individualTile').hide();
-    }
-  });
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-
-
-
-
+  // Iterate Over Courses
+  for (let i = 0; i < numberOfCourses; i++) {
+    // Add Click Event for Buttons
+    $courseTagButton.on('click', (e) => {
+      if (e.target.innerHTML === 'All') {
+        $('.course h3').parentsUntil('.individualTile').show();
+      } else if (e.target.innerHTML === courses[i]) {
+        $('.course h3:contains(' + e.target.innerHTML + ')').parentsUntil('.individualTile').show();
+      } else {
+        $('.course h3:not(:contains(' + e.target.innerHTML + '))').parentsUntil('.individualTile').hide();
+      }
+    });
+  }
 
 });
