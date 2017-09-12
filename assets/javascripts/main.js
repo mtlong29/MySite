@@ -110,7 +110,8 @@ $(document).ready(() => {
   // Array of All Courses
   const courses = [
     'Treehouse - Front End Web Development',
-    'Treehouse - Beginner JavaScript'
+    'Treehouse - Beginner JavaScript',
+    'Treehouse - Full Stack JavaScript'
   ];
   // Sort courses Array By Name
   courses.sort()
