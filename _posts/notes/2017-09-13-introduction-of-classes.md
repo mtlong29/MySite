@@ -166,7 +166,7 @@ stevenJ.dance();
 console.log(stevenJ.interestLevel)
 // Steven is doing the tango!
 // 3
-{% endhighligt %}
+{% endhighlight %}
 
 {% highlight javascript linenos %}
 'use strict';
