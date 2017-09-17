@@ -188,3 +188,66 @@ users.forEach(profile.get);
 treehouse:~/workspace$ node app.js matthewlong29
 matthewlong29 has 115 total badge(s) and 4094 number of points in JavaScript
 {% endhighlight %}
+
+## Command Line Current Weather Conditions Application
+
+### api.json
+
+{% highlight javascript linenos %}
+{
+  "key": "yourkey"
+}
+{% endhighlight %}
+
+### weather.js
+
+{% highlight javascript linenos %}
+const https = require('https');
+const api = require('./api.json');
+
+// Print out temp details
+function printWeather(weather) {
+  const message = `Current temperature in ${weather.location.city} is ${weather.current_observation.temp_f}F`;
+  console.log(message);
+}
+
+function get(query) {
+  // current conditions http://api.wunderground.com/api/a75ed8a9205127d7/conditions/q/CA/San_Francisco.json
+  const request = https.get(`https://api.wunderground.com/api/${api.key}/geolookup/conditions/q/${query}.json`, response => {
+    let body = '';
+    // Read the data
+    response.on('data', chunk => {
+      body += chunk;
+    });
+    response.on('end', () => {
+      const weather = JSON.parse(body);
+      printWeather(weather);
+      // Parse data
+      // Print the data
+    });
+  });
+}
+
+module.exports.get = get;
+{% endhighlight %}
+
+### app.js
+
+{% highlight javascript linenos %}
+const weather = require('./weather.js');
+ 
+// Join multiple values passed as arguments and replace all spaces with underscores
+const query = process.argv.slice(2).join('_').replace(' ', '_');
+
+// query: 90201
+// query: Cleveland_OH
+// query: London_England
+weather.get(query);
+{% endhighlight %}
+
+### Console
+
+{% highlight bash linenos %}
+treehouse:~/workspace$ node app.js 40207
+Current temperature in Louisville is 87.4F
+{% endhighlight %}
