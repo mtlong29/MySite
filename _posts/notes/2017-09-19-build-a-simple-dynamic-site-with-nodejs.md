@@ -285,3 +285,227 @@ var router = require('./router.js');
   // read from file and get a string
     // merge values into a string
 {% endhighlight %}
+
+## Making Our Views DRY
+
+Creating the HTML sections that can be dynamically pulled in at a later time.
+
+### header.html
+{% highlight html linenos %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Treehouse Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css" media="screen">
+      @import url(http://fonts.googleapis.com/css?family=Varela+Round);
+      @import url(http://necolas.github.io/normalize.css/3.0.2/normalize.css);
+      body {
+        background: #ECEEEF;
+        text-align: center;
+        margin: 100px auto;
+        max-width: 462px;
+        padding: 0 40px;
+        font: 18px normal 'Varela Round', Helvetica, serif;
+        color: #777B7E;
+      }
+      img {
+        width: 100%;
+      }
+      #searchIcon, #avatar {
+        width: 50%;
+        border-radius: 50%;
+        margin: 0 25% 0 25%;
+      }
+      input {
+        font-family: 'Varela Round', Helvetica, serif;
+        font-size: 18px;
+        padding: 31px 0;
+        margin: 10px 0;
+        text-align: center;
+        width: 360px;
+        border-radius: 4px;
+        border: 1px solid #D5DDE4;
+        color: #2C3238;
+      }
+      #username {
+        margin: 20px 0 0;
+      }
+      .button {
+        border-color: #5FB6E1;
+        background: #5FB6E1;
+        color: #fff;
+      }
+      #error {
+        width: 100%;
+        padding: 22px 0;
+        background: #FFE6B2;
+        color: #C5A14E;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      #profile {
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #D5DDE4;
+        padding: 40px 0 0;
+        margin: -40px 0 0;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 40px 0 0;
+      }
+      li {
+        display: inline-block;
+        width: 100%;
+        padding: 22px 0;
+        margin: 0;
+        border-top: 1px solid #D5DDE4;
+      }
+      a, a:visited {
+        color: #5FB6E1;
+        text-decoration: none;
+      }
+      span {
+        color: #2C3238;
+      }
+    </style>
+  </head>
+  <body>
+{% endhighlight %}
+
+### search.html
+{% highlight html linenos %}
+<img src="http://i.imgur.com/VKKm0pn.png" alt="Magnifying Glass" id="searchIcon">
+<form action="/" method="POST">
+  <input type="text" placeholder="Enter a Treehouse username" id="username" name="username">
+  <input type="submit" value="submit" class="button">
+</form>
+{% endhighlight %}
+
+### profile.html
+{% highlight html linenos %}
+<div id="profile">
+  <img src="{{avatarUrl}}" alt="Avatar" id="avatar">
+  <p><span>{{username}}</span></p>
+  <ul>
+    <li><span>{{badges}}</span> Badges earned</li>
+    <li><span>{{javascriptPoints}}</span> JavaScript points</li>
+    <li><a href="/">search again</a></li>
+  </ul>
+</div>
+{% endhighlight %}
+
+### error.html
+{% highlight html linenos %}
+<div id="error">{{errorMessage}}</div>
+{% endhighlight %}
+
+### footer.html
+{% highlight html linenos %}
+  </body>
+</html>
+{% endhighlight %}
+
+## Reading from Files
+
+The basis for the templates are the contents of the files in views folder as seen above. Now we need to use Node.js File System module to read the contents of our files.
+
+### renderer.js 
+
+{% highlight javascript linenos %}
+var fs = require("fs");
+function view(templateName, values, reponse) {
+  //Read from the template file
+  var fileContents = fs.readFileSync('./views/' + templateName + '.html');
+  //Insert values in to the content
+  //Write out the contents to the response
+  reponse.write(fileContents);
+}
+module.exports.view = view;
+{% endhighlight %}
+
+### router.js
+
+{% highlight javascript linenos %}
+var Profile = require("./profile.js");
+var renderer = require("./renderer.js");
+//Handle HTTP route GET / and POST / i.e. Home
+function home(request, response) {
+  //if url == "/" && GET
+  if(request.url === "/") {
+    //show search
+    response.writeHead(200, {'Content-Type': 'text/plain'});  
+    renderer.view("header", {}, response);
+    renderer.view("search", {}, response);
+    renderer.view("footer", {}, response);
+    response.end();
+  }
+  //if url == "/" && POST
+    //redirect to /:username
+}
+//Handle HTTP route GET /:username i.e. /chalkers
+function user(request, response) {
+  //if url == "/...."
+  var username = request.url.replace("/", "");
+  if(username.length > 0) {
+    response.writeHead(200, {'Content-Type': 'text/plain'});  
+    renderer.view("header", {}, response);    
+    //get json from Treehouse
+    var studentProfile = new Profile(username);
+    //on "end"
+    studentProfile.on("end", function(profileJSON){
+      //show profile
+      //Store the values which we need
+      var values = {
+        avatarUrl: profileJSON.gravatar_url, 
+        username: profileJSON.profile_name,
+        badges: profileJSON.badges.length,
+        javascriptPoints: profileJSON.points.JavaScript
+      }
+      //Simple response
+      renderer.view("profile", values, response);
+      renderer.view("footer", {}, response);
+      response.end();
+    });  
+    //on "error"
+    studentProfile.on("error", function(error){
+      //show error
+      renderer.view("error", {errorMessage: error.message}, response);
+      renderer.view("search", {}, response);
+      renderer.view("footer", {}, response);
+      response.end();
+    });     
+  }
+}
+module.exports.home = home;
+module.exports.user = user;
+{% endhighlight %}
+
+## Binding Values (populate templates with user data)
+
+{% highlight javascript linenos %}
+var fs = require("fs");
+function mergeValues(values, content) {
+  // Cycle over the keys
+    for(var key in values) {
+    // Replace all {{keys}} with the values from the values object
+    content = content.replace('{{' + key + '}}', values[key]);
+    }
+  // return merged content
+  return content;
+}
+function view(templateName, values, reponse) {
+  //Read from the template file
+  var fileContents = fs.readFileSync('./views/' + templateName + '.html', {encoding: 'utf-8'});
+  //Insert values in to the content
+  fileContents = mergeValues(values, fileContents);
+  //Write out the contents to the response
+  reponse.write(fileContents);
+}
+module.exports.view = view;
+{% endhighlight %}
