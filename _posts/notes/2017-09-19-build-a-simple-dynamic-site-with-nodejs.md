@@ -509,3 +509,248 @@ function view(templateName, values, reponse) {
 }
 module.exports.view = view;
 {% endhighlight %}
+
+## Sending Content Type Headers in Node.js
+
+you can specify what type of content you serve by modifying a header called `Content-Type`.
+
+Headers can be programattically created client and server side.
+
+{% highlight javascript linenos %}
+var Profile = require("./profile.js");
+var renderer = require("./renderer.js");
+var commonHeaders = {'Content-Type': 'text/html'};
+//Handle HTTP route GET / and POST / i.e. Home
+function home(request, response) {
+  //if url == "/" && GET
+  if(request.url === "/") {
+    //show search
+    response.writeHead(200, commonHeaders);  
+    renderer.view("header", {}, response);
+    renderer.view("search", {}, response);
+    renderer.view("footer", {}, response);
+    response.end();
+  }
+  //if url == "/" && POST
+    //redirect to /:username
+}
+//Handle HTTP route GET /:username i.e. /chalkers
+function user(request, response) {
+  //if url == "/...."
+  var username = request.url.replace("/", "");
+  if(username.length > 0) {
+    response.writeHead(200, commonHeaders);  
+    renderer.view("header", {}, response);    
+    //get json from Treehouse
+    var studentProfile = new Profile(username);
+    //on "end"
+    studentProfile.on("end", function(profileJSON){
+      //show profile
+      //Store the values which we need
+      var values = {
+        avatarUrl: profileJSON.gravatar_url, 
+        username: profileJSON.profile_name,
+        badges: profileJSON.badges.length,
+        javascriptPoints: profileJSON.points.JavaScript
+      }
+      //Simple response
+      renderer.view("profile", values, response);
+      renderer.view("footer", {}, response);
+      response.end();
+    });
+        
+    //on "error"
+    studentProfile.on("error", function(error){
+      //show error
+      renderer.view("error", {errorMessage: error.message}, response);
+      renderer.view("search", {}, response);
+      renderer.view("footer", {}, response);
+      response.end();
+    });
+      
+  }
+}
+module.exports.home = home;
+module.exports.user = user;
+{% endhighlight %}
+
+In the above we changed the `Content-Type` to `text/html` from `text/plain`.
+
+## Dealing with the POST Body
+
+Now we need to get the user input from the search form.
+
+{% highlight javascript linenos %}
+var Profile = require("./profile.js");
+var renderer = require("./renderer.js");
+var querystring = require('querystring');
+var commonHeaders = {'Content-Type': 'text/html'};
+//Handle HTTP route GET / and POST / i.e. Home
+function home(request, response) {
+  //if url == "/" && GET
+  if(request.url === "/") {
+    if (request.method.toLowerCase() === 'get') {
+      //show search
+      response.writeHead(200, commonHeaders);
+      renderer.view("header", {}, response);
+      renderer.view("search", {}, response);
+      renderer.view("footer", {}, response);
+      response.end();
+    } else {
+      //if url == "/" && POST
+      //get the post data from body
+      request.on('data', function(postBody){
+        //extract the username
+        var query = querystring.parse(postBody.toString());
+        response.write(query.username);
+        response.end();
+        //redirect to /:username
+      });
+    }
+  }
+}
+//Handle HTTP route GET /:username i.e. /chalkers
+function user(request, response) {
+  //if url == "/...."
+  var username = request.url.replace("/", "");
+  if(username.length > 0) {
+    response.writeHead(200, commonHeaders);  
+    renderer.view("header", {}, response);    
+    //get json from Treehouse
+    var studentProfile = new Profile(username);
+    //on "end"
+    studentProfile.on("end", function(profileJSON){
+      //show profile
+      //Store the values which we need
+      var values = {
+        avatarUrl: profileJSON.gravatar_url, 
+        username: profileJSON.profile_name,
+        badges: profileJSON.badges.length,
+        javascriptPoints: profileJSON.points.JavaScript
+      }
+      //Simple response
+      renderer.view("profile", values, response);
+      renderer.view("footer", {}, response);
+      response.end();
+    }); 
+    //on "error"
+    studentProfile.on("error", function(error){
+      //show error
+      renderer.view("error", {errorMessage: error.message}, response);
+      renderer.view("search", {}, response);
+      renderer.view("footer", {}, response);
+      response.end();
+    });     
+  }
+}
+module.exports.home = home;
+module.exports.user = user;
+{% endhighlight %}
+
+## Redirection Headers in Node.js
+
+{% highlight javascript linenos %}
+var Profile = require("./profile.js");
+var renderer = require("./renderer.js");
+var querystring = require('querystring');
+var commonHeaders = {'Content-Type': 'text/html'};
+//Handle HTTP route GET / and POST / i.e. Home
+function home(request, response) {
+  //if url == "/" && GET
+  if(request.url === "/") {
+    if (request.method.toLowerCase() === 'get') {
+      //show search
+      response.writeHead(200, commonHeaders);
+      renderer.view("header", {}, response);
+      renderer.view("search", {}, response);
+      renderer.view("footer", {}, response);
+      response.end();
+    } else {
+      //if url == "/" && POST
+      //get the post data from body
+      request.on('data', function(postBody){
+        //extract the username
+        var query = querystring.parse(postBody.toString());
+        response.writeHead(303, {'Location': '/' + query.username});
+        response.end();
+      });
+    }
+  }
+}
+//Handle HTTP route GET /:username i.e. /chalkers
+function user(request, response) {
+  //if url == "/...."
+  var username = request.url.replace("/", "");
+  if(username.length > 0) {
+    response.writeHead(200, commonHeaders);  
+    renderer.view("header", {}, response);    
+    //get json from Treehouse
+    var studentProfile = new Profile(username);
+    //on "end"
+    studentProfile.on("end", function(profileJSON){
+      //show profile
+      //Store the values which we need
+      var values = {
+        avatarUrl: profileJSON.gravatar_url, 
+        username: profileJSON.profile_name,
+        badges: profileJSON.badges.length,
+        javascriptPoints: profileJSON.points.JavaScript
+      }
+      //Simple response
+      renderer.view("profile", values, response);
+      renderer.view("footer", {}, response);
+      response.end();
+    });
+    //on "error"
+    studentProfile.on("error", function(error){
+      //show error
+      renderer.view("error", {errorMessage: error.message}, response);
+      renderer.view("search", {}, response);
+      renderer.view("footer", {}, response);
+      response.end();
+    });     
+  }
+}
+module.exports.home = home;
+module.exports.user = user;
+{% endhighlight %}
+
+## Application Perfection
+
+Add the ability to add external css files and serve through Node.js.
+
+A possible new application would be to generate Lorem Ipsum through.
+
+## Quiz:
+
+Finish the following code. How do you find out the HTTP method of a request?
+
+`request.url === '/'`
+
+What is the Content-type for PDF files?
+
+`application/pdf`
+
+What is the Content-type for CSS files?
+
+`text/css`
+
+Status code 303 means "See Other". This is good for redirecting POST requests to GET. However, there are other redirection headers better suited for other situations. Imagine I had an old URL that no longer can be accessed at it's original location, like `/user/chalkers` but it's now at `/users/chalkers`. What status code should I use when redirecting? 
+
+`301 (moved permanently)`
+
+What is the Content-type for HTML?
+
+`text/html`
+
+What HTTP header do I use to redirect to another URL?
+
+`Location`
+
+What Node module do you need to require to parse a query string or the body of a POST request?
+
+`querystring`
+
+What is the Content-type for PNG files?
+
+`image/png`
