@@ -26,7 +26,7 @@ published: false
 
 {% include /globalSections/toc.html %}
 
-There is a very indepth <a href="https://github.com/mediaelement/mediaelement/blob/master/docs/installation.md">installation guide</a> found on their <a href="https://github.com/mediaelement">GitHub</a>. In this article I will go over the basics of getting up and running using MediaElement.js. 
+There is a very in-depth <a href="https://github.com/mediaelement/mediaelement/blob/master/docs/installation.md">installation guide</a> found on their <a href="https://github.com/mediaelement">GitHub</a>. In this article I will go over the basics of getting up and running using MediaElement.js. 
 
 ## Why Use MediaElement.js?
 First, why bother using MediaElement.js when there is a `<video>` tag introduced in HTML5? The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video">video</a> tag is very limited; see the reasons to use MediaElement.js instead below.

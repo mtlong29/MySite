@@ -7,7 +7,7 @@ title: "Sticky Footer Techniques"
 
 subtitle: "Wordpress"
 
-excerpt: "That wordpress login page could not be more boring."
+excerpt: "That WordPress login page could not be more boring."
 
 categories: blog
 

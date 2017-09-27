@@ -44,7 +44,7 @@ Block elements such as the ones in the list below stack on top of each other, li
 </ul>
 
 ### Inline Elements
-Inline elements such such as the ones in the list below do not create line breaks in a layout. These elements appear on the same line as the content and elements beside them.
+Inline elements such as the ones in the list below do not create line breaks in a layout. These elements appear on the same line as the content and elements beside them.
 
 <ul>
   <li>images</li>

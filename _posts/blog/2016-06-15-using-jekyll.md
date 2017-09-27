@@ -85,7 +85,7 @@ Installing Ruby, Bundler, and Ruby Gems are essential to getting this site runni
 
 ### Bundler
 
-It didn't take long to fully embrace [Bundler](http://bundler.io/) but mainly because its what everyone else is doing. Bundler is the official way to install Jekyll. Tt wasn't that big of a leap for me to start using a `Gemfile` to manage all dependencies. To do that:
+It didn't take long to fully embrace [Bundler](http://bundler.io/) but mainly because it's what everyone else is doing. Bundler is the official way to install Jekyll. Tt wasn't that big of a leap for me to start using a `Gemfile` to manage all dependencies. To do that:
 
 1. Run `bundle init` to create an empty `Gemfile`
 2. Add `gem 'jekyll'` and any other gems to the `Gemfile`.

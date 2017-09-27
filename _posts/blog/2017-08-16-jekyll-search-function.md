@@ -24,13 +24,13 @@ featured: true
 
 {% include /globalSections/toc.html %}
 
-Obviously, one downside of using Jekyll is its lack of server side scripting, or communication with a server in general. Therefore, all searching is done client side. There are a number of methods people use to accomplish client side searching.
+Obviously, one downside of using Jekyll is its lack of server-side scripting, or communication with a server in general. Therefore, all searching is done client side. There are a number of methods people use to accomplish client side searching.
 
 If you host your site somewhere other than <a href="https://pages.github.com/">GitHub pages</a> then you could process a search with `PHP` or `Node.js` for example.
 
 ## Methods 
 
-Most approaches have you create a JSON file that compiles the content from your pages at build time. However, this causes issues if your site is extremely large, because the page will have to query a large JSON file before it loads the results. Therefore, this isn't ideal if you already have a very large site. In other words if you have a very large site it might be more reasonable to use server side searching. The methods (client and server side) I've discovered are shown below.
+Most approaches have you create a JSON file that compiles the content from your pages at build time. However, this causes issues if your site is extremely large, because the page will have to query a large JSON file before it loads the results. Therefore, this isn't ideal if you already have a very large site. In other words if you have a very large site it might be more reasonable to use server-side searching. The methods (client and server-side) I've discovered are shown below.
 
 <ol>
   <li><a href="http://www.tipue.com/search/">Tipue Search</a> - jQuery plugin. Tipue basically reads a JavaScript file and displays the results based on the JSON object.</li>

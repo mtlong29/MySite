@@ -3,11 +3,11 @@ layout: article
 
 permalink: /blog/custom-wordpress-login-page/
 
-title: "Creating a Custom Wordpress Login Page"
+title: "Creating a Custom WordPress Login Page"
 
 subtitle: "Wordpress"
 
-excerpt: "That default wordpress login page could not be more boring. In fact, if you were to deliver a custom wordpress site to a client that still has that default login page then I consider that project unfinished. This is true especially due to the fact that this is extremely easy."
+excerpt: "That default WordPress login page could not be more boring. In fact, if you were to deliver a custom wordpress site to a client that still has that default login page then I consider that project unfinished. This is true especially due to the fact that this is extremely easy."
 
 categories: blog
 
@@ -24,7 +24,7 @@ featured: true
 
 {% include /globalSections/toc.html %}
 
-There are many reasons why someone would want to create a custom wordpress login page. I decided to design a custom login page for a new theme I was working on based off of the <a href="http://underscores.me/">underscores</a> starter. Upon briefly researching the current standards of doing this I noticed the top search results were all plugin based. Yuck.. Using a plugin is often a gross approach to things in my opinion. This post documents how I changed my login page such as the example below.
+There are many reasons why someone would want to create a custom WordPress login page. I decided to design a custom login page for a new theme I was working on based off of the <a href="http://underscores.me/">underscores</a> starter. Upon briefly researching the current standards of doing this I noticed the top search results were all plugin based. Yuck.. Using a plugin is often a gross approach to things in my opinion. This post documents how I changed my login page such as the example below.
 
 <figure class="full">
 	<a href="/images/post-custom-wordpress-login/customWordpressLogin.jpg" title="Custom Wordpress Login"><img src="/images/post-custom-wordpress-login/customWordpressLogin.jpg" alt="Custom Wordpress Login" /></a>
@@ -34,7 +34,7 @@ There are many reasons why someone would want to create a custom wordpress login
 
 1. Create a new folder (inside your theme) and name it login (for example..)
 2. In that folder create the css file that your login page will use
-3. Tell wordpress to load this css file by editing your theme's `functions.php` file
+3. Tell WordPress to load this css file by editing your theme's `functions.php` file
 4. Add optional php functions to your `functions.php` file
 
 ## Folder Structure
@@ -159,7 +159,7 @@ Each block of code in the following `PHP` file is commented enough for you to un
 
 {% highlight php linenos %}
 /**
- * Tell wordpress to load this for custom login page
+ * Tell WordPress to load this for custom login page
  */
 function my_custom_login() {
   echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/login/custom-login-styles.css" />';
