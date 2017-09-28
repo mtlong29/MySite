@@ -56,7 +56,7 @@ University of Kentucky, December 2015. Bachelor’s Degree in Civil Engineering.
 ### Web Development and Design
 
 <p><a href="{{site.url}}/tag/html/">HTML</a> (<a href="{{site.url}}/tag/markdown/">Markdown</a>), <a href="{{site.url}}/tag/css/">CSS</a> (<a href="{{site.url}}/tag/scss/">SCSS</a>, <a href="{{site.url}}/tag/bootstrap/">Bootstrap</a>), and <a href="{{site.url}}/tag/javascript/">JavaScript</a> (<a href="{{site.url}}/tag/jquery/">jQuery</a>)</p>
-<p>Web Design Tools - <a href="{{site.url}}/tag/jekyll/">Jekyll</a>, WordPress, Grunt</p>
+<p>Tools - <a href="{{site.url}}/tag/jekyll/">Jekyll</a>, WordPress, Gulp</p>
 <p>Git Clients / Services - GitHub</p>
 
 ## Experience
