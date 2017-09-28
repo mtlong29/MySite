@@ -444,3 +444,6 @@ gulp.task("default", ['clean'], function() {
 });
 {% endhighlight %}
 
+## Where to next?
+
+There are many possibilities with Gulp.
