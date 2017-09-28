@@ -447,3 +447,11 @@ gulp.task("default", ['clean'], function() {
 ## Where to next?
 
 There are many possibilities with Gulp.
+
+Question: It is best to have a single large 'gulpfile', rather than having several small files with defined tasks.
+
+Answer: False
+
+Question: When diving into a set of tasks for a new project, what is the best approach?
+
+Answer: In the gulpfile, work from the bottom up. This way, you can see which tasks depend on which other tasks, starting with the "default" task.
