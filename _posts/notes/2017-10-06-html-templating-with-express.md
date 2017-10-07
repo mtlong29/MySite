@@ -417,7 +417,7 @@ Now a full HTML page will be rendered using these two files.
 
 This can be broken up even further into something known as `includes`. Create a folder in the "views" directory called "includes".
 
-You can then cut something out such as a header and place it in the "included" folder. Name it `header.put`. The same can be done for the footer.
+You can then cut something out such as a header and place it in the "includes" folder. Name it `header.put`. The same can be done for the footer.
 
 {% highlight html linenos %}
 header
@@ -439,3 +439,25 @@ html(lang="en")
     block content
     include includes/footer.pug
 {% endhighlight %}
+
+### Quiz
+
+Question: One Pug file can loag another Pug file.
+
+Answer: True
+
+Question: What is the conventional name of the Pug file that holds the topmost elements, like <html>, <body>, stylesheets, etc?
+
+Answer: layout.pug
+
+Question: A good use for a conditional in a template might be to hide a menu for accessing user account data unless a user is signed in.
+
+Answer: True
+
+Question: What is an example of something Pug templates are capable of?
+
+Answer: Rendering a list of elements based on an array of data.
+
+Question: A good use for iteration in a Pug template might be for rendering an HTML <body> element.
+
+Answer: False
