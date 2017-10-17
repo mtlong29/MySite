@@ -97,3 +97,28 @@ The answer is paired with a question. Therefore questions answers will be at `/q
 ## Voting on Answers
 
 Users will need to vote-up and vote-down answers. This means there will be two routes for each: `questions/:qID/answers/:aID/vote-up` and `questions/:qID/answers/:aID/vote-down`.
+
+Every API will do things a little differently. Keeping the people who will use your API in mind will help you find the best way to built it.
+
+#### Quiz
+
+Question: What does the "i" in API stand for?
+
+Answer: interface
+
+Question: Why must care be taken when making improvements to an API once it has been released for public use?
+
+Answer: Changes can break applications that have been built to depend on it by other developers
+
+Question: What HTTP verb is analogous to the "update" action of the "U" in the acronym CRUD?
+
+Answer: PUT
+
+Question: WHat is a route?
+
+Answer: A pattern that describes a URL
+
+Question: How do URLs represent one resource's dependency on another?
+
+Answer: (/) forward slash
+
