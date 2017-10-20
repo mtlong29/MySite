@@ -198,3 +198,84 @@ The perspective property alone doesn't add any 3D effects. You then apply a tran
   transform: rotateX(-20deg);
 }
 {% endhighlight %}
+
+## Reveal Content on Backface
+
+You can create a flipping animation with 3D Transofrm properties:
+
+{% highlight css linenos %}
+.content {
+  perspective: 700px;
+}
+.photo {
+  transition: transform 1s cubic-bezier(.55, -.62, .27, 1.2);
+  transform-style: preserve-3d;
+}
+.photo:hover {
+  transform: rotate3d(1, 0, 0, -180deg);
+}
+.side-a,
+.side-b {
+  backface-visibility: hidden;
+}
+.side-b {
+  transform: rotate3d(1, 0, 0, 180deg);;
+}
+{% endhighlight %}
+
+To make the perspective the same for every photo in a gallery you would move the `perspective` property so that the container is the same for every image.
+
+See my pen on codepen about this <a href="https://codepen.io/mtlong29/pen/dVrKaP">here</a>.
+
+## Building a 3D Cube
+
+{% highlight css linenos %}
+.button {
+	transition: background .3s;
+}
+.button:hover {
+	background: rgba(74,137,202, 1);
+}
+.cube-container {
+	box-shadow: 0 18px 40px 5px rgba(0,0,0,.4);
+	perspective: 800px;
+}
+.photo-cube {
+	transition: transform 2s ease-in-out;
+	width: 220px;
+	height: 200px;
+	transform-style: preserve-3d;
+}
+.photo-cube:hover {
+	transform: rotateY(-270deg);
+}
+.front,
+.back,
+.left,
+.right {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+}
+.front {
+	transform: translateZ(110px);
+}
+.back {
+	transform: translateZ(-110px) rotateY(270deg);
+	transform-origin: center left;
+}
+.left {
+	transform: rotateY(-270deg) translateX(110px);
+	transform-origin: top right;
+}
+.right {
+	transform: translateZ(-110px) rotateY(180deg);
+}
+{% endhighlight %}
+
+See my codepen <a href="https://codepen.io/mtlong29/pen/RLdBro">here</a> for a 3D cube that rotates.
+
+## Translate Shorthand
+
+You can use `translate3d(x, y, z)` in place of `translateX`, `translateY`, and `translateZ`.
