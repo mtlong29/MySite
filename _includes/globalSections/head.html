@@ -34,41 +34,41 @@
 <!-- Site Title -->
 
 {% if seo_title %}
-  <title>{{ seo_title }}</title>
+  <title>{{seo_title}}</title>
 {% endif %}
 
 <!-- Site description -->
 
 {% if seo_description %}
-  <meta name="description" content="{{ seo_description }}" />
+  <meta name="description" content="{{seo_description}}" />
 {% endif %}
 
 <!-- Sharing Meta -->
 {% if page.title %}
-  <meta name="twitter:title" property="og:title" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
+  <meta name="twitter:title" property="og:title" content="{{page.title | markdownify | strip_html | strip_newlines | escape_once}}">
 {% endif %}
 
-<meta name="twitter:url" property="og:url" content="{{ canonical_url }}">
+<meta name="twitter:url" property="og:url" content="{{canonical_url}}">
 
 {% if page.excerpt %}
-  <meta name="twitter:description" property="og:description" content="{{ seo_description }}">
+  <meta name="twitter:description" property="og:description" content="{{seo_description}}">
 {% endif %}
 
 {% if site.owner.twitter %}
-  <meta name="twitter:site" content="@{{ site.owner.twitter | replace:"@","" }}">
+  <meta name="twitter:site" content="@{{site.owner.twitter | replace:"@",""}}">
 
-  <meta name="twitter:creator" content="@{{ site.owner.twitter | replace:"@","" }}">
+  <meta name="twitter:creator" content="@{{site.owner.twitter | replace:"@",""}}">
 {% endif %}
 
 {% if page.image.header %}
   <meta name="twitter:card" content="summary_large_image">
 
-  <meta name="twitter:image" property="og:image" content="{{ site.url }}/images/{{ page.image.header }}">
+  <meta name="twitter:image" property="og:image" content="/assets/images/{{page.image.header}}">
 {% else %}
 
   <meta name="twitter:card" content="summary">
 
-  <meta name="twitter:image" content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.url }}/images/{{ site.logo }}{% endif %}">
+  <meta name="twitter:image" content="{% if page.image.thumb %}/assets/images/{{page.image.thumb}}{% else %}/assets/images/{{site.logo}}{% endif %}">
 {% endif %}
 
 <meta property="og:locale" content="{{ site.locale }}">
@@ -77,18 +77,18 @@
   <meta property="og:type" content="article">
 {% endif %}
 
-<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:site_name" content="{{site.title}}">
 
 {% if page.image.teaser %}
-  <meta property="og:image" content="{{ site.url }}/images/teaser-image/{{ page.image.teaser }}">
+  <meta property="og:image" content="/assets/images/teaser-image/{{page.image.teaser}}">
 {% endif %}
 
 
-<link rel="canonical" href="{{ canonical_url }}">
+<link rel="canonical" href="{{canonical_url}}">
 
 <!-- Link to sitemap -->
 
-<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ site.url }}/sitemap.xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
 <!-- Additional meta data -->
 
@@ -103,10 +103,10 @@
 
 <!-- Stylesheet links -->
 
-<link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/stylesheets/main.css">
+<link rel="stylesheet" type="text/css" href="/assets/servedCSS/all.css">
 
 <!-- Favicons -->
 
-<link rel="icon" type="image/png" href="{{site.url}}/images/favicons/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="{{site.url}}/images/favicons/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="{{site.url}}/images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">

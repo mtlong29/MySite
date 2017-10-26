@@ -33,5 +33,5 @@ The high school was trying to focus on healthy foods and more specifically, Kent
 The following image is the poster. Note that it is displayed at a lower resolution that of the final version that was printed.
 
 <figure class="full">
-	<a href="/images/post-advertisingproject/adm-project.jpg" title="Digital Media Advertising Project"><img src="/images/post-advertisingproject/adm-project.jpg" alt="Digital Media Advertising Project" /></a>
+	<a href="/assets/images/post-advertisingproject/adm-project.jpg" title="Digital Media Advertising Project"><img src="/assets/images/post-advertisingproject/adm-project.jpg" alt="Digital Media Advertising Project" /></a>
 </figure>

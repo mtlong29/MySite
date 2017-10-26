@@ -36,16 +36,16 @@ Part of the senior design course is to present a solution to the client of which
 The brochure is a front and back magazine style. Therefore, the pages seem out of order when viewed in this manner. Once folded and printed correctly the brochure will no longer appear to be in a jumbled order.
 
 <figure class="full">
-	<a href="/images/post-senior-design/Brochure Page One.jpg" title="Brochure Page One"><img src="/images/post-senior-design/Brochure Page One.jpg" alt="Brochure Page One" /></a>
+	<a href="/assets/images/post-senior-design/Brochure Page One.jpg" title="Brochure Page One"><img src="/assets/images/post-senior-design/Brochure Page One.jpg" alt="Brochure Page One" /></a>
 </figure>
 <figure class="full">
-	<a href="/images/post-senior-design/Brochure Page Two.jpg" title="Brochure Page Two"><img src="/images/post-senior-design/Brochure Page Two.jpg" alt="Brochure Page Two" /></a>
+	<a href="/assets/images/post-senior-design/Brochure Page Two.jpg" title="Brochure Page Two"><img src="/assets/images/post-senior-design/Brochure Page Two.jpg" alt="Brochure Page Two" /></a>
 </figure>
 <figure class="full">
-	<a href="/images/post-senior-design/Brochure Page Three.jpg" title="Brochure Page Three"><img src="/images/post-senior-design/Brochure Page Three.jpg" alt="Brochure Page Three" /></a>
+	<a href="/assets/images/post-senior-design/Brochure Page Three.jpg" title="Brochure Page Three"><img src="/assets/images/post-senior-design/Brochure Page Three.jpg" alt="Brochure Page Three" /></a>
 </figure>
 <figure class="full">
-	<a href="/images/post-senior-design/Brochure Page Four.jpg" title="Brochure Page Four"><img src="/images/post-senior-design/Brochure Page Four.jpg" alt="Brochure Page Four" /></a>
+	<a href="/assets/images/post-senior-design/Brochure Page Four.jpg" title="Brochure Page Four"><img src="/assets/images/post-senior-design/Brochure Page Four.jpg" alt="Brochure Page Four" /></a>
 </figure>
 
 ### Poster
@@ -53,5 +53,5 @@ The brochure is a front and back magazine style. Therefore, the pages seem out o
 The printed size of the following poster is four feet four inches by three feet.
 
 <figure class="full">
-	<a href="/images/post-senior-design/Poster.jpg" title="Poster"><img src="/images/post-senior-design/Poster.jpg" alt="Poster" /></a>
+	<a href="/assets/images/post-senior-design/Poster.jpg" title="Poster"><img src="/assets/images/post-senior-design/Poster.jpg" alt="Poster" /></a>
 </figure>

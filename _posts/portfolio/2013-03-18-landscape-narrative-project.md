@@ -34,26 +34,26 @@ Upon researching genetic cloning concerns I came across common terms such as abn
 The image directly below is the one I chose to use to tell my story.
 
 <figure class="full">
-	<a href="/images/post-landscape-narrative/Narrative Image One.jpg" title="Narrative Image One"><img src="/images/post-landscape-narrative/Narrative Image One.jpg" alt="Narrative Image One" /></a>
+	<a href="/assets/images/post-landscape-narrative/Narrative Image One.jpg" title="Narrative Image One"><img src="/assets/images/post-landscape-narrative/Narrative Image One.jpg" alt="Narrative Image One" /></a>
 </figure>
 
 ### Scene One
 This first scene I wanted to simply show scientists at work. 
 
 <figure class="full">
-	<a href="/images/post-landscape-narrative/Narrative Image Two.jpg" title="Narrative Image Two"><img src="/images/post-landscape-narrative/Narrative Image Two.jpg" alt="Narrative Image Two" /></a>
+	<a href="/assets/images/post-landscape-narrative/Narrative Image Two.jpg" title="Narrative Image Two"><img src="/assets/images/post-landscape-narrative/Narrative Image Two.jpg" alt="Narrative Image Two" /></a>
 </figure>
 
 ### Scene Two
 In the second scene I wanted to show when things start to go south. The scientists had to shoot whatever was in the cage and they are arguing over it.
 
 <figure class="full">
-	<a href="/images/post-landscape-narrative/Narrative Image Three.jpg" title="Narrative Image Three"><img src="/images/post-landscape-narrative/Narrative Image Three.jpg" alt="Narrative Image Three" /></a>
+	<a href="/assets/images/post-landscape-narrative/Narrative Image Three.jpg" title="Narrative Image Three"><img src="/assets/images/post-landscape-narrative/Narrative Image Three.jpg" alt="Narrative Image Three" /></a>
 </figure>
 
 ### Scene Three
 In the final scene I wanted to show that the apocalypse has begun.
 
 <figure class="full">
-	<a href="/images/post-landscape-narrative/Narrative Image Four.jpg" title="Narrative Image Four"><img src="/images/post-landscape-narrative/Narrative Image Four.jpg" alt="Narrative Image Four" /></a>
+	<a href="/assets/images/post-landscape-narrative/Narrative Image Four.jpg" title="Narrative Image Four"><img src="/assets/images/post-landscape-narrative/Narrative Image Four.jpg" alt="Narrative Image Four" /></a>
 </figure>

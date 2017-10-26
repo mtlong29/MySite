@@ -947,7 +947,7 @@ button {
 header {
   text-align: center;
   background: linear-gradient(90deg, #d4eece, #55b3d0, #1e7eb7),
-              url('../images/header-bg.jpg') no-repeat;
+              url('../assets/images/header-bg.jpg') no-repeat;
   background-blend-mode: multiply;    
   background-size: cover;   
 }

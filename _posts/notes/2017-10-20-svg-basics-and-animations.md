@@ -136,3 +136,134 @@ Also, the transform origin for firefox is buggy when using percentages. Firefox 
 
 ## Creating an SVG Animation Sequence
 
+Many animation sequences can be seen on codepen.
+
+When animating an SVG the first step is to give the different elements of your SVG classes. You can also group various elements using the `<g>` tag.
+
+Create keyframe rules by using `@keyframes{}`.
+
+{% highlight css linenos %}
+@keygrams grow {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  60% {
+    transform scale(0.9);
+  }
+}
+.badge * {
+  transform-origin: 180px 180px;
+}
+.outer,
+.inner,
+.inline {
+  animation: grow 1s ease-out backwards;
+}
+.inner {
+  animation-delay: .1s;
+}
+.inline {
+  animation-delay: .15s;
+}
+{% endhighlight %}
+
+The backwards fill mode immediately applies the first animation keyframe to the element.
+
+### Using multiple transforms
+
+{% highlight css linenos %}
+@keyframes turn {
+  0% {
+    transform: rotate(0) scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: rotate(375deg) scale(1.1);
+  }
+  80% {
+    transform: rotate(355deg) scale(0.9);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+.star {
+  animation: turn 1.1s .2s ease-out backwards;
+}
+{% endhighlight %}
+
+You can also use `nth-of-type()` to apply delays to various parts of an element.
+
+## Creating an Animated Line Drawing
+
+To create a drawing animation start with giving the path you want to be drawn a class. Also, if there is a fill color within the SVG HTML change it to transparent.
+
+Now, you can use CSS to accomplish the animation:
+
+{% highlight css linenos %}
+.logo {
+  stroke: #6fbc6d;
+  stroke-width: 2;
+  stroke-dasharray: 5;
+  stroke-dashoffset: 150;
+  animation: offset 5s linear forwards;
+}
+@keyframes offset {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+{% endhighlight %}
+
+The main thing that creates the drawing effect is taking advantage of the stroke properties `stroke-dasharray` and `stroke-dashoffset`.
+
+The above will create marching ants aound your SVG. In order to create the drawing effect you need the `stroke-dasharray` value to be equal to the paths total length.
+
+You can use JavaScript to figure out this value. Or you can guess and check by entering a number for the `stroke-dasharray` and checking if the stroke completes your SVG.
+
+{% highlight javascript linenos %}
+var path = document.querySelector('.logo');
+var length = path.getTotalLength();
+{% endhighlight %}
+
+The stroke length of this example SVG is `810`. Now your CSS looks like the following:
+
+{% highlight css linenos %}
+.logo {
+  stroke: #6fbc6d;
+  stroke-width: 2;
+  stroke-dasharray: 810;
+  stroke-dashoffset: 810;
+  animation: offset 5s linear forwards;
+}
+@keyframes offset {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+{% endhighlight %}
+
+Now you culd fill in the background:
+
+{% highlight css linenos %}
+.logo {
+  stroke: #6fbc6d;
+  stroke-width: 2;
+  stroke-dasharray: 810;
+  stroke-dashoffset: 810;
+  animation: offset 5s linear forwards, fill-it .8s 5s forwards;
+}
+@keyframes offset {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fill-it {
+  100% {
+    fill: #6fbc6d;
+  }
+}
+{% endhighlight %}

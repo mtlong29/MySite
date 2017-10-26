@@ -32,17 +32,17 @@ Below are some collages I have made using photoshop. Click to enlarge.
 This Game of Thrones collage actually uses 16 individual pictures.
 
 <figure class="half">
-  <a href="{{ site.url }}/images/post-photoshop-collage/matt-evolution0.jpg" title="Original background and picture of myself."><img src="{{ site.url }}/images/post-photoshop-collage/matt-evolution0.jpg" alt="Original background and picture of myself."></a>
-  <a href="{{ site.url }}/images/post-photoshop-collage/matt-evolution1.jpg" title="Evolution 1"><img src="{{ site.url }}/images/post-photoshop-collage/matt-evolution1.jpg" alt="Evolution 1"></a>
+  <a href="/assets/images/post-photoshop-collage/matt-evolution0.jpg" title="Original background and picture of myself."><img src="/assets/images/post-photoshop-collage/matt-evolution0.jpg" alt="Original background and picture of myself."></a>
+  <a href="/assets/images/post-photoshop-collage/matt-evolution1.jpg" title="Evolution 1"><img src="/assets/images/post-photoshop-collage/matt-evolution1.jpg" alt="Evolution 1"></a>
 </figure>
 
 <figure class="half">
-  <a href="{{ site.url }}/images/post-photoshop-collage/matt-evolution2.jpg" title="Evolution 2"><img src="{{ site.url }}/images/post-photoshop-collage/matt-evolution2.jpg" alt="Evolution 2"></a>
-  <a href="{{ site.url }}/images/post-photoshop-collage/matt-evolution3.jpg" title="Evolution 3"><img src="{{ site.url }}/images/post-photoshop-collage/matt-evolution3.jpg" alt="Evolution 3"></a>
+  <a href="/assets/images/post-photoshop-collage/matt-evolution2.jpg" title="Evolution 2"><img src="/assets/images/post-photoshop-collage/matt-evolution2.jpg" alt="Evolution 2"></a>
+  <a href="/assets/images/post-photoshop-collage/matt-evolution3.jpg" title="Evolution 3"><img src="/assets/images/post-photoshop-collage/matt-evolution3.jpg" alt="Evolution 3"></a>
 </figure>
 
 <figure class="full">
-  <a href="{{ site.url }}/images/post-photoshop-collage/matt-evolution4.jpg" title="Final Evolution"><img src="{{ site.url }}/images/post-photoshop-collage/matt-evolution4.jpg" alt="Final Evolution"></a>
+  <a href="/assets/images/post-photoshop-collage/matt-evolution4.jpg" title="Final Evolution"><img src="/assets/images/post-photoshop-collage/matt-evolution4.jpg" alt="Final Evolution"></a>
 </figure>
 
 ## Retro Rustic Advertisement
@@ -50,7 +50,7 @@ This Game of Thrones collage actually uses 16 individual pictures.
 This retro style advertisement collage combines 10 individual pictures.
 
 <figure class="full">
-  <a href="{{ site.url }}/images/post-photoshop-collage/rustic-moon-collage.png" title="Rustic Moon Collage"><img src="{{ site.url }}/images/post-photoshop-collage/rustic-moon-collage.png" alt="Rustic Moon Collage"></a>
+  <a href="/assets/images/post-photoshop-collage/rustic-moon-collage.png" title="Rustic Moon Collage"><img src="/assets/images/post-photoshop-collage/rustic-moon-collage.png" alt="Rustic Moon Collage"></a>
 </figure>
 
 ## GMM #TakeAndMake
@@ -58,7 +58,7 @@ This retro style advertisement collage combines 10 individual pictures.
 <a href="https://www.youtube.com/user/rhettandlink2">Good Mythical Morning</a> is a YouTube channel that has a daily morning talk show. At the end of every episode they spin a wheel and sometimes the wheel lands on something called take and make. Take and make is when you take a still from that episode and make it into something else. This time you were to make them into aliens. Below is one that I made.
 
 <figure class="full">
-  <a href="{{ site.url }}/images/post-photoshop-collage/gmm-takeandmake.jpg" title="Good Mythical Morning #TakeAndMake"><img src="{{ site.url }}/images/post-photoshop-collage/gmm-takeandmake.jpg" alt="Good Mythical Morning #TakeAndMake"></a>
+  <a href="/assets/images/post-photoshop-collage/gmm-takeandmake.jpg" title="Good Mythical Morning #TakeAndMake"><img src="/assets/images/post-photoshop-collage/gmm-takeandmake.jpg" alt="Good Mythical Morning #TakeAndMake"></a>
 </figure>
 
 ## Terminator Katie
@@ -66,6 +66,6 @@ This retro style advertisement collage combines 10 individual pictures.
 This is a friend of mine that I turned into a killer robot. Not sure why. Just did.
 
 <figure class="half">
-  <a href="{{ site.url }}/images/post-photoshop-collage/katie-evolution0.jpg" title="Original Image"><img src="{{ site.url }}/images/post-photoshop-collage/katie-evolution0.jpg" alt="Original Image"></a>
-  <a href="{{ site.url }}/images/post-photoshop-collage/katie-evolution3.jpg" title="Final Evolution"><img src="{{ site.url }}/images/post-photoshop-collage/katie-evolution3.jpg" alt="Final Evolution"></a>
+  <a href="/assets/images/post-photoshop-collage/katie-evolution0.jpg" title="Original Image"><img src="/assets/images/post-photoshop-collage/katie-evolution0.jpg" alt="Original Image"></a>
+  <a href="/assets/images/post-photoshop-collage/katie-evolution3.jpg" title="Final Evolution"><img src="/assets/images/post-photoshop-collage/katie-evolution3.jpg" alt="Final Evolution"></a>
 </figure>

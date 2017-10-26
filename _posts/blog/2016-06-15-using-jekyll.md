@@ -96,7 +96,6 @@ Below is what the gemfile for this site looked like as of 6/29/2017.
 #Gemfile
 source 'https://rubygems.org'
 
-gem 'breakpoint'
 gem 'wdm', '~> 0.1.0' if Gem.win_platform?
 gem 'mini_magick'
 gem 'autoprefixer-rails'

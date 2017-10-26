@@ -33,13 +33,15 @@ exclude:
   - README
   - .asset-cache
   - .sass-cache
+  - package.json
+  - node_modules
+  - gulpfile.js
 
 plugins:
   - jekyll-archives
   - jekyll/tagging
   - jekyll-tagging-related_posts
   - jekyll-assets
-  - breakpoint
   - uglifier
 
 # Collections

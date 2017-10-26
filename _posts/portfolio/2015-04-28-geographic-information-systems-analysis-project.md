@@ -39,7 +39,7 @@ There is an equation known as the flow continuity equation which states the flow
 It should be noted that the text on this poster appears very small, due to the scale shown here. However, the setup of the presentation involved people walking by and therefore standing close to the poster. The poster was 4 foot by 3 foot which resulted in adequate size of the text.
 
 <figure class="full">
-	<a href="/images/post-gis-analysis/Poster.jpg" title="GIS Poster Project"><img src="/images/post-gis-analysis/Poster.jpg" alt="GIS Poster Project" /></a>
+	<a href="/assets/images/post-gis-analysis/Poster.jpg" title="GIS Poster Project"><img src="/assets/images/post-gis-analysis/Poster.jpg" alt="GIS Poster Project" /></a>
 </figure>
 
 ## Analysis Conclusion

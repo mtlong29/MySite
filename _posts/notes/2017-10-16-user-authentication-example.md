@@ -443,7 +443,7 @@ nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
         
       if currentUser
         div
-          img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
+          img.avatar.img-circle.hidden-xs-down(src='/assets/images/avatar.png', alt='avatar')
           a.btn.btn-light.pull-md-right(href='/logout') Log out
       else  
         a.btn.btn-info.pull-md-right(href='login') Login
@@ -459,7 +459,7 @@ block content
     .row
       .col-md-8.col-md-offset-2
         h1.display-4
-          img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
+          img.avatar.img-circle.hidden-xs-down(src='/assets/images/avatar.png', alt='avatar')
           | #{name}
         h2.favorite-book Favorite Book
         | #{favorite}

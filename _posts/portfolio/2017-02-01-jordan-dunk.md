@@ -33,12 +33,12 @@ A decent amount of my free time is spent designing various things using photosho
 I used the following three images as well as various techniques in photoshop to design a simple collage of Michael Jordan dunking.
 
 <figure class="half">
-  <a href="{{ site.url }}/images/post-dunk/jordan.jpg" title="Original image of Jordan."><img src="{{ site.url }}/images/post-dunk/jordan.jpg" alt="Original image of Jordan."></a>
-  <a href="{{ site.url }}/images/post-dunk/goal.jpg" title="Original image of goal."><img src="{{ site.url }}/images/post-dunk/goal.jpg" alt="Original image of goal."></a>
+  <a href="/assets/images/post-dunk/jordan.jpg" title="Original image of Jordan."><img src="/assets/images/post-dunk/jordan.jpg" alt="Original image of Jordan."></a>
+  <a href="/assets/images/post-dunk/goal.jpg" title="Original image of goal."><img src="/assets/images/post-dunk/goal.jpg" alt="Original image of goal."></a>
 </figure>
 
 <figure class="half">
-  <a href="{{ site.url }}/images/post-dunk/background.jpg" title="Original background image."><img src="{{ site.url }}/images/post-dunk/background.jpg" alt="Original background image."></a>
+  <a href="/assets/images/post-dunk/background.jpg" title="Original background image."><img src="/assets/images/post-dunk/background.jpg" alt="Original background image."></a>
 </figure>
 
 ## Completed Graphic
@@ -46,5 +46,5 @@ I used the following three images as well as various techniques in photoshop to 
 The final project can be seen below!
 
 <figure class="full">
-  <a href="{{ site.url }}/images/post-dunk/jordan-dunk.jpg" title="Final image."><img src="{{ site.url }}/images/post-dunk/jordan-dunk.jpg" alt="Final image."></a>
+  <a href="/assets/images/post-dunk/jordan-dunk.jpg" title="Final image."><img src="/assets/images/post-dunk/jordan-dunk.jpg" alt="Final image."></a>
 </figure>

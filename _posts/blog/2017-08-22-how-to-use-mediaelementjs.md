@@ -51,7 +51,7 @@ The most basic default media player (note that the audio player would look simil
 </style>
 
 <video style="width:100%;height:100%;" id="basicExample">
-  <source type="video/mp4" src="{{site.url}}/images/post-use-mediaelementjs/stock-video-drawing-layout.mp4">
+  <source type="video/mp4" src="/assets/images/post-use-mediaelementjs/stock-video-drawing-layout.mp4">
 </video>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
@@ -71,7 +71,7 @@ The basic HTML needed can be seen below. As you can see, MediaPlayer.js comes wi
 <link rel="stylesheet" href="main.css">
 
 <video style="width:100%;height:100%;" id="basicExample">
-  <source type="video/mp4" src="{{site.url}}/images/post-use-mediaelementjs/stock-video-drawing-layout.mp4">
+  <source type="video/mp4" src="/assets/images/post-use-mediaelementjs/stock-video-drawing-layout.mp4">
 </video>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>

@@ -34,14 +34,14 @@ Design and development of this site began mid september. Below are screenshots o
 At this point the website has been in development for a couple weeks. Katie and Skylar have been writing a few posts ready to go for launch. 
 
 <div class="scroll-box">
-    <img src="/images/post-pare-and-flourish-site-evo/evo1.jpg">
+    <img src="/assets/images/post-pare-and-flourish-site-evo/evo1.jpg">
 </div>
 
 ### Evolution Two (December 20, 2016)
 The site was launched October 26th. Over the course of the last couple months many changes have been made. Examples of said changes are new background, new google and amazon ads, new metadata, pinterest pins and other social media tools, and updated navigation bar.
 
 <div class="scroll-box">
-    <img src="/images/post-pare-and-flourish-site-evo/evo2.jpg">
+    <img src="/assets/images/post-pare-and-flourish-site-evo/evo2.jpg">
 </div>
 
 ### Evolution Three (April 22, 2017)
@@ -85,21 +85,21 @@ $(document).ready(function () {
 {% endhighlight %}
 
 <div class="scroll-box">
-    <img src="/images/post-pare-and-flourish-site-evo/evo3.jpg">
+    <img src="/assets/images/post-pare-and-flourish-site-evo/evo3.jpg">
 </div>
 
 ### Evolution Four (May 13, 2017)
 Both a lot and not a lot has happened since the last evolution. The main changes are removal of color during our identiy crisis, new images (used all over the site now), and removal of that ugly dark footer. Functionality of the site hasn't changed much either. Therefore, the only updates are styling related.
 
 <div class="scroll-box">
-    <img src="/images/post-pare-and-flourish-site-evo/evo4.jpg">
+    <img src="/assets/images/post-pare-and-flourish-site-evo/evo4.jpg">
 </div>
 
 ### Evolution Five (July 9, 2017)
 My life had calmed down around this period so I had plenty of time to make changes to the site. As you can see it has gone through drastic changes. Changes such as a new blog tile layout and styling, adding content to the homepage other than said blog tiles such as a reading list and services (more to come), new fully responsive navigation bar, and a new banner image. Oh, and say hello to our new light purple color #e7dff0!
 
 <div class="scroll-box">
-    <img src="/images/post-pare-and-flourish-site-evo/evo5.jpg">
+    <img src="/assets/images/post-pare-and-flourish-site-evo/evo5.jpg">
 </div>
 
 ## Development (CSS and HTML)

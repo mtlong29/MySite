@@ -75,3 +75,9 @@
 		margin-bottom: 0px + $doc-line-height;
 	}
 }
+
+@mixin breakpoint($width) {
+	@media (min-width: $width){
+    @content;
+  }
+}

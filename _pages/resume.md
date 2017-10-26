@@ -38,7 +38,7 @@ University of Kentucky, December 2015. Bachelor’s Degree in Civil Engineering.
 
 <p>Operating Systems - Windows and Mac OSX</p>
 <p>Microsoft Office - Excel, PowerPoint, and Word</p>
-<p>Programming - <a href="{{site.url}}/tag/javascript/">JavaScript</a>, <a href="{{site.url}}/tag/jquery/">jQuery</a>, Python, VBScript, and Ruby</p>
+<p>Programming - <a href="/tag/javascript/">JavaScript</a>, <a href="/tag/jquery/">jQuery</a>, Python, VBScript, and Ruby</p>
 
 ### Communication
 
@@ -46,17 +46,17 @@ University of Kentucky, December 2015. Bachelor’s Degree in Civil Engineering.
 
 ### Engineering
 
-<p>Computer Aided Drafting – <a href="{{site.url}}/tag/autocad/">AutoCAD</a>, and Google SketchUp</p>
-<p><a href="{{site.url}}/tag/gis/">Geographic Information Systems</a> technology – ArcMap, ArcCatalog</p>
+<p>Computer Aided Drafting – <a href="/tag/autocad/">AutoCAD</a>, and Google SketchUp</p>
+<p><a href="/tag/gis/">Geographic Information Systems</a> technology – ArcMap, ArcCatalog</p>
 
 ### Graphic Design
 
-<p>Adobe Creative Cloud - <a href="{{site.url}}/tag/photoshop/">Photoshop</a>, Illustrator, and some InDesign</p>
+<p>Adobe Creative Cloud - <a href="/tag/photoshop/">Photoshop</a>, Illustrator, and some InDesign</p>
 
 ### Web Development and Design
 
-<p><a href="{{site.url}}/tag/html/">HTML</a> (<a href="{{site.url}}/tag/markdown/">Markdown</a>), <a href="{{site.url}}/tag/css/">CSS</a> (<a href="{{site.url}}/tag/scss/">SCSS</a>, <a href="{{site.url}}/tag/bootstrap/">Bootstrap</a>), and <a href="{{site.url}}/tag/javascript/">JavaScript</a> (<a href="{{site.url}}/tag/jquery/">jQuery</a>)</p>
-<p>Tools - <a href="{{site.url}}/tag/jekyll/">Jekyll</a>, WordPress, Gulp</p>
+<p><a href="/tag/html/">HTML</a> (<a href="/tag/markdown/">Markdown</a>), <a href="/tag/css/">CSS</a> (<a href="/tag/scss/">SCSS</a>, <a href="/tag/bootstrap/">Bootstrap</a>), and <a href="/tag/javascript/">JavaScript</a> (<a href="/tag/jquery/">jQuery</a>)</p>
+<p>Tools - <a href="/tag/jekyll/">Jekyll</a>, WordPress, Gulp</p>
 <p>Git Clients / Services - GitHub</p>
 
 ## Experience
@@ -74,7 +74,7 @@ University of Kentucky, December 2015. Bachelor’s Degree in Civil Engineering.
 ### Freelance
 <h4 class="experience">Graphic Web Designer and Developer</h4>
 
-<p>I create graphics and websites from scratch, update websites, and perform related tasks. Basic web development skills such as CSS (Sass/SCSS), HTML, JavaScript (jQuery). Experience understanding exactly what the client needs and working to fulfill that need. Some of my work can be seen on my portfolio at <a href="{{site.url}}/portfolio">here</a>.</p>
+<p>I create graphics and websites from scratch, update websites, and perform related tasks. Basic web development skills such as CSS (Sass/SCSS), HTML, JavaScript (jQuery). Experience understanding exactly what the client needs and working to fulfill that need. Some of my work can be seen on my portfolio at <a href="/portfolio">here</a>.</p>
 
 ## Certifications
 

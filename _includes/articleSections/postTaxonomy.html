@@ -3,13 +3,13 @@
   <!-- modified from http://www.codeofclimber.ru/2015/sorting-site-tags-in-jekyll/ -->
 {% endcomment %}
 
-{% capture page_tags %}{% for tag in page.tags %}{{ tag | downcase }}#{{ tag }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% capture page_tags %}{% for tag in page.tags %}{{tag | downcase}}#{{tag}}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign tag_hashes = (page_tags | split: ',' | sort:0) %}
 
 Tags: <span class="postTaxonomy-wrapper" itemprop="keywords">
 {% for hash in tag_hashes %}
   {% assign keyValue = hash | split: '#' %}
-  {% capture tag_word %}{{ keyValue[1] | strip_newlines }}{% endcapture %}
-    {% if forloop.last %} and{% endif %} <a href="{{ site.url }}{{ tag_word | slugify | prepend: '/tag/' | append: '/' }}" rel="tag">{{ tag_word }}</a>{% unless forloop.last %}, {% endunless %}
+  {% capture tag_word %}{{keyValue[1] | strip_newlines}}{% endcapture %}
+    {% if forloop.last %} and{% endif %} <a href="{{tag_word | slugify | prepend: '/tag/' | append: '/'}}" rel="tag">{{tag_word}}</a>{% unless forloop.last %}, {% endunless %}
 {% endfor %}
 </span>

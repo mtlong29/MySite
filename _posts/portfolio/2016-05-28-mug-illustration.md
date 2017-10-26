@@ -31,8 +31,8 @@ No reason as to why I modeled this mug specifically. Nevertheless, I gained addi
 The first version of the model is nothing but the frame.
 
 <figure class="half">
-	<a href="/images/post-mug-illustration/Mug-ver1-1.jpg" title="Mug Illustration One"><img src="/images/post-mug-illustration/Mug-ver1-1.jpg" alt="Mug Illustration One" /></a>
-    <a href="/images/post-mug-illustration/Mug-ver1-2.jpg" title="Mug Illustration One"><img src="/images/post-mug-illustration/Mug-ver1-2.jpg" alt="Mug Illustration One" /></a>
-    <a href="/images/post-mug-illustration/Mug-ver1-3.jpg" title="Mug Illustration One"><img src="/images/post-mug-illustration/Mug-ver1-3.jpg" alt="Mug Illustration One" /></a>
-    <a href="/images/post-mug-illustration/Mug-ver1-4.jpg" title="Mug Illustration One"><img src="/images/post-mug-illustration/Mug-ver1-4.jpg" alt="Mug Illustration One" /></a>
+	<a href="/assets/images/post-mug-illustration/Mug-ver1-1.jpg" title="Mug Illustration One"><img src="/assets/images/post-mug-illustration/Mug-ver1-1.jpg" alt="Mug Illustration One" /></a>
+    <a href="/assets/images/post-mug-illustration/Mug-ver1-2.jpg" title="Mug Illustration One"><img src="/assets/images/post-mug-illustration/Mug-ver1-2.jpg" alt="Mug Illustration One" /></a>
+    <a href="/assets/images/post-mug-illustration/Mug-ver1-3.jpg" title="Mug Illustration One"><img src="/assets/images/post-mug-illustration/Mug-ver1-3.jpg" alt="Mug Illustration One" /></a>
+    <a href="/assets/images/post-mug-illustration/Mug-ver1-4.jpg" title="Mug Illustration One"><img src="/assets/images/post-mug-illustration/Mug-ver1-4.jpg" alt="Mug Illustration One" /></a>
 </figure>

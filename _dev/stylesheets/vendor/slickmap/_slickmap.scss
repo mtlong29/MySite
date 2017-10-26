@@ -52,14 +52,14 @@
   margin-top: 0;
   padding-bottom: 30px;
   @include breakpoint($medium) {
-    background: $lightGray url('../../images/slickmapConnectorLines/L1-left.png') center bottom no-repeat; /* bg on >= medium screens */
+    background: $lightGray url('../../assets/images/slickmapConnectorLines/L1-left.png') center bottom no-repeat; /* bg on >= medium screens */
   }
 }
 #primaryNav li {
   list-style-type: none;
   @include breakpoint($medium) {
     float: left;
-    background: url('../../images/slickmapConnectorLines/L1-center.png') center top no-repeat;
+    background: url('../../assets/images/slickmapConnectorLines/L1-center.png') center top no-repeat;
   }
   padding: 30px 0;
   margin-top: -30px;
@@ -83,7 +83,7 @@
 }
 #primaryNav li:last-child {
   @include breakpoint($medium) {
-    background: url('../../images/slickmapConnectorLines/L1-right.png') center top no-repeat; /* bg on >= medium screens */
+    background: url('../../assets/images/slickmapConnectorLines/L1-right.png') center top no-repeat; /* bg on >= medium screens */
   }
 }
 #primaryNav > li:last-child {
@@ -102,7 +102,7 @@
   margin-top: 0;
   padding: 10px 0 0 0;
   @include breakpoint($medium) {
-    background: url('../../images/slickmapConnectorLines/vertical-line.png') center bottom repeat-y; /* bg on >= medium screens */
+    background: url('../../assets/images/slickmapConnectorLines/vertical-line.png') center bottom repeat-y; /* bg on >= medium screens */
   }
 }
 #primaryNav li li a {
@@ -118,7 +118,7 @@
 }
 #primaryNav li li:last-child {
   @include breakpoint($medium) {
-    background: url('../../images/slickmapConnectorLines/vertical-line.png') center bottom repeat-y; /* bg on >= medium screens */
+    background: url('../../assets/images/slickmapConnectorLines/vertical-line.png') center bottom repeat-y; /* bg on >= medium screens */
   }
 }
 
@@ -133,12 +133,12 @@
   }
   padding: 9px 0 10px 0;
   @include breakpoint($medium) {
-    background: $lightGray url('../../images/slickmapConnectorLines/L3-ul-top.png') center top no-repeat; /* bg on >= medium screens */
+    background: $lightGray url('../../assets/images/slickmapConnectorLines/L3-ul-top.png') center top no-repeat; /* bg on >= medium screens */
   }
 }
 #primaryNav li li li {
   @include breakpoint($medium) {
-    background: url('../../images/slickmapConnectorLines/L3-center.png') left center no-repeat; /* bg on >= medium screens */
+    background: url('../../assets/images/slickmapConnectorLines/L3-center.png') left center no-repeat; /* bg on >= medium screens */
   }
   padding: 5px 0;
 }
@@ -159,13 +159,13 @@
 #primaryNav li li li:first-child {
   padding: 15px 0 5px 0;
   @include breakpoint($medium) {
-    background: url('../../images/slickmapConnectorLines/L3-li-top.png') left center no-repeat; /* bg on >= medium screens */
+    background: url('../../assets/images/slickmapConnectorLines/L3-li-top.png') left center no-repeat; /* bg on >= medium screens */
   }
 }
 #primaryNav li li li:last-child {
   @include breakpoint($medium) {
     padding-botom: 0;
-    background: url('../../images/slickmapConnectorLines/L3-bottom.png') left center no-repeat; /* bg on >= medium screens */
+    background: url('../../assets/images/slickmapConnectorLines/L3-bottom.png') left center no-repeat; /* bg on >= medium screens */
   }
 }
 
@@ -197,7 +197,7 @@
   border-radius: 5px;
 	@include boxShadow(0, 0, 5px, mix($black, $lightGray, 30%));
   @include breakpoint($medium) {
-    background: mix($white, $accentColor, 90%) url('../../images/slickmapConnectorLines/white-highlight.png') top left repeat-x; /* bg on >= medium screens */
+    background: mix($white, $accentColor, 90%) url('../../assets/images/slickmapConnectorLines/white-highlight.png') top left repeat-x; /* bg on >= medium screens */
   }
 }
 #utilityNav li a:hover {
