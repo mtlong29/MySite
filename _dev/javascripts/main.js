@@ -113,7 +113,8 @@ $(document).ready(() => {
     'Treehouse - Front End Web Development',
     'Treehouse - Beginner JavaScript',
     'Treehouse - Full Stack JavaScript',
-    'Treehouse - Learn React'
+    'Treehouse - Learn React',
+    'Treehouse - Beginner iOS Development',
   ];
   // Sort courses Array By Name
   courses.sort()
