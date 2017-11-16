@@ -667,6 +667,7 @@ struct BackgroundColorProvider {
     return colors[randomNumber]
   }  
 }
+{% endhighlight %}
 
 This changes the background color of the view every click when added to the IBAction for the `showFact()` button:
 
