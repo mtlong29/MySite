@@ -282,3 +282,594 @@ let done = BarButton.done(title: "Save")
 let button = done.button()
 {% endhighlight %}
 
+## The Absence of Data
+
+In many languages, when you encounter the absence of data, you have to deal with it by writing another pah for your code. There is no indication that the data doesn't exist so at many points in your program you have to write defensive code. This isn't the situation in Swift.
+
+An example of the absence of data is if you're building a journaling app where you write your thoughts and hit save and then a string is stored in some database. However, what if someone hits save before writing your thoughts. There is no string to store in the database. If you haven't taken this into account the database will return an error and your app will crash!
+
+Luckily, Swift has a feature for this known as optionals! Once you start working with optionals it's really hard to go back to a language that doesn't have optionals.
+
+In order to have an `optional` you use the question mark character, `?`.
+
+Consider the following example concerning a persons name:
+
+{% highlight swift linenos %}
+struct Person {
+  let firstName: String
+  let lastName: String
+}
+
+let me = Person(firstName: "Timmy", lastName: "Billy")
+{% endhighlight %}
+
+For many people this is enough, but for others the middle name is an important part of their culture. For others, they don't even have a middle name. Therefore, a middle name should be `optional`:
+
+{% highlight swift linenos %}
+struct Person {
+  let firstName: String
+  let middleName: String?
+  let lastName: String
+}
+
+let me = Person(firstName: "Timmy", middleName: nil, lastName: "Billy")
+{% endhighlight %}
+
+As you can see the value of Timmy Billy's middle name is `nil`. This means there is no value. If the `?` was removed this would be an error because `nil` is not a `String`.
+
+In other words, the following line of code `let someInt: Int?` means `someInt` might be type `Int` or it might be nothing. However, it cannot be a differnt type such as a `String`, or `Bool`.
+
+On a side note, an `optional` is modeled as an `enum`. Consider the following:
+
+{% highlight swift linenos %}
+enum Optional {
+  case some(String)
+  case none
+}
+{% endhighlight %}
+
+If some string exists then it's that string otherwise it is none.
+
+Note that any custom type that we create can also be an optional. Not just Swifts built in types can be optionals.
+
+Another example of optionals:
+
+{% highlight swift linenos %}
+var someValue: Int? = nil
+{% endhighlight%}
+
+## Working with Optional Types
+
+Many languages don't have a way to indicate that a type could be `nil` or `null` at some point. Instead, we have to remember to check in many places.
+
+In order to use the `middleName` value in string concatenation such as creating a `fullName` you must unwrap the `middleName` variable type. This is because a `String` and an `optional String` are not the same type. 
+
+There is a way to forceably unwrap using an `!` but this is VERY bad. NEVER do this.. For example, if `middleName` is `nil`, but you forget to check (such as an `if else` statement) for this and you concatenate AND unwrap then your code will crash!! DO NOT USE THE `!` TO UNWRAP!!
+
+## Optional Binding
+
+The safe way to unwrap things is using `optional binding`.
+
+Recall that dictionaries always `return` an `optional` value. This is because when we asked for a particular value using a `key`, there's a chance this `key` might not exist. And rather than crashing, we safely `return nil` using an `optional`.
+
+{% highlight swift linenos %}
+let airportCodes = [
+  "CDG": "Charles De Gaulle"
+]
+let newYorkAirport = airportCodes["JFK"]
+
+if let newYorkAirport = airportCodes["JFK"] {
+  print(newYorkAirport)
+} else {
+  print("Whoops! That key does not exist!")
+}
+// "Whoops! That key does not exist!"
+{% endhighlight %}
+
+The above is called `optional binding`. It's like saying if something exists do this else if nil do something else. This lets the compiler do the unwrapping for us instead of forcing it to unwrap.
+
+Consider another example:
+
+{% highlight swift linenos %}
+let weatherDictionary: [String: [String: String]] = [
+  "currently": ["temperature": "22.3"],
+  "daily": ["temperature": "25.1"],
+  "weekly": ["temperature": "24.8"]
+]
+
+let dailyWeather = weatherDictionary["daily"]
+{% endhighlight %}
+
+When you option click on `dailyWeather` you will see that it is type `[String: String]?`. This means we need to unrap it:
+
+{% highlight swift linenos %}
+let weatherDictionary: [String: [String: String]] = [
+  "currently": ["temperature": "22.3"],
+  "daily": ["temperature": "25.1"],
+  "weekly": ["temperature": "24.8"]
+]
+
+if let dailyWeather = weatherDictionary["daily"] {
+  
+}
+{% endhighlight %}
+
+Now when you option click `dailyWeather` you will see that it is type `[String: String]`. Which means `dailyWeather` has been unwrapped. However, when you add  the `"temperature"` key you will see that this also needs to be unwrapped:
+
+{% highlight swift linenos %}
+let weatherDictionary: [String: [String: String]] = [
+  "currently": ["temperature": "22.3"],
+  "daily": ["temperature": "25.1"],
+  "weekly": ["temperature": "24.8"]
+]
+
+if let dailyWeather = weatherDictionary["daily"] {
+  if let highTemp = dailyWeather["temperature"] {
+    print(highTemp)
+  }
+}
+{% endhighlight %}
+
+This works and prints `"25.1"`, but when you have nested `optional bindings` it can get very messy. If you have a lot of unnesting to do this can look like a pyramid if you look at it on its side. The swift community called this the Swift Pyramid of Doom... Luckily since Swift 2, and now even better in 3, we don't need the Pyramid of Doom:
+
+{% highlight swift linenos %}
+if let dailyWeather = weatherDictionary["daily"], let highTemperature = dailyWeather["temperature"] {
+  print(highTemperature)
+}
+{% endhighlight %}
+
+Now you can chain what to unwrap by separating them in one `if` using a comma instead of nested `if` statements. 
+
+Another example:
+
+{% highlight swift linenos %}
+let movieDictionary = ["Spectre": ["cast": ["Daniel Craig", "Christoph Waltz", "Léa Seydoux", "Ralph Fiennes", "Monica Bellucci", "Naomie Harris"]]]
+
+var leadActor: String = ""
+
+if let movie = movieDictionary["Spectre"], let castMembers = movie["cast"] {
+  leadActor = castMembers[0]
+}
+{% endhighlight %}
+
+There are some downsides to using `if let` to unwrap an `optional`.. If you have a `struct` with two `String` types but one optional String type. You will almost always have that pyramid type. For example, you can check for the first two but then that third will make it `nil` which means you have to check inside the first two checks resulting in a pyramid.
+
+This is where early exits come in!
+
+## Early Exits Using Guards
+
+An early exit is when we exit a function as early as possible. We can do this using the guard statement.
+
+Consider the following example:
+
+{% highlight swift linenos %}
+if let someValue = someOptionalExpression {
+  print(someValue)
+}
+{% endhighlight %}
+
+In the above a temporary constant is assigned to an expression. The expression has to be one that returns an optional value if this succeeds, inside the `if let` statement we have access to that temporary variable containing the unwrapped value.
+
+In contrast we start a `guard` statement with the `guard` keyword. Like `if let` we then create a temporary constant and assign the value. Then we provide an expression to evaluate. This expression like before must return an optional value. If the expression succeeds that is the opational contains a value and is not `nil` it is assigned to the constant. So far eveything is the same: `guard let someValue = someOptionalExpression`. However, with the `guard` statement instead of opening the brace now, we write the `else` keyword and then add the brace. In the body we write what to do if it DOES contain `nil`:
+
+{% highlight swift linenos %}
+guard let someValue = someOptionalExpression else {
+  return nil
+}
+{% endhighlight %}
+
+With `guard` the body is the failure path. We have to exit the current scope once we enter the brace. Typically, this means that we exit the function early by returning `nil`. This is why the `guard` statement s called an early exit contruct.
+
+{% highlight swift linenos %}
+struct Friend {
+  let name: String
+  let age: String
+  let address: String?
+}
+
+func newFriend(friendDictionary: [String: String]) -> Friend? {
+  guard let name = friendDictionary["name"], let age = friendDictionary["age"] else {
+    return nil
+  }
+  let address = friendDictionary["address"]
+  return Friend(name: name, age: age, address: address)
+}
+{% endhighlight %}
+
+In the above example you check for `name` and `age`. For this, those are required to have a `Friend`. So if either of these don't exist we immediately exit the function with `nil`. If they do exist then we can return an instance of `Friend` with an optional `address`. You don't have to know the `address` to be your friend.
+
+Note that there is a feature known as a failure initializer that can be used to initialize something that may not give a value this can look like `init?`.
+
+Example:
+
+{% highlight swift linenos %}
+struct Book {
+  let title: String
+  let author: String
+  let price: String?
+  let pubDate: String?
+  init?(dict: [String: String]) {
+    guard let title = dict["title"], let author = dict["author"] else {
+      return nil
+    }
+    self.title = title
+    self.author = author
+    self.price = dict["price"]
+    self.pubDate = dict["pubDate"]
+  }
+}
+{% endhighlight %}
+
+## Enumerations With Raw Values
+
+`enum` values can come populated with default values. These values can be different for each instance, and we can use these values to do some work.
+
+For example, let's say we're modeling a cash register where we might want to denote the different types of coins we can accept. Then a function that will sum the coins:
+
+{% highlight swift linenos %}
+enum Coin {
+  case penny
+  case nickel
+  case dime
+  case quarter
+}
+
+let coins: [Coin] = [.penny, .nickel, .dime, .dime, .quarter, .quarter, .quarter]
+
+func sum(having coins: [Coin]) -> Double {
+  var total: Double = 0
+  for coin in coins {
+    switch coin {
+    case .penny: total += 0.01
+    case .nickel: total += 0.05
+    case .dime: total += 0.1
+    case .quarter: total += 0.25
+    }
+  }
+  return total
+}
+
+sum(having: coins) // 1.01
+{% endhighlight %}
+
+Now the above works, but it's not the best way to do things. The coins always have the same value. In situations like this, where we want our `enum` members to always have a default value, we can give them `raw values`.
+
+These `raw values` all have to be the same type and we specify the type in the `enum` declaration.
+
+{% highlight swift linenos %}
+enum Coin: Double {
+  case penny = 0.01
+  case nickel = 0.05
+  case dime = 0.1
+  case quarter = 0.25
+}
+{% endhighlight %}
+
+You will see that the code still works. However, now the `switch` statement is not needed. We can take advantage of the `rawValue` property:
+
+{% highlight swift linenos %}
+enum Coin: Double {
+  case penny = 0.01
+  case nickel = 0.05
+  case dime = 0.1
+  case quarter = 0.25
+}
+
+let coins: [Coin] = [.penny, .penny, .penny, .nickel, .nickel, .dime, .dime, .quarter, .quarter, .quarter]
+
+func sum(having coins: [Coin]) -> Double {
+  var total: Double = 0
+  for coin in coins {
+    total += coin.rawValue
+  }
+  return total
+}
+
+sum(having: coins) // 1.08
+{% endhighlight %}
+
+It's important to note that raw values are not associated values. And it's important to distinguish between the two. You use raw values when you always wnat an `enum` member to have a dafault value. Associated values on the other hand are set when you create the `enum` and can be different values for every instance.
+
+The important thing to note is that `rawValues` can only be Strings, characters, integers, or floating-point number types. This means custom types do not work, just the primitive swift types. Custom types do work with associated values though.
+
+Note that `enums` with integer `rawValues` get some special behavior.
+
+{% highlight swift linenos %}
+enum Day: Int {
+  case sunday = 1, monday = 2, tuesday = 3, wednesday = 4, thursday = 5, friday = 6, saturday = 7
+}
+
+Day.friday.rawValue // 6
+{% endhighlight %}
+
+Is equal to:
+
+{% highlight swift linenos %}
+enum Day: Int {
+  case sunday = 1, monday, tuesday, wednesday, thursday, friday, saturday
+}
+
+Day.friday.rawValue // 6
+{% endhighlight %}
+
+This is because integer `rawValues` are automatically incrementing. If you specify the first value, Swift increments and assigns this value to each successive case. This just makes it easier to declare.
+
+Note that you also get some special behavior with strings. With strings, if you specify a string as a raw value and then don't provide a value, you get the name of the `enum` member as a string by default.
+
+{% highlight swift linenos %}
+enum HTTP: String {
+  case post
+  case get
+  case put
+  case delete
+}
+
+HTTP.get.rawValue // get
+{% endhighlight %}
+
+## Initializing With Raw Values
+
+Like a `struct` and a `class` we can initialize a `enum`, but only if it has `rawValues`. 
+
+HTTP Status Codes make for a great example of `rawValues` and `enum` initialization. 
+
+{% highlight swift linenos %}
+enum HTTPStatusCodes: Int {
+  case success = 200
+  case forbidden = 403
+  case unauthorized = 401
+  case notFound = 404
+}
+{% endhighlight %}
+
+Obviously, there are many more HTTP Status Codes than those, but this is sufficient for the example.
+
+Note that `enums` raw values have an initializer method and we can use this to produuce the right `enum` member instance. When you type `let HTTPStatusCodes =` and then open the parentheses, Xcode show that it has an initializer. 
+
+{% highlight swift linenos %}
+let statusCode = 200
+let httpStatusCode = HTTPStatusCodes(rawValue: statusCode) // success
+{% endhighlight %}
+
+When you option click on `httpStatusCode` you will see that it is an optional type. What we're doing here is providing the `rawValue` which has to match the type of raw value specified in these `enum` cases. If the argument does match the raw value of one of these cases, we get that `enum` case back. 
+
+The initializer for `enum`s with `rawValues` is that failible initializer. It's an initializer that always retuns an optional value of the type. If you think about it for a second, this makes sense. The only restriction of `rawValue` parameter is the type that we specify here. So, in this case, if I were to do `HTTPStatusCode` and use that initializer, you'll see that it can accept any integer value. And, obviously, that is quite a large range. If the integer value doesn't match any of our cases here, then there is a very high chance of failure. In that case, we've no choice but to `return nil`.
+
+We need to use either `if let` or `guard` statements. This means we can do `if let httpStatusCode` and then inside there we can print the status code:
+
+{% highlight swift linenos %}
+let statusCode = 200
+if let httpStatusCode = HTTPStatusCodes(rawValue: statusCode) {
+  print(httpStatusCode) // success
+}
+{% endhighlight %}
+
+Another example:
+
+{% highlight swift linenos %}
+enum Compass: Int {
+  case north = 0
+  case south = 180
+  case east = 90
+  case west = 270
+}
+
+let direction = Compass(rawValue: 180)
+{% endhighlight %}
+
+## Optional Chaining
+
+Consider the following three classes:
+
+{% highlight swift linenos %}
+class Address {
+  var buildingName: String?
+  var buildingNumber: String?
+  var street: String?
+}
+
+class Residence {
+  var numberOfRooms = 1
+  var address: Address?
+}
+
+class Person {
+  var residence: Residence?
+}
+{% endhighlight %}
+
+Note that these classes do not have `init` methods that are required. This is because they are all optionals, which are assigned the value of `nil`, and the `numberOfRooms` variable is set to an arbitrary value of `1`. Therefore, the `init` method is not required because everything already has a value.
+
+We can create some data:
+
+{% highlight swift linenos %}
+let susan = Person()
+
+let address = Address()
+address.street = "1234 Something Drive"
+address.buildingName = "Building"
+address.buildingNumber = "10"
+
+let residence = Residence()
+residence.address = address
+
+susan.residence = residence
+{% endhighlight %}
+
+Now in order to print the `buildingNumber` we need to test that other values are not `nil`:
+
+{% highlight swift linenos %}
+if let home = susan.residence, let postalAddress = home.address, let buildNumber = postalAddress.buildingNumber, let convertedNumber = Int(buildNumber) {
+  print(convertedNumber)
+}
+{% endhighlight %}
+
+This can be done with optional chaining:
+
+{% highlight swift linenos %}
+if let buildingNumber = susan.residence?.address?.buildingNumber {
+  print(buildingNumber)
+}
+{% endhighlight %}
+
+## Pattern Matching With Enums
+
+Pattern matching in Swift lets you compare different values to execute code based on certain conditions.
+
+Pattern matching is also done with `switch` statements. You try matching something with a case. Enums allow us to take this to a whole new level.
+
+Consider the following example. This example has a wallet with coins in it. If you wanted to count the number of quarters then you can write a `for` loop with a switch statement that checks for `Coin.quarter` and increments the count by 1.
+
+{% highlight swift linenos %}
+enum Coin: Double {
+  case penny = 0.01
+  case nickel = 0.05
+  case dime = 0.1
+  case quarter = 0.25
+}
+
+let wallet: [Coin] = [.penny, .nickel, .dime, .dime, .quarter, .quarter, .quarter, .dime, .nickel, .penny, .penny, .quarter, .dime]
+
+var count = 0
+
+for coin in wallet {
+  switch coin {
+  case .quarter: count += 1
+  default: continue
+  }
+}
+{% endhighlight %}
+
+The `continue` keyword, like `return` is a control transfer statement. The `continue` statement tells a loop to stop what it's doing, and start at the beginning of the next iteration through the loop. SO all we're doing is jumping to the next value in the loop.
+
+This kind of code is done often. Which means Swift has some flavor for this:
+
+{% highlight swift linenos %}
+for case .quarter in wallet {
+  count += 1
+}
+{% endhighlight %}
+
+The power of cases have been extended to `if` statements as well:
+
+{% highlight swift linenos %}
+for coin in wallet {
+  if case .nickel = coin {
+    print("Not so much money")
+  } else if case .dime = coin {
+    print("Better than nothing")
+  }
+}
+{% endhighlight %}
+
+Most of this is just syntaxical sugar, because you can do most of it with a comparrison operator and other basic syntax.
+
+The interesting thing here is, remember that an `optional` is just an `enum` under the hood with a none and a some case? Now because they're just enumerations, we can use this same type of syntax, `if case` and `for case`, with an `optional` to even unwrap the value.
+
+For example:
+
+{% highlight swift linenos %}
+let someOptional: Int? = 42
+
+if case .some(let x) = someOptional {
+  print(x)
+}
+{% endhighlight %}
+
+Note that `if let` is a lot easier to read so it is used instead.
+
+## Nil Coalescing Operator
+
+In most cases, custom operators just add to the syntax overhead of the language but a useful one in Swift is the `nil` coalescing operator, `??`. This operator makes it much easier to provide values in case an optional value is `nil`.
+
+{% highlight swift linenos %}
+a ?? b
+{% endhighlight %}
+
+Given an optional value `a`, if `a` contains a value, then we unwrap and use it. Otherwise we use `b`. Now, in this case when using this kind of operator, the expression `a` must always be an optional. And the type should always match the type of the unwrapped `a`, so the type of `b` should always match the type of the unwrapped `a`.
+
+Consider the following logic:
+
+{% highlight swift linenos %}
+let firstName: String? = "Matthew"
+let username = "Actionhero29"
+
+var displayName: String
+
+if let name = firstName {
+  displayName = name
+} else {
+  displayName = username
+}
+{% endhighlight %}
+
+This type of logic is very common. There is a dedicated operator for it known as the ternary conditional operator: `question ? answer1 : answer2`. This essentially is a shortcut for evaluating a `true` or `false` question. If `true` `question` is evaluated to `answer1` else, if `false` `question` is evaluated to `answer2`.
+
+{% highlight swift linenos %}
+let displayName = firstName != nil ? firstName! : username
+{% endhighlight %}
+
+Note that you have to use the bang operator, `!`. This is VERY bad. Thankfully we can use the coalescing operator, `??`.
+
+{% highlight swift linenos %}
+let displayName = firstName ?? username
+{% endhighlight %}
+
+When you are going to use any of these always start with an `if` statement and then you can refactor to this later if you want.
+
+#### Quiz
+
+Question: Enums can do everything structs and classes can do including contain stored properties
+
+Answer: False
+
+Question: When an enum member has an associated value, how do you access it?
+
+Answer: By binding it to a local constant
+
+Question: Given the following: `fun someFunction() -> SomeEnum {}` Where `SomeEnum` is an `enum` with a single member value. Why does `return .value` compile?
+
+Answer: Because the return type is specified, the compiler can infer `.value` really means `SomeEnum.value`
+
+Question: You cannot include a control transfer statement in the `else` clause `guard` statement.
+
+Answer: False
+
+Question: What is the value of `c` given the code below?
+
+{% highlight swift linenos %}
+var a: Int? = nil
+let b = 2
+let c = a ?? b
+{% endhighlight %}
+
+Answer: `2`
+
+Question: Enums are well suited for use with `switch` statements because the compiler can deduce exhaustiveness.
+
+Answer: True
+
+Question: Which of the following is valud syntax for creating an `enum` with integer raw values?
+
+Answer: `enum SomeEnum: Int {}`
+
+Question: Which of the following sets of data would not be well suited modeled as an enumeration?
+
+Answer: Types of ice cream flavors. There are an infinite amount of ice cream flavors so an `enum` wouldn't be well suited for this type of data.
+
+Question: Associated values allow us to provide default values to our enumeration members.
+
+Answer: False
+
+Question: In Swift, only an optional type can be set to `nil`.
+
+Answer: True
+
+Question: Raw value initializers accept any value that conforms to the type requirements. An optional value allow the intializer to return `nil` in case there is no match.
+
+Answer: True
+
+Question: In an optional chaining expression, if one part of the expression fails, an error is raised
+
+Answer: False
+
