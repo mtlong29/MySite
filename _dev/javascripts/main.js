@@ -110,6 +110,7 @@ $(document).ready(() => {
   // Button Sorting For Courses On Notes Page
   // Array of All Courses
   const courses = [
+    'Basic Syntax',
     'Treehouse - Front End Web Development',
     'Treehouse - Beginner JavaScript',
     'Treehouse - Full Stack JavaScript',
