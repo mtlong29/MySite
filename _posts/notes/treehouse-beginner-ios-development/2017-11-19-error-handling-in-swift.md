@@ -96,7 +96,7 @@ struct Friend {
   let address: String?
 }
 
-func friend(from dict: [String: String]) -> Friend? {
+func friend(from dict: [String: String]) -> Friend {
   guard let name = dict["name"], let age = dict["age"] else { return nil }
   
   let address = dict["address"]
@@ -119,7 +119,7 @@ enum FriendError: Error {
   case invalidData
 }
 
-func friend(from dict: [String: String]) -> Friend? {
+func friend(from dict: [String: String]) -> Friend {
   guard let name = dict["name"], let age = dict["age"] else { return nil }
   
   let address = dict["address"]
@@ -145,7 +145,7 @@ When we specifically want to indicate that our function contains code that can r
 `throws` is always added to a function after the parameter list and before the return type:
 
 {% highlight swift linenos %}
-func friend(from dict: [String: String]) throws -> Friend? {
+func friend(from dict: [String: String]) throws -> Friend {
   guard let name = dict["name"], let age = dict["age"] else { return nil }
   
   let address = dict["address"]
@@ -161,7 +161,7 @@ At any point inside the body of a throwing function, you can return an error by 
 Inside the `else` clause, we want to `throw` an error and we're going to throw `FriendError.invalidData`:
 
 {% highlight swift linenos %}
-func friend(from dict: [String: String]) throws -> Friend? {
+func friend(from dict: [String: String]) throws -> Friend {
   guard let name = dict["name"], let age = dict["age"] else {
     throw FriendError.invalidData
   }
@@ -186,7 +186,7 @@ print(someFriend)
 If you mess up the response `dictionary` you will somewhat get an error. We can make this better with a description:
 
 {% highlight swift linenos %}
-func friend(from dict: [String: String]) throws -> Friend? {
+func friend(from dict: [String: String]) throws -> Friend {
   guard let name = dict["name"] else {
     throw FriendError.invalidData(description: "Invalid name value.")
   }
@@ -253,3 +253,204 @@ Question: The `throw` keyword is a control transfer statement and exists the cur
 
 Answer: True
 
+## Handling Errors
+
+Now that we've thrown an error we need to be able to handle it gracefully so that our program execution does not halt.
+
+In Swift the <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html">error handling</a> process involves first catching the error and then handling it. This is done with a `do catch` statement.
+
+To use a `do catch` statement you start with the `do` and then open a pair of curley braces. Everything that goes inside this pair of curley braces is what happens if there are no errors to catch and everything works perfectly. 
+
+To `catch` an error you use the keyword `catch` directly after the `do` closing curley brace. You can then assign the error to a local constant with `let error`. This looks like `catch let error {}`. Note that `let error` is default so technically you can simply write `catch {}`. However, this isn't extremely readable for someone trying to understand what you are trying to catch so always use `let error`. 
+
+It is not great to simply catch every error either. This is when you would add the error `enum` you've created. In this example it was called `FriendError`. The `FriendError` tested for invalid data which had a description of type `String` so `catch FriendError.invalidData(let description)`. Next, open a pair of curley braces and do what you want when this error occurs such as printing something (for the developers benefit) or sending an alert to the screen (for the users benefit). All together this looks like the following:
+
+{% highlight swift linenos %}
+struct Friend {
+  let name: String
+  let age: String
+  let address: String?
+}
+
+enum FriendError: Error {
+  case invalidData(description: String)
+}
+
+func friend(from dict: [String: String]) throws -> Friend {
+  guard let name = dict["name"] else {
+    throw FriendError.invalidData(description: "Invalid name value.")
+  }
+  
+  guard let age = dict["age"] else {
+    throw FriendError.invalidData(description: "Invalid age value.")
+  }
+  
+  let address = dict["address"]
+  
+  return Friend(name: name, age: age, address: address)
+}
+
+func send(message: String, to friend: Friend) {}
+
+let response = [
+  "name": "Billy",
+  "ag": "26",
+  "address": "somewhere"
+]
+
+do {
+  let myFriend = try friend(from: response)
+  send(message: "Test", to: myFriend)
+} catch FriendError.invalidData(let description) {
+  // Inform the user that they passed in invalidData
+  print(description)
+}
+
+// Invalid age value
+{% endhighlight %}
+
+You can catch multiple errors as well. This is done by adding subsequent `catch` clauses. This is necessary because unlike other languages Swift's error handling mechanism doesn't preserve the type or error thrown.
+
+{% highlight swift linenos %}
+enum FriendError: Error {
+  case invalidData(description: String)
+  case someError
+}
+
+do {
+  let myFriend = try friend(from: response)
+  send(message: "Test", to: myFriend)
+} catch FriendError.invalidData(let description) {
+  // Inform the user that they passed in invalidData
+  print(description)
+} catch FriendError.someError {
+  // Inform user of this error
+}
+{% endhighlight %}
+
+Therefore, it is important for Swift developers to determine the types of errors that can occur because it is not "done for us".
+
+#### Another Example
+
+{% highlight swift linenos %}
+enum ParserError: Error {
+  case emptyDictionary
+  case invalidKey
+}
+
+struct Parser {
+  var data: [String : String?]?
+  
+  func parse() throws {
+    if (data == nil) {
+      throw ParserError.emptyDictionary
+    } else if (data?.keys.contains("someKey") == false) {
+      throw ParserError.invalidKey
+    }
+  }
+}
+
+let data: [String : String?]? = ["someKey": nil]
+let parser = Parser(data: data)
+
+do {
+  let parsedData = try Parser.parse(parser)
+} catch ParserError.emptyDictionary {
+  print("The dictionary is empty.")
+} catch ParserError.invalidKey {
+  print("The key is invalid.")
+}
+{% endhighlight %}
+
+## Cleaning Up With Defer
+
+As we exit the current scope, we may want to execute some code that "cleans up" behind us. Swift has a handy construct for this called the `defer` statement.
+
+In other words regardless of the error that is raised we may still need to execute some code.
+
+A great example of this, is if we were working with some files on disk, that is a file in local storage. Here we have a function that takes a path to a file name, checks if the file exists, opens it, and does some work with it.
+
+The implementation details of the function aren't really important. What is important is that regardless of what happens, whether we successfully execute our code, we need to close the file that we opened.
+
+The best time to close this file, is when we leave the scope of this function since that indicates that we've either successfully completed work. Or an error has been thrown. But there are several points where we transfer control and exit our current scope in this function. So in this contrived example, there are three points of exit. We have two throwing statements. One of which doesn't matter because we haven't opened the file just yet. And one where we have opened the file and we may throw in there. 
+
+And when we're done with the body of the function. We've successfully completed our work and now we need to close this file. To make sure that regardless of the path we take to exit the current scope, we always close the file. We can use a `defer` statement.
+
+A `defer` statement executes code within the statement when the program execution leave the current scope. 
+
+The above example in code:
+
+{% highlight swift linenos %}
+func process(file name: String) throws {
+  guard isValidFile(withName: name) else {
+    throw ReadError.invalidFile
+  }
+  
+  let file = open(fileName: name)
+  
+  guard let line = try file.readLine() else {
+    ReadError.unableToReadLine
+  }
+}
+{% endhighlight %}
+
+Note that the above code is theoretical.
+
+Adding the `defer` statement:
+
+{% highlight swift linenos %}
+func process(file name: String) throws {
+  guard isValidFile(withName: name) else {
+    throw ReadError.invalidFile
+  }
+  
+  let file = open(fileName: name)
+  defer {
+    close(fileName: name)
+  }
+  
+  guard let line = try file.readLine() else {
+    ReadError.unableToReadLine
+  }
+  
+  // close (fuleName: name) is called here, at the end of scope
+}
+{% endhighlight %}
+
+The above gurantees that the file will be closed. Note that the close file is actually called at the bottom of the function. This is because we want it to be at the end of the current scope.
+
+Also important to know that the `defer` statement is not tied to error handling. You can use the `defer` statement at any point you want to defer execution. But in most cases, you will be using it along with your error handling statements.
+
+You can also add multiple `defer` statments in a single function and they're executed in reverse order.
+
+For example, let's say we added a `defer` statement at the bottom to close off a second hypothetical file that we've opened. So the second file here is closed before the first file, because `defer` statements are executed bottom to top of the current scope.
+
+#### Quiz
+
+Question: In Swift, you can indicate what kind of error is being thrown from a function, i.e., the function preserves type information of thrown errors.
+
+Answer: False
+
+Question: How are `defer` statements executed?
+
+Answer: In reverse order of which they are written
+
+Question: `catch` clauses cannot pattern match on different error cases like a `switch` statement.
+
+Answer: False
+
+Question: When an error is thrown from inside a `do` clause, what happens?
+
+Answer: The error is propagated to its outer scope and handled by a `catch` clause.
+
+Question: Where are errors thrown from a function handled?
+
+Answer: `catch` clause
+
+Question: To execute statements as we leave the current scope we use a ____ statement.
+
+Answer: `defer`
+
+Question: The call to a throwing function along with the happy path of code is encapsulated in a `do` clause.
+
+Answer: `do`
