@@ -4,6 +4,9 @@ _site
 
 node_modules
 
+assets/servedCSS
+assets/servedJS
+
 # Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
