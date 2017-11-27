@@ -1,46 +1,73 @@
 /****************************************************
-javascript for altering the notes page
+altering the notes page.. sorting
 ****************************************************/
 
 $(document).ready(() => {
-// button sorting for courses on notes page
-  // array of all courses
-  const courses = [
-    'Basic Syntax',
-    'Treehouse - Front End Web Development',
-    'Treehouse - Beginner JavaScript',
-    'Treehouse - Full Stack JavaScript',
-    'Treehouse - Learn React',
-    'Treehouse - Beginner iOS Development',
-  ];
-  // sort courses array by name
-  courses.sort()
-  // select courseTags id
-  const $courseTags = $('#courseTags');
-  // get the number of courses
-  const numberOfCourses = courses.length;
-  // initialize HTML button string including the All button
-  let html = '<button>All</button>';
-  // iterate over courses
-  for (let i = 0; i < numberOfCourses; i++) {
-    // generate course tag buttons
-    html += '<button>' + courses[i] + '</button>';
+
+  // object of all courses
+  const courses = {
+    basicSyntax: {
+      name: 'Basic Syntax',
+      color: '#000',
+    },
+    frontEndDev: {
+      name: 'Treehouse - Front End Web Development',
+      color: '#3079AB',
+    },
+    beginJS: {
+      name: 'Treehouse - Beginner JavaScript',
+      color:'#C25975',
+    },
+    intermJS: {
+      name: 'Treehouse - Full Stack JavaScript',
+      color: '#C25975',
+    },
+    react: {
+      name: 'Treehouse - Learn React',
+      color: '#C25975',
+    },
+    beginSwift: {
+      name: 'Treehouse - Beginner iOS Development',
+      color:'#53BBB4',
+    },
   }
-  // append course tag buttons to dom
-  $courseTags.append(html);
-  // select now generated course tag buttons
-  const $courseTagButton = $('#courseTags button');
-  // iterate over courses
-  for (let i = 0; i < numberOfCourses; i++) {
-    // add click event for buttons
-    $courseTagButton.on('click', (e) => {
+
+  // initialize courseButtons string
+  let courseButtons = "";
+
+  // iterate over courses object and generate buttons
+  $.each(courses, (key, value) => {
+    courseButtons += `<button class="${key}">${value.name}</button>`;
+  });
+
+  // add course buttons to the dom
+  $('#courseTags').append(`<button>All</button>${courseButtons}`);
+
+  // iterate over courses now that buttons are part of the dom
+  $.each(courses, (key, value) => {
+
+    // change CSS for course buttons
+    $(`.${key}`).css({
+      'border-color': `${value.color}`,
+    });
+
+    // change notes border color based on colors defined in object
+    $(`.course h3:contains(${value.name})`).css({
+      'border-color': `${value.color}`,
+      'color': `${value.color}`,
+    });
+
+    // add click event for buttons -- sort through notes based on button clicked
+    $('#courseTags button').on('click', (e) => {
       if (e.target.innerHTML === 'All') {
         $('.course h3').parentsUntil('.individualTile').show();
-      } else if (e.target.innerHTML === courses[i]) {
-        $('.course h3:contains(' + e.target.innerHTML + ')').parentsUntil('.individualTile').show();
+      } else if (e.target.innerHTML === value.name) {
+        $(`.course h3:contains(${e.target.innerHTML})`).parentsUntil('.individualTile').show();
       } else {
-        $('.course h3:not(:contains(' + e.target.innerHTML + '))').parentsUntil('.individualTile').hide();
+        $(`.course h3:not(:contains(${e.target.innerHTML}))`).parentsUntil('.individualTile').hide();
       }
     });
-  }
+
+  });
+
 });
