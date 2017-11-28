@@ -17,92 +17,51 @@ image:
 
 {% include /globalSections/toc.html %}
 
-Hello, my name is Matthew Long, and I don't update this page near as often as I would like. I graduated from the University of Kentucky with an engineering degree and now work as a web developer.
-
-## Contact
-
-You can contact me in a number of ways. The easiest is by email at <a href="mailto:long.matthew29@gmail.com">long.matthew29@gmail.com</a>. You can find me on twitter at <a href="https://www.twitter.com/MaLong29">@MaLong29</a> and LinkedIn at <a href="https://www.linkedin.com/in/mtlong29">mtlong29</a>.
-
-## About the Site
-
-This site began as a little project of mine of which was originally going to take minimal time. However, it quickly became an addiction, and for a while a huge time sink, when I decided to make it a portfolio and/or blog.
-
-### Content
-
-The content on this site is all my own, unless otherwise stated. It can somewhat be broken down into two categories. One focuses on my career and accomplishments (<a href="/portfolio/">portfolio</a> and <a href="/resume/">resume</a>) while the other focuses on blog posts ranging from web development to programming and sometimes (actually.. very rarely) random relevant thoughts (<a href="/blog/">blog</a>). The blog section of this site has remained barren for some time now. It's quite a sad blog, really.
-
-### Jekyll
-
-The first version of this site was created using a WordPress theme. I never feel like I have enough control over a site when using WordPress. So why would I use that for my own site? I then decided to play with the new trend known as <a href="http://jekyllrb.com/">Jekyll</a>. Jekyll is a static site generator. Basically, it takes your dynamic content and compiles it into a static site ready to be uploaded.
-
-Jekyll has become incredibly popular for many reasons. One thing I love about jekyll is its built-in development server that allows you to preview the site on a browser locally. This eliminates the need for MAMP or whatever localhost server environment you use. This is done by typing the following command:
-
-{% highlight bash %}
-jekyll serve
-=> A development server will run at http://localhost:4000/
-{% endhighlight %}
-
-If you use the same Jekyll build on different systems, or it's the first time you're using it; you may need to "reinstall" your gems which can be done in one command:
-
-{% highlight bash %}
-bundle exec jekyll serve
-=> A development server will run at http://localhost:4000/
-{% endhighlight %}
-
-In order to build the site so that it's ready to go live (likely by FTP or <a href="https://jekyllrb.com/docs/github-pages/">GitHub pages</a>) instead of "building" a server using `serve` (or `s`) you would use `build` (or `b`). This (both do) generates a `_site` folder found inside your Jekyll directory that you would then place in the appropriate web root directory for your web server. The only real difference between `build` and `serve` is that everywhere you have linked to pages within your site using <a href="https://shopify.github.io/liquid/">Liquid</a> syntax for `site.url` for example, will go to localhost instead of your live site url creating many broken links. Broken links to stylesheets and scripts will without a doubt break your site or at least make it so that it's pure HTML. I also have a tendency of deleting the `_site` folder before executing `jekyll build`.
-
-Jekyll is highly customizable. Additional information can be found at <a href="/blog/using-jekyll/">Building and Maintaining a Jekyll Site.
-
-### Sass
-
-<a href="http://sass-lang.com/">Sass</a>, or Synthetically Awesome StyleSheets (usually SCSS is my preference), wasn't part of this site in its early days; especially back when this was a WordPress site. However, with more and more CSS piling on itself it was time to get organized. I was experienced and familiar with <a href="/tag/scss/">SCSS</a> before using it for this site, but I am VERY comfortable using it at this point. 
+Hello, my name is Matthew Long. I don't update this page near as often as I would like. I have a Bachelors in Civil Engineering. However, I don't currently practice civil engineering. My passion lies with computer science. In fact, I spend most of my time in front of a computer screen with a text editor, or IDE depending on the current project.
 
 ## Hobbies
 
-I have many hobbies ranging from video games to fishing. 
+I have many hobbies such as coding anything and everything, video games, fishing, sports, graphic design, obsessing over a latest tv show or movie, and relaxing. Yes relaxing is a hobby... Who doesn't like to relax?? "They" say to find a hobby that will help you relax. So why can't relaxing, laying down doing next to nothing, be that hobby?? It is. Get over it. While that's rare all my other hobbies help me to relax as well.
 
-### Video Games
+#### Coding
 
-I'm what you would call an avid gamer. Yes, I am very nerdy. I stick to PC gaming for the most part, but I play Playstation too. 
+My go to hobby is coding, and it's not even close. I love coding, and it's become my passion. At the time of writing this I code most often in <a href="/tag/javascript/">JavaScript</a> and Swift. I also use <a href="/tag/html/">HTML</a>, <a href="/tag/scss/">SCSS</a>, <a href="/tag/jekyll/">Jekyll</a>, and more. See my <a href="/portfolio/">portfolio</a> for more!
 
-Most games I play are on steam; sometimes I play blizzard games too. My steam account is <a href="http://steamcommunity.com/id/Actionhero29/">Actionhero29</a> and my battle.net account is <a href="http://us.battle.net/en/">Actionhero#1100</a>. Also, yes. I am aware the name "Actionhero" is pretty lame. It's one of those things where the middle school version of yourself thinks it's so cool. The mid 20's version of you does not, but that mid 20's guy is also somewhat attached to it. 
+#### Video Games
 
-<figure class="half">
-	<a href="/assets/images/page-about/game1.jpg" title="Steam"><img src="/assets/images/page-about/game1.jpg" alt="steam" /></a>
-	<a href="/assets/images/page-about/game2.jpg" title="The Witcher 3"><img src="/assets/images/page-about/game2.jpg" alt=""/></a>
-</figure>
+I'm what you would call an avid gamer. I stick to PC gaming for the most part, but I play Playstation too from time to time. PC MASTER RACE! 
 
-Some of my favorite games I currently play are <a href="http://store.steampowered.com/app/292030/">The Witcher 3: Wild Hunt</a>, <a href="http://store.steampowered.com/app/374320/">DARK SOULS III</a>, and <a href="http://store.steampowered.com/app/730/">Counter-Strike: Global Offensive</a>. I also love playing indie  games like <a href="http://store.steampowered.com/app/105600/">Terraria</a> and <a href="http://store.steampowered.com/app/283640/">Salt and Sanctuary</a>.
+Most games I play are on steam; sometimes I play blizzard games too. Some of my all time favorites are <a href="http://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/">The Witcher Franchise</a>, <a href="http://store.steampowered.com/app/374320/DARK_SOULS_III/">DARK SOULS Franchise</a>, <a href="http://store.steampowered.com/app/238960/Path_of_Exile/">Path of Exile</a>, and <a href="http://store.steampowered.com/app/730/CounterStrike_Global_Offensive/">Counter-Strike: Global Offensive</a>. I also love playing indie games like <a href="http://store.steampowered.com/app/105600/Terraria/">Terraria</a> and <a href="http://store.steampowered.com/app/283640/Salt_and_Sanctuary/">Salt and Sanctuary</a>.
 
-<figure class="full">
-	<a href="/assets/images/page-about/game3.jpg" title="World of Warcraft"><img src="/assets/images/page-about/game3.jpg" alt="World of Warcraft"/></a>
-</figure>
+During high school I played <a href="http://us.battle.net/wow/en/">World of Warcraft</a>. No.. that's not right.. What I mean is when I played World of Warcraft I had to go to high school some too.. I was among the top on my server. I multiclassed as hunter, mage, warlock, druid, and at one point a priest. However, my main was a hunter. Just writing this has made me nostalgic for World of Warcraft. The game simply hasn't been the same since Cataclysm was launched.
 
-During highschool I played <a href="http://us.battle.net/wow/en/">World of Warcraft</a> what some would call a crap ton. I was among the top on my server. I multiclassed as hunter, mage, warlock, druid, and at one point a priest. However, my main was a hunter. Just writing this made me nostalgic for the "glory days" of world of warcraft. Simply hasn't been the same since cataclysm was launched.
+Today I don't play games near as often as I did before. Instead, I watch Twitch. Twitch allows me to enjoy gaming while doing other things that may be a little more productive.
 
-### Sports
+#### Sports
 
-I'm not the most active person around. In fact I spend a lot of my time in my computer chair. However, I do love watching sports. Mainly the NFL and college basketball.
+I'm not the most active person around. As you could probably assume, my "sport" during high school was World of Warcraft. However, just because I didn't play anything doesn't mean I don't love watching sports. My teams are the University of Kentucky Wildcats, Washington Wizards, and the Dallas Cowboys. Go CATS!
 
-<figure class="half">
-	<a href="/assets/images/page-about/sports1.jpg" title="University of Kentucky Basketball"><img src="/assets/images/page-about/sports1.jpg" alt="University of Kentucky Basketball" /></a>
-    <a href="/assets/images/page-about/sports2.jpg" title="Dallas Cowboys"><img src="/assets/images/page-about/sports2.jpg" alt="Dallas Cowboys" /></a>
-</figure>
+#### Photoshop
 
-My favorite NFL team is the cowboys (unfortunately) and my favorite college basketball team is obviously the University of Kentucky Wildcats. Go CATS!
+Ever heard of a photoshop battle? Photoshop battling is when someone posts a picture somewhere, and other people take that picture and try creating the best edited photo. These edited photos can be literally anything and are often very bizarre. This is typically done on the <a href="https://www.reddit.com/r/photoshopbattles/">Photoshop Battles Subreddit</a>. In fact, it's the only place I've done it at. Either way it's a blast! There's an art to it! Yes, obviously.. But there's more to it than just making the best edited photo; you also have to time it perfectly on when to post and what to say with the post. I can get competitive sometimes.
 
-### Drawing
+I also sometimes like creating collages in photoshop. Some of my graphics can be seen on my portfolio.
 
-By drawing I am referring to Photoshop or AutoCAD not pencil and paper. You can see some of the things I have drawn over at my <a href="/portfolio/">portfolio</a> section. These days a lot of what I "draw" becomes a graphic for a website.
+#### Doggy Named Harley
 
-## Doggy Named Harley
-
-In early 2016 I adopted a puppy! His name is Harley, but I call him Harlers most of the time. He is a Schnauzer and Lab mix. 
+In early 2016 I adopted a puppy! His name is Harley, but I call him Harlers most of the time. He is a Schnauzer and Lab mix apparently.
 
 <figure class="half">
 	<a href="/assets/images/page-about/harley1.jpg" title="Harlers"><img src="/assets/images/page-about/harley1.jpg" alt="Harlers" /></a>
     <a href="/assets/images/page-about/harley2.jpg" title="Me and Harlers"><img src="/assets/images/page-about/harley2.jpg" alt="Me and Harlers" /></a>
 </figure>
 
-He's pretty much the best ever.
+He's pretty much the best ever!
 
+## About This Site
+
+This site is primarily used to display my <a href="/portfolio/">portfolio</a> and extended <a href="/resume/">resume</a>. However, I <a href="/blog/">blog</a> from time to time as well. I typically blog about coding, and most often a recent project. I'm not against blogging about something random such as movies or even random thoughts.. who knows. I'm the writer and I don't. Your guess as to what I may blog about is as good as mine.
+
+## Contact
+
+You can contact me in a number of ways. The easiest is by email at <a href="mailto:long.matthew29@gmail.com">long.matthew29@gmail.com</a>. You can find me on twitter at <a href="https://www.twitter.com/MaLong29">@MaLong29</a> and LinkedIn at <a href="https://www.linkedin.com/in/mtlong29">mtlong29</a>.
