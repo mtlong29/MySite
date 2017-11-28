@@ -602,4 +602,244 @@ Question: How does the `NSDictionary` class handle the fact that when initializi
 
 Answer: By using a failable initializer and returning `nil`.
 
-## 
+## Displaying Icons with UIImage
+
+The interface to our model is somewhat complete but the UI still displays the placeholder image. We can add an instance method to our `enum` to `return` an instance of `UIImage` based on the selection we make.
+
+In the final app there are 12 selections you can make and these are represented by the `selection` property of the `VendingMachine`. That selection property is simply an array of vending selection values. For each selection we want to have some associated image.
+
+To do this start by going to the `VendingSelecion` enum and add a method named icon that doesn't take any parameters, but returns an instance of a class known as `UIImage`.
+
+The goal of this method is to return the correct image based on which in a member or selection is made. We could use a `switch` on `self` and then it it's the `.soda` `case` I could return an instance of the soda image.
+
+{% highlight swift linenos %}
+func icon() -> UIImage {
+  switch self {
+  case .soda: return UIImage(named: "soda")
+  // etc
+  }
+}
+{% endhighlight %}
+
+However, there's a way to do it with far less code. Less isn't always best but it is here. So instead of switching on `self`, rather than passing the name as a string manually recall that our enum has raw values which are strings of themselves. 
+
+Instead of switching on `self` and going through each one, we can get a string automatically and use that to return the right image.
+
+{% highlight swift linenos %}
+import UIKit
+
+enum VendingSelection: String {
+  case soda
+  case dietSoda
+  case chips
+  case cookie
+  case sandwich
+  case wrap
+  case candyBar
+  case popTart
+  case water
+  case fruitJuice
+  case sportsDrink
+  case gum
+  
+  func icon() -> UIImage {
+    if let image = UIImage(named: self.rawValue) {
+      return image
+    } else {
+      return default
+    }
+  }
+}
+{% endhighlight %}
+
+With Swift 8 we don't have to force unwrap for our else clause. Instead we can return the default image (in fact the image icon for default will show in Xcode). Xcode 8 knows what the default image is.
+
+Finally, for this to show up in your app you must make a change in the `ViewController.swift` file:
+
+{% highlight swift linenos %}
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? VendingItemCell else { fatalError() }
+  
+    let item = vendingMachine.selection[indexPath.row]
+    cell.iconView.image = item.icon()
+  
+    return cell
+}
+{% endhighlight %}
+
+## Modeling the Vending Machine
+
+Now that the user can select an item in our app, the logic to vend that particular item can be written. Like loading from an inventory, there are things that can go wrong here so we must first write some error handing code.
+
+In a collection view, when any of the items in the collection are tapped, it fires off a method, it calls a method `collectionView` you did select item and index path. For example, the following will print the vending item to the console in Xcode when tapped:
+
+{% highlight swift linenos %}
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    updateCell(having: indexPath, selected: true)
+  
+    print(vendingMachine.selection[indexPath.row])
+}
+{% endhighlight %}
+
+So `indexPath.row` here gives us the index posisiton we're tapping and we can use this index number again to look in the election array, and figure out what object we're tapping.
+
+Instead of printing it to the console lets save the selection to a stored property:
+
+{% highlight swift linenos %}
+var currentSelection: VendingSelection?
+{% endhighlight %}
+
+The reason we are assigning `VendingSelection` as an optional is because when we first start the app we don't want anything selected. We don't want some random vending item to be selected.
+
+Now, everytime we tap a selection we're going to fire off the method `didSelectItemAt` and now instead of the print statement we're going to assign the selection to the `currentSelection` variable.
+
+{% highlight swift linenos %}
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    updateCell(having: indexPath, selected: true)
+  
+    currentSelection = vendingMachine.selection[indexPath.row]
+}
+{% endhighlight %}
+
+All of the work is going to be done inside the `FoodVendingMachine` class found in the `VendingMachine.swift` file:
+
+{% highlight swift linenos %}
+class FoodVendingMachine: VendingMachine {
+  let selection: [VendingSelection] = [.soda, .dietSoda, .chips, .cookie, .sandwich, .wrap, .candyBar, .popTart, .water, .fruitJuice, .sportsDrink, .gum]
+  var inventory: [VendingSelection: VendingItem]
+  var amountDeposited: Double = 10.0
+  
+  required init(inventory: [VendingSelection : VendingItem]) {
+    self.inventory = inventory
+  }
+  
+  func vend(_ quantity: Int, _ selection: VendingSelection) throws {
+    // code
+  }
+  
+  func deposit(_ amount: Double) {
+    // code
+  }
+}
+{% endhighlight %}
+
+So, when a user selects an item we need to first make sure it's valid. Then we need to check if there's enough in stock. Finally, we need to make sure the user has enough money to buy it. All of these cases are where an error can occur. Hence, we need to define new errors:
+
+{% highlight swift linenos %}
+enum VendingMachineError: Error {
+  case invalidSelection
+  case outOfStock
+  case insufficientFunds(required: Double)
+}
+{% endhighlight %}
+
+Note that for the insufficient funds error, we'd like to let the users know how much money they need to add to complete the transaction. So we're going to use an associated value to convey that information. Therefore, we'll add a tuple.
+
+The logic and error handling:
+
+{% highlight swift linenos %}
+class FoodVendingMachine: VendingMachine {
+  let selection: [VendingSelection] = [.soda, .dietSoda, .chips, .cookie, .sandwich, .wrap, .candyBar, .popTart, .water, .fruitJuice, .sportsDrink, .gum]
+  var inventory: [VendingSelection: VendingItem]
+  var amountDeposited: Double = 10.0
+  
+  required init(inventory: [VendingSelection : VendingItem]) {
+    self.inventory = inventory
+  }
+  
+  func vend(_ quantity: Int, _ selection: VendingSelection) throws {
+    guard var item = inventory[selection] else  {
+      throw VendingMachineError.invalidSelection
+    }
+    
+    guard  item.quantity >= quantity else {
+      throw VendingMachineError.outOfStock
+    }
+    
+    let totalPrice = item.price * Double(quantity)
+    
+    if (amountDeposited >= totalPrice) {
+      amountDeposited -= totalPrice
+      
+      item.quantity -= quantity
+      
+      inventory.updateValue(item, forKey: selection)
+    } else {
+      let amountRequired = totalPrice - amountDeposited
+      throw VendingMachineError.insufficientFunds(required: amountRequired)
+    }
+  }
+  
+  func deposit(_ amount: Double) {
+    // code
+  }
+}
+{% endhighlight %}
+
+Now we must update the `ViewController.swift` file to use the above.
+
+We can start by adding a stored property to keep track of the selection.
+
+{% highlight swift linenos %}
+var quantity = 1
+{% endhighlight %}
+
+Assuming that we can't increate the quantity just yet we still only want to purchase one item at a time. This way we can implement our simplest use case and then go from there. 
+
+A user purchases an item in our vending machine when they tapped the purchase button. So our first step here should be to create an action.
+
+Note that adding a comment such as `// MARK: - Vending Machine` will allow you to use this section in the jump bar navigation.
+
+To do this you head over to the `main.storyboard` file and open up the assistant editor. Then control drag the purchase button over and make sure that you select Action as the connection. You can name it `purchase` and set the arguments to `none`. Now we can add our logic:
+
+{% highlight swift linenos %}
+// MARK: - Vending Machine
+
+@IBAction func purchase() {
+  if let currentSelection = currentSelection {
+    do {
+      try vendingMachine.vend(selection: currentSelection, quantity: quantity)
+    } catch {
+      // FIXME: Error handling code
+    }
+  } else {
+    // FIXME: Alert user to no selection
+  }
+}
+{% endhighlight %}
+
+Note that the `if let currentSelection = currentSelection{}` bit is just a quick way to unwrap an optional and assign it to a constant of the same name so that there's no confusion as to what it is we want. Remember that this is in its local scope it only exists inside the body of the if let. So you can have this duplication because `currentSelection` is really `self.currentSelection`.
+
+Also note that the comment `// FIXME: Alert user to no selection` is a way to show a problem to yourself as a developer. In the jump bar a bandaid  with the text `Alert user to no selection` is displayed for quick reference. 
+
+Note that we changed the `vendingMachine` protocol slightly. The `vend` method did not read very well:
+
+{% highlight swift linenos %}
+protocol VendingMachine {
+  var selection: [VendingSelection] { get }
+  var inventory: [VendingSelection: VendingItem] { get set }
+  var amountDeposited: Double { get set }
+  
+  init(inventory: [VendingSelection: VendingItem])
+  
+  func vend(selection: VendingSelection, quantity: Int) throws
+  func deposit(_ amount: Double)
+}
+{% endhighlight %}
+
+#### Quiz
+
+Question: When we use `UIImage`s `named:` initializer, where do the images come from?
+
+Answer: Assets folder
+
+Question: How do we convey additional information to the call site when throwing an error?
+
+Answer: Through associated values
+
+Question: Why is a generic empty atch block generally a bad idea?
+
+Answer: It allows you to ignore errors in your code which is as bad as not writing error handling. Errors occur for different reasons. A generic catch block ignores specifics and just handles all errors as equal.
+
+## Updating the Price
+
