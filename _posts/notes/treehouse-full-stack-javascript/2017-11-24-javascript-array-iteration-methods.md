@@ -132,6 +132,112 @@ numbers.forEach(number => {
 // [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 {% endhighlight %}
 
+#### Example Five
+
+{% highlight javascript linenos %}
+const numbers = [1, 2, 3, 4, 5];
+let total = 0;
+
+numbers.forEach(number => total += number);
+{% endhighlight %}
+
+#### Example Six
+
+{% highlight javascript linenos %}
+// method one:
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+let dayAbbreviations = [];
+
+days.forEach(day => {
+  dayAbbreviations.push(day.charAt(0) + day.charAt(1));
+});
+
+// method two:
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+let dayAbbreviations = [];
+
+days.forEach(day => dayAbbreviations.push(day.slice(0, 2)));
+{% endhighlight %}
+
+#### Example Seven
+
+{% highlight javascript linenos %}
+const stringPrices = ['5.47', '3.12', '8.00', '5.63', '10.70'];
+let priceTotal = 0;
+
+stringPrices.forEach(price => priceTotal += parseFloat(price));
+{% endhighlight %}
+
+#### Example Eight
+
+{% highlight javascript linenos %}
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+let noel = [];
+
+// noel should be an array containing every letter of the alphabet except "L"
+
+// method one:
+alphabet.forEach(letter => {
+  if (letter != "L") {
+    noel.push(letter);
+  }
+});
+
+// method two:
+alphabet.forEach(letter => letter != "L" ? noel.push(letter) : null);
+{% endhighlight %}
+
+#### Example Nine
+
+{% highlight javascript linenos %}
+const percentages = [34, 67, 12, 39, 90, 82, 22, 24, 99];
+let upperRange = [];
+
+// store all percentages that are greater than 50% in upperRange.
+
+// method one:
+percentages.forEach(percentage => {
+  if (percentage > 50) {
+    upperRange.push(percentage);
+  }
+});
+
+// method two:
+percentages.forEach(percentage => (percentage > 50) ? upperRange.push(percentage): null);
+{% endhighlight %}
+
+#### Example Ten
+
+{% highlight javascript linenos %}
+const colors = ['#87E2D0', '#559F4D', '#FFE0F4', '#7E7E7E', '#FF2D2D', '#F7FFEC'];
+let filteredColors = [];
+
+// add colors with hex values that start with "F" to filteredColors
+
+// method one:
+colors.forEach(color => {  
+  if (color.charAt(1) === "F") {
+    filteredColors.push(color);
+  }
+});
+
+// method two:
+colors.forEach(color => (color.charAt(1) === "F") ? filteredColors.push(color) : null);
+
+// method three:
+colors.forEach(color => (color[1] === "F") ? filteredColors.push(color) : null);
+{% endhighlight %}
+
+#### Example Eleven
+
+{% highlight javascript linenos %}
+const months = ['january', 'february', 'march', 'april', 'may'];
+let capitalizedMonths = [];
+
+// return array of capitalized months
+months.forEach(month => capitalizedMonths.push(month.toUpperCase()));
+{% endhighlight%}
+
 ### forEach 'index' and 'array' Parameters
 
 Note that there are other parameters the `forEach()` method can take.
