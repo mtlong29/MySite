@@ -56,25 +56,25 @@ University of Kentucky, December 2015. Bachelor’s Degree in Civil Engineering.
 ### Web Development and Design
 
 <p><a href="/tag/html/">HTML</a> (<a href="/tag/markdown/">Markdown</a>), <a href="/tag/css/">CSS</a> (<a href="/tag/scss/">SCSS</a>, <a href="/tag/bootstrap/">Bootstrap</a>), and <a href="/tag/javascript/">JavaScript</a> (<a href="/tag/jquery/">jQuery</a>)</p>
-<p>Tools - <a href="/tag/jekyll/">Jekyll</a>, WordPress, Gulp</p>
+<p>Tools - <a href="/tag/jekyll/">Jekyll</a>, <a href="/tag/wordpress">WordPress</a>, <a href="/tag/gulp/">Gulp</a></p>
 <p>Git Clients / Services - GitHub</p>
 
 ## Experience
 
-### 1926 Digital Agency
+#### 1926 Digital Agency
 <h4 class="experience">Web Developer</h4>
 
 <p>I use WordPress to manage content and develop websites. Content management consists of migrating blog posts; arranging client information such as menus, blogs, contact information, graphics, etc.; and publishing new information on the new or pre-existing website. Websites are primarily developed by combining popular WordPress themes with custom CSS3, PHP, and some JavaScript.</p>
 
-### Pare and Flourish
+#### Pare and Flourish
 <h4 class="experience">Web Developer</h4>
 
 <p>Pare and Flourish is a professional development blog that teaches you how to pitch your brand in your career. I developed the responsive website from scratch using HTML (Markdown), CSS3 (Sass/SCSS and Bootstrap), JavaScript (jQuery), and Jekyll (RubyGems and Liquid). I also manage their content and use Photoshop to create graphics for both the site and social media. You can see the website at <a href="http://www.pareandflourish.com">http://www.pareandflourish.com</a>.</p>
 
-### Freelance
+#### Freelance
 <h4 class="experience">Graphic Web Designer and Developer</h4>
 
-<p>I create graphics and websites from scratch, update websites, and perform related tasks. Basic web development skills such as CSS (Sass/SCSS), HTML, JavaScript (jQuery). Experience understanding exactly what the client needs and working to fulfill that need. Some of my work can be seen on my portfolio at <a href="/portfolio">here</a>.</p>
+<p>I create graphics and websites from scratch, update websites, and perform related tasks. Basic web development skills such as CSS (Sass/SCSS), HTML, JavaScript (jQuery). Experience understanding exactly what the client needs and working to fulfill that need. Some of my work can be seen on my portfolio at <a href="/portfolio/">here</a>.</p>
 
 ## Certifications
 
