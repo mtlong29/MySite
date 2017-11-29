@@ -829,7 +829,7 @@ protocol VendingMachine {
 
 #### Quiz
 
-Question: When we use `UIImage`s `named:` initializer, where do the images come from?
+Question: When we use `UIImage`'s `named:` initializer, where do the images come from?
 
 Answer: Assets folder
 
@@ -841,5 +841,422 @@ Question: Why is a generic empty atch block generally a bad idea?
 
 Answer: It allows you to ignore errors in your code which is as bad as not writing error handling. Errors occur for different reasons. A generic catch block ignores specifics and just handles all errors as equal.
 
-## Updating the Price
+## Communicating with User
 
+Even though the vending machine works, there's no indication to the user that code has been executed. This can be resolved by updating the price and the quantity. 
+
+#### Updating the Price
+
+The price for both the selected item as well as the total price of our selection should be updated. For now, that's the same, but as we add in the option to increase the qnaitity, we'll update the display with the total price as well.
+
+We know that when we select an item, we execute the code inside the `didSelectItemAt` `indexPath` method. So far, we're assigning a value to the current selection, what is the price of the item? Since we have the current selection, we can get the item from the inventory using subscript notation.
+
+It's best to make things pretty obvious to the reader of our code what's going on so adding a convenience method that returns either the correct item if it exists or `nil` if it doesn't is a good idea. A method like this is really just a convenience method. It does nothing more than wrap a function around an accessor we can already use, but it gives context.
+
+In the `VendingMachine.swift` file:
+
+{% highlight swift linenos %}
+protocol VendingMachine {
+  var selection: [VendingSelection] { get }
+  var inventory: [VendingSelection: VendingItem] { get set }
+  var amountDeposited: Double { get set }
+  
+  init(inventory: [VendingSelection: VendingItem])
+  
+  func vend(selection: VendingSelection, quantity: Int) throws
+  func deposit(_ amount: Double)
+  func item(forSelection selection: VendingSelection) -> VendingItem?
+}
+{% endhighlight %}
+
+Now that we have a new conform we must add this to the `FoodVendingMachine` class:
+
+{% highlight swift linenos %}
+func item(forSelection selection: VendingSelection) -> VendingItem? {
+  return inventory[selection]
+}
+{% endhighlight %}
+
+Back in the `ViewController.swift` file:
+
+{% highlight swift linenos %}
+// MARK: - UICollectionViewDelegate
+
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    updateCell(having: indexPath, selected: true)
+  
+    currentSelection = vendingMachine.selection[indexPath.row]
+  
+  if let currentSelection = currentSelection, let item = vendingMachine.item(forSelection: currentSelection) {
+    priceLabel.text = "$\(item.price)"
+    totalLabel.text = "$\(item.price * Double(quantity))"
+  }
+}
+{% endhighlight %}
+
+Now when we run the app when you select an item the price and the total price change. Keep in mind that at this point they are the same thing.
+
+Currently, hitting purchase doesn't provide any indication that you purchased anything. The balance is just an arbitrary placeholder at the moment. Recall that when we start off a certain amount is deposited into our machine. We gave it that default value of `10`. But the balance doesnt indicate that. 
+
+We want the balance to be reflected right when the view loads. So head over to `viewDidLoad`:
+
+{% highlight swift linenos %}
+override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.
+    setupCollectionViewCells()
+  
+    balanceLabel.text = "$\(vendingMachine.amountDeposited)"
+    totalLabel.text = "$00.00"
+    priceLabel.text = "$0.00"
+}
+{% endhighlight %}
+
+Note that we also set the total prices initial value of total and price to something sensible, `$00.00`.
+
+Still though, if we make a transation, nothing changes. When we hit Purchase, if the vend function executes successfully, then all we need to do is update our labels again. So the following helper method can help do this. In the `VendingMachine` section in the `ViewController.swift` file we can write a new function and call this `updateDisplay`.
+
+{% highlight swift linenos %}
+// MARK: - Vending Machine
+
+@IBAction func purchase() {
+  if let currentSelection = currentSelection {
+    do {
+      try vendingMachine.vend(selection: currentSelection, quantity: quantity)
+      updateDisplay()
+    } catch {
+      // FIXME: Error handling code
+    }
+  } else {
+    // FIXME: Alert user to no selection
+  }
+}
+
+func updateDisplay() {
+  balanceLabel.text = "$\(vendingMachine.amountDeposited)"
+  totalLabel.text = "$00.00"
+  priceLabel.text = "$0.00"
+}
+{% endhighlight %}
+
+Now when we run the app the prices all display correctly. You can purchase an item and the balance will decrease until you are out of funds. 
+
+One current issue is when you purchase an item the item stays selected but the price and total displays as $0. This can be resolved with some magic code after the `do catch` statement in the Vending Machine function on the `ViewController.swift` file:
+
+{% highlight swift linenos %}
+// MARK: - Vending Machine
+
+@IBAction func purchase() {
+  if let currentSelection = currentSelection {
+    do {
+      try vendingMachine.vend(selection: currentSelection, quantity: quantity)
+      updateDisplay()
+    } catch {
+      // FIXME: Error handling code
+    }
+    
+    if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+      collectionView.deselectItem(at: indexPath, animated: true)
+      updateCell(having: indexPath, selected: false)
+    }
+    
+  } else {
+    // FIXME: Alert user to no selection
+  }
+}
+
+func updateDisplay() {
+  balanceLabel.text = "$\(vendingMachine.amountDeposited)"
+  totalLabel.text = "$00.00"
+  priceLabel.text = "$0.00"
+}
+{% endhighlight %}
+
+Note that that was technically beyond the scope of these notes. Basically what it is saying is asking the collection view to tell us which cells are selected. Now, the collection views can be set up to have multiple cells selected at once, so this returns an array of cells or an array of index values.
+
+Because these are all optiona, they could be `nil`. We're using an `if let` statement to unwrap it. So if this works, we have an index path for the selected item. Once we have that index path, we can tell `CollectionView` to go ahead and deselect that and give it an `indexPath`. The animated property allows us to animate that transition, which it does automatically. Finally, once we have that, we go ahead and update the cell to have a default background. Getting rid of the blue selected item after purchase.
+
+However, we're not done. We can still only select and purchase one item.
+
+#### Working with Steppers
+
+So far in this app the only control is a button. Using the target action pattern and a button we're able to fire off an action when the button was tapped.
+
+In this app, the purchased action, for example, is executed when we tap the purchase button. Like a button, there's another control in this project. It's known as a stepper. 
+
+A stepper provides an interface for incrementing or decrementing values. It's really simple, if you click on the stepper and go to the attributes inspector you'll see that it has a minimum and maximum range of values set to one and ten.
+
+For the next set of fields we can customize what value the stepper starts at by default which again is set to one. When we click the increment or decrement button it steps up or down by a certain value and we can set the values that it steps by. Here, we want it to step by one. If you set it to five, for example, it would go from one to six is you click the increment button.
+
+Controls are meant to be very simple to setup. They offer common functionality with very little setup involved. 
+
+When we connected the Purchase button from the `storyboard.swift` file to the `ViewController.swift` file by creating an action, we specifically connected it to the touch up inside event. You can right click on it to see this as well. This means the action only fired if you tab the button and life you finger while inside the boundaries of the button. 
+
+We want to do the same thing with the stepper. Except we want the value changed event instead. This is becasue we want to change a value depending on what button (increment or decrement) is clicked. We want to keep track of this as well.
+
+When you right click any control you should see all of the events that you can trigger and be notified of. At the bottom there's a value changed event that we can hook up to a particular action. Do this with the assistant editior. It looks like this:
+
+{% highlight swift linenos %}
+@IBAction func updateQuantity(_ sender: UIStepper) {
+  
+}
+{% endhighlight %}
+
+Note that it is named `updateQuantity` and is type `UIStepper`.
+
+To test that everything is connect propperly you can add a print statement inside the function:
+
+{% highlight swift linenos %}
+@IBAction func updateQuantity(_ sender: UIStepper) {
+  print(sender.value)
+}
+{% endhighlight %}
+
+Now, in the console the stepper can increment and decrement. As expected, it bottoms out at 1 and maxes out at 10.
+
+#### Updating the Quantity
+
+With a stepper in the app, we can now update the quantity and allow users to purchase more than one item.
+
+To update the quantity displayed on the screen is relatively easy:
+
+{% highlight swift linenos %}
+
+
+@IBAction func updateQuantity(_ sender: UIStepper) {
+  quantity = Int(sender.value)
+  quantityLabel.text = "\(quantity)"
+}
+{% endhighlight %}
+
+Note that we also set the initial `quantityLabel` to `1` using `quantityLabel.text = "1"`.
+
+There are however a few holes in our current logic. The total price does not update with the quantity. Except when you increase the quantity and change your selection the quantity stays the same and the total price updates according to the price of that new selection times the previous quantity selected. 
+
+First, we need a reference to the actual stepper so we can reset the value there.
+
+In the `Main.storyboard` file select the stepper and go to the assistant selector. Then control drag from the stepper over to the `ViewController`. We need to create an `IBOutlet` and we can name it `quantityStepper`. This looks like `@IBOutlet weak var quantityStepper: UIStepper!`.
+
+Now, over in the `ViewController`, we'll need to first reset the quantity to `1` and then update the `quantityLabel`. We'll do that in `didSelectItemAt indexPath` because we want to do that every time we select a new item.
+
+{% highlight swif linenos %}
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    updateCell(having: indexPath, selected: true)
+  
+    quantityStepper.value = 1
+    quantityLabel.text = "1"
+    quantity = 1
+  
+    currentSelection = vendingMachine.selection[indexPath.row]
+  
+  if let currentSelection = currentSelection, let item = vendingMachine.item(forSelection: currentSelection) {
+    priceLabel.text = "$\(item.price)"
+    totalLabel.text = "$\(item.price * Double(quantity))"
+  }
+}
+{% endhighlight %}
+
+Now, we still need to update the total price based off the quantity. This can be `updateQuantity` method. However, we first need a method for updating the total price. We'll name it `updateTotalPrice`.
+
+{% highlight swift linenos %}
+func updateTotalPrice(for item: VendingItem) {
+  totalLabel.text = "$\(item.price * Double(quantity))"
+}
+
+@IBAction func updateQuantity(_ sender: UIStepper) {
+  quantity = Int(sender.value)
+  quantityLabel.text = "\(quantity)"
+  
+  if let currentSelection = currentSelection, let item = vendingMachine.item(forSelection: currentSelection) {
+    updateTotalPrice(for: item)
+  }
+}
+{% endhighlight %}
+
+Lastly, we need to reset the `totalPrice` label when selecting a new item. We can also do this in `didSelectItemAt indexPath`:
+
+{% highlight swift linenos %}
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    updateCell(having: indexPath, selected: true)
+  
+    quantityStepper.value = 1
+    quantityLabel.text = "1"
+    quantity = 1
+  
+    totalLabel.text = "$00.00"
+  
+    currentSelection = vendingMachine.selection[indexPath.row]
+  
+  if let currentSelection = currentSelection, let item = vendingMachine.item(forSelection: currentSelection) {
+    priceLabel.text = "$\(item.price)"
+    totalLabel.text = "$\(item.price * Double(quantity))"
+  }
+}
+{% endhighlight %}
+
+The `totalPrice` and `quanitiy` update correctly now, but the code is really sloppy. All of this brings room for error, right now because we have to always make sure that `quantity` and `quantitiyStepper` are in sync. If it doesnt stay in sync, then when we decrease the value we might end up purchasing something else because the `vend` method uses the quantities stored property and not the stepper value.
+
+The best thing at this point would be to get rid of the stored property and then everywhere we're usign the `quantity` stored property let's change it to the steppers value.
+
+Upon deleting this a ton of errors show up, which is great, because it shows us everywhere we need to change. So we can quickly scroll through and change `quantity` to `Int(quantityStepper.value)` unless it needs to be a Double value you simply change it to `quantityStepper.value`.
+
+At this point everything is working correctly. However, the code is using strings in a number of places, and they're even the same string pretty often: `"$00.00"` or `$0.00` etc. So we want to refact this because using Strings like this could be our downfall. To do this, we'll change the `updateDisplay` method:
+
+{% highlight swift linenos %}
+func updateDisplayWith(balance: Double? = nil, totalPrice: Double? = nil, itemPrice: Double? = nil, itemQuantity: Int? = nil) {
+  if let balanceValue = balance {
+    balanceLabel.text = "$\(balanceValue)"
+  }
+  if let totalValue = totalPrice {
+    totalLabel.text = "$\(totalValue)"
+  }
+  if let priceValue = itemPrice {
+    priceLabel.text = "$\(priceValue)"
+  }
+  if let quantityValue = itemQuantity {
+    quantityLabel.text = "\(quantityValue)"
+  }
+}
+{% endhighlight %}
+
+This function is doing a lot of the display work for us so now all we have to do is call it in the right places. You only need to include the arguments you need since they are set to `nil` by default.
+
+#### Quiz
+Question: According to the Human Interface Guidelines, when should we not use a stepper?
+
+Answer: When users are likely to make large changes to a value
+
+Question: A stepper is an instance of a particular component in `UIKit`. Which component is this?
+
+Answer: `Control`
+
+Question: Which event is fired off when we increase the value of a stepper?
+
+Answer: `ValueChanged`
+
+## Temporary Views
+
+So far we only know how to display a single view in our apps. Apps almost always show more than one view.
+
+For example, the Vending Machine app works, but if something does go wrong there is no indication to the user that something has gone wrong such as attempting to purchase an amount greater than our balance.
+
+Views come in all sorts of variations. We have specific views that are very flexible, and then many different ways to pesent each one of these views on the screen.
+
+The presentation style of each view matters because they each convey a specific type of information to the user.
+
+To start off we can show a temporary view. Sometimes we want to present information to the user about an event that occurred, but we don't necessarily want to remove them from their place in the app or change the context they are in. To achieve this purpose, iOS provides three different <a href="https://developer.apple.com/ios/human-interface-guidelines/ui-views/alerts/">temporary views</a> out of the box.
+
+Since the view is temporary, we're not removing the user from their current place in the app. We're just asking them to take a quick action for a certain event or object. The simplest temporary view in iOS is an alert.
+
+An alert gives people important information that affects their use of an app or the device. These are the messages such as "Allow 'App Title' to access your location while you use the app?"
+
+There are guidelines on how you're allowed to use these. The <a href="https://developer.apple.com/ios/human-interface-guidelines/overview/design-principles/">iOS Human Interface Guidelines</a> contains Apple's guidelines for developers on how to build apps that match the platform's look, feel, and purpose. It is full of important information.
+
+#### Displaying an Alert View
+
+Earlier, when we implemented the `vend` functionality, we wrote incomplete error handling code in the `purchase` function.
+
+We can fis that by showing an alert when something goes wrong. An <a href="https://developer.apple.com/ios/human-interface-guidelines/ui-views/alerts/">alert view</a> is represented by the class `UIAlertController`. <a href="https://developer.apple.com/reference/uikit/uialertcontroller">Learn more about UIAlertController class.</a> It has a simple `init` method that takes all the information needed to display an alert.
+
+We are going to display three different alerts depending on the error that the user has run into, so we can create a single method, we'll name it `showAlert`:
+
+{% highlight swift linenos %}
+func showAlert() {
+  let alertController = UIAlertController(title: "Out of Stock", message: "This item is unavailable. Please make another selection.", preferredStyle: .alert)
+  
+  present(alertController, animated: true, completion: nil)
+}
+{% endhighlight %}
+
+Note that, `preferredStyles` is an `enum` with differnt styles.
+
+The `present` method is used to tell the `ViewController` that a view should be displayed over top of a view. This is a "Modal View" that sits on top of a different view. Moval views prevent the user from interacting with the view it's sitting on top of, the underline view, until they preform the action that is necessary such as a dismiss.
+
+Moval views can be full screen or take up just a little bit of the screen. Either way, they prevent input of the underlying view.
+
+By default if you ask a `ViewController` to `present` another `ViewControll`, it displays that set of views modally. An app has a hierarchy. 
+
+#### Quiz
+
+Question: A modal view allows a user to interact with the underlying views.
+
+Answer: False
+
+Question: If an alert view provides information related to the standard functioning of an app, what should we be doing instead?
+
+Answer: Designing information presentation within the app's centeral design
+
+Question: Why do we present a view controller and not a view directly?
+
+Answer: A view controller manages a view and we're simply asking the controller to present it.
+
+Question: Create an alert without buttons when you want to prevent the user from undertaking an action in your app.
+
+Answer: False
+
+Question: Since alerts are used to convey important information, they should be used often to highlight content.
+
+Answer: False
+
+#### Adding User Interaction
+
+According to the iOS Human Interface Guidelines buttons are "required" for your alerts. These are made with the `UIAlertAction` class. <a herf="https://developer.apple.com/reference/uikit/uialertaction">Learn more about the UIAlertAction class.</a>
+
+This action is created in the `showAlert()` method. Instead of creating the action in the Interface Builder and dragging it over we can do it in code.
+
+{% highlight swift linenos %}
+func showAlert() {
+  let alertController = UIAlertController(title: "Out of Stock", message: "This item is unavailable. Please make another selection.", preferredStyle: .alert)
+  
+  let okAction = UIAlertAction(title: "OK", style: .default, handler: dismissAlert)
+  alertController.addAction(okAction)
+  
+  present(alertController, animated: true, completion: nil)
+}
+
+func dismissAlert(sender: UIAlertAction) -> Void {
+  updateDisplayWith(balance: 0, totalPrice: 0, itemPrice: 0, itemQuantity: 1)
+}
+{% endhighlight %}
+
+1. make show alert more configurable
+2. account for every error in vending machien erorr type and present an alert that is appropriate
+Finishing up by exhausting possible errors:
+
+{% highlight swift linenos %}
+func showAlertWith(title: String, message: String, style: UIAlertControllerStyle = .alert) {
+  let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+
+  let okAction = UIAlertAction(title: "OK", style: .default, handler: dismissAlert)
+  alertController.addAction(okAction)
+  
+  present(alertController, animated: true, completion: nil)
+}
+
+func dismissAlert(sender: UIAlertAction) -> Void {
+  updateDisplayWith(balance: 0, totalPrice: 0, itemPrice: 0, itemQuantity: 1)
+}
+
+@IBAction func purchase() {
+  if let currentSelection = currentSelection {
+    do {
+      try vendingMachine.vend(selection: currentSelection, quantity: Int(quantityStepper.value))
+      updateDisplayWith(balance: vendingMachine.amountDeposited, totalPrice: 0.0, itemPrice: 0, itemQuantity: 1)
+    } catch VendingMachineError.outOfStock {
+      showAlertWith(title: "Out of Stock", message: "This item is not available. Please make another selection.")
+    } catch VendingMachineError.invalidSelection {
+      showAlertWith(title: "Invalid Selection", message: "Please make another selection.")
+    } catch VendingMachineError.insufficientFunds(let required) {
+      let message = "You need $\(required) to complete the transaction."
+      showAlertWith(title: "Insufficient Funds", message: message)
+    } catch let error {
+      fatalError("\(error)")
+    }
+    // .. code
+  }
+}
+{% endhighlight %}
+
+Note that without the final generic gatch the compiler has no way of knowing we have exhausted all possible errors.
+
+## Displaying Cust Views Modally
