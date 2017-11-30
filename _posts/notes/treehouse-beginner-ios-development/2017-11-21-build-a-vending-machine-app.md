@@ -1260,3 +1260,46 @@ func dismissAlert(sender: UIAlertAction) -> Void {
 Note that without the final generic gatch the compiler has no way of knowing we have exhausted all possible errors.
 
 ## Displaying Cust Views Modally
+
+Unlike the alert view (or a system view) it is possible to design and layout a view completely in code, but we don't know how to do that just yet.
+
+What if we want to display a custom view modally rather than a system?
+
+You can do it quite easily using Interface Builder. So over in the `Main.storyboard` file we can add a second view controller onto our screen.
+
+In Interface Builder simply open the right panel (the utilities panel) towards the bottom click "Show Object Library" and drag "View Controller" onto the page.
+
+You can quickly style the new view using the utilities panel. For example, you can change the background color in the attributes inspector.
+
+You can copy and paste elements from one view onto another using the typical command-c and command-v keyboard shortcuts.
+
+Note that when you copy and paste the constraints aren't copied so you must add those in afterward. 
+
+For the vending machine app we copied over the purchase button from the main View Controller and added left right and bottom constraints, 0. We also added a height constraint of 56pts. Same as before.
+
+Next, we changed the title from "purchase" to "dismiss" by double clicking the text. Next, we changed the background color of the button to red to indicate something needs doing.
+
+After we finished the button we added a new label to the center of the view and added the text "funds successfully added".
+
+Now that we have a new view the goal is to display it when the user adds money to the vending machine funds. This is the "add funds" button at the top of the original view.
+
+For the purpose of this app we're going to keep the scope of this limited meaning this will always just add five dollars. This is because the focus is displaying the modal view.
+
+On a side note, a modal isn't actually the best tool here. You should use a modal when you want to interrupt what the user is currently doing. This action (adding funds and informing the user it has been done) would be better suited for thoughtful animation.
+
+Displaying the modal on click of the "add funds" button is super easy. All you do is control drag from the button over to the new view! Upon doing this a popup in Xcode will appear giving you several options. The option to "present modally" is used in this case. Once this is done, a connecting arrow is displayed on the storyboard. If you click on the arrow it will show you other details. You can change the way its presented and give it an identity, etc.
+
+Now, when you run the app and click the "add funds" button the modal appears. The objective of the modal now is to dismiss the modal. This requires a tiny bit more work. 
+
+However, we also must add the 5 dollars to our funds on the click of "add funds".. To get this started go to the assistant editor and create a new action. Add this after the `shorAlert` and `dismissAlert` functions in the `ViewController.swift` file. To add it right click on the button and drag the "Touch Up Inside" action over. Name it `depositFunds`. We don't need any arguments so set that to none and then click connect.
+
+Inside the function is very simple. We just have to call the `vendingMachine` `deposit` function and add `5.0`. Next, we want to update the display balance using the `updateDisplayWith` method.
+
+{% highlight swift linenos %}
+@IBAction func depositFunds() {
+  vendingMachine.deposit(5.0)
+  updateDisplayWith(balance: vendingMachine.amountDeposited)
+}
+{% endhighlight %}
+
+Currently, there's no way to tell if we have actually added the funds because we can't dismiss the modal view yet.
