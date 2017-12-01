@@ -115,7 +115,7 @@ class FoodVendingMachine: VendingMachine {
   }
   
   func deposit(_ amount: Double) {
-    // code
+    amountDeposited += amount
   }
 }
 {% endhighlight %}
@@ -1303,3 +1303,49 @@ Inside the function is very simple. We just have to call the `vendingMachine` `d
 {% endhighlight %}
 
 Currently, there's no way to tell if we have actually added the funds because we can't dismiss the modal view yet.
+
+Since this new modal view that we added is an entirely new View Controller than the one we've been working with, we need to create a different custom subclass to manage it.
+
+If you select the Project Navigator, you know that this `ViewController.swift` file contains a ViewController subclass, and that's what manages this View Controller in the storyboard. We can't use that same view controller to manage this one, because we added an entirely new view controller to get this view on the screen. So, we need a custom subclass. 
+
+To add a new View Controller right click on the `VendingMachine` file or go to File ? New File, and select "Cocoa Touch Class". Now in here we can specify what base class tha we want to inherit from and since we want a `UIViewController` subclass we're going to specify that this file that we're adding should be a subclass of `UIViewController`.
+
+Next, we need to give this class a name, the subclass, and we'll call this `DepositController`, then hit Next and add it to the project.
+
+Now, we have this new custom subclass, but right now the two don't know about each other, so back in the `Main.storyboard` file in the utilities area head over to the Identity Inspector. Be sure to have the top part of the view selected first. From the dropdown, add the new associated class, `DepositController`. Now we have a custom subclass.
+
+All you have to do now is create a new `IBAction`. However, make sure that there isn't a that there isnt a link, by right clicking the button first. A link could exist because of how we simply copied the button and pasted it onto the new view. Afteraward, drag "Touch Up Inside" again to the `DepositController.swift` file. This will look like the following, in code:
+
+{% highlight swift linenos %}
+@IBAction func deposit(_ sender: Any) {}
+{% endhighlight %}
+
+The `present` method that we used to show the controller modally has a counterpart, `dismiss`. This method dismisses the view controller that was presented modally.
+
+{% highlight swift linenos %}
+@IBAction func deposit(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+}
+{% endhighlight %}
+
+#### Quiz
+
+Question: A `UIAlertAction` instance can be initialized with a "handler" - a function that executes code when the action is started. Why does the following function not work as a handler?
+
+{% highlight swift linenos %}
+func doSomething(sender: UIStepper) {}
+{% endhighlight %}
+
+Answer: The function signature does not match the one accepted by the handler parameter
+
+Question: Which function can we call to intentionally crash the app and prevent the user from continuing?
+
+Answer: `fatalError()`
+
+Question: To dismiss a view controller, you must call `dismiss: animated:` on the controller you want to dismiss otherwise it wont work.
+
+Answer: False
+
+Question: How do you modify a view controller created in a Storyboard in code?
+
+Answer: Create a custom subclass and associate it with the view controller in the storyboard
