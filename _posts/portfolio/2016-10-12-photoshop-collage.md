@@ -60,12 +60,3 @@ This retro style advertisement collage combines 10 individual pictures.
 <figure class="full">
   <a href="/assets/images/post-photoshop-collage/gmm-takeandmake.jpg" title="Good Mythical Morning #TakeAndMake"><img src="/assets/images/post-photoshop-collage/gmm-takeandmake.jpg" alt="Good Mythical Morning #TakeAndMake"></a>
 </figure>
-
-## Terminator Katie
-
-This is a friend of mine that I turned into a killer robot. Not sure why. Just did.
-
-<figure class="half">
-  <a href="/assets/images/post-photoshop-collage/katie-evolution0.jpg" title="Original Image"><img src="/assets/images/post-photoshop-collage/katie-evolution0.jpg" alt="Original Image"></a>
-  <a href="/assets/images/post-photoshop-collage/katie-evolution3.jpg" title="Final Evolution"><img src="/assets/images/post-photoshop-collage/katie-evolution3.jpg" alt="Final Evolution"></a>
-</figure>
