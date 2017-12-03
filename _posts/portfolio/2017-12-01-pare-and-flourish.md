@@ -25,12 +25,16 @@ featured: true
 
 <a href="http://www.pareandflourish.com/">Pare and Flourish</a> is a professional development blog teaching you how to pitch your brand in your career. Go there to read the latest millennial career advice from the job search, to career development, and everything in between.
 
+I am responsible for the design and development of Pare and Flourish.
+
 ## Design
-Design and development of this site began mid september. Below are screenshots of the site at the times listed.
+The overall design of Pare and Flourish is relatively simple. It basically consists of three different page types: the landing page, blog posts, and subpages. The content of the landing page is basically a shortened version of every subpage aside from the blog posts. The main difference between a blog post page and a "subpage", as it's described here, is a blog post page as a sidebar whereas a subpage does not.
 
-### Home
+### Pare and Flourish Landing Page
 
-The Pare and Flourish home page...
+The Pare and Flourish landing page, or home page, contains links to every blog post to date. To access older blog posts you can click a button labeled "Click here to load more blogs!". Once a user clicks there older posts are displayed using a combination of AJAX and Jekylls own pagination system. Learn more about this in the development section. 
+
+In addition to blog posts, the landing page contains brief snippets of most subpages including services, events, and #amReading (what Pare and Flourish like to call currently reading). The services section contains some toggle pannels, which are executed using jQuery, concerning Pare and Flourish events. Next to that is an ordered list describing how a typical Pare and Flourish services goes down. Below the services section is the events section which contains a carousel using the slick.js jQuery plugin. Lastly is the #amReading section which contains images of books that Pare and Flourish members are currently reading. Each book when moused over has a nice transition restoring color and correct orientation.
 
 <div class="macbook-pro-mockup">
   <img src="/assets/images/mockups/macbook-pro-mockup.png" alt="MacBook Pro Container">
@@ -39,9 +43,9 @@ The Pare and Flourish home page...
   </div>
 </div>
 
-### Blog Post
+### Pare and Flourish Blog Post
 
-A Pare and Flourish blog post...
+Blogs are like the heart and soul of the Pare and Flourish website. New blogs are added weekly. The design of the blog page has a header that resembles that of the landing page to create a sense of flow and theme. The body of the blogs are fairly ordinary. The blog posts contain a sidebar which has various information about Pare and Flourish.
 
 <div class="macbook-pro-mockup">
   <img src="/assets/images/mockups/macbook-pro-mockup.png" alt="MacBook Pro Container">
@@ -50,9 +54,9 @@ A Pare and Flourish blog post...
   </div>
 </div>
 
-### Pare and Flourish Sub Page
+### Pare and Flourish Subpage
 
-A Pare and Flourish sub page...
+Pare and Flourish pages that aren't blog posts and aren't the landing page fall under this category. There are various designs for each of these pages. For example, the #amReading page is just a larger version of said section on the landing page. But the events and services page are primarily text describing the respective page followed by a way to purchase the service or reserve a seat. Below is a snapshot of the about page titled, Start Here.
 
 <div class="macbook-pro-mockup">
   <img src="/assets/images/mockups/macbook-pro-mockup.png" alt="MacBook Pro Container">
