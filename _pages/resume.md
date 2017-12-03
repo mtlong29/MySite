@@ -34,26 +34,26 @@ University of Kentucky, December 2015. Bachelor’s Degree in Civil Engineering.
 
 <p>I take pride in my personal traits such as adaptive, creative, critical thinker, decisive, detail-oriented, goal focused, listener, problem solver, self-disciplined, and visionary. Below you will find specific skills I have obtained over the years. I am always looking to learn and add additional skills to this list.</p>
 
-### Computer
+#### Computer
 
 <p>Operating Systems - Windows and Mac OSX</p>
 <p>Microsoft Office - Excel, PowerPoint, and Word</p>
 <p>Programming - <a href="/tag/javascript/">JavaScript</a>, <a href="/tag/jquery/">jQuery</a>, Python, VBScript, and Ruby</p>
 
-### Communication
+#### Communication
 
 <p>Prefer working with teams due to their potential for higher productivity, but proficient working alone as well. I am distinguished with many sources of communication such as email, and social media.</p>
 
-### Engineering
+#### Engineering
 
 <p>Computer Aided Drafting – <a href="/tag/autocad/">AutoCAD</a>, and Google SketchUp</p>
 <p><a href="/tag/gis/">Geographic Information Systems</a> technology – ArcMap, ArcCatalog</p>
 
-### Graphic Design
+#### Graphic Design
 
 <p>Adobe Creative Cloud - <a href="/tag/photoshop/">Photoshop</a>, Illustrator, and some InDesign</p>
 
-### Web Development and Design
+#### Web Development and Design
 
 <p><a href="/tag/html/">HTML</a> (<a href="/tag/markdown/">Markdown</a>), <a href="/tag/css/">CSS</a> (<a href="/tag/scss/">SCSS</a>, <a href="/tag/bootstrap/">Bootstrap</a>), and <a href="/tag/javascript/">JavaScript</a> (<a href="/tag/jquery/">jQuery</a>)</p>
 <p>Tools - <a href="/tag/jekyll/">Jekyll</a>, <a href="/tag/wordpress">WordPress</a>, <a href="/tag/gulp/">Gulp</a></p>
