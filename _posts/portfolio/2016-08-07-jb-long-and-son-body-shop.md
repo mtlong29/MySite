@@ -30,22 +30,19 @@ I was tasked with creating a website for JB Long and Son Body Shop. This is a Bo
 ## Design
 I wanted the design of this site to be simple such that the objective of JB Long and Son Body Shop is nearly instantaneously known.
 
-### Evolution One (August 22, 2016)
-Below is the first version of the site. This version was delivered to the client in request of content. I added as much content as I knew and/or found online, but I needed more from the client before the site could be completed.
+#### Site as of August 13, 2017
+Below is the "finished" version of the JB Long and Son Body Shop site. I put quotations around finished, because as a designer I always want to improve things. I always want to add new features, and constaly making something I'm proud of.
 
-<div class="scroll-box">
-    <img src="/assets/images/post-jb-long-site-evo/site-evo1.jpg">
-</div>
+As of August 13, 2017 the JB Long and Son Body Shop site is a one page site with few features. The main objective of this site is to provide someone with information about JB Long and Son Body Shop quickly and effortlessly. The user can swipe over old repairs using the comparison slider. The User can quickly see what services the shop offers as well. Next, the user can learn more about some of the JB Long and Son Body Shop employees in the "Meet Us!" section.
 
-### Evolution Two (August 13, 2017)
-Below is the first finished version of the site. Obviously lots of time has passed between the first version and this version. The main difference is the addition of actual content. I also used <a href="https://github.com/koenoe/cocoen">cocoen.js</a>. It is an image comparison slider. This is much better than simply adding the before and after pictures next to each other like before.
+Most importantly, the user can find quick and easy to read contact information where they would expect it, at the bottom of the page.
 
-<div class="scroll-box">
-    <img src="/assets/images/post-jb-long-site-evo/site-evo2.jpg">
+<div class="macbook-pro-mockup">
+  <img src="/assets/images/mockups/macbook-pro-mockup.png" alt="MacBook Pro Container">
+  <div class="macbook-pro-mockup-content">
+    <img src="/assets/images/post-jb-long-site-evo/site-evo2.jpg" alt="Snapshot of the JB Long and Son Body Shop landing page.">
+  </div>
 </div>
 
 ## Development
-The source code of www.jblongandsonbodyshop.com can be found <a href="https://github.com/mtlong29/JBShop_Site">here</a>. This is a jekyll based site. The use of jekyll can be found in <a href="/blog/using-jekyll/">this</a> post. 
-
-## What I learned
-<a href="http://getbootstrap.com/">Bootstrap</a> is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web. Basically makes front-end web development faster and easier. In other words bootstrap is meant for web developers of all skill levels. I decided it would be a good idea to learn this framework as designing this site.
+The source code of <a href="http://jblongandsonbodyshop.com/">www.jblongandsonbodyshop.com</a> can be found <a href="https://github.com/mtlong29/JBShop_Site">here</a>. This is a jekyll based site. The use of jekyll can be found in <a href="/blog/using-jekyll/">this</a> post.
