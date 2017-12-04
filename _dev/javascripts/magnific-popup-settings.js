@@ -3,6 +3,10 @@ magnific-popup settings
 ****************************************************/
 
 $(document).ready(() => {
+
+  // add image-popup to anchor tags with links to images
+  $('a[href$=".jpg"],a[href$=".png"],a[href$=".gif"]').addClass('image-popup');
+
   // magnific-popup settings
   $('.image-popup').magnificPopup({
     disableOn: () => {
