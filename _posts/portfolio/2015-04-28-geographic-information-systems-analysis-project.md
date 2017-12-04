@@ -7,7 +7,7 @@ categories: portfolio
 
 title: "GIS Analysis Project"
 
-subtitle: "Poster"
+subtitle: "Civil Engineering"
 
 excerpt: "For my geographic information systems course we were to analyze something of our choosing using ArcGIS."
 
