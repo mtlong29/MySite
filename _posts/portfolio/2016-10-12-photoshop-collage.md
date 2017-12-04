@@ -60,3 +60,26 @@ This retro style advertisement collage combines 10 individual pictures.
 <figure class="full">
   <a href="/assets/images/post-photoshop-collage/gmm-takeandmake.jpg" title="Good Mythical Morning #TakeAndMake"><img src="/assets/images/post-photoshop-collage/gmm-takeandmake.jpg" alt="Good Mythical Morning #TakeAndMake"></a>
 </figure>
+
+## Jordan Dunk
+
+#### Material Used
+
+I used the following three images as well as various techniques in photoshop to design a simple collage of Michael Jordan dunking.
+
+<figure class="half">
+  <a href="/assets/images/post-dunk/jordan.jpg" title="Original image of Jordan."><img src="/assets/images/post-dunk/jordan.jpg" alt="Original image of Jordan."></a>
+  <a href="/assets/images/post-dunk/goal.jpg" title="Original image of goal."><img src="/assets/images/post-dunk/goal.jpg" alt="Original image of goal."></a>
+</figure>
+
+<figure class="half">
+  <a href="/assets/images/post-dunk/background.jpg" title="Original background image."><img src="/assets/images/post-dunk/background.jpg" alt="Original background image."></a>
+</figure>
+
+#### Finished Graphic
+
+The final project can be seen below!
+
+<figure class="full">
+  <a href="/assets/images/post-dunk/jordan-dunk.jpg" title="Final image."><img src="/assets/images/post-dunk/jordan-dunk.jpg" alt="Final image."></a>
+</figure>
