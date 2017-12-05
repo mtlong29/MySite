@@ -41,7 +41,7 @@ I'm not the most active person around. As you could probably assume, my "sport" 
 
 #### Photoshop
 
-Ever heard of a photoshop battle? Photoshop battling is when someone posts a picture somewhere, and other people take that picture and try creating the best edited photo. These edited photos can be literally anything and are often very bizarre. This is typically done on the <a href="https://www.reddit.com/r/photoshopbattles/">Photoshop Battles Subreddit</a>. In fact, it's the only place I've done it at. Either way it's a blast! There's an art to it! Yes, obviously.. But there's more to it than just making the best edited photo; you also have to time it perfectly on when to post and what to say with the post. I can get competitive sometimes.
+Ever heard of a photoshop battle? Photoshop battling is when someone posts an image somewhere, and other people take that image and try creating the best edited version. These edited images can be literally anything and are often very bizarre. This is typically done on the <a href="https://www.reddit.com/r/photoshopbattles/">Photoshop Battles Subreddit</a>. In fact, it's the only place I've done it at. Either way it's a blast! There's an art to it! Yes, obviously.. But there's more to it than just making the best edited image; you also have to time it perfectly on when to post and what to say with the post. I can get competitive sometimes.
 
 I also sometimes like creating collages in photoshop. Some of my graphics can be seen on my portfolio.
 
