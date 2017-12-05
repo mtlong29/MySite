@@ -1,17 +1,11 @@
 <section id="featuredPortfolio">
     
-  <h3 class="tileHeader">Portfolio Preview</h3>
-  
-  <p>Below are a few examples of my work. Click <a href="/portfolio">here</a> to see even more, or you can click <a href="/resume">here</a> to see my resume.</p>
-    
+  <h3 class="tileHeader">Latest Portfolio Entries</h3>
   <div class="tilesContainer vertical">
-    
     {% assign features = site.categories[page.feature-portfolio.category] | where:"featured", true %}
     
-      {% for post in features limit:3 %}
-      
+    {% for post in features limit:3 %}
       {% include /globalSections/tile.html %}
-          
     {% endfor %}
           
   </div>
