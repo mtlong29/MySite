@@ -89,6 +89,7 @@ MacBook Pro, iPad, iPhone, mockups. used in portfolio
 }
 
 .macbook-pro-mockup {
+  @include userSelect(none);
   position: relative;
   width: 100%;
   margin: 22px auto 0;
