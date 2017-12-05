@@ -17,7 +17,7 @@ image:
   header: searching.jpg
   teaser: searching.jpg
 
-modified: 2017-08-16
+date: 2017-08-16
 
 featured: true
 ---

@@ -11,7 +11,7 @@ excerpt: "JavaScript has an extremely powerful keyword, this. this can be used t
 
 categories: notes
 
-modified: 2017-09-08
+date: 2017-09-08
 ---
 
 {% include /globalSections/toc.html %}

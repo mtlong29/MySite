@@ -11,7 +11,7 @@ excerpt: "Learn to use callback functions to respond to server responses, how th
 
 categories: notes
 
-modified: 2017-08-23
+date: 2017-08-23
 ---
 
 {% include /globalSections/toc.html %}

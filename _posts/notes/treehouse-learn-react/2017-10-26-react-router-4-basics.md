@@ -11,7 +11,7 @@ excerpt: "Notes on how to use React Router v4, a declarative routing solution fo
 
 categories: notes
 
-modified: 2017-10-26
+date: 2017-10-26
 ---
 
 {% include /globalSections/toc.html %}

@@ -7,8 +7,6 @@ title: "Sitemap"
 
 date: 2014-12-26
 
-modified: 2016-08-07
-
 excerpt: "A visual sitemap of all the pages on mtlong.me"
 ---
 

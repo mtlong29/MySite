@@ -11,7 +11,7 @@ excerpt: "Scalable Vector Graphics (SVG) is an XML markup language for creating 
 
 categories: notes
 
-modified: 2017-10-20
+date: 2017-10-20
 ---
 
 {% include /globalSections/toc.html %}

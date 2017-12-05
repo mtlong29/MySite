@@ -11,7 +11,7 @@ excerpt: "Express.js is used to build dynamic websites on the Node.js platform. 
 
 categories: notes
 
-modified: 2017-09-29
+date: 2017-09-29
 ---
 
 {% include /globalSections/toc.html %}

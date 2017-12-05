@@ -11,7 +11,7 @@ excerpt: "Swift allows you to create custom data types using structures and clas
 
 categories: notes
 
-modified: 2017-11-06
+date: 2017-11-06
 ---
 
 {% include /globalSections/toc.html %}

@@ -11,7 +11,7 @@ excerpt: "These notes discuss what a constructor function is. It explains that o
 
 categories: notes
 
-modified: 2017-08-27
+date: 2017-08-27
 ---
 
 {% include /globalSections/toc.html %}

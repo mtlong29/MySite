@@ -11,7 +11,7 @@ excerpt: "Notes on dealing with groups of values in Swift. This is achieved thro
 
 categories: notes
 
-modified: 2017-11-04
+date: 2017-11-04
 ---
 
 {% include /globalSections/toc.html %}

@@ -11,7 +11,7 @@ excerpt: "These notes show the process of building a simple iPhone App with Swif
 
 categories: notes
 
-modified: 2017-11-10
+date: 2017-11-10
 ---
 
 {% include /globalSections/toc.html %}

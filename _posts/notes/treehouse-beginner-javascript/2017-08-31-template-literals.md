@@ -11,7 +11,7 @@ excerpt: "Template literals offer a lot of convenience when creating strings in 
 
 categories: notes
 
-modified: 2017-08-31
+date: 2017-08-31
 ---
 
 {% include /globalSections/toc.html %}

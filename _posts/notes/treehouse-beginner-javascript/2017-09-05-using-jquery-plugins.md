@@ -11,7 +11,7 @@ excerpt: "Notes about jQuery plugins. jQuery plugins let you add interactive pag
 
 categories: notes
 
-modified: 2017-09-05
+date: 2017-09-05
 ---
 
 {% include /globalSections/toc.html %}

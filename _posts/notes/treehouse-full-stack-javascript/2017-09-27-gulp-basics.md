@@ -11,7 +11,7 @@ excerpt: "Gulp.js is a JavaScript taskrunner that allows you to automate importa
 
 categories: notes
 
-modified: 2017-09-27
+date: 2017-09-27
 ---
 
 {% include /globalSections/toc.html %}

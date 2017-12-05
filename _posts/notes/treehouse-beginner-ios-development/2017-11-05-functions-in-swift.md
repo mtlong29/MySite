@@ -11,7 +11,7 @@ excerpt: "Notes on how to use functions in Swift."
 
 categories: notes
 
-modified: 2017-11-05
+date: 2017-11-05
 ---
 
 {% include /globalSections/toc.html %}

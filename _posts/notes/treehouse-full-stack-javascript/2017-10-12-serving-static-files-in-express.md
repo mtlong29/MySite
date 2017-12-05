@@ -11,7 +11,7 @@ excerpt: "Web pages need CSS and other assets to look good. Express can supply t
 
 categories: notes
 
-modified: 2017-10-12
+date: 2017-10-12
 ---
 
 {% include /globalSections/toc.html %}

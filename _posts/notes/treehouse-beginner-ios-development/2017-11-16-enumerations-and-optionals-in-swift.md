@@ -11,7 +11,7 @@ excerpt: "Two of Swift's most novel features over Objective-C are the extended p
 
 categories: notes
 
-modified: 2017-11-16
+date: 2017-11-16
 ---
 
 {% include /globalSections/toc.html %}

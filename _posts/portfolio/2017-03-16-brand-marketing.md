@@ -11,9 +11,7 @@ subtitle: "Graphic Design"
 
 excerpt: "Branding for companies is an art. Some of my favorite creations for social media purposes can be found here."
 
-date: 2017-03-16
-
-modified: 2017-08-17
+date: 2017-08-17
 
 image: 
   header: brand-marketing.jpg

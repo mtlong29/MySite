@@ -11,7 +11,7 @@ excerpt: "Authentication example. This example uses Pug templating, Express, Exp
 
 categories: notes
 
-modified: 2017-10-16
+date: 2017-10-16
 ---
 
 {% include /globalSections/toc.html %}

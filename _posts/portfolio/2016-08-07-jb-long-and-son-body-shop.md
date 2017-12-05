@@ -11,9 +11,7 @@ subtitle: "Web Development"
 
 excerpt: "I was tasked with creating a website for JB Long and Son Body Shop. This post documents the journey."
 
-date: 2016-08-07
-
-modified: 2017-08-13
+date: 2017-08-13
 
 image: 
   header: jbshop-site.jpg

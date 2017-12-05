@@ -11,7 +11,7 @@ excerpt: "Notes on tactics used when optimizing the performance of a website. Fo
 
 categories: notes
 
-modified: 2017-08-30
+date: 2017-08-30
 ---
 
 {% include /globalSections/toc.html %}

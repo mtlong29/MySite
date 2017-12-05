@@ -11,7 +11,7 @@ excerpt: "Notes on web accessibility. Web accessibillity is typically defined as
 
 categories: notes
 
-modified: 2017-08-27
+date: 2017-08-27
 ---
 
 {% include /globalSections/toc.html %}

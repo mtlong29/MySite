@@ -11,9 +11,7 @@ subtitle: "Civil Engineering"
 
 excerpt: "For my geographic information systems course we were to analyze something of our choosing using ArcGIS."
 
-date: 2015-04-28
-
-modified: 2016-02-13
+date: 2016-02-13
 
 image: 
   header: gis-poster.jpg

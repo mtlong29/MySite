@@ -11,7 +11,7 @@ excerpt: "These are notes regarding alternatives to if..then statements for cont
 
 categories: notes
 
-modified: 2017-09-17
+date: 2017-09-17
 ---
 
 {% include /globalSections/toc.html %}

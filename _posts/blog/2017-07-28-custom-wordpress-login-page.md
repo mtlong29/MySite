@@ -17,7 +17,7 @@ image:
   header: custom-wordpress-login.jpg
   teaser: custom-wordpress-login.jpg
 
-modified: 2017-07-28
+date: 2017-07-28
 
 featured: true
 ---

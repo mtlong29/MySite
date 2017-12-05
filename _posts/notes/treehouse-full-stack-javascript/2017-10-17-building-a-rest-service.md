@@ -11,7 +11,7 @@ excerpt: "Notes on what REST APIs are. Understanding REST services. Notes on des
 
 categories: notes
 
-modified: 2017-10-17
+date: 2017-10-17
 ---
 
 {% include /globalSections/toc.html %}

@@ -11,7 +11,7 @@ excerpt: "Notes on JavaScript closures. A closure is an inner function that has 
 
 categories: notes
 
-modified: 2017-10-15
+date: 2017-10-15
 ---
 
 {% include /globalSections/toc.html %}

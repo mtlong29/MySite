@@ -11,7 +11,7 @@ excerpt: "Authentication process. What happens behind the scenes when you log on
 
 categories: notes
 
-modified: 2017-10-165
+date: 2017-10-16
 ---
 
 {% include /globalSections/toc.html %}

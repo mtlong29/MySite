@@ -11,7 +11,7 @@ excerpt: "Notes on how to use JavaScript to interact with the document object mo
 
 categories: notes
 
-modified: 2017-09-01
+date: 2017-09-01
 ---
 
 {% include /globalSections/toc.html %}

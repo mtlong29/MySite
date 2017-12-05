@@ -11,7 +11,7 @@ excerpt: "CSS transitions and transforms can create simple animations that enhan
 
 categories: notes
 
-modified: 2017-10-20
+date: 2017-10-20
 ---
 
 {% include /globalSections/toc.html %}

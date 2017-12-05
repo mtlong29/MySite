@@ -11,7 +11,7 @@ excerpt: "Node.js is a JavaScript environment that allows you to perform a multi
 
 categories: notes
 
-modified: 2017-09-14
+date: 2017-09-14
 ---
 
 {% include /globalSections/toc.html %}

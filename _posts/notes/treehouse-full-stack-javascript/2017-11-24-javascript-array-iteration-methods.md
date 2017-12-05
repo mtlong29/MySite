@@ -11,7 +11,7 @@ excerpt: "Notes on how to access and transform data in arrays with JavaScript's 
 
 categories: notes
 
-modified: 2017-11-24
+date: 2017-11-24
 ---
 
 {% include /globalSections/toc.html %}

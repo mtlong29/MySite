@@ -11,7 +11,7 @@ excerpt: "These are notes about ways to make Gulp work even harder. How to run m
 
 categories: notes
 
-modified: 2017-09-28
+date: 2017-09-28
 ---
 
 {% include /globalSections/toc.html %}

@@ -11,7 +11,7 @@ excerpt: "Notes on another essential component of Express, middleware."
 
 categories: notes
 
-modified: 2017-10-08
+date: 2017-10-08
 ---
 
 {% include /globalSections/toc.html %}

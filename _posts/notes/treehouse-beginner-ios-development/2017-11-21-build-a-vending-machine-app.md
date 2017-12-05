@@ -11,7 +11,7 @@ excerpt: "This set of notes concern building a vending machine app that models a
 
 categories: notes
 
-modified: 2017-11-21
+date: 2017-11-21
 ---
 
 {% include /globalSections/toc.html %}

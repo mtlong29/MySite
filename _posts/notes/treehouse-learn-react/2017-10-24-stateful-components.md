@@ -11,7 +11,7 @@ excerpt: "In this stage you will learn how to create components that have their 
 
 categories: notes
 
-modified: 2017-10-24
+date: 2017-10-24
 ---
 
 {% include /globalSections/toc.html %}

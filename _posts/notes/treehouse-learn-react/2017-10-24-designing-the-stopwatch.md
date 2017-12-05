@@ -11,7 +11,7 @@ excerpt: "React provides several lifecycle hooks that can be very useful when bu
 
 categories: notes
 
-modified: 2017-10-24
+date: 2017-10-24
 ---
 
 {% include /globalSections/toc.html %}

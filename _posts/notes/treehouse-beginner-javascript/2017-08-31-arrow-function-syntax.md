@@ -11,7 +11,7 @@ excerpt: "ECMAScript 2015 has been widely adopted by all modern browsers. This m
 
 categories: notes
 
-modified: 2017-08-31
+date: 2017-08-31
 ---
 
 {% include /globalSections/toc.html %}

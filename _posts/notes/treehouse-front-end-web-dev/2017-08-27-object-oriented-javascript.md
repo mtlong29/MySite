@@ -11,7 +11,7 @@ excerpt: "An object is a container for values in the form of properties and func
 
 categories: notes
 
-modified: 2017-08-27
+date: 2017-08-27
 ---
 
 {% include /globalSections/toc.html %}

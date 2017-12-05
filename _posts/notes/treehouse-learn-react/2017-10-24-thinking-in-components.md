@@ -11,7 +11,7 @@ excerpt: "Components are the core building blocks of a React application. Being 
 
 categories: notes
 
-modified: 2017-10-24
+date: 2017-10-24
 ---
 
 {% include /globalSections/toc.html %}

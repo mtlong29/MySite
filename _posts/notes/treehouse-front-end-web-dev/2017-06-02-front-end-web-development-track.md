@@ -11,7 +11,7 @@ excerpt: "Very basic notes on the history of web based programming. Information 
 
 categories: notes
 
-modified: 2017-06-02
+date: 2017-06-02
 ---
 
 {% include /globalSections/toc.html %}

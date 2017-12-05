@@ -11,7 +11,7 @@ excerpt: "Notes about jQuery, the world's most used JavaScript library. jQuery a
 
 categories: notes
 
-modified: 2017-09-04
+date: 2017-09-04
 ---
 
 {% include /globalSections/toc.html %}

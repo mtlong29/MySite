@@ -11,7 +11,7 @@ excerpt: "Module Patterns are how some of those huge JavaScript projects out the
 
 categories: notes
 
-modified: 2017-09-09
+date: 2017-09-09
 ---
 
 {% include /globalSections/toc.html %}

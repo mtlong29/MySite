@@ -11,7 +11,7 @@ excerpt: "These are notes regarding aspects of Sass I didn't already have a stro
 
 categories: notes
 
-modified: 2017-10-23
+date: 2017-10-23
 ---
 
 {% include /globalSections/toc.html %}

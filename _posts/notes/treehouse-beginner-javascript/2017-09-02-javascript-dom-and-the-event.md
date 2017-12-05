@@ -11,7 +11,7 @@ excerpt: "Once we've selected an element in the DOM, we can read or affect it. W
 
 categories: notes
 
-modified: 2017-09-02
+date: 2017-09-02
 ---
 
 {% include /globalSections/toc.html %}

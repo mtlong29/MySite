@@ -11,7 +11,7 @@ excerpt: "Notes on how MongoDB works. Comparing it to other databases. Why shoul
 
 categories: notes
 
-modified: 2017-10-13
+date: 2017-10-13
 ---
 
 {% include /globalSections/toc.html %}

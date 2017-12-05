@@ -17,7 +17,7 @@ image:
   header: using-jekyll.jpg
   teaser: using-jekyll.jpg
 
-modified: 2016-07-04
+date: 2016-06-15
 
 featured: true
 ---

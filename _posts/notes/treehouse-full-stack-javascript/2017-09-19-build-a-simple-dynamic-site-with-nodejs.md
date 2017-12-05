@@ -11,7 +11,7 @@ excerpt: "Node.js is a versatile platform for building all sorts of applications
 
 categories: notes
 
-modified: 2017-09-19
+date: 2017-09-19
 ---
 
 {% include /globalSections/toc.html %}

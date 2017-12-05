@@ -11,7 +11,7 @@ excerpt: "State is one of the most difficult things to reason about in your appl
 
 categories: notes
 
-modified: 2017-10-24
+date: 2017-10-24
 ---
 
 {% include /globalSections/toc.html %}

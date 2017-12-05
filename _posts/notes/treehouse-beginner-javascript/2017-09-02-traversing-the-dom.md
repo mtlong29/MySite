@@ -11,7 +11,7 @@ excerpt: "These are notes on how to traverse the DOM using techniques such as pa
 
 categories: notes
 
-modified: 2017-09-02
+date: 2017-09-02
 ---
 
 {% include /globalSections/toc.html %}

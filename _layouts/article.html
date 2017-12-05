@@ -15,10 +15,6 @@ layout: default
         <meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">
       {% endif %}
       
-      {% if page.modified %}
-        <meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">
-      {% endif %}
-      
       {% unless post.url contains notes %}
         {% include /globalSections/pageHeader.html %}
       {% endunless %}

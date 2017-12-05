@@ -11,7 +11,7 @@ excerpt: "Example of a quicz constructor function. There isn't a working example
 
 categories: notes
 
-modified: 2017-08-27
+date: 2017-08-27
 ---
 
 {% include /globalSections/toc.html %}

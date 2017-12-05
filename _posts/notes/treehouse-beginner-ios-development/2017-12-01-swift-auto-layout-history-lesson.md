@@ -11,7 +11,7 @@ excerpt: "Auto Layout has evolved greatly since it's conception. It wasn't even 
 
 categories: notes
 
-modified: 2017-12-01
+date: 2017-12-01
 ---
 
 {% include /globalSections/toc.html %}
@@ -72,7 +72,46 @@ Answer: `A1 = (M * A2) + C`
 
 #### Quiz 3
 
-Question:
+Question: Why do we not have to specify a height and a width constraint of a label that contains some simple text?
 
-Answer:
+Answer: Auto Layout can determine the size of views with content using their intrinsic content size
 
+Question: Suppose that view A has the following constrains applied to it. 1: Height constraing with a constant of 80 and a priority of 750. 2: Heigh constraint with a constant of 90 and a priority of 250. What is the resulting height of view A?
+
+Answer: 80
+
+Question: Content hugging refers to how much the view resists compressing its size to protect its content.
+
+Answer: False
+
+Question: Auto Layout uses a constraints priority value to determine how to resolve conflicts between two constraints.
+
+Answer: True
+
+#### Quiz 4
+
+Question: A size class can have two values ____ and ____.
+
+Answer: compact, regular
+
+Question: In addition to size classes, what other trait(s) can we use to modify layouts?
+
+Answer: Display scale and user interface idiom
+
+Question: A generic size class is represended by what combination?
+
+Answer: Any width, any height
+
+Question: Size classes correspond to exact device specifications or measurements.
+
+Answer: False
+
+Question: What size classes targets all iPhones in landscape?
+
+Answer: Any width, compact height
+
+Question: Use size classes to make fine tuned changes to your interface.
+
+Answer: False
+
+ 

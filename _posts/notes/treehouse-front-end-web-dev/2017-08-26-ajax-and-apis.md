@@ -11,7 +11,7 @@ excerpt: "Using APIs, or Application Programming Interfaces. Notes on what APIs 
 
 categories: notes
 
-modified: 2017-08-26
+date: 2017-08-26
 ---
 
 {% include /globalSections/toc.html %}

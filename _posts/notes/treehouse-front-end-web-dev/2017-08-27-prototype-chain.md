@@ -11,7 +11,7 @@ excerpt: "Notes on JavaScript prototypes. All JavaScript objects inherit the pro
 
 categories: notes
 
-modified: 2017-08-27
+date: 2017-08-27
 ---
 
 {% include /globalSections/toc.html %}

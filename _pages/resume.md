@@ -7,8 +7,6 @@ title: "Resume"
 
 date: 2014-06-01
 
-modified: 2017-08-13
-
 excerpt:
 
 image:

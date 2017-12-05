@@ -11,7 +11,7 @@ excerpt: "These notes contain an example for dom scripting. The example is an in
 
 categories: notes
 
-modified: 2017-09-03
+date: 2017-09-03
 ---
 
 {% include /globalSections/toc.html %}

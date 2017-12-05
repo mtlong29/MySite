@@ -11,7 +11,7 @@ excerpt: "JavaScript classes, introduced in ECMAScript 2015, are primarily synta
 
 categories: notes
 
-modified: 2017-09-13
+date: 2017-09-13
 ---
 
 {% include /globalSections/toc.html %}

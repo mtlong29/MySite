@@ -11,7 +11,7 @@ excerpt: "Example of how to sort tables using the jQuery dataTables.js plugin. T
 
 categories: notes
 
-modified: 2017-08-21
+date: 2017-08-21
 ---
 
 {% include /globalSections/toc.html %}

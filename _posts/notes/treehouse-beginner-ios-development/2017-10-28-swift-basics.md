@@ -11,7 +11,7 @@ excerpt: "Basic notes on Swift programming language."
 
 categories: notes
 
-modified: 2017-10-28
+date: 2017-10-28
 ---
 
 {% include /globalSections/toc.html %}

@@ -11,7 +11,7 @@ excerpt: "Templates are a special type of file that has their own syntax and lan
 
 categories: notes
 
-modified: 2017-10-06
+date: 2017-10-06
 ---
 
 {% include /globalSections/toc.html %}

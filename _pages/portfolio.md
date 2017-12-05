@@ -7,8 +7,6 @@ title: "Portfolio"
 
 date: 2014-06-02
 
-modified: 2016-08-08
-
 excerpt: ""
 
 image:

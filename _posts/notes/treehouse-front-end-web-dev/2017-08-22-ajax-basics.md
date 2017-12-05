@@ -11,7 +11,7 @@ excerpt: "AJAX is an important front-end web technology that lets JavaScript com
 
 categories: notes
 
-modified: 2017-08-21
+date: 2017-08-21
 ---
 
 {% include /globalSections/toc.html %}

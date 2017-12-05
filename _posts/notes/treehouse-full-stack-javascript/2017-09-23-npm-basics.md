@@ -11,7 +11,7 @@ excerpt: "npm is a command line tool and package manager for JavaScript. It is a
 
 categories: notes
 
-modified: 2017-09-19
+date: 2017-09-19
 ---
 
 {% include /globalSections/toc.html %}

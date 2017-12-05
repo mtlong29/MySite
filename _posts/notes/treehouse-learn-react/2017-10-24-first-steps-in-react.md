@@ -11,7 +11,7 @@ excerpt: "Introductory notes on React. React is a powerful tool for building and
 
 categories: notes
 
-modified: 2017-10-24
+date: 2017-10-24
 ---
 
 {% include /globalSections/toc.html %}

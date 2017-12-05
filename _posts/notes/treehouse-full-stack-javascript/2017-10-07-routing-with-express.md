@@ -11,7 +11,7 @@ excerpt: "Routing is how users can access different parts of your application."
 
 categories: notes
 
-modified: 2017-10-07
+date: 2017-10-07
 ---
 
 {% include /globalSections/toc.html %}

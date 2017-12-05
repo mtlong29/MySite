@@ -11,7 +11,7 @@ excerpt: "Called interfaces in other languages, protocols define a blueprint of 
 
 categories: notes
 
-modified: 2017-11-16
+date: 2017-11-16
 ---
 
 {% include /globalSections/toc.html %}

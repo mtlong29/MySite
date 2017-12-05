@@ -11,7 +11,7 @@ excerpt: "Introduction to Git and GitHub. Notes on how to use Git from the comma
 
 categories: notes
 
-modified: 2017-08-30
+date: 2017-08-30
 ---
 
 {% include /globalSections/toc.html %}

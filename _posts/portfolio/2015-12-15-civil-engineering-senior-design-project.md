@@ -11,9 +11,7 @@ subtitle: "Civil Engineering"
 
 excerpt: "Civil Engineering senior design concerned reviving Town Branch Creek. This post documents the journey."
 
-date: 2015-12-15
-
-modified: 2016-02-13
+date: 2016-02-13
 
 image: 
   header: senior-design.jpg

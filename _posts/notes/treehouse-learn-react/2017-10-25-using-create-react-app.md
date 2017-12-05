@@ -11,7 +11,7 @@ excerpt: "Notes on using create react app. Create React App lets you quickly set
 
 categories: notes
 
-modified: 2017-10-25
+date: 2017-10-25
 ---
 
 {% include /globalSections/toc.html %}

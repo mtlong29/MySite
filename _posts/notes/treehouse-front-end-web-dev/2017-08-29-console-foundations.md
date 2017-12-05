@@ -11,7 +11,7 @@ excerpt: "Notes on using the console. The console is a text-based interface on y
 
 categories: notes
 
-modified: 2017-08-29
+date: 2017-08-29
 ---
 
 {% include /globalSections/toc.html %}

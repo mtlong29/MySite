@@ -13,8 +13,6 @@ excerpt: "I have created an absurd amount of collages using photoshop. This post
 
 date: 2016-10-12
 
-modified: 2016-10-12
-
 image: 
   header: photoshop-collage.jpg
   teaser: photoshop-collage.png

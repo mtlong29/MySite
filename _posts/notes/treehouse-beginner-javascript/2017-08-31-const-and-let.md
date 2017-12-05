@@ -11,7 +11,7 @@ excerpt: "Notes on new ways to declare a variable in JavaScript. The var declara
 
 categories: notes
 
-modified: 2017-08-31
+date: 2017-08-31
 ---
 
 {% include /globalSections/toc.html %}

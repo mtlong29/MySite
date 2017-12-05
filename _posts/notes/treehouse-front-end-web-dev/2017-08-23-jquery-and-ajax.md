@@ -11,7 +11,7 @@ excerpt: "How to greatly simplify the use of AJAX with jQuery."
 
 categories: notes
 
-modified: 2017-08-23
+date: 2017-08-23
 ---
 
 {% include /globalSections/toc.html %}

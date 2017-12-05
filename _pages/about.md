@@ -7,8 +7,6 @@ title: "About"
 
 date: 2014-06-01
 
-modified: 2016-06-20
-
 excerpt: "Matthew Long is..."
 
 image:
