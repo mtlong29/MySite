@@ -30,6 +30,10 @@ $(document).ready(() => {
       name: 'Treehouse - Beginner iOS Development',
       color:'#53BBB4',
     },
+    intermSwift: {
+      name: 'Treehouse - Intermediate iOS Development',
+      color:'#53BBB4',
+    },
   }
 
   // initialize courseButtons string
