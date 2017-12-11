@@ -40,9 +40,7 @@ $(document).ready(() => {
   let courseButtons = "";
 
   // iterate over courses object and generate buttons
-  $.each(courses, (key, value) => {
-    courseButtons += `<button class="${key}">${value.name}</button>`;
-  });
+  $.each(courses, (key, value) => courseButtons += `<button class="${key}">${value.name}</button>`);
 
   // add course buttons to the dom
   $('#courseTags').append(`<button>All</button>${courseButtons}`);
