@@ -1,13 +1,13 @@
 ---
 layout: article
 
-permalink: /notes/javascript-array-iteration-methods/
+permalink: /notes/javascript-array-iteration-using-foreach/
 
-title: "JavaScript Array Iteration Methods"
+title: "JavaScript Array Iteration Using forEach"
 
 subtitle: "Treehouse - Full Stack JavaScript"
 
-excerpt: "Notes on how to access and transform data in arrays with JavaScript's array iteration methods. The main methods looked at in these notes are forEach(), filter(), map(), and reduce()."
+excerpt: "Notes on how to iterate over array in JavaScript using forEach()."
 
 categories: notes
 
@@ -16,7 +16,7 @@ date: 2017-11-24
 
 {% include /globalSections/toc.html %}
 
-Notes on how to access and transform data in arrays with JavaScript's array iteration methods. The main methods looked at in these notes are forEach(), filter(), map(), and reduce().
+Notes on how to iterate over array in JavaScript using forEach().
 
 #### Quiz
 
