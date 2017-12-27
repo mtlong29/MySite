@@ -1,6 +1,6 @@
-/* ANIMATIONS */
-
-/* Fade-in */
+/************************************************************
+fadein animation
+************************************************************/
 
 @keyframes fade-in {
   0% {
@@ -11,11 +11,12 @@
   }
 }
 
-
-/* Magnific-Popup zoom-in */
+/************************************************************
+magnific-popup zoom-in
+************************************************************/
 
 .mfp-zoom-in {
-  /* start state */
+  // start state
   .mfp-with-anim {
     opacity: 0;
     @include transition(.25s, ease-in-out, all);
@@ -27,7 +28,7 @@
     @include transition(.25s, ease-out, all);
   }
 
-  /* animate in */
+  // animate in
   &.mfp-ready {
     .mfp-with-anim {
       opacity: 1;
@@ -38,7 +39,7 @@
     }
   }
 
-  /* animate out */
+  // animate out
   &.mfp-removing {
     .mfp-with-anim {
       transform: scale(0.8);
