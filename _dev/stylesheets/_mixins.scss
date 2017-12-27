@@ -1,4 +1,6 @@
-// Transition Webkits
+/************************************************************
+transition webkits
+************************************************************/
 
 @mixin transition($time, $type, $selector) {
 	-webkit-transition: $time $type $selector;
@@ -7,27 +9,37 @@
 	transition: $time $type $selector;
 }
 
-// Transition Delays Webkits
+/************************************************************
+transition delays webkits
+************************************************************/
 
 @mixin transitionDelay($time) {
 	-webkit-transition-delay: $time;
 	transition-delay: $time;
 }
 
-// Translations Webkits
+/************************************************************
+translation webkits
+************************************************************/
 
 @mixin translateY($amount) {
 	-webkit-transform: translateY($amount);
 	transform: translateY($amount);
 }
 
-// Box Shadow Webkits
+/************************************************************
+box shadow webkits
+************************************************************/
 
 @mixin boxShadow($top, $left, $blur, $color, $inset:"") {
 	-webkit-box-shadow: $top $left $blur $color #{$inset};
 	-moz-box-shadow: $top $left $blur $color #{$inset};
 	box-shadow: $top $left $blur $color #{$inset};
 }
+
+/************************************************************
+clearfix
+************************************************************/
 
 @mixin clearfix {
 	&::after {
@@ -37,7 +49,9 @@
 	}
 }
 
-// User select 
+/************************************************************
+user select webkits
+************************************************************/
 
 @mixin userSelect ($arg) {
   -webkit-user-select: $arg;
@@ -46,13 +60,13 @@
   user-select: $arg;
 }
 
-// Font Size Calculator
+/************************************************************
+font size calculator
+************************************************************/
 
 @function em($target, $context: $doc-font-size) {
 	@return ($target / $context) * 1em;
 }
-
-// Font Size Calculator
 
 @mixin font-size($size, $margin: yes, $line-height: $doc-line-height) {
 	font-size: 0px + $size;
@@ -75,6 +89,10 @@
 		margin-bottom: 0px + $doc-line-height;
 	}
 }
+
+/************************************************************
+breakpoints
+************************************************************/
 
 @mixin breakpoint($width) {
 	@media (min-width: $width){
