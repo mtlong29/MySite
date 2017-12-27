@@ -4,8 +4,12 @@ layout: default
 
 <div id="main" role="main">
 
-  <header class="container post__header">  
-    {% include /globalSections/pageHeader.html %}
+  <header class="container">  
+    <div class="page-header">
+      {% if page.image.header %}
+        <img src="/assets/images/header/{{page.image.header}}" alt="Header Image for {{page.title}}">
+      {% endif %}
+    </div>
   </header>
   
   <div class="container">
