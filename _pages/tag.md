@@ -8,8 +8,6 @@ title: "Tag Index"
 date: 2016-02-08
 
 excerpt: "An archive of posts sorted by tag frequency."
-
-share: false
 ---
 
 {{page.excerpt | markdownify}}
