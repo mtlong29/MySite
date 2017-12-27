@@ -14,10 +14,6 @@ $(document).ready(() => {
       name: 'Treehouse - Front End Web Development',
       color: '#3079AB',
     },
-    beginJS: {
-      name: 'Treehouse - Beginner JavaScript',
-      color:'#C25975',
-    },
     intermJS: {
       name: 'Treehouse - Full Stack JavaScript',
       color: '#C25975',
