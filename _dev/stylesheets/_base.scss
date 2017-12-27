@@ -40,7 +40,7 @@ body {
   font-family: $serif;
   line-height: 1.5;
   &.overflow--hidden {
-    /* when primary navigation is visible, the content in the background won't scroll */
+    // when primary navigation is visible, the content in the background won't scroll
     overflow: hidden;
   }
 }
@@ -102,7 +102,6 @@ a {
 }
 
 // remove outline from links
-
 a:hover,
 a:active,
 a:focus {
@@ -294,7 +293,6 @@ figcaption {
 }
 
 // remove anchor styling from images
-
 .image-popup {
   border-bottom: 0;
   &:hover {
