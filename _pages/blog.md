@@ -7,7 +7,7 @@ title: "Blog"
 
 date: 2014-06-02
 
-excerpt: ""
+excerpt: "Blog entries by Matthew Long"
 
 image:
   header: blog.jpg

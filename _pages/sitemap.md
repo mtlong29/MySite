@@ -7,7 +7,7 @@ title: "Sitemap"
 
 date: 2014-12-26
 
-excerpt: "A visual sitemap of all the pages on mtlong.me"
+excerpt: "A visual sitemap of all the pages on www.mtlong.me"
 ---
 
 A hierarchical breakdown of all the sections and pages (except the secret ones.. <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">of course</a>) found on the site.

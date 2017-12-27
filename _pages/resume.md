@@ -7,7 +7,7 @@ title: "Resume"
 
 date: 2014-06-01
 
-excerpt:
+excerpt: "Resume belonging to Matthew Long."
 
 image:
   header: resume-temp.jpg

@@ -7,7 +7,7 @@ title: "Portfolio"
 
 date: 2014-06-02
 
-excerpt: ""
+excerpt: "Portfolio belonging to Matthew Long."
 
 image:
   header: portfolio.jpg

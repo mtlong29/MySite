@@ -7,7 +7,7 @@ title: "About"
 
 date: 2014-06-01
 
-excerpt: "Matthew Long is..."
+excerpt: "About page for Matthew Long."
 
 image:
   header: about-me.jpg
