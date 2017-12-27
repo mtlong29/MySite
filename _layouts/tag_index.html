@@ -7,27 +7,31 @@ layout: default
 
 <div id="main" role="main">
 
-  <header class="container post__header">
-    <h1 class="post__title">{{ page.title }}</h1>
-    <h2 class="post__excerpt">
+  <header class="container">
+    <h1 class="page-title">{{ page.title }}</h1>
+    <h2 class="page-excerpt">
       {% if tag.description %}
         {{ tag.description | markdownify | remove: "<p>" | remove: "</p>" }}
       {% else %}
         An archive of posts tagged <em>{{ page.title }}</em>.
       {% endif %}
     </h2>
-    {% include /globalSections/pageHeader.html %}
+    <div class="page-header">
+      {% if page.image.header %}
+        <img src="/assets/images/header/{{page.image.header}}" alt="Header Image for {{page.title}}">
+      {% endif %}
+    </div>
   </header>
 
   {% if page.feature.visible == true %}
     {% include featured.html %}
   {% endif %}
 
-  <div class="container post__content">
+  <div class="container page-content">
 
-    <div class="post__inner-wrapper-archive">
+    <div class="page-inner-wrapper-archive">
 
-      <section class="post__body">
+      <section class="page-body">
         <div class="tilesContainer horizontal">
 
           {% for post in page.posts %}
@@ -39,7 +43,7 @@ layout: default
 
     </div>
 
-    <aside class="post__sidebar sticky">
+    <aside class="sidebar sticky">
     </aside>
 
   </div>
