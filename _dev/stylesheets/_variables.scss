@@ -1,4 +1,6 @@
-// Typography
+/************************************************************
+typography
+************************************************************/
 
 $serif: "PT Serif", serif;
 $sans-serif: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
@@ -8,7 +10,9 @@ $monospace: Monaco, Consolas, "Lucida Console", monospace;
 $doc-font-size: 16;
 $doc-line-height: 24;
 
-// Primary Site Colors
+/************************************************************
+primary site colors
+************************************************************/
 
 $white: #fff;
 $black: #000;
@@ -24,15 +28,16 @@ $linkedin-color: #4875b4;
 $twitter-color: #55acee;
 $github-color: #333333;
 
-// Commonly Used SCSS Values
+/************************************************************
+commonly used styling values
+************************************************************/
 
 $border-radius: 4px;
-
-// Menu Values
-
 $masthead-height: 53px;
 
-// Screen Sizes for Breakpoints
+/************************************************************
+breakpoints
+************************************************************/
 
 $small: 600px;
 $medium: 768px;
