@@ -150,6 +150,30 @@ masthead overlay menu
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
+    // first column
+    &.overlayMenuCol-1 {
+      @include breakpoint($medium) {
+        flex: 2;
+        margin-right: 2em;
+      }
+    }
+    // second column
+    &.overlayMenuCol-2 {
+      display: none;
+      @include breakpoint($medium) {
+        display: flex;
+        flex: 4;
+        margin-right: 2em;
+      }
+    }
+    // third column
+    &.overlayMenuCol-3 {
+      display: none;
+      @include breakpoint($medium) {
+        display: flex;
+        flex: 4;
+      }
+    }
   }
   a {
     display: inline-block;
@@ -161,42 +185,15 @@ masthead overlay menu
     &:hover {
       border-bottom: 0;
     }
-  }
-  a.primaryLinks {
-    &:hover {
-      padding-left: 10px;
-      padding-right: 10px;
+    &.primaryLinks {
+      &:hover {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
     }
   }
   &.is--visible {
     @include translateY(0);
-  }
-}
-
-/************************************************************
-overlay menu columns
-************************************************************/
-
-// first column
-.overlayMenuCol-1 {
-  @include breakpoint($small) {
-    flex: 2;
-    margin-right: 2em;
-  }
-}
-
-// second column
-.overlayMenuCol-2 {
-  @include breakpoint($small) {
-    flex: 4;
-    margin-right: 2em;
-  }
-}
-
-// third column
-.overlayMenuCol-3 {
-  @include breakpoint($small) {
-    flex: 4;
   }
 }
 
@@ -383,8 +380,8 @@ masthead posts
   }
   h3 {
     @include transitionDelay(0.05s);
-    margin: 0 1em;
     @include translateY(-100%);
+    margin: 0 1em;
     text-transform: uppercase;
     font-weight: 400;
     margin-bottom: 5px;
