@@ -24,7 +24,7 @@ featured: true
 
 {% include /globalSections/toc.html %}
 
-There are many reasons why someone would want to create a custom WordPress login page. I decided to design a custom login page for a new theme I was working on based off of the <a href="http://underscores.me/">underscores</a> starter. Upon briefly researching the current standards of doing this I noticed the top search results were all plugin based. Yuck.. Using a plugin is often a gross approach to things in my opinion. This post documents how I changed my login page such as the example below.
+There are many reasons why someone would want to create a custom WordPress login page. I decided to design a custom login page for a new theme I was working on based off of the [underscores](http://underscores.me/) starter. Upon briefly researching the current standards of doing this I noticed the top search results were all plugin based. Yuck.. *Using a plugin is often a gross approach to things in my opinion*. This post documents how I changed my login page such as the example below.
 
 <figure class="full">
 	<a href="/assets/images/post-custom-wordpress-login/customWordpressLogin.jpg" title="Custom Wordpress Login"><img src="/assets/images/post-custom-wordpress-login/customWordpressLogin.jpg" alt="Custom Wordpress Login" /></a>
@@ -41,24 +41,23 @@ There are many reasons why someone would want to create a custom WordPress login
 
 Your folder structure should looks like the following.
 
-{% highlight bash %}
-    wordpress/
-    ├── your-theme/
-    |   ├── login/
-    |   |   ├── custom-login-style.css
-    |   |   ├── background.jpg
-    |   |   └── logo.png
-    |   └── other-theme-files.txt
-    └── other-wordpress-files.txt
-{% endhighlight%}
+```bash
+wordpress/
+├── your-theme/
+|   ├── login/
+|   |   ├── custom-login-style.css
+|   |   ├── background.jpg
+|   |   └── logo.png
+|   └── other-theme-files.txt
+└── other-wordpress-files.txt
+```
 
 ## CSS
 
-You can use whatever styling you wish for your custom login page. The below `CSS` will result in a login page like the shown on this page.
+You can *use whatever styling you wish for your custom login page*. The below **CSS** will result in a login page like the shown on this page.
 
-{% highlight css linenos %}
+```css
 /* Change Background Image */
-
 body.login {
   background-image: url("background.jpg");
   background-repeat: no-repeat;
@@ -72,7 +71,6 @@ body.login {
 }
 
 /* Customize The login Form */
-
 .login label {
   font-size: 12px;
   color: #555555;
@@ -91,7 +89,6 @@ body.login {
 }
 
 /* Customize Login Button */
-
 .login .button-primary {
   width: 120px;
   float:right;
@@ -134,30 +131,26 @@ body.login {
 }
 
 /* Change border-left color of login error and login message */
-
 .login #login_error, .login .message {
   border-left: 4px solid #3fa4a6;
 }
 
 /* Remove Lost Password Link */
-
 p#nav {
   display: none;
 }
 
 /* Remove "Back To" Link */
-
-
 p#backtoblog {
   display: none;
 }
-{% endhighlight %}
+```
 
 ## PHP
 
-Each block of code in the following `PHP` file is commented enough for you to understand its purpose.
+Each block of code in the following **PHP** file is commented enough for you to understand its purpose.
 
-{% highlight php linenos %}
+```php
 /**
  * Tell WordPress to load this for custom login page
  */
@@ -195,4 +188,4 @@ function my_login_head() {
   remove_action('login_head', 'wp_shake_js', 12);
 }
 add_action('login_head', 'my_login_head');
-{% endhighlight %}
+```

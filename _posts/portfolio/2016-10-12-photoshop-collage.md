@@ -21,13 +21,14 @@ tags: [graphic design, photoshop, collage]
 
 featured: true
 ---
+
 {% include /globalSections/toc.html %}
 
-Below are some collages I have made using photoshop. Click to enlarge.
+Below are some collages I have made using photoshop. *Click to enlarge.*
 
 ## Game of Thrones Today
 
-This Game of Thrones collage actually uses 16 individual pictures.
+This Game of Thrones collage actually uses *16 individual pictures*.
 
 <figure class="half">
   <a href="/assets/images/post-photoshop-collage/matt-evolution0.jpg" title="Original background and picture of myself."><img src="/assets/images/post-photoshop-collage/matt-evolution0.jpg" alt="Original background and picture of myself."></a>
@@ -45,7 +46,7 @@ This Game of Thrones collage actually uses 16 individual pictures.
 
 ## Retro Rustic Advertisement
 
-This retro style advertisement collage combines 10 individual pictures.
+This retro style advertisement collage *combines 10 individual pictures*.
 
 <figure class="full">
   <a href="/assets/images/post-photoshop-collage/rustic-moon-collage.png" title="Rustic Moon Collage"><img src="/assets/images/post-photoshop-collage/rustic-moon-collage.png" alt="Rustic Moon Collage"></a>
@@ -53,7 +54,7 @@ This retro style advertisement collage combines 10 individual pictures.
 
 ## GMM #TakeAndMake
 
-<a href="https://www.youtube.com/user/rhettandlink2">Good Mythical Morning</a> is a YouTube channel that has a daily morning talk show. At the end of every episode they spin a wheel and sometimes the wheel lands on something called take and make. Take and make is when you take a still from that episode and make it into something else. This time you were to make them into aliens. Below is one that I made.
+[Good Mythical Morning](https://www.youtube.com/user/rhettandlink2) is a YouTube channel that has a daily morning talk show. At the end of every episode they spin a wheel and sometimes the wheel lands on something called take and make. Take and make is when you take a still from that episode and make it into something else. This time you were to make them into aliens. Below is one that I made. It is made out of *15 individual images*.
 
 <figure class="full">
   <a href="/assets/images/post-photoshop-collage/gmm-takeandmake.jpg" title="Good Mythical Morning #TakeAndMake"><img src="/assets/images/post-photoshop-collage/gmm-takeandmake.jpg" alt="Good Mythical Morning #TakeAndMake"></a>
@@ -63,7 +64,7 @@ This retro style advertisement collage combines 10 individual pictures.
 
 #### Material Used
 
-I used the following three images as well as various techniques in photoshop to design a simple collage of Michael Jordan dunking.
+I used the following *three images* as well as various techniques in photoshop to design a simple collage of Michael Jordan dunking.
 
 <figure class="half">
   <a href="/assets/images/post-dunk/jordan.jpg" title="Original image of Jordan."><img src="/assets/images/post-dunk/jordan.jpg" alt="Original image of Jordan."></a>

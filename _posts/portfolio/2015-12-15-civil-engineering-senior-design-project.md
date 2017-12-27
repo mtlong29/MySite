@@ -21,9 +21,10 @@ tags: [school work, civil engineering, poster, modeling, graphic design, photosh
 
 featured: true
 ---
+
 {% include /globalSections/toc.html %}
 
-Historically a waste canal, sewer, and water conduit for the city, Town Branch is a neglected, hidden, and underutilized fragment of public infrastructure. Reviving Town Branch can catalyze the redesign of other single-use infrastructures in downtown Lexington. Town Branch Commons offers an opportunity to link rural and urban regions by improving the quality of water along with the quality of life. Phase One of this restoration project consists of research whereas Phase Two consists of design.
+Historically a waste canal, sewer, and water conduit for the city, **Town Branch is a neglected, hidden, and underutilized fragment of public infrastructure. Reviving Town Branch can catalyze the redesign of other single-use infrastructures in downtown Lexington.** Town Branch Commons offers an opportunity to link rural and urban regions by improving the quality of water along with the quality of life. Phase One of this restoration project consists of research whereas Phase Two consists of design.
 
 ## Project Media
 

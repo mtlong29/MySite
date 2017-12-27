@@ -24,7 +24,7 @@ featured: true
 
 {% include /globalSections/toc.html %}
 
-I first started using <a href="http://jekyllrb.com/">Jekyll</a> a static site generator, early 2016.
+I first started using [Jekyll](http://jekyllrb.com/) a static site generator, early 2016.
 
 The following isn't a guide for how to use Jekyll, but instead almost a guide for me to quickly make updates to this site, and learn/document things on the way.
 
@@ -34,9 +34,9 @@ To learn how Jekyll works I read, or more realistically skimmed over tutorials. 
 
 ## Posts for Nearly Everything
 
-Within each blog post there is a <a href="http://yaml.org/">YAML</a> front matter block that will be processed by Jekyll as a special file. In order to communicate to Jekyll add three dashes before and after the front matter. Below is an example:
+Within each blog post there is a [YAML](http://yaml.org/) front matter block that will be processed by Jekyll as a special file. In order to communicate to Jekyll add three dashes before and after the front matter. Below is an example:
 
-{% highlight bash %}
+```bash
 ---
 layout: article
 title: "How I'm using Jekyll for this site."
@@ -49,7 +49,7 @@ image:
 featured: true
 modified: 2016-06-15
 ---
-{% endhighlight %}
+```
 
 ## Pages for Everything Else
 
@@ -57,27 +57,25 @@ Content that doesn't need to be ordered chronologically or grouped in any way be
 
 An architecture like this helps centralize the content so you're not poking around trying to locate files. Meaningfully naming files should be the goal. Avoid patterns like `/about/index.md` as it makes distinguishing between multiple `index.md` files harder.
 
-
-{% highlight bash %}
-    project-name/
-    ├── _assets/
-    ├── _includes/
-    ├── _layouts/
-    ├── _pages/
-    |   ├── 404.md
-    |   ├── about.md
-    |   ├── blog.md
-    |   ├── home.md
-    |   ├── portfolio.md
-    |   ├── resume.md
-    |   ├── sitemap.md
-    |   └── tag.md
-    ├── _posts/
-    ├── images
-    ├── _config.yml
-    └── Gemfile
-{% endhighlight %}
-
+```bash
+project-name/
+├── _assets/
+├── _includes/
+├── _layouts/
+├── _pages/
+|   ├── 404.md
+|   ├── about.md
+|   ├── blog.md
+|   ├── home.md
+|   ├── portfolio.md
+|   ├── resume.md
+|   ├── sitemap.md
+|   └── tag.md
+├── _posts/
+├── images
+├── _config.yml
+└── Gemfile
+```
 
 ## Tools Needed to Get the Site Up and Running
 
@@ -92,7 +90,7 @@ It didn't take long to fully embrace [Bundler](http://bundler.io/) but mainly be
 
 Below is what the gemfile for this site looked like as of 6/29/2017.
 
-{% highlight ruby %}
+```ruby
 #Gemfile
 source 'https://rubygems.org'
 
@@ -106,16 +104,16 @@ gem 'jekyll'
 gem 'jekyll-archives'
 gem 'jekyll-tagging-related_posts'
 gem 'jekyll-sitemap'
-{% endhighlight %}
+```
 
 Now when running `bundle install` each of the gems specified above are installed and a `Gemfile.lock` is created listing all of the dependencies.
 
 In my experience it is extremely easy to break a gem resulting in the entire site to stop working. In other words (I know it's obvious) but backup this file before installing a new update.
 
-{% highlight bash %}
+```bash
 bundle exec jekyll serve
-{% endhighlight %}
+```
 
-{% highlight bash %}
+```bash
 bundle exec jekyll build
-{% endhighlight %}
+```

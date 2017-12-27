@@ -21,9 +21,10 @@ tags: [web development, web design, scss, html, graphic design, photoshop, boots
 
 featured: true
 ---
+
 {% include /globalSections/toc.html %}
 
-I was tasked with creating a website for JB Long and Son Body Shop. This is a Body Shop found in Frankfort, Kentucky. This post documents the journey taken while designing and developing this website. The published website can be found at <a href="http://www.jblongandsonbodyshop.com">jblongandsonbodyshop.com</a>.
+I was tasked with creating a *website for JB Long and Son Body Shop*. This is a Body Shop found in Frankfort, Kentucky. This post documents the journey taken while designing and developing this website. The published website can be found at [jblongandsonbodyshop.com](http://www.jblongandsonbodyshop.com).
 
 ## Design
 
@@ -31,9 +32,7 @@ I wanted the design of this site to be simple such that the objective of JB Long
 
 #### Site as of August 13, 2017
 
-Below is the "finished" version of the JB Long and Son Body Shop site. I put quotations around finished, because as a designer I always want to improve things. I always want to add new features, and constaly making something I'm proud of.
-
- The JB Long and Son Body Shop site, at the time of this portfolio entry, is a simple one page site. The main objective of the site is to provide someone with information about JB Long and Son Body Shop. The user can swipe over old repairs using the comparison slider. The User can quickly scan what services the shop offers as well in the services section. Next, the user can learn more about some of the JB Long and Son Body Shop employees in the "Meet Us!" section.
+The JB Long and Son Body Shop site, at the time of this portfolio entry, is a simple one page site. *The main objective of the site is to provide someone with quick information about JB Long and Son Body Shop.* The user can swipe over old repairs using the comparison slider. The User can quickly scan what services the shop offers as well in the services section. Next, the user can learn more about some of the JB Long and Son Body Shop employees in the "Meet Us!" section.
 
 Most importantly, the user can quickly find and easily read the contact information where they would expect it, at the bottom of the page.
 
@@ -46,4 +45,4 @@ Most importantly, the user can quickly find and easily read the contact informat
 
 ## Development
 
-The <a href="https://github.com/mtlong29/JBShop_Site">source code for the JB Long and Son Body Shop site</a> can be found on github.
+The [source code for the JB Long and Son Body Shop site](https://github.com/mtlong29/JBShop_Site) can be found on github.

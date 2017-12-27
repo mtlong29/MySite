@@ -21,9 +21,10 @@ tags: [web design, photoshop, graphic design, branding]
 
 featured: false
 ---
+
 {% include /globalSections/toc.html %}
 
-Branding for companies is an art. It's one of the most important aspects of any business, large or small. And a large portion of branding consists of social media marketing. Some of my favorite creations, primarily used for social media purposes, can be found here.
+**Branding for companies is an art.** It's one of the most important aspects of any business, large or small. And a large portion of branding consists of social media marketing. Some of my favorite creations, *primarily used for social media purposes*, can be found here.
 
 ## Social Media 
 

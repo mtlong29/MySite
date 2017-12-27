@@ -26,34 +26,33 @@ published: true
 
 {% include /globalSections/toc.html %}
 
-Jekyll amateur hour is over. It is time to gulpify your Jekyll workflow.
+Jekyll amateur hour is over. **It is time to gulpify your Jekyll workflow.**
 
 ## What is Gulp
 
-Gulp is a toolkit that helps you automate the painfully tedious, time-consuming tasks in your development workflow. At its core, Gulp will run all of the tasks you don’t want to do manually. This gives you more time to focus on what you’re really interested in—your website and code—instead of the less interesting build processes.
+Gulp is a toolkit that helps you automate the painfully tedious, time-consuming tasks in your development workflow. At its core, Gulp will run all of the tasks you don’t want to do manually. *This gives you more time to focus on what you’re really interested in—your website and code—instead of the less interesting build processes.*
 
 ## Why I Use Gulp
 
-I love <a href="https://jekyllrb.com/">Jekyll</a>. However, this is one case where less is actually not more. Jekyll can do many things out of the box such as handle Sass, convert Markdown to HTML, render Liquid, a built-in development server, and more. All of this sounds like a lot, but it’s not enough.
-You can read a little more on how I use Jekyll <a href="http://localhost:4000/blog/building-and-maintaining-a-jekyll-site/">here</a>.
+I love [Jekyll](https://jekyllrb.com/). However, this is one case where less is actually not more. Jekyll can do many things out of the box such as handle Sass, convert Markdown to HTML, render Liquid, a built-in development server, and more. All of this sounds like a lot, but it’s not enough.
+
+You can read a little more on how I use Jekyll [here](/blog/building-and-maintaining-a-jekyll-site/).
 
 ### The Possibilities of Gulp
 
 I wanted jekyll AND file concatenation, minification, automatic prefixing of CSS, live reloading, live testing on your mobile phone, automatic optimization of images, etc. And I wanted all of it to happen when executing a single command in the terminal. 
 
-Those are just the things that I wanted at the time I wrote this article. It’s very likely that by the time you’re reading this there have been numerous additions to my workflow that Gulp is likely taking care of.
+Those are just the things that I wanted at the time I wrote this article. *It’s very likely that by the time you’re reading this there have been numerous additions to my workflow that Gulp is likely taking care of.*
 
 ## Installing Gulp
 
-If you’ve made it this far and don’t know how to use Gulp, you should probably take the time to catch up on it elsewhere. You can do that by taking a look at the <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md">Gulp documentation</a>, or perhaps a <a href="https://css-tricks.com/gulp-for-beginners/">tutorial</a>. 
+If you’ve made it this far and don’t know how to use Gulp, you should probably take the time to catch up on it elsewhere. You can do that by taking a look at the [Gulp documentation](https://github.com/gulpjs/gulp/blob/master/docs/API.md), or perhaps a [tutorial](https://css-tricks.com/gulp-for-beginners/). 
 
-If you’re antsy and just want to wing it, make sure you have <a href="https://nodejs.org/en/">Node</a> installed, by typing `node -v` and then initialize npm by typing `npm init`, once you’ve navigated to your Jekyll directory. You can then: 
+If you’re antsy and just want to wing it, make sure you have [Node](https://nodejs.org/en/) installed, by typing `node -v` and then initialize npm by typing `npm init`, once you’ve navigated to your Jekyll directory. You can then: 
 
-<ol>
-  <li>Fill out the prompted questions (don’t worry, you can change these later). You now have a <code>package.json</code> file.</li>
-  <li>Install Gulp by typing <code>npm install -g gulp</code>.</li>
-  <li>Finally, to add Gulp as a development dependency in your package.json file, type <code>npm install --save-dev gulp</code>.</li>
-</ol>
+- Fill out the prompted questions (don’t worry, you can change these later). You now have a `package.json` file.
+- Install Gulp by typing `npm install -g gulp`.
+- Finally, to add Gulp as a development dependency in your package.json file, type `npm install --save-dev gulp`.
 
 Congratulations, you now have a Gulp file capable of running tasks.
 
@@ -65,77 +64,77 @@ Before we get started creating tasks for Gulp to run, there are a few more thing
 
 You can create and use whatever file structure works for you. From time to time my preferred file structure changes a little, so whatever you choose to work with is fine. Technically, you don’t need to change it at all but, in my experience, keeping your development styles and JavaScript separate makes the build process easier. For example, you can have Gulp concatenate all files in a folder and then remove all of them except the concatenated one during the build. However, it makes more sense to me to have a structure as follows:
 
-{% highlight plain text linenos %}
-    example-project-name/
-    ├── assets/
-    |   ├── servedCSS/
-    |   |   └── all.css
-    |   ├── servedJS/
-    |   |   └── all.js
-    |   ├── images/
-    |   |   └── background.jpg
-    ├── _dev/
-    |   ├── stylesheets/
-    |   |   ├── _mixins.scss
-    |   |   ├── _header.scss
-    |   |   ├── _base.scss
-    |   |   └── main.scss
-    |   ├── javascripts/
-    |   |   ├── slick/
-    |   |   |   └── main.js
-    |   |   ├── stickyNav.js
-    |   |   ├── lightbox.js
-    |   |   └── main.js
-    ├── _includes/
-    |   ├── head.html
-    |   ├── body.html
-    |   └── footer.html
-    ├── _layouts/
-    |   └── default.html    
-    ├── _pages/
-    |   ├── about.md
-    |   ├── blog.md
-    |   └── home.md
-    ├── _posts/
-    |   └── 2017-10-04-using-gulp-with-jekyll.md
-    ├── _config.yml
-    ├── .gitignore
-    ├── README.MD
-    ├── LICENSE
-    ├── Gemfile
-    └── Gemfile.lock
-{% endhighlight %}
+```text
+example-project-name/
+├── assets/
+|   ├── servedCSS/
+|   |   └── all.css
+|   ├── servedJS/
+|   |   └── all.js
+|   ├── images/
+|   |   └── background.jpg
+├── _dev/
+|   ├── stylesheets/
+|   |   ├── _mixins.scss
+|   |   ├── _header.scss
+|   |   ├── _base.scss
+|   |   └── main.scss
+|   ├── javascripts/
+|   |   ├── slick/
+|   |   |   └── main.js
+|   |   ├── stickyNav.js
+|   |   ├── lightbox.js
+|   |   └── main.js
+├── _includes/
+|   ├── head.html
+|   ├── body.html
+|   └── footer.html
+├── _layouts/
+|   └── default.html    
+├── _pages/
+|   ├── about.md
+|   ├── blog.md
+|   └── home.md
+├── _posts/
+|   └── 2017-10-04-using-gulp-with-jekyll.md
+├── _config.yml
+├── .gitignore
+├── README.MD
+├── LICENSE
+├── Gemfile
+└── Gemfile.lock
+```
 
-As you can see, I have the images already inside the `assets` folder. The `servedCSS` and `servedJS` contents are generated by Gulp tasks. The content is pulled from the `_dev` folder.
+As you can see, I have the images already inside the **assets** folder. The **servedCSS** and **servedJS** contents are generated by Gulp tasks. The content is pulled from the **_dev** folder.
 
 ### Jekyll Build Exclusions
 
-By definition, you won’t want your development dependencies to be served up with your actual site. Add the following in your `_config.yml` file:
+By definition, you won’t want your development dependencies to be served up with your actual site. Add the following in your **_config.yml** file:
 
-{% highlight plain text linenos %}
+```text
 exclude:
   - package.json
   - node_modules
   - gulpfile.js
-{% endhighlight %}
+```
 
 ### Specifiy What Git Should Ignore
 
-There is no need for adding the `node_modules` folder to be tracked with Git so add the following to your `.gitignore` file:
+There is no need for adding the **node_modules** folder to be tracked with Git so add the following to your **.gitignore** file:
 
-{% highlight plain text linenos %}
+```text
 node_modules
-{% endhighlight %}
+```
 
 ## Getting Gulp to Work with Jekyll
 
 Now that some initial setup has been accomplished, it is time to use Gulp to run Jekyll. There are a number of obvious reasons you would want to do this. First of all, without this you would have to run Jekyll AND Gulp to have a functioning site. Keep in mind this is just a nicety.
 
-To accomplish this, we’ll use the `child_process` library that comes with Node. You’ll also be using `gulp-util`. Install `gulp-util` as a dev dependency by typing `npm install --save-dev gulp-util` in the terminal.
+To accomplish this, we’ll use the **child_process** library that comes with Node. You’ll also be using **gulp-util**. Install **gulp-util** as a dev dependency by typing `npm install --save-dev gulp-util` in the terminal.
 
-Create your `jekyll` task as follows:
+Create your **jekyll** task as follows:
 
-{% highlight javascript linenos %}
+```javascript
 const gulp = require('gulp'); 
 const gutil = require('gulp-util');
 
@@ -154,28 +153,28 @@ gulp.task('jekyll', () => {
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
 });
-{% endhighlight %}
+```
 
 Hooray! You can now run `jekyll build` as a Gulp task.
 
-Note that we are using `jekyll build` instead of `jekyll serve`. This is because while the built-in Jekyll server is nice, it lacks some features. By using `browserSync,` we will be able to detect changes made in our JavaScript, CSS, or HTML and then automatically refresh the browser.
+Note that we are using `jekyll build` instead of `jekyll serve`. This is because while the built-in Jekyll server is nice, it lacks some features. By using **browserSync,** we will be able to detect changes made in our JavaScript, CSS, or HTML and then automatically refresh the browser.
 
-You will also have the most sought after feature of browserSync: viewing development live across as many browsers as you’d like, including on mobile devices. When a change occurs during the live development, all of your synced browsers automatically refresh. Skip ahead to read more on actually using browserSync <a href="/blog/using-gulp-with-jekyll/#using-browsersync-to-serve-your-site-and-more">here</a>.
+You will also have the most sought after feature of browserSync: viewing development live across as many browsers as you’d like, including on mobile devices. When a change occurs during the live development, all of your synced browsers automatically refresh. Skip ahead to read more on actually using browserSync [here](/blog/using-gulp-with-jekyll/#using-browsersync-to-serve-your-site-and-more).
 
 ### Breaking Down the Jekyll Task
 
 As you can see, task `gulp jekyll` will basically run the `jekyll build` function, which you’re probably familiar with unless you were using GitHub Pages; GitHub Pages will build your site for you. Be aware that if you want to use Gulp, you cannot use GitHub Pages due to this very reason, unless you simply add the generated static site to a new repository. Although, adding it to a new repository would defeat the purpose. With GitHub Pages, the site is generated on their end, leaving you with no opportunity to run build tasks.
 
-Without the `jekyllLogger` constant above you will not see the usual `Regenerating: 1 file(s) changed at 2017-10-04 03:36:44 ...done in 11.268734 seconds` that Jekyll outputs. With the constant, every time a new line is there, or a change in your HTML occurs (recall that your JavaScript and CSS will be handled elsewhere), it is logged as `Jekyll: Regenerating: 1 file(s) changed at 2017-10-04 03:36:44 ...done in 11.268734 seconds.` This takes care of standard output and error.
+Without the **jekyllLogger** constant above you will not see the usual **Regenerating: 1 file(s) changed at 2017-10-04 03:36:44 ...done in 11.268734 seconds** that Jekyll outputs. With the constant, every time a new line is there, or a change in your HTML occurs (recall that your JavaScript and CSS will be handled elsewhere), it is logged as **Jekyll: Regenerating: 1 file(s) changed at 2017-10-04 03:36:44 ...done in 11.268734 seconds.** This takes care of standard output and error.
 
 
 ## Using browserSync to Serve Your Site (and More)
 
 Now you can build your Jekyll site, but you can’t develop with the `jekyll serve` command like you could before. Yet. This is where browserSync comes into play.
 
-We will be serving it to the same `_site` folder that Jekyll uses and the same port (4000), but you can technically use whatever port you would like. 
+We will be serving it to the same **_site** folder that Jekyll uses and the same port (4000), but you can technically use whatever port you would like. 
 
-{% highlight javascript linenos %}
+```javascript
 const browserSync = require('browser-sync').create();
 const siteRoot = '_site';
 
@@ -188,11 +187,11 @@ gulp.task('serve', () => {
     }
   });
 });
-{% endhighlight %}
+```
 
-The task `gulp serve` similar to `jekyll serve` will now start up a server for you. The server will watch for changes made to the `_site` root. You can also add the `gulp.watch()` task inside your `serve` task. This will allow for you to add additional files to watch for, such as CSS and JavaScript files. Leaving you with the following:
+The task `gulp serve` similar to `jekyll serve` will now start up a server for you. The server will watch for changes made to the **_site** root. You can also add the **gulp.watch()** task inside your **serve** task. This will allow for you to add additional files to watch for, such as CSS and JavaScript files. Leaving you with the following:
 
-{% highlight javascript linenos %}
+```javascript
 const browserSync = require('browser-sync').create();
 const siteRoot = '_site';
 
@@ -207,7 +206,7 @@ gulp.task('serve', () => {
   gulp.watch('files-to-change', ['tasks', 'to', 'run']);
 });
 gulp.task('default', ['jekyll', 'serve']);
-{% endhighlight %}
+```
 
 In the above example there are pseudo files being watched and pseudo tasks being run. The files you will want to watch are your CSS files and your JavaScript files. The tasks you may want to run are concatenation and minification of the aforementioned assets.
 
@@ -219,7 +218,7 @@ At this point, you’ll find tons of tutorials online regarding the typical Gulp
 
 I concatenated my JavaScript and CSS files into one file, respectively, using the following tasks:
 
-{% highlight javascript linenos %}
+```javascript
 const concat = require('gulp-concat');
 const sass = require('gulp-sass');
 
@@ -247,15 +246,15 @@ gulp.task('concatCSS', () => {
     .pipe(concat('all.css'))
     .pipe(gulp.dest('assets/stylesheets'));
 });
-{% endhighlight %}
+```
 
 These tasks are nothing fancy. They also don’t do anything that will heavily conflict with Jekyll. However, I am using Sass, which will be compiled into CSS, instead of leaving the action to Jekyll.
 
 ### Minification
 
-Many developers will want to keep the concatenated files as well as the minified files, using something like `gulp-rename`. However, because I’m changing the path and only want the concatenated files for the served site, I don’t currently need to keep both. My minification tasks are as follows:
+Many developers will want to keep the concatenated files as well as the minified files, using something like **gulp-rename**. However, because I’m changing the path and only want the concatenated files for the served site, I don’t currently need to keep both. My minification tasks are as follows:
 
-{% highlight javascript linenos %}
+```javascript
 gulp.task('minifyJS', ['concatJS'], () => {
   return gulp.src('assets/javascript/all.js')
     .pipe(minify())
@@ -270,15 +269,15 @@ gulp.task('minifyCSS', ['concatCSS'], () => {
     }))
     .pipe(gulp.dest('assets/stylesheets'));
 });
-{% endhighlight %}
+```
 
-Again, nothing too fancy. Except that uglify doesn't yet support es2015. You have a number of options on how to minify JavaScript such as the one above (or you can look into `babili`). If my concatenated file fails to minify, you will see an error output instead of the `gulp` command aborting.
+Again, nothing too fancy. Except that uglify doesn't yet support es2015. You have a number of options on how to minify JavaScript such as the one above (or you can look into **babili**). If my concatenated file fails to minify, you will see an error output instead of the **gulp** command aborting.
 
 Note that the concatenation tasks are dependencies of the minify tasks, meaning that minify will wait for the concatenation to finish before running.
 
-Minifying JavaScript with `babili` would look something like this:
+Minifying JavaScript with **babili** would look something like this:
 
-{% highlight javascript linenos %}
+```javascript
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 
@@ -287,13 +286,15 @@ gulp.task('default', () => {
   .pipe(babel({presets: ['babili']}))
   .pipe(gulp.dest('dist'));
 });
-{% endhighlight %}
+```
+
+---
 
 ## Putting it Together: My gulpfile.js
 
 If you were able to follow along, you should have a gulpfile.js ready to automate some of your Jekyll workflow with the possibility to do much more. Below, is my complete gulpfile.js at the time of this article.
 
-{% highlight javascript linenos %}
+```javascript
 const child = require('child_process');
 const browserSync = require('browser-sync').create();
 
@@ -373,10 +374,10 @@ gulp.task('serve', () => {
 });
 
 gulp.task('default', ['minifyCSS', 'minifyJS', 'jekyll', 'serve']);
-{% endhighlight %}
+```
 
 ## What's Next
 
-Over time, new tasks will be added to my gulpfile.js. Tasks that will likely come next are optimization of images, mapping of assets, and checking JavaScript files for syntax errors using <a href="https://github.com/eslint/eslint">ESLint</a>.
+Over time, new tasks will be added to my gulpfile.js. Tasks that will likely come next are optimization of images, mapping of assets, and checking JavaScript files for syntax errors using [ESLint](https://github.com/eslint/eslint).
 
 For image optimization, I will likely start using the `<picture>` tag instead of the `<img>` tag. I came to this conclusion because you are then able to specify between images based on different resolutions to display at different browser widths.
