@@ -3,8 +3,6 @@ layout: home
 
 permalink: /
 
-title: ""
-
 excerpt: "Personal website belonging to Matthew Long."
 
 image:
@@ -22,5 +20,4 @@ feature-blog:
 ---
 
 {% include /landingPageSections/featuredPortfolio.html %}
-
 {% include /landingPageSections/featuredBlog.html %}
