@@ -1,4 +1,6 @@
-/* TABLE OF CONTENTS */
+/************************************************************
+table of contents
+************************************************************/
 
 .toc {
   @include userSelect(none);
@@ -7,14 +9,14 @@
   border-top: 8px solid $accentColor;
 }
 
-.toc__title {
+.toc-tile {
   margin: .75em 0;
   font-family: $serif;
   font-size: 1.25rem;
   color: $gray;
 }
 
-.toc__menu {
+.toc-menu {
   padding-left: 0;
   font-size: 0.8rem;
   border-bottom: 2px solid #e2e2e2;
