@@ -1,3 +1,7 @@
+/************************************************************
+imported scss partials
+************************************************************/
+
 @import "vendor/normalize/normalize";
 
 @import "variables",
@@ -7,14 +11,11 @@
         "vendor/slickmap/slickmap",
         "vendor/syntax-highlighting/syntax-highlighting";
 
-@import "fourOhFour",
-        "base",
+@import "base",
         "animations",
         "utilities",
         "masthead",
         "page",
         "tags",
         "toc",
-        "thumbnail-grids",
-        "tiles",
-        "notesUtilities";
+        "tiles";
