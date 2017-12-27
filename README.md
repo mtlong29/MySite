@@ -1,1 +1,1 @@
-The read me is clearly a work in progress.
+Personal website for Matthew Long.
