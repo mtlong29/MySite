@@ -1,9 +1,9 @@
-/* BASE ELEMENTS */
-
-/* Typography */
+/************************************************************
+html - typography,
+************************************************************/
 
 html {
-  /* apply a natural box layout model to all elements */
+  // apply a natural box layout model to all elements
   box-sizing: border-box;
   background-color: $lightGray;
   font-size: 15px;
@@ -17,9 +17,11 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
+/************************************************************
+universal selector - box sizing, 
+************************************************************/
 
-/* apply a natural box layout model to all elements */
-
+// apply a natural box layout model to all elements
 *,
 *:before,
 *:after {
@@ -27,22 +29,35 @@ html {
 }
 
 
-/* Remove margin */
+/************************************************************
+body - remove margins, 
+************************************************************/
 
 body {
   margin: 0;
+  padding: 0;
+  color: $gray;
+  font-family: $serif;
+  line-height: 1.5;
+  &.overflow--hidden {
+    /* when primary navigation is visible, the content in the background won't scroll */
+    overflow: hidden;
+  }
 }
 
 
-/* Selected elements */
+/************************************************************
+selected elements
+************************************************************/
 
 ::selection {
   color: $white;
   background: $black;
 }
 
-
-/* Display HTML5 elements in IE6-9 and FF3 */
+/************************************************************
+display HTML5 elements in IE6-9 and FF3
+************************************************************/
 
 article,
 aside,
@@ -58,17 +73,9 @@ section {
   display: block;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  color: $gray;
-  font-family: $serif;
-  line-height: 1.5;
-  &.overflow--hidden {
-    /* when primary navigation is visible, the content in the background won't scroll */
-    overflow: hidden;
-  }
-}
+/************************************************************
+heading elements
+************************************************************/
 
 h1,
 h2,
@@ -79,33 +86,9 @@ h6 {
   line-height: 1.25;
 }
 
-
-/* Ensures images dont stretch past their parent container */
-
-img {
-  max-width: 100%;
-  width: auto\9;
-  height: auto;
-  vertical-align: middle;
-  border: 0;
-  -ms-interpolation-mode: bicubic;
-}
-
-small {
-  font-size: 0.8rem;
-}
-
-u,
-ins {
-  text-decoration: none;
-  border-bottom: 1px solid $gray;
-  a {
-    color: inherit;
-  }
-}
-
-
-/* Defaul Link Styling */
+/************************************************************
+default link styling
+************************************************************/
 
 a {
   text-decoration: none;
@@ -118,15 +101,7 @@ a {
   }
 }
 
-
-/* Remove blue color */
-
-a {
-  color: inherit;
-}
-
-
-/* Remove outline from links */
+// remove outline from links
 
 a:hover,
 a:active,
@@ -134,34 +109,9 @@ a:focus {
   outline: 0;
 }
 
-
-/* reduce orphans and widows when printing */
-
-p,
-pre,
-blockquote,
-ul,
-ol,
-dl,
-figure,
-table,
-fieldset {
-  orphans: 3;
-  widows: 3;
-}
-
-
-/* Abbreviations */
-
-abbr[title],
-abbr[data-original-title] {
-  text-decoration: none;
-  cursor: help;
-  border-bottom: 1px dotted $gray;
-}
-
-
-/* Blockquotes */
+/************************************************************
+blockquotes
+************************************************************/
 
 blockquote {
   margin: 0.8em 0em 0.8em 0;
@@ -183,13 +133,13 @@ blockquote {
   }
 }
 
-
-/* Lists */
+/************************************************************
+lists
+************************************************************/
 
 ol,
 ul {
   @include breakpoint($small) {
-    padding-left: 0;
     ol,
     ul {
       padding: 0em 0em;
@@ -198,8 +148,9 @@ ul {
   }
 }
 
-
-/* Code */
+/************************************************************
+code blocks
+************************************************************/
 
 tt,
 code,
@@ -229,8 +180,9 @@ figcaption code {
   }
 }
 
-
-/* Horizontal rule */
+/************************************************************
+horizontal rules
+************************************************************/
 
 hr {
   display: block;
@@ -239,9 +191,21 @@ hr {
   border-top: 5px solid $accentColor;
 }
 
+/************************************************************
+figures and images
+************************************************************/
 
-/* Figures and images */
+// ensures images dont stretch past their parent container
+img {
+  max-width: 100%;
+  width: auto\9;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
 
+// figures
 figure {
   display: flex;
   justify-content: space-between;
@@ -296,9 +260,7 @@ figure {
   }
 }
 
-
-/* Figure captions */
-
+// figure captions
 figcaption {
   margin-top: 0rem;
   margin-bottom: 0rem;
@@ -320,7 +282,7 @@ figcaption {
   }
 }
 
-/* Remove Anchor Stylings From Images */
+// remove anchor styling from images
 
 .image-popup {
   border-bottom: 0;
@@ -329,8 +291,12 @@ figcaption {
   }
 }
 
-/* Hide bullets from navbar */
 
+/************************************************************
+navbar 
+************************************************************/
+
+// hide bullets from navbar
 nav {
   ul {
     margin: 0;
@@ -344,8 +310,9 @@ nav {
   }
 }
 
-
-/* Footer Styles */
+/************************************************************
+footer
+************************************************************/
 
 .colophon {
   margin-top: 0em;
@@ -358,8 +325,9 @@ nav {
   }
 }
 
-
-/* Global animation transition */
+/************************************************************
+global animation transition 
+************************************************************/
 
 b,
 i,
