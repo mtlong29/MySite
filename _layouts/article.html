@@ -6,25 +6,21 @@ layout: default
 
   <article itemscope itemtype="http://schema.org/CreativeWork">
 
-    <meta itemprop="description" content="{{ page.excerpt | strip_html }}">
-
-    <header class="container post__header">
-      <h1 class="post__title" itemprop="headline">{{ page.title | markdownify | remove: '<p>' | remove: '</p>' }}</h1>
-      
-      {% if page.date %}
-        <meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">
-      {% endif %}
-      
+    <header class="container">
       {% unless post.url contains notes %}
-        {% include /globalSections/pageHeader.html %}
+        <div class="page-header">
+          {% if page.image.header %}
+            <img src="/assets/images/header/{{page.image.header}}" alt="Header Image for {{page.title}}">
+          {% endif %}
+        </div>
       {% endunless %}
+      <h1 class="page-title" itemprop="headline">{{ page.title | markdownify | remove: '<p>' | remove: '</p>' }}</h1>
     </header>
 
-      <div class="container post__content">
+    <div class="container page-content">
+      <div class="page-inner-wrapper">
 
-      <div class="post__inner-wrapper">
-
-        <section class="post__body" itemprop="text">
+        <section class="page-body" itemprop="text">
           {{ content }}
         </section>
 
@@ -36,7 +32,7 @@ layout: default
 
       </div>
 
-      <aside class="post__sidebar sticky">
+      <aside class="sidebar sticky">
         <div class="toc--sidebar"></div>
       </aside>
 
