@@ -16,13 +16,13 @@ date: 2017-09-13
 
 {% include /globalSections/toc.html %}
 
-JavaScript classes, introduced in ECMAScript 2015, are primarily syntactical sugar over JavaScript's existing prototype-based inheritance. The class syntax is not introducing a new object-oriented inheritance model to JavaScript. JavaScript classes provide a much simpler and clear syntax to create objects and deal with inheritance.
+**JavaScript classes, introduced in ECMAScript 2015, are primarily syntactical sugar over JavaScript's existing prototype-based inheritance.** The class syntax is **not introducing a new object-oriented inheritance model to JavaScript**. JavaScript classes provide a **much simpler and clear syntax to create objects and deal with inheritance**.
 
 ## Structure of Classes
 
-Classes are common feature of MANY object oriented programming languages such as (Java, Python, RoR, PHP, etc.). 
+>Classes are common feature of MANY object oriented programming languages such as (Java, Python, RoR, PHP, etc.). 
 
-{% highlight javascript linenos %}
+```javascript
 'use strict';
 
 let Student = function(data) {
@@ -37,9 +37,9 @@ console.log(joey);
 console.log(sarah);
 // Student {name: 'Joey', age: 25}
 // Student {name: 'Sarah', age: 22}
-{% endhighlight %}
+```
 
-{% highlight javascript linenos %}
+```javascript
 'use strict';
 
 class Student {
@@ -56,9 +56,9 @@ console.log(joey);
 console.log(sarah);
 // Student {name: 'Joey', age: 25}
 // Student {name: 'Sarah', age: 22}
-{% endhighlight %}
+```
 
-{% highlight javascript linenos %}
+```javascript
 'use strict';
 
 class Student {
@@ -76,9 +76,9 @@ console.log(joey);
 console.log(sarah);
 // Student {name: 'Joey', age: 25, interestLevel: 5}
 // Student {name: 'Sarah', age: 22, interestLevel: 5}
-{% endhighlight %}
+```
 
-{% highlight javascript linenos %}
+```javascript
 'use strict';
 
 class Student {
@@ -100,13 +100,13 @@ console.log(joey);
 console.log(sarah);
 // Student {name: 'Joey', age: 25, interestLevel: 5}
 // Student {name: 'Sarah', age: 22, interestLevel: 5, grades: Map {'History' => 'B', 'Math' => 'A'}}
-{% endhighlight %}
+```
 
 ## Sub-Classes
 
 Classes can easily inherit properties from other classes. You can add new features to a class by extending another class.
 
-{% highlight javascript linenos %}
+```javascript
 'use strict';
 
 class Person {
@@ -129,9 +129,9 @@ class Person {
 let stevenJ = new Person({ name: 'Steven', age: 22 });
 stevenJ.dance();
 // Steven is doing the waltz!
-{% endhighlight %}
+```
 
-{% highlight javascript linenos %}
+```javascript
 'use strict';
 
 class Person {
@@ -166,9 +166,9 @@ stevenJ.dance();
 console.log(stevenJ.interestLevel)
 // Steven is doing the tango!
 // 3
-{% endhighlight %}
+```
 
-{% highlight javascript linenos %}
+```javascript
 'use strict';
 
 class Person {
@@ -217,9 +217,9 @@ stevenJ.dance(true);
 console.log(stevenJ.interestLevel);
 // Steven is doing the mambo!
 // 3
-{% endhighlight %}
+```
 
-{% highlight javascript linenos %}
+```javascript
 'use strict';
 
 class Person {
@@ -268,13 +268,13 @@ stevenJ.dance();
 console.log(stevenJ.interestLevel);
 // Steven is doing the lyrical!
 // 3
-{% endhighlight %}
+```
 
 ## Static Methods
 
-A static method is one that exists on the class declaration and is not accessible through an instance. You can only call the function by referencing it's calss.
+**A static method is one that exists on the class declaration and is not accessible through an instance.** You can only call the function by referencing it's calss.
 
-{% highlight javascript linenos %}
+```javascript
 'use strict';
 
 class Bird {
@@ -293,13 +293,13 @@ Bird.changeColor.call(redBird, 'blue');
 console.log(redBird.color);
 // red
 // blue
-{% endhighlight %}
+```
 
 ## Getter and Setter Methods
 
 Getter and Setter methods have long been available in objects, but now they are available in classes, too!
 
-{% highlight javascript linenos %}
+```javascript
 'use strict';
 
 class Student {
@@ -320,9 +320,9 @@ let stevenJ = new Student({ firstName: 'Steven', lastName: 'Jones', age: 22});
 
 console.log(stevenJ.name);
 // Steven Jones
-{% endhighlight %}
+```
 
-{% highlight javascript linenos %}
+```javascript
 'use strict';
 
 class Student {
@@ -345,9 +345,9 @@ console.log(stevenJ.name);
 
 stevenJ.name = 'Steven Jones';
 // Cannot set property name of #<Student> which has only a getter
-{% endhighlight %}
+```
 
-{% highlight javascript linenos %}
+```javascript
 'use strict';
 
 class Student {
@@ -379,5 +379,4 @@ stevenJ.name = 'Steven Jennines';
 console.log(stevenJ.name);
 // Steven Jones
 // Steven Jennings
-{% endhighlight %}
-
+```

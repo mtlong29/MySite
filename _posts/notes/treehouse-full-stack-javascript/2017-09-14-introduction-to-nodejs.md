@@ -16,42 +16,40 @@ date: 2017-09-14
 
 {% include /globalSections/toc.html %}
 
-Node.js is a JavaScript environment that allows you to perform a multitude of tasks and build all sorts of exciting applications. These are notes about node.js basics.
+**Node.js is a JavaScript environment that allows you to perform a multitude of tasks and build all sorts of exciting applications.** These are notes about node.js basics.
 
-Examples of what you can do with Node.js:
+*Examples of what you can do with Node.js:*
 
-<ol>
-  <li>Chat applications,</li>
-  <li>Play gameboy games online,</li>
-  <li>Productivity tools such as cloud9,</li>
-  <li>Treehouse workspaces,</li>
-  <li>Grunt,</li>
-  <li>Gulp,</li>
-  <li>webpack,</li>
-  <li>paypal,</li>
-  <li>walmart,</li>
-  <li>etc..</li>
-</ol>
+- Chat applications,
+- Play gameboy games online,
+- Productivity tools such as cloud9,
+- Treehouse workspaces,
+- Grunt,
+- Gulp,
+- webpack,
+- paypal,
+- walmart,
+- etc..
 
-Writing a node.js application is basically just writing a JavaScript application outside of the browser.
+>Writing a node.js application is basically just writing a JavaScript application outside of the browser.
 
 ## Commands
 
-Running a node application is simple as typing `node <filename>`. Running the node REPL (Read-Eval-Print-Loop) `node`. To exit the REPL use CTRL+D once or CTRL+C twice.
+**Running a node application is simple as typing `node <filename>`.** Running the node REPL (Read-Eval-Print-Loop) `node`. To exit the REPL use CTRL+D once or CTRL+C twice.
 
 To see if you have node up and running check the version by typing `node -v`.
 
 ## JavaScript without the Browser
 
-JavaScript is intrepreded by browser API's. The key to writing a Node.js application is knowing what objects you have available to you.
+JavaScript is interpreted by browser API's. **The key to writing a Node.js application is knowing what objects you have available to you.**
 
-### Native Objects
+#### Native Objects
 
-Native objects are those objects that are part of the JavaScript programming language and are available in both Node.js and the Browser.
+Native objects are those *objects that are part of the JavaScript programming language* and are available in both Node.js and the Browser.
 
-### Host Objects
+#### Host Objects
 
-Host objects are those objects that are only available in a single envornment. For example the DOM, or Document Object Model is not available in Node.js but are available in the Browser. Likewise, the host objects to access local file system is not available in the Browser but are in Node.js.
+Host objects are those *objects that are only available in a single environment*. For example the DOM, or Document Object Model is not available in Node.js but are available in the Browser. Likewise, the host objects to access local file system is not available in the Browser but are in Node.js.
 
 ## Why use Node.js?
 
@@ -59,19 +57,19 @@ There are many programming languages that are natively available on the server-s
 
 Languages that queue up requests, and process them one at a time are known as blocking languages, since it blocks the handling of other requests.
 
-Node.js is a more efficient system, doing what it can do now, responding to requests while it waits for other tasks to finish. This often means when certain types of applications are ported to Node.js, you don't necessarily require as much system resources to perform the same tasks.
+**Node.js is a more efficient system, doing what it can do now, responding to requests while it waits for other tasks to finish.** This often means when certain types of applications are ported to Node.js, you don't necessarily require as much system resources to perform the same tasks.
 
-Node.js is non-blocking and that's why you'd want to build JavaScript applications on the Node.js platform over other languages and platforms. It's fast and efficient. It doesn't take up as many computer resources by the computers processing power or memory.
+Node.js is *non-blocking* and that's why you'd want to build JavaScript applications on the Node.js platform over other languages and platforms. It's fast and efficient. It doesn't take up as many computer resources by the computers processing power or memory.
 
 ## Finding Help as a Node.js developer
 
 Being a developer in any environment requires you to know what tools are at our disposal to help us in our endeavors building applications.
 
-<a href="http://nodejs.org/api/">The node.js documentation site.</a>
+[The node.js documentation site.](http://nodejs.org/api/)
 
 ## Connecting Node.js to Treehouse User API Example
 
-{% highlight javascript linenos %}
+```javascript
 // Problem: We need a simple way to look at a user's badge count and JavaScript points
 // Solution: Use Node.js to connect to Treehouse's API to get profile information to print out
 
@@ -105,18 +103,18 @@ function getProfile(username) {
 
 const users = process.argv.slice(2);
 users.forEach(getProfile);
-{% endhighlight %}
+```
 
-{% highlight bash %}
+```bash
 treehouse:~/workspace$ node app.js matthewlong29
 matthewlong29 has 115 total badge(s) and 4062 number of points in JavaScript
-{% endhighlight %}
+```
 
 ## Error Handling and Requiring Your Own Files
 
-### profile.js
+#### profile.js
 
-{% highlight javascript linenos %}
+```javascript
 // Require https module
 const https = require('https');
 
@@ -168,11 +166,11 @@ function get(username) {
 }
 
 module.exports.get = get;
-{% endhighlight %}
+```
 
-### app.js 
+#### app.js 
 
-{% highlight javascript linenos %}
+```javascript
 // Problem: We need a simple way to look at a user's badge count and JavaScript points
 // Solution: Use Node.js to connect to Treehouse's API to get profile information to print out
 
@@ -180,28 +178,28 @@ const profile = require('./profile.js');
 
 const users = process.argv.slice(2);
 users.forEach(profile.get);
-{% endhighlight %}
+```
 
-### Console 
+#### Console 
 
-{% highlight bash %}
+```bash
 treehouse:~/workspace$ node app.js matthewlong29
 matthewlong29 has 115 total badge(s) and 4094 number of points in JavaScript
-{% endhighlight %}
+```
 
 ## Command Line Current Weather Conditions Application
 
-### api.json
+#### api.json
 
-{% highlight javascript linenos %}
+```javascript
 {
   "key": "yourkey"
 }
-{% endhighlight %}
+```
 
-### weather.js
+#### weather.js
 
-{% highlight javascript linenos %}
+```javascript
 const https = require('https');
 const api = require('./api.json');
 
@@ -229,11 +227,11 @@ function get(query) {
 }
 
 module.exports.get = get;
-{% endhighlight %}
+```
 
-### app.js
+#### app.js
 
-{% highlight javascript linenos %}
+```javascript
 const weather = require('./weather.js');
  
 // Join multiple values passed as arguments and replace all spaces with underscores
@@ -243,11 +241,11 @@ const query = process.argv.slice(2).join('_').replace(' ', '_');
 // query: Cleveland_OH
 // query: London_England
 weather.get(query);
-{% endhighlight %}
+```
 
-### Console
+#### Console
 
-{% highlight bash linenos %}
+```bash
 treehouse:~/workspace$ node app.js 40207
 Current temperature in Louisville is 87.4F
-{% endhighlight %}
+```
