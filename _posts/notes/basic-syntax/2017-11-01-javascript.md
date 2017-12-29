@@ -26,12 +26,12 @@ Use `let` and `const` as variables. `let` is the same as what `var` was. `const`
 
 An array is an ordered collection of values. An array just like an object, may end with a comma. This can make it easier to add new values without risking forgetting a comma:
 
-{% highlight javascript linenos %}
+```javascript
 var fruits = [
   'Apple',
   'Banana',
 ];
-{% endhighlight %}
+```
 
 Useful array methods. `pop()`: extracts the last element of the array and returns it, `push()`: appends the element to the end of the array, `shift()`: extracts the first element of the array and returns it, and `unshift()`: adds the element to the beginning of the array.
 
@@ -45,7 +45,5 @@ Useful array methods. `pop()`: extracts the last element of the array and return
 
 ## Learn More Links
 
-<ul>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN JavaScript Documents</a></li>
-  <li><a href="https://devhints.io/es6">devhints.io/es6</a></li>
-</ul>
+- [MDN JavaScript Documents](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [devhints.io/es6](https://devhints.io/es6)
