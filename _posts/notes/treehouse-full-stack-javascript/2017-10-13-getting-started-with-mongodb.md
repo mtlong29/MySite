@@ -16,91 +16,91 @@ date: 2017-10-13
 
 {% include /globalSections/toc.html %}
 
-MongoDB is a databse used to store information for applications. There is a big difference between MonogoDB and other databases. It falls into a category of databases called NoSQL.
+MongoDB is a database used to store information for applications. There is a big difference between MonogoDB and other databases. It falls into a category of databases called NoSQL.
 
 ## MongoDB is NoSQL
 
-NoSQL is not anti-SQL or opposed to SQL databases. NoSQL is an acronym that atands for Not Only SQL. Whereas, SQL databases store information in tables. And have a schema different NoSQL databases store data in a multitude of formats and are generally less bound to schema controls.
+NoSQL is not anti-SQL or opposed to SQL databases. 
 
-Another big difference is that SQL databases have a standard mostly unified language that they are named for.
+>**NoSQL is an acronym that stands for Not Only SQL**. Whereas, SQL databases store information in tables, and have a schema different NoSQL databases store data in a multitude of formats and are generally less bound to schema controls.
 
-It is called Structured Query Language.
+Another big difference is that SQL databases have a standard mostly unified language that they are named for. It is called Structured Query Language.
 
-### Why Use MongoDB
+#### Why Use MongoDB
 
 There are a bunch of reasons you should use MongoDB:
 
-<ul>
-  <li>MongoDB does not have a schema, it makes development really fast</li>
-  <li>Changing and evolving prjects is easy without a schema to migrate</li>
-  <li>Mongo's query language is really easy to use (it looks a lot more like a functional programming language)</li>
-  <li>It is popular among developers. Companies large and small are adopting MongoDB</li>
-  <li>Monogo is being adopted not because it's old and is simply the standad but because it's awesome..</li>
-</ul>
+- **MongoDB does not have a schema**, it makes development really fast
+- Changing and evolving projects is easy without a schema to migrate
+- Mongo's query language is really easy to use (**it looks a lot more like a functional programming language**)
+- It is popular among developers. Companies large and small are adopting MongoDB
+- Mongo is being adopted not because it's old and is simply the standard but because it's awesome..
 
-See more on why to use MonogoDB on their website <a href="https://www.mongodb.com/who-uses-mongodb">here</a>.
+See more on why to use MongoDB on their website [here](https://www.mongodb.com/who-uses-mongodb).
 
-#### Quiz
+#### Quiz:
 
-Question: MongoDB is a SQL based database.
+---
 
-Answer: False
+**Question**: MongoDB is a SQL based database.
 
-Question: Mongo has been widely adopted, however it is generally used for non business critical use cases.
+**Answer**: False
 
-Answer: False
+**Question**: Mongo has been widely adopted, however it is generally used for non business critical use cases.
 
-Question: MongoDB is a relational database.
+**Answer**: False
 
-Answer: False
+**Question**: MongoDB is a relational database.
 
-Question: NoSQL means ____.
+**Answer**: False
 
-Answer: Not Only SQL
+**Question**: NoSQL means ____.
 
-Question: Mongo is great to use because ____.
+**Answer**: Not Only SQL
 
-Answer: it has a powerful and simple query language
+**Question**: Mongo is great to use because ____.
+
+**Answer**: it has a powerful and simple query language
+
+---
 
 ## Documents in Mongo
 
-From a developer's perspective, documents are core to how you interact with and model date in Mongo.
+From a developer's perspective, documents are core to how you interact with and model date in Mongo. **Documents are unique records.** They are *a lot like JSON objects*. Every document has a required ID field which makes them easily identifiable. Mongo takes care of the ID field. This is called ObjectId. Learn more on the [mongodb documentation](https://docs.mongodb.com/manual/reference/method/ObjectId/).
 
-Documents are uniqe records. They are a lot like JSON objects. Every document has a required ID field which makes them easily identifable. Mongo takes care of the ID field. This is called ObjectId. Learn more on the <a href="https://docs.mongodb.com/manual/reference/method/ObjectId/">mongodb documentation</a>.
+#### Quiz:
 
-#### Quiz
+---
 
-Question: The `_id` field is always required.
+**Question**: The `_id` field is always required.
 
-Answer: True
+**Answer**: True
 
-Question: Mongo documents can store objects as field values.
+**Question**: Mongo documents can store objects as field values.
 
-Answer: True
+**Answer**: True
 
-Question: There is generally only one right way to model data in Mongo.
+**Question**: There is generally only one right way to model data in Mongo.
 
-Answer: False
+**Answer**: False
 
-Question: Which of the following is NOT a mongo field type:
+**Question**: Which of the following is NOT a mongo field type:
 
-Answer: Map
+**Answer**: Map
 
-Question: Mongo only accepts the ISODate format.
+**Question**: Mongo only accepts the ISODate format.
 
-Answer: False
+**Answer**: False
+
+---
 
 ## Setting Up MongoDB
 
-The easiest way to install MongoDB on your mac is using homebrew. First make sure homebrew is up to date by typing `brew update`. Afterward install MongoDB by typing `brew install mongodb`. To make sure it is installed type `which mongod`. There is no `b`.
+**The easiest way to install MongoDB on your mac is using homebrew.** First make sure homebrew is up to date by typing `brew update`. Afterward install MongoDB by typing `brew install mongodb`. To make sure it is installed type `which mongod`. There is no `b`. **You will then create the mongo directory.** Type `mkdir -p /data/db`. **The `-p` flag means to create the entire path if it doesn't exist. You may need to make sure the file is readable, writable, and executable by everyone by typing `chmod 777 /data/db`.** For both of these you may need to be the super user or `sudo`. To get MongoDB up and running run the command `mongod`. Note you can only do this because it was installed using homebrew. If you downloaded it you would navigate to the executables in the terminal.
 
-You will then create the mongo directory. Type `mkdir -p /data/db`. The `-p` flag means to create the entire path if it doesnt exist. You may need to make sure the file is readable, writable, and executable by everyone by typing `chmod 777 /data/db`. For both of these you may need to be the super user or `sudo`.
+>Once you have MongoDB up and running you need to open another terminal window to access Mongo via the shell. Since it was installed using homebrew you can type `mongo` in the new terminal window to access the MongoDB shell. Which is just an access point to the database where you can control it.
 
-To get MongoDB up and running run the command `mongod`. Note you can only do this because it was installed using homebrew. If you downloaded it you would navigate to the executables in the terminal.
-
-Once you have MongoDB up and running you need to open another terminal window to access Mongo via the shell. Since it was installed using homebrew you can type `mongo` in the new terminal window to access the MongoDB shell. Which is just an access point to the database where you can control it.
-
-### Shell Basics
+#### Shell Basics
 
 `show dbs` will show the databases that we currently have.
 
@@ -114,87 +114,93 @@ Now when you type `show dbs` it will list mongoBasics as a database.
 
 `db.post.find()` will show the one document that we have created. `{ "_id" : ObjectId("59e15b6aab9139f65d11a5ab"), "title" : "horray!" }` for example.
 
-#### Quiz
+#### Quiz:
 
-Question: When installing Mongo manually (by downloading it from the web), commands to run Mongo Dawmon and the Mongo Shell ____.
+---
 
-Answer: must be run relative to the directory - for example, `bin/mongod`, `bin/mongo`.
+**Question**: When installing Mongo manually (by downloading it from the web), commands to run Mongo Dawmon and the Mongo Shell ____.
 
-Question: In the command, `db.posts.insert({...})` "posts" stands for a ____.
+**Answer**: must be run relative to the directory - for example, `bin/mongod`, `bin/mongo`.
 
-Answer: collection
+**Question**: In the command, `db.posts.insert({...})` "posts" stands for a ____.
 
-Question: The default location for mongo to store data is ____.
+**Answer**: collection
 
-Answer: `/data/db`
+**Question**: The default location for mongo to store data is ____.
 
-Question: `show dbs` is the command for listing databases in a Mongo installation.
+**Answer**: `/data/db`
 
-Answer: True
+**Question**: `show dbs` is the command for listing databases in a Mongo installation.
 
-Question: Homebrew is ____.
+**Answer**: True
 
-Answer: a package manager for OSX.
+**Question**: Homebrew is ____.
+
+**Answer**: a package manager for OSX.
+
+---
 
 ## Data in Mongo, By Example
 
-<a href="https://www.mongodb.com/nosql-explained">NoSQL</a> encompasses a wide variety of ifferent databast technologies that were developed in response to the demands presented in building modern applications.
+[NoSQL](https://www.mongodb.com/nosql-explained) encompasses a wide variety of different databases technologies that were developed in response to the demands presented in building modern applications. Learn more on difference between SQL and MongoDB [here](https://docs.mongodb.com/manual/reference/sql-comparison/).
 
-Learn more on difference between SQL and MongoDB <a href="https://docs.mongodb.com/manual/reference/sql-comparison/">here</a>.
+#### Quiz:
 
-#### Quiz
+---
 
-Question: Collections are like ____ in a relational database.
+**Question**: Collections are like ____ in a relational database.
 
-Answer: tables
+**Answer**: tables
 
-Question: In Mongo, when a field is missing a given value in a document it is necessary to give the field a substitute value, e.g. `null`.
+**Question**: In Mongo, when a field is missing a given value in a document it is necessary to give the field a substitute value, e.g. `null`.
 
-Answer: False
+**Answer**: False
 
-Question: In Mongo, documents are ____.
+**Question**: In Mongo, documents are ____.
 
-Answer: individual records
+**Answer**: individual records
 
-Question: A document is like a ____ in a relational database.
+**Question**: A document is like a ____ in a relational database.
 
-Answer: row
+**Answer**: row
 
-Question: Documents can store references to other documents.
+**Question**: Documents can store references to other documents.
 
-Answer: True
+**Answer**: True
 
-### Loading Files
+---
+
+#### Loading Files
 
 To load a file you want to have the file installed on your computer and ideally close to Mongo. This is because you will be using realtive paths.
 
-First, make sure mongo daemon is running:
+**First, make sure mongo daemon is running:**
 
-{% highlight bash linenos %}
+```bash
 > mongod
-{% endhighlight %}
+```
 
-Next, open a new tab or terminal window and run mongo:
+**Next, open a new tab or terminal window and run mongo:**
 
-{% highlight bash linenos %}
+```bash
 > mongo
-{% endhighlight %}
+```
 
 To see all files in the directory you can list directory:
 
-{% highlight bash linenos %}
+```bash
 > ls()
-{% endhighlight %}
+```
 
-To load the file such as `seed.js` use local paths (this will most defeinitely apply to you if you installed mongo manually instead of using homebrew):
+**To load the file such as `seed.js` use local paths (this will most definitely apply to you if you installed mongo manually instead of using homebrew):**
 
-{% highlight bash linenos %}
+```bash
 > load('./seed.js')
-{% endhighlight %}
+```
 
-### Example File (seed.js)
+#### Example File (seed.js)
 
-{% highlight javascript linenos %}
+```javascript
 // this is the same as running `use mongoBasics` from the shell
 var db = db.getSiblingDB('mongoBasics');
 
@@ -250,20 +256,20 @@ for(var i = 0; i < titles.length; i++) {
 
 // insert posts into posts collection
 db.posts.insert(postsRaw);
-{% endhighlight %}
+```
 
 The above JavaScript file creates 6 users and 4 blog posts. This can be seen by using the `count()` method.
 
-{% highlight bash linenos %}
+```bash
 > db.users.count()
 6
 > db.posts.count()
 4
-{% endhighlight %}
+```
 
-You can see all of the users by using the `find()` method without any parameters.
+**You can see all of the users by using the `find()` method without any parameters.**
 
-{% highlight bash linenos %}
+```bash
 > db.users.find()
 { "_id" : ObjectId("59e3b5aaf81f4072f17b49f4"), "name" : { "first" : "Sam", "last" : "Lund" }, "signupDate" : ISODate("2017-10-15T19:23:22.156Z") }
 { "_id" : ObjectId("59e3b5aaf81f4072f17b49f5"), "name" : { "first" : "Bill", "last" : "Noor" }, "signupDate" : ISODate("2017-10-15T19:23:22.158Z") }
@@ -271,11 +277,11 @@ You can see all of the users by using the `find()` method without any parameters
 { "_id" : ObjectId("59e3b5aaf81f4072f17b49f7"), "name" : { "first" : "Sara", "last" : "Henderson" }, "signupDate" : ISODate("2017-10-15T19:23:22.158Z") }
 { "_id" : ObjectId("59e3b5aaf81f4072f17b49f8"), "name" : { "first" : "Natasha", "last" : "Frank" }, "signupDate" : ISODate("2017-10-15T19:23:22.158Z") }
 { "_id" : ObjectId("59e3b5aaf81f4072f17b49f9"), "name" : { "first" : "Nivine", "last" : undefined }, "signupDate" : ISODate("2017-10-15T19:23:22.158Z") }
-{% endhighlight %}
+```
 
-If we wanted to view individual users we could query the command like an array:
+**If we wanted to view individual users we could query the command like an array:**
 
-{% highlight bash linenos %}
+```bash
 > db.users.find()[0]
 {
 	"_id" : ObjectId("59e3b5aaf81f4072f17b49f4"),
@@ -285,74 +291,76 @@ If we wanted to view individual users we could query the command like an array:
 	},
 	"signupDate" : ISODate("2017-10-15T19:23:22.156Z")
 }
-{% endhighlight %}
+```
 
-If you have a large dataset you can use the `limit()` method to limit the number of documents returned.
+**If you have a large dataset you can use the `limit()` method to limit the number of documents returned.**
 
-{% highlight bash linenos %}
+```bash
 > db.users.find().limit(2)
 { "_id" : ObjectId("59e3b5aaf81f4072f17b49f4"), "name" : { "first" : "Sam", "last" : "Lund" }, "signupDate" : ISODate("2017-10-15T19:23:22.156Z") }
 { "_id" : ObjectId("59e3b5aaf81f4072f17b49f5"), "name" : { "first" : "Bill", "last" : "Noor" }, "signupDate" : ISODate("2017-10-15T19:23:22.158Z") }
-{% endhighlight %}
+```
 
-As you can see Mongo has a nice method chaining syntax.
+As you can see Mongo has a nice method chaining syntax. **You can also set variables within Mongo.** For example, if we set the second post to a variable it is then easy to access its properties:
 
-You can also set variables within Mongo. For example, if we set the second post to a variable it is then easy to access its properties:
-
-{% highlight bash linenos %}
+```bash
 > const post = db.posts.find()[1];
 > post.title
 Parenting 101
 > post.author
 ObjectId("59e3b5aaf81f4072f17b49f4")
-{% endhighlight %}
+```
 
-Note that the `post.author` field is called a reference field, because it references documents in another collection. In this case, the reference is to documents in the users collection. This means you can assign `post.author` to a variable and use that to look up the associated user!
+**Note that the `post.author` field is called a reference field, because it references documents in another collection.** In this case, the reference is to documents in the users collection. This means **you can assign `post.author` to a variable and use that to look up the associated user!**
 
-{% highlight bash linenos %}
+```bash
 > const id = post.author
 > db.users.find(id);
 { "_id" : ObjectId("59e3b5aaf81f4072f17b49f4"), "name" : { "first" : "Sam", "last" : "Lund" }, "signupDate" : ISODate("2017-10-15T19:23:22.156Z") }
-{% endhighlight %}
+```
 
 Generally, you won't have to write a lot of scripts to use Mongo. Every software language has bindings for Mongo. 
 
-#### Quiz
+#### Quiz:
 
-Question: Mongo only accepts the ISO Date Format.
+---
 
-Answer: False. See more <a href="https://docs.mongodb.org/v3.0/reference/method/Date/">here</a>.
+**Question**: Mongo only accepts the ISO Date Format.
 
-Question: The `load()` command in the Mongo shell runs files with a path relative to the Mongo shell installation.
+**Answer**: False. See more <a href="https://docs.mongodb.org/v3.0/reference/method/Date/">here</a>.
 
-Answer: False. The load command is relative to the current working directory of where you launch the mongo shell from.
+**Question**: The `load()` command in the Mongo shell runs files with a path relative to the Mongo shell installation.
 
-Question: `db.collection.____()` returns the number of documents in a collection. 
+**Answer**: False. The load command is relative to the current working directory of where you launch the mongo shell from.
 
-Answer: `count`
+**Question**: `db.collection.____()` returns the number of documents in a collection. 
 
-Question: The `limit()` command limits the ____ when chained to the end of a query.
+**Answer**: `count`
 
-Answer: number of documents returned
+**Question**: The `limit()` command limits the ____ when chained to the end of a query.
 
-Question: The Mongo shell is the best way to programmatically access data in MongoDB.
+**Answer**: number of documents returned
 
-Answer: False. The Mongo shell is great for management and data exploration. However, almost every functional programming language has a library to access Mongo directly.
+**Question**: The Mongo shell is the best way to programmatically access data in MongoDB.
+
+**Answer**: False. The Mongo shell is great for management and data exploration. However, almost every functional programming language has a library to access Mongo directly.
+
+---
 
 ## Working With Collections
 
-Collections are how you organize and categorize documents in MongoDB. Being able to alter and delete collections is important as it grows and changes.
+>Collections are how you organize and categorize documents in MongoDB. Being able to alter and delete collections is important as it grows and changes.
 
-The `getCollectionNames()` method is useful anytime you're handed a database of data and you have to start exploring it. As soon as you know the collection names you can start using the individual collections methods from the previous sections in these notes.
+**The `getCollectionNames()` method is useful anytime you're handed a database of data and you have to start exploring it.** As soon as you know the collection names you can start using the individual collections methods from the previous sections in these notes.
 
-{% highlight bash linenos %}
+```bash
 > db.getCollectionNames()
 [ "posts", "users" ]
-{% endhighlight %}
+```
 
 Another useful collection level operation is the ability to see indexes on a collection. Using the `getIndexes()` method. 
 
-{% highlight bash linenos %}
+```bash
 > db.posts.getIndexes()
 [
 	{
@@ -364,15 +372,13 @@ Another useful collection level operation is the ability to see indexes on a col
 		"ns" : "mongoBasics.posts"
 	}
 ]
-{% endhighlight %}
+```
 
 This tells you there is only one index and it is on the `_id` key. 
 
-Creating our own indexes can have a huge performance benefit for our application. In our use case, a logical index would be on the post title since we may decide to look up posts by title in our application.
+Creating our own indexes can have a huge performance benefit for our application. In our use case, a logical index would be on the post title since we may decide to look up posts by title in our application. **In order to create this index, we'll use the `createIndex()` method.** The method takes an object with a key, in our example it will be title. Then it takes a value of `1` to index the documents by title, in ascending order, or `-1` in descending order. There is also an optional second parameter that holds options.
 
-In order to create this index, we'll use the `createIndex()` method. The method takes an object with a key, in our example it will be title. Then it takes a value of `1` to index the documents by title, in ascending order, or `-1` in descending order. There is also an optional second parameter that holds options.
-
-{% highlight bash linenos %}
+```bash
 > db.posts.createIndex({title: 1})
 {
 	"createdCollectionAutomatically" : false,
@@ -380,11 +386,11 @@ In order to create this index, we'll use the `createIndex()` method. The method 
 	"numIndexesAfter" : 2,
 	"ok" : 1
 }
-{% endhighlight %}
+```
 
 Now there are two indexs.
 
-{% highlight bash linenos %}
+```bash
 > db.posts.getIndexes()
 [
 	{
@@ -404,115 +410,115 @@ Now there are two indexs.
 		"ns" : "mongoBasics.posts"
 	}
 ]
-{% endhighlight %}
+```
 
-As you can see Mongo has named it "title_" and of course ot is on the posts collection.
+As you can see Mongo has named it "title_" and of course ot is on the posts collection. **You can delete the index with the `dropIndex()` method.**
 
-You can delete the index with the `dropIndex()` method.
-
-{% highlight bash linenos %}
+```bash
 > db.posts.dropIndex('title_1')
 { "nIndexesWas" : 2, "ok" : 1 }
-{% endhighlight %}
+```
 
 Note that you cannot drop the `_id` index because Mongo protects it internatlly.
 
-#### Quiz
+#### Quiz:
 
-Question: With Mongo Hacker installed, the command to rename a database is `db.____()`.
+---
 
-Answer: `rename`
+**Question**: With Mongo Hacker installed, the command to rename a database is `db.____()`.
 
-Question: One of the most important things to do when creating a new collection is to index the `_id` field.
+**Answer**: `rename`
 
-Answer: False. Month takes care of this for you.
+**Question**: One of the most important things to do when creating a new collection is to index the `_id` field.
 
-Question: As applications grow and change, collections change too.
+**Answer**: False. Month takes care of this for you.
 
-Answer: True. Often times how collections are indexed and how data is stored in documents will change as an application evolves.
+**Question**: As applications grow and change, collections change too.
 
-Question: The ____ command returns a collections indexes.
+**Answer**: True. Often times how collections are indexed and how data is stored in documents will change as an application evolves.
 
-Answer: `getIndexes`
+**Question**: The ____ command returns a collections indexes.
 
-Question: indexes are useful because ____.
+**Answer**: `getIndexes`
 
-Answer: they allow quick lookups of documents for queries on fields that have been indexed
+**Question**: indexes are useful because ____.
+
+**Answer**: they allow quick lookups of documents for queries on fields that have been indexed
+
+---
 
 ## Querying Collections
 
-Being able to query data from Mongo collections underlies just about everything you do in a relation to the database. How you query Mongo will dictate how you model the data, and can even affect some aspects of how your application works.
+Being able to query data from Mongo collections underlies just about everything you do in a relation to the database. How you query Mongo will dictate how you model the data, and can even affect some aspects of how your application works. **In addition to the `find()` method there is also the `findOne()` method. You can add query parameters as well `find({})` or `findOne({})`. There is a second parameter called projects.** Projects are an object where the keys are filled to return true or false.
 
-In addition to the `find()` method there is also the `findOne()` method. You can add query parameters as well `find({})` or `findOne({})`. There is a second parameter called projects.
-
-Projects are an object where the keys are filled to return true or false.
-
-{% highlight bash linenos %}
+```bash
 > db.posts.find({}, {body: false, description: false})
 { "_id" : ObjectId("59e3b5aaf81f4072f17b49fa"), "title" : "My Awesome Recipe!", "author" : ObjectId("59e3b5aaf81f4072f17b49f8") }
 { "_id" : ObjectId("59e3b5aaf81f4072f17b49fb"), "title" : "I love the holidays", "author" : ObjectId("59e3b5aaf81f4072f17b49f4") }
 { "_id" : ObjectId("59e3b5aaf81f4072f17b49fc"), "title" : "How to workout", "author" : ObjectId("59e3b5aaf81f4072f17b49f7") }
 { "_id" : ObjectId("59e3b5aaf81f4072f17b49fd"), "title" : "Parenting 101", "author" : ObjectId("59e3b5aaf81f4072f17b49f4") }
-{% endhighlight %}
+```
 
 You will usually want to return the `_id` field, you can set this to false as well.
 
-{% highlight bash linenos %}
+```bash
 > db.posts.find({}, {_id: false, body: false, description: false, author: false})
 { "title" : "My Awesome Recipe!" }
 { "title" : "I love the holidays" }
 { "title" : "How to workout" }
 { "title" : "Parenting 101" }
-{% endhighlight %}
+```
 
 If you want to return a specific known post you can type the title as an option in the first parameter.
 
-{% highlight bash linenos %}
+```bash
 > db.posts.find({title: "Parenting 101"}, {_id: false, body: false, description: false, author: false})
 { "title" : "Parenting 101" }
-{% endhighlight %}
+```
 
-Keep in mind that Mongo is looking for exact matches it will not return anything unless there is an exact match.
+>Keep in mind that Mongo is looking for exact matches it will not return anything unless there is an exact match. 
 
 You can return a document using the `$or` operator as well. Use this when you need to return a document that has a title My Awesome Recipe or Parenting 101 for example.
 
-{% highlight bash linenos %}
+```bash
 > db.posts.find({$or: [{title: "Parenting 101"}, {title: "My Awesome Recipe!"}]}, {_id: false, body: false, description: false, author: false})
 { "title" : "My Awesome Recipe!" }
 { "title" : "Parenting 101" }
-{% endhighlight %}
+```
 
 The `$or` operator is powerful, but its not the one you'll use most often. See more <a href="https://docs.mongodb.org/v3.0/reference/operator/query/">here</a>.
 
-#### Quiz
+#### Quiz:
 
-Question: The ____ method is like the `find()` method, but returns only one document.
+---
 
-Answer: `findOne()`
+**Question**: The ____ method is like the `find()` method, but returns only one document.
 
-Question: The `_id` field is always returned unless explicitely set to false in the projections.
+**Answer**: `findOne()`
 
-Answer: True
+**Question**: The `_id` field is always returned unless explicitely set to false in the projections.
 
-Question: The second parameter of the `find()` method is the ____ parameter.
+**Answer**: True
 
-Answer: projections
+**Question**: The second parameter of the `find()` method is the ____ parameter.
 
-Question: The "projections" parameter takes an object where the keys are the fields to return and the values are ____.
+**Answer**: projections
 
-Answer: booleans
+**Question**: The "projections" parameter takes an object where the keys are the fields to return and the values are ____.
 
-Question: The ____ operator allows you to query a single field or multiple fields based on different query values.
+**Answer**: booleans
 
-Answer: `$or`
+**Question**: The ____ operator allows you to query a single field or multiple fields based on different query values.
+
+**Answer**: `$or`
+
+---
 
 ## Updating Data
 
-In a typical application, one of the most common things you'll do is update existing data. Whi.e records are created only once and sometimes they are deleted, they might be updated hundreds or thousands of times!
+In a typical application, one of the most common things you'll do is update existing data. Whi.e records are created only once and sometimes they are deleted, they might be updated hundreds or thousands of times! **To update a document you can use the `update()` method:**
 
-To update a document you can use the `update()` method:
-
-{% highlight bash linenos %}
+```bash
 > db.posts.update({author:ObjectId("59e3b5aaf81f4072f17b49f5")}, {$set: {tags: ['foo', 'bar', 'interesting'], title:"I'm an updated title!"}})
 Updated 1 record(s) in 4ms
 WriteResult({
@@ -520,15 +526,13 @@ WriteResult({
   "nUpserted": 0,
   "nModified": 1
 })
-{% endhighlight %}
+```
 
 ## Doing More With Queries in Mongo
 
-Mongo's query engine is extremely powerful. Additionally, some of the ways that you can sort, filter, and aggregate data will determine how you choose to model your data.
+Mongo's query engine is extremely powerful. Additionally, some of the ways that you can sort, filter, and aggregate data will determine how you choose to model your data. Recall **you can use the `limit()` method to limit the number of results returned. This can be chained onto the `find()` method as well.**
 
-Recall you can use the `limit()` method to limit the number of results returned. This can be chained onto the `find()` method as well.
-
-{% highlight bash linenos %}
+```bash
 > db.posts.find({}, {title: true})
 {
   "_id": ObjectId("59e3b5aaf81f4072f17b49fa"),
@@ -557,11 +561,11 @@ Fetched 4 record(s) in 2ms
   "title": "I love the holidays"
 }
 Fetched 2 record(s) in 0ms
-{% endhighlight %}
+```
 
-You can use the `Object.keys` method to display all of the keys on an object.
+**You can use the `Object.keys` method to display all of the keys on an object.**
 
-{% highlight bash linenos %}
+```bash
 > Object.keys(db.posts.find()[0])
 [
   "_id",
@@ -570,13 +574,11 @@ You can use the `Object.keys` method to display all of the keys on an object.
   "body",
   "author"
 ]
-{% endhighlight %}
+```
 
-The above is a very loose method. In a real world environment you'd likely need a better query such as the example <a href="http://stackoverflow.com/questions/2298870/mongodb-get-names-of-all-keys-in-collection">here</a>.
+The above is a very loose method. In a real world environment you'd likely need a better query such as the example [here](http://stackoverflow.com/**questions**/2298870/mongodb-get-names-of-all-keys-in-collection). We can also return the post documents in alphabetical order. This can be done using the `sort()` method. The `sort()` method takes a parameter which is an object that asks what you want to sort by and if you want in ascending or descending (1 or -1).
 
-We can also return the post documents in alphabetical order. This can be done using the `sort()` method. The `sort()` method takes a parameter which is an object that asks what you want to sort by and if you want in ascending or descending (1 or -1).
-
-{% highlight bash linenos %}
+```bash
 > db.posts.find({}, {title: true}).sort({title: 1})
 {
   "_id": ObjectId("59e3b5aaf81f4072f17b49fc"),
@@ -595,15 +597,13 @@ We can also return the post documents in alphabetical order. This can be done us
   "title": "Parenting 101"
 }
 Fetched 4 record(s) in 4ms
-{% endhighlight %}
+```
 
-### Pagination
+#### Pagination
 
-Another common scenario you will run into is where you want to paginate results. Check out <a href="https://pdxstartups.switchboardhq.com/">this</a> example from the Portland startup switchboard. Pagination means that you display a set of results across different pages.
+**Another common scenario you will run into is where you want to paginate results.** Check out [this](https://pdxstartups.switchboardhq.com/) example from the Portland startup switchboard. Pagination means that you display a set of results across different pages. **To accomplish this with our data we use the `skip()` method along with the `limit()` method.**
 
-To accomplish this with our data we use the `skip()` method along with the `limit()` method.
-
-{% highlight bash linenos %}
+```bash
 > db.posts.find({}, {title: true}).limit(2)
 {
   "_id": ObjectId("59e3b5aaf81f4072f17b49fa"),
@@ -624,39 +624,39 @@ Fetched 2 record(s) in 0ms
   "title": "Parenting 101"
 }
 Fetched 2 record(s) in 2ms
-{% endhighlight %}
+```
 
 Think of pagination like ` limit = number of records on each page`, `skip = number of records on each page * page number - 1`.
 
-#### Quiz
+#### Quiz:
 
-Question: The second parameter of the `update` method is the ____ parameter.
+---
 
-Answer: update
+**Question**: The second parameter of the `update` method is the ____ parameter.
 
-Question: If you try to update a file that does not exist on a document, by providing a field that is not already on the document, the field will be created with the values you provide.
+**Answer**: update
 
-Answer: True
+**Question**: If you try to update a file that does not exist on a document, by providing a field that is not already on the document, the field will be created with the values you provide.
 
-Question: The `sort()` method will sort strings in alphabetical or reverse alphabetical order, data, and will sort numbers in ascending or descending order.
+**Answer**: True
 
-Answer: True
+**Question**: The `sort()` method will sort strings in alphabetical or reverse alphabetical order, data, and will sort numbers in ascending or descending order.
 
-Question: The `skip()` method and the `limit()` method CANNOT be used together.
+**Answer**: True
 
-Answer: False
+**Question**: The `skip()` method and the `limit()` method CANNOT be used together.
 
-Question: In the mongo shell, documents are like ____.
+**Answer**: False
 
-Answer: JavaScript Objects
+**Question**: In the mongo shell, documents are like ____.
+
+**Answer**: JavaScript Objects
+
+---
 
 ## Language Drivers
 
-The most common way MongoDB is used in applications is through language drivers. Language drivers, sometimes callsed "clients", "plugins", "bindings", or "wrappers", are sets of functions and methods that allow you to more easily interact with a technology. In the case of MongoDB, there are drivers for Node, Scala, C++, Ruby, Python, and basically any other language you can imagine, even including Go and Erlang. Find them all <a href="https://docs.mongodb.org/ecosystem/drivers/">here</a>.
-
-This allows you to use Mongo within the language you wish instead of from the command line.
-
-There are also entire open-source frameworks built that use these libraries. The most well-known framework for nodeJS is Mongoose.
+The most common way MongoDB is used in applications is through language drivers. Language drivers, sometimes callsed "clients", "plugins", "bindings", or "wrappers", are sets of functions and methods that allow you to more easily interact with a technology. In the case of MongoDB, there are drivers for Node, Scala, C++, Ruby, Python, and basically any other language you can imagine, even including Go and Erlang. Find them all [here](https://docs.mongodb.org/ecosystem/drivers/). This allows you to use Mongo within the language you wish instead of from the command line. There are also entire open-source frameworks built that use these libraries. The most well-known framework for nodeJS is Mongoose.
 
 ## Sharding
 
@@ -668,24 +668,28 @@ This is where MongoDB has a big advantage over SQL databases. MongoDB can spread
 
 From a perfoamance standpoint, this is why many large applications choose Mongo.
 
-#### Quiz
+#### Quiz:
 
-Question: Relational databases can send write operations to ____.
+---
 
-Answer: only one database
+**Question**: Relational databases can send write operations to ____.
 
-Question: Which of the following is NOT a name a language driver might go by.
+**Answer**: only one database
 
-Answer: resource
+**Question**: Which of the following is NOT a name a language driver might go by.
 
-Question: Sharding is also known as ____.
+**Answer**: resource
 
-Answer: horizontal scaling
+**Question**: Sharding is also known as ____.
 
-Question: The Mongo Shell is the primary way that developers interact with MongoDB in their applications.
+**Answer**: horizontal scaling
 
-Answer: False
+**Question**: The Mongo Shell is the primary way that developers interact with MongoDB in their applications.
 
-Question: MongoDB can send write operations to ____.
+**Answer**: False
 
-Answer: all shards
+**Question**: MongoDB can send write operations to ____.
+
+**Answer**: all shards
+
+---

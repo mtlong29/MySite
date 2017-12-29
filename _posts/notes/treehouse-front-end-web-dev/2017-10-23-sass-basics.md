@@ -18,13 +18,13 @@ date: 2017-10-23
 
 ## Why SCSS Over Sass
 
-The main reason to choose SCSS over Sass is because ordinary CSS is directly compatible with SCSS but not Sass. This means you can copy and paste CSS into an SCSS file without any issues what so ever.
+**The main reason to choose SCSS over Sass is because ordinary CSS is directly compatible with SCSS but not Sass.** This means you can copy and paste CSS into an SCSS file without any issues what so ever.
 
 ## Mixins Content
 
 If you have content that is unique for each time you call a mixin you can use the `@content` selector in the mixin then write SCSS like you would before:
 
-{% highlight css linenos %}
+```scss
 @mixin skewed {
   &::after {
     content: '';
@@ -42,13 +42,13 @@ If you have content that is unique for each time you call a mixin you can use th
     bottom: -25px;
   }
 }
-{% endhighlight %}
+```
 
 ## Extend Placeholder Selectors
 
 It's easy to "extend" properties made in one selector to another. It is also very useful to create placeholder selectors because they may not be needed. This is done with the `%` symbol. This is considered best practice in SCSS.
 
-{% highlight css linenos %}
+```scss
 %btn {
   color: $white;
   display: inline-block;
@@ -72,7 +72,7 @@ It's easy to "extend" properties made in one selector to another. It is also ver
     background-color: $color-primary;
   }
 }
-{% endhighlight %}
+```
 
 You can also nest selectors that are to be extended.
 
@@ -80,25 +80,25 @@ It is possible to overextend however. For example, you will not want to add the 
 
 ## Organizing Partials
 
-Parials can be organized in any way you wish. My favorite way I've seen is `/base`, `/components`, `/layout`, and `/utilities`.
+Partials can be organized in any way you wish. My favorite way I've seen is `/base`, `/components`, `/layout`, and `/utilities`.
 
 Base consists of base styles and resets. Components are buttons, icons, images, etc. Layouts card styles, containers, footer, header, etc. And utilities are functions, helpers, mixins, and variables.
 
 You can import these styles in your main.scss file like:
 
-{% highlight css linenos %}
+```scss
 @import '/utilities/variables',
         '/utilities/mixins',
         '/utilities/functions';
 @import '/base/reset',
         '/base/base';
-{% endhighlight %}
+```
 
 ## Nest Media Queries
 
 You can nest media queries directly inside a selector.
 
-{% highlight css linenos %}
+```scss
 .img-feature {
   width: 165px;
   border: 4px solid $white;
@@ -108,17 +108,15 @@ You can nest media queries directly inside a selector.
     }
   }
 }
-{% endhighlight %}
+```
 
 ## Custom Functions
 
-Besides providing a collecion of built-in functions, Sass lets you write your own functions to reuse logic in your code.
+Besides providing a collection of built-in functions, Sass lets you write your own functions to reuse logic in your code.
 
-You define a function with the `@function name() {}` declaration.
+**You define a function with the `@function name() {}` declaration.** Inside the parentheses you can include parameters separated by a comma.
 
-Inside the parantheses you can include parameters separated by a comma.
-
-{% highlight css linenos %}
+```scss
 @function divide($a, $b) {
   @return ($a / $b);
 }
@@ -126,13 +124,11 @@ Inside the parantheses you can include parameters separated by a comma.
   line-height: divide(32px, 16px);
 }
 // line-height: 2;
-{% endhighlight %}
+```
 
-This isn't the most useful function, but functions can be very complex.
+This isn't the most useful function, but functions can be very complex. You could make a function that converts pixel values to percents:
 
-You could make a function that converts pixel values to percents:
-
-{% highlight css linenos %}
+```scss
 $max-width: 1000px;
 @function px-to-pc($target, $context: $max-width) {
   @return ($target / $context) * 100%;
@@ -141,20 +137,18 @@ $max-width: 1000px;
   width: px-to-pc(400px);
 }
 // width: 40%;
-{% endhighlight %}
+```
 
-Note, that you can set default values for your parameters as seen in the previous example. You can override this value by passing a second parameter in your function call like `px-to-pc(400px, 1200px);`.
+Note, that you can set default values for your parameters as seen in the previous example. You can override this value by passing a second parameter in your function call like `px-to-pc(400px, 1200px);`. You can also create a function for flexbox layout:
 
-You can also create a function for flexbox layout:
-
-{% highlight css linenos %}
+```scss
 $gutter: 10px;
 @function per-line($items) {
   $g-pct: px-to-pc($gutter) * 2;
   $g-total: $items * $g-pct;
   @return (100% / $items) - $g-total;
 }
-{% endhighlight %}
+```
 
 As you can see you can create variables inside of functions. These are local variables.
 
@@ -162,7 +156,7 @@ As you can see you can create variables inside of functions. These are local var
 
 You can create optional parameters in mixins by making the default value of the parameter `null`.
 
-{% highlight css linenos %}
+```scss
 @mixin roundy($dim, $brdr: null) {
   width: $dim;
   height: $dim;
@@ -172,13 +166,13 @@ You can create optional parameters in mixins by making the default value of the 
 img {
   @include roundy(20px);
 }
-{% endhighlight %}
+```
 
 ## Add Conditional Logic
 
 You can add conditional logic to your stylesheets using `@if`. You can also use `@else if`.
 
-{% highlight css linenos %}
+```scss
 @mixin mq($break) {
   @if $break == 'xs' {
     @media (max-width: $break-xs) {
@@ -207,7 +201,7 @@ You can add conditional logic to your stylesheets using `@if`. You can also use 
     //
   }
 }
-{% endhighlight %}
+```
 
 This makes SCSS smarter and leaner.
 
@@ -215,7 +209,7 @@ This makes SCSS smarter and leaner.
 
 Sass maps provide a flexible way to keep track of data by associating a name with a particular value.
 
-{% highlight css linenos %}
+```scss
 // not using Sass maps
 $break-xs: 575px;
 $break-sm: 576px;
@@ -232,23 +226,23 @@ $breakpoints: (
 @media (max-width: map-get($breakpoints, 'sm')) {
   //
 }
-{% endhighlight %}
+```
 
 ## Write Loops
 
-Loops simplify repetive tasks by cycling through lists of items or values and performing an action on each. Developers commonly use for-loops to repeat a block of styles a certain number of times.
+Loops simplify repetitive tasks by cycling through lists of items or values and performing an action on each. Developers commonly use for-loops to repeat a block of styles a certain number of times.
 
 ### For Loops 
 
 For loops use the `@for` keyword:
 
-{% highlight css linenos %}
+```scss
 @for $i 1 through 10 {
   .box-#{$i} {
     background-color: adjust-hue(tomato, $i * 5);
   }
 }
-{% endhighlight %}
+```
 
 You can also use `to` instead of `through`. The `through` keyword includes the end value and the `to` keyword does not.
 
@@ -256,14 +250,14 @@ You can also use `to` instead of `through`. The `through` keyword includes the e
 
 While `@for` loops are incremental and run for a particular number of repetitions, `@each` loops iterate through collections of data, like a lists or map, and perform an action on each item:
 
-{% highlight css linenos %}
+```scss
 $names: ('andrew', 'matthew', 'timmy', 'billy', 'katie');
 @each $name in $names {
   .name-#{name} {
     background-image: url('img/#{name}.jpg');
   }
 }
-{% endhighlight %}
+```
 
 You can use this to loop through data in a map.
 
