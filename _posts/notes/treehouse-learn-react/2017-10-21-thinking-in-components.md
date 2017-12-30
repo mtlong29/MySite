@@ -11,12 +11,12 @@ excerpt: "Components are the core building blocks of a React application. Being 
 
 categories: notes
 
-date: 2017-10-24
+date: 2017-10-21
 ---
 
 {% include /globalSections/toc.html %}
 
-Components are the core building blocks of a React application. Being able to break your application up into reusable and composable components is critical to building scalable React applications.
+**Components are the core building blocks of a React application.** Being able to break your application up into reusable and composable components is critical to building scalable React applications.
 
 ## Mocking up our Application
 
@@ -24,7 +24,7 @@ This application is a simple scoreboard that allows you to add and remove player
 
 Before adding dynamic content to an application it's a good idea to mock up your application first using static content and JSX. In this process ignore the dynamic portions of the application and focus on the markup we ultimately want to produce.
 
-{% highlight javascript linenos %}
+```javascript
 function Application() {
   return (
     <div className="scoreboard">
@@ -51,25 +51,21 @@ function Application() {
 }
 
 ReactDOM.render(<Application />, document.getElementById('container'));
-{% endhighlight %}
+```
 
-Note that classes use the attribute `className` instead of `class`. This is because `class` is a reserved keyword in JavaScript.
+>Note that classes use the attribute `className` instead of `class`. This is because `class` is a reserved keyword in JavaScript.
 
 Most style guides will recommend putting your values in double quotes. Though single quotes will be valid, we'll be using double quotes for our properties.
 
 ## Properties
 
-In React we can use properties to customize our components. When we define a component using a function, this function actually does take an argument. The argument is an object that contains all the properties that were used when the stance of this component was written out.
+**In React we can use properties to customize our components.** When we define a component using a function, this function actually does take an argument. The argument is an object that contains all the properties that were used when the stance of this component was written out.
 
-The most common name for this argument is `props`. When application is called, `props` will be an object with the key of `title` and a value of `My Scoreboard`. Now we place `props.title` in our `h1` element.
+The most common name for this argument is `props`. When application is called, `props` will be an object with the key of `title` and a value of `My Scoreboard`. Now we place `props.title` in our `<h1>` element. **In order to use this we must use curly braces.** These curly braces can appear where normal content appears between tags in our code. They can also appear as the value of an attribute in a JSX tag. By wrapping this curly braces, what's inside the curly braces will now be regular JavaScript, so `props.title` will be evaluated. **We can write any JavaScript expression between these braces.**
 
-In order to use this we must use curley braces. These curly braces can appear where normal content appears between tags in our code. They can also appear as the value of an attribute in a JSX tag.
+>The big thing to remember is it has to be an expression. That is, something that returns a value. We cannot use an `if else` statement since that would be a JavaScript statement which does not evaluate to a value.
 
-By wrapping this curly braces, what's inside the curly braces will now be regular JavaScript, so `props.title` will be evaluated. We can write any JavaScript expression between these braces. 
-
-The big thing to remember is it has to be an expression. That is, something that returns a value. We cannot use an `if else` statement since that would be a JavaScript statement which does not evaluate to a value.
-
-{% highlight javascript linenos %}
+```javascript
 function Application(props) {
   return (
     <div className="scoreboard">
@@ -96,21 +92,15 @@ function Application(props) {
 }
 
 ReactDOM.render(<Application title="My Scoreboard"/>, document.getElementById('container'));
-{% endhighlight %}
+```
 
 ## PropTypes and DefaultProps
 
-Now that our application component has a title property it will have an empty header if we forget to pass it in. In React we can document exactly which properties our components take and what types they should be.
+Now that our application component has a title property it will have an empty header if we forget to pass it in. In React we can document exactly which properties our components take and what types they should be. We can even make a property required or provide a default value. This is done by assigning to our components props type property. Props types is just an object that contains all the keys a component can take, as well as a special type definition.
 
-We can even make a property required or provide a default value. This is done by assigning to our components props type property.
+The first thing to do is after the application function has been declared, we can write `Application.propTypes` with a plural, equals, and then it will be an object. Each key in this object will be a property that application can take. We can access these special property types by going to `React.PropTypes` again notice the plural and notice the capital `P`. So you'll notice we defined our `PropTypes` by assigning to `Application.propTypes` with a lower case `p`.
 
-Props types is just an object that contains all the keys a component can take, as well as a special type definition.
-
-The first thing to do is after the application function has been declared, we can write `Application.propTypes` with a plural, equals, and then will be an object. Each key in this object will be a property that application can take.
-
-We can access these special property types by going to `React.PropTypes` again notice the plural and notice the capital `P`. So you'll notice we defined our `PropTypes` by assining to `Application.propTypes` with a lower case `p`.
-
-{% highlight javascript linenos %}
+```javascript
 function Application(props) {
   return (
     <div className="scoreboard">
@@ -145,37 +135,39 @@ Application.defaultProps = {
 }
 
 ReactDOM.render(<Application/>, document.getElementById('container'));
-{% endhighlight %}
+```
 
 If it's not a default property, but still needs to be required you can add `.isRequired`. This would look like `title: React.PropTypes.string.isRequired`.
 
-You will see errors in the console if anything is wrongly defined or left out.
+Y>ou will see errors in the console if anything is wrongly defined or left out.
 
-#### Quiz
+#### Quiz:
 
-Question: You can use if / else statements inside JSX expressions.
+---
 
-Answer: False
+**Question**: You can use if / else statements inside JSX expressions.
 
-Question: Props passed to a component should not be changed by that component.
+**Answer**: False
 
-Answer: True
+**Question**: Props passed to a component should not be changed by that component.
 
-Question: How would you assign a CSS class to a component in JSX?
+**Answer**: True
 
-Answer: `<div className="player">...</div>`
+**Question**: How would you assign a CSS class to a component in JSX?
 
-Question: `propTypes` are required on all components that take properties.
+**Answer**: `<div className="player">...</div>`
 
-Answer: False
+**Question**: `propTypes` are required on all components that take properties.
+
+**Answer**: False
+
+---
 
 ## Decomposing our Application
 
-The point of decomposition is to break down your code to make it more readable. Having one large component is not very effective. While, having a ton of small components is also not efficient. Your goal should be finding a middle ground where your application is most readable. The act of composition is combining many smaller or simpler pieces to create a large piece.
+**The point of decomposition is to break down your code to make it more readable.** Having one large component is not very effective. While, having a ton of small components is also not efficient. Your goal should be finding a middle ground where your application is most readable. The act of composition is combining many smaller or simpler pieces to create a large piece. It is often the case that decomposition occurs during development.
 
-It is often the case that decomposition occurs during development.
-
-{% highlight javascript linenos %}
+```javascript
 function Header(props) {
   return (
     <div className="header">
@@ -239,21 +231,17 @@ Application.defaultProps = {
 }
 
 ReactDOM.render(<Application/>, document.getElementById('container'));
-{% endhighlight %}
+```
 
 ## Loops and Lists in JSX
 
-One way to improve the current application is how players are placed into the application. We currently have two hardcoded player components. It would be nice if we could have an array or `player` and render a player component of each of those.
+One way to improve the current application is how players are placed into the application. We currently have two *hardcoded* player components. It would be nice if we could have an array or `player` and render a player component of each of those. 
 
-Start by creating a variable at the top of the script to act as our initial player code. The array will contain multiple objects. Each object will have a name and a score.
-
-In order to display it we can't write a simple `for` loop because it is a statement not an expression. Instead we'll use the map function of the array. The map method takes a function itself. This function will take each of our players that's in the players array.
-
-Our map function will map a player object onto a player component. And what will ultimately be returned in this outer expression is an array of player components.
+Start by creating a variable at the top of the script to act as our initial player code. The array will contain multiple objects. Each object will have a name and a score. In order to display it we can't write a simple `for` loop because it is a statement not an expression. Instead we'll use the map function of the array. The map method takes a function itself. This function will take each of our players that's in the players array. Our map function will map a player object onto a player component. And what will ultimately be returned in this outer expression is an array of player components. 
 
 In a React JSX expression, an array of components will simply be rendered in the DOM one after the other, like a list.
 
-{% highlight javascript linenos %}
+```javascript
 var PLAYERS = [
   {
     name: "Matthew Long",
@@ -341,25 +329,28 @@ Application.defaultProps = {
 }
 
 ReactDOM.render(<Application players={PLAYERS} />, document.getElementById('container'));
-{% endhighlight %}
+```
 
 Note that the players array and each object also has a property of id. This helps fix an error that says warning: each child in an array or iterator must have a uniqe key prop. Check the render method of Application.
 
-#### Quiz
+#### Quiz:
 
-Question: You can use a JavaScript `for` loop to iterate over items inside a JSX expression.
+---
 
-Answer: False
+**Question**: You can use a JavaScript `for` loop to iterate over items inside a JSX expression.
 
-Question: Which property is required on components generated in a loop?
+**Answer**: False
 
-Answer: key
+**Question**: Which property is required on components generated in a loop?
 
-Question: Which function allows you to create a list of JSX elements from an array of JavaScript values?
+**Answer**: key
 
-Answer: `array.map`
+**Question**: Which function allows you to create a list of JSX elements from an array of JavaScript values?
 
-Question: When should we break a component into smaller components?
+**Answer**: `array.map`
 
-Answer: When the component has too much markup, when the component does too many things, and when the component is reused
+**Question**: When should we break a component into smaller components?
 
+**Answer**: When the component has too much markup, when the component does too many things, and when the component is reused
+
+---

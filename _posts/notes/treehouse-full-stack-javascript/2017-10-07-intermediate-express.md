@@ -1459,6 +1459,8 @@ You can google and find a Pug to HTML converter. The main objective of this will
 
 #### Quiz:
 
+---
+
 **Question**: What overall problem do cookies attempt to solve?
 
 **Answer**: How to store state
@@ -1482,3 +1484,5 @@ You can google and find a Pug to HTML converter. The main objective of this will
 **Question**: Express cannot read and execute client-side JavaScript
 
 **Answer**: True
+
+---

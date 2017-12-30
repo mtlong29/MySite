@@ -11,7 +11,7 @@ excerpt: "State is one of the most difficult things to reason about in your appl
 
 categories: notes
 
-date: 2017-10-24
+date: 2017-10-23
 ---
 
 {% include /globalSections/toc.html %}
@@ -20,11 +20,11 @@ State is one of the most difficult things to reason about in your application be
 
 ## Unidirectional Data Flow
 
-Undirectional data flow means all data in our applications flow in a single direction. In React it flows down the tree from parent to child. This makes tracking the score and destination easy compared to other architectures where data may be coming from many parts of the application.
+>Unidirectional data flow means all data in our applications flow in a single direction. In React it flows down the tree from parent to child. This makes tracking the score and destination easy compared to other architectures where data may be coming from many parts of the application.
 
 Application state is the state or data in our application that is core to the functionality of the application as a while. This usually includes a list of the models and data being manipulated by the interface. If we were to reload our application, the Application state is what we would would like to persist the most.
 
-Local component state is the state that is used to allow a component to function. Local component state is typically not used by other components in the application, and is less important to persist if the application resists.
+>Local component state is the state that is used to allow a component to function. Local component state is typically not used by other components in the application, and is less important to persist if the application resists.
 
 ## Restructuring State
 
@@ -32,13 +32,9 @@ Our application currently has one stateful component, our counter. This is actua
 
 First, create a function called counter. It takes props just like any other functional component. Then we can copy the content of our render function and place it into our counter. Remember that anywhere we used our `state.score`, we need to change it to `props`.
 
-Now, instead of handling increment and decrement score from this, we'll actually be creating new `props` that will handle it higher up in our application.
+Now, instead of handling increment and decrement score from this, we'll actually be creating new `props` that will handle it higher up in our application. For now, we're going to remove these `onClick` handlers. Then we'll work on how we communicate later. We can move `propTypes` up as well as create a function for `defaultProps`.
 
-For now, we're going to remove these `onClick` handlers. Then we'll work on how we communicate later.
-
-We can move `propTypes` up as well as create a function for `defaultProps`.
-
-{% highlight javascript linenos %}
+```javascript
 var PLAYERS = [
   {
     name: "Jim Hoskins",
@@ -140,43 +136,41 @@ var Application = React.createClass({
 })
 
 ReactDOM.render(<Application initialPlayers={PLAYERS}/>, document.getElementById('container'));
-{% endhighlight %}
+```
 
-#### Quiz
+#### Quiz:
 
-Question: In a React application, components commonly communicate with their children by calling methods on them.
+---
 
-Answer: False
+**Question**: In a React application, components commonly communicate with their children by calling methods on them.
 
-Question: How does data flow in a React application?
+**Answer**: False
 
-Answer: From parent to child via properties.
+**Question**: How does data flow in a React application?
 
-Question: Application State is defined as state needed locally for a component to serve its function.
+**Answer**: From parent to child via properties.
 
-Answer: False
+**Question**: Application State is defined as state needed locally for a component to serve its function.
 
-Question: We usually want to concentrate our application state high in our virtual DOM tree.
+**Answer**: False
 
-Answer: True
+**Question**: We usually want to concentrate our application state high in our virtual DOM tree.
 
-Question: How do we communicate events up through the DOM tree in a standard React application?
+**Answer**: True
 
-Answer: Provide callback functions as properties to components.
+**Question**: How do we communicate events up through the DOM tree in a standard React application?
+
+**Answer**: Provide callback functions as properties to components.
+
+---
 
 ## Communicating Events
 
-While data flows down, events and communication flows up. This completes the loop of events that can change data bubbling up and the updated state data flowing back down to be displayed.
+>While data flows down, events and communication flows up. This completes the loop of events that can change data bubbling up and the updated state data flowing back down to be displayed.
 
-In order to design how data flows upwards while data continues to flow downwards. In order to design how data flows upwards through our componentry, we need to think about each component and its responsibilities.
+In order to design how data flows upwards while data continues to flow downwards. In order to design how data flows upwards through our components, we need to think about each component and its responsibilities. Our counter for instance has a score passed to it by the parent, but ti also includes buttons intended to change that score. First thing, we'll do is add it to our `PropTypes` for counter. We'll say `onChange`, and the type for this is `react.PropTypes.func` and we'll say it `isRequired`. As you can see when adding anonymous functions you may have to use `.bind(this)` to the function if `this` has already been used in a previous anonymous function.
 
-Our counter for instance has a score passed to it by the parent, but ti also includes buttons intended to change that score.
-
-First thing, we'll do is add it to our `PropTypes` for counter. We'll say `onChange`, and the type for this is `react.PropTypes.func` and we'll say it `isRequired`.
-
-As you can see when adding anonymous functions you may have to use `.bind(this)` to the function if `this` has already been used in a previous anonymous function.
-
-{% highlight javascript linenos %}
+```javascript
 var PLAYERS = [
   {
     name: "Jim Hoskins",
@@ -291,25 +285,13 @@ var Application = React.createClass({
 })
 
 ReactDOM.render(<Application initialPlayers={PLAYERS}/>, document.getElementById('container'));
-{% endhighlight %}
+```
 
 ## Building the Statistics Component
 
-Now that we have our state consolidated in a single place, we can use it to build more componenets.
+Now that we have our state consolidated in a single place, we can use it to build more components. So far it may seem like we did a lot of code for very little benefit. Our code up until now functions the same as it did in the early stages. One issue on how it was before is keeping score value in the counter components state locally: What if we wanted to put the total score of all players in the header? How would we collect that data from each counter? We don't really have a way to do that in the old structure. The information of the score was trapped in the counter component and any of the counter's children. Its data couldnt be used in parents of the counter, siblings of the counter, or relatives of the counter that require moving upwards in the tree. Now our data is at the top of our application. So getting the total score is pretty straightforward. Start by building a new component into our header that gives us some statistics. Do this by creating a new stateless component called `Stats`. **Note that you must include a `tbody` if you are using a `table` with React. This is because if you create a `table` the `tbody` will be automatically created by the browser.** Basically, we want the length of the array of players to be the number of players. Create a variable to get this: `var totalPlayers = props.players.length;`. In order to get the total amount of points we can use the `reduce` function. The first time it gets called the total will be set to `0` which is what is passed as the second argument to `reduce`.
 
-So far it may seem like we did a lot of code for very little benefit. Our code up until now functions the same as it did in the early stages. One issue on how it was before is keeping score value in the counter componenets state locally: What if we wanted to put the total score of all players in the header? How would we collect that data from each counter? We don't really have a way to do that in the old structure. The information of the score was trapped in the counter component and any of the counter's children. Its data couldnt be used in parents of the counter, siblings of the counter, or relatives of the counter that require moving upwards in the tree.
-
-Now our data is at the top of our application. So getting the total score is pretty straightforward.
-
-Start by building a new component into our header that gives us some statistics. Do this by creating a new stateless componenet called `Stats`.
-
-Note that you must include a `tbody` if you are using a `table` with React. This is because if you create a `table` the `tbody` will be automatically created by the browser. 
-
-Basically, we want the length of the array of players to be the number of players. Create a variable to get this: `var totalPlayers = props.players.length;`.
-
-In order to get the total amount of points we can use the `reduce` funciton. The first time it gets called the total will be set to `0` which is what is passed as the second argument to `reduce`.
-
-{% highlight javascript linenos %}
+```javascript
 var PLAYERS = [
   {
     name: "Jim Hoskins",
@@ -452,13 +434,13 @@ var Application = React.createClass({
 })
 
 ReactDOM.render(<Application initialPlayers={PLAYERS}/>, document.getElementById('container'));
-{% endhighlight %}
+```
 
 ## Adding Players to the Scoreboard
 
 An input form thats controlled when its value is passed to it by the parent component. This requires us to update the passed value when it changes by listening for the `onChange` event of the input component.
 
-{% highlight javascript linenos %}
+```javascript
 var PLAYERS = [
   {
     name: "Jim Hoskins",
@@ -657,27 +639,30 @@ var Application = React.createClass({
 })
 
 ReactDOM.render(<Application initialPlayers={PLAYERS}/>, document.getElementById('container'));
-{% endhighlight %}
+```
 
-#### Quiz
+#### Quiz:
 
-Question: The state called "name" in our AddPlayerForm componenet would be considered
+---
 
-Answer: Local Component State
+**Question**: The state called "name" in our AddPlayerForm component would be considered
 
-Question: Where does all of our application state live?
+**Answer**: Local Component State
 
-Answer: Application
+**Question**: Where does all of our application state live?
 
-Question: How do we define a property called onChange is a required function for a Counter componenet?
+**Answer**: Application
 
-Answer: Counter.propTypes = `{ onChange: React.PropTypes.func.isRequired }`
+**Question**: How do we define a property called onChange is a required function for a Counter component?
 
-Question: Which of the following componenets in our Application currently holds state?
+**Answer**: Counter.propTypes = `{ onChange: React.PropTypes.func.isRequired }`
 
-Answer: AddPlayerForm
+**Question**: Which of the following components in our Application currently holds state?
 
-Question: All state is contained in Application currently?
+**Answer**: AddPlayerForm
 
-Answer: False
+**Question**: All state is contained in Application currently?
 
+**Answer**: False
+
+---

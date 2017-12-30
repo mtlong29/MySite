@@ -47,3 +47,5 @@ Useful array methods. `pop()`: extracts the last element of the array and return
 
 - [MDN JavaScript Documents](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [devhints.io/es6](https://devhints.io/es6)
+- [jQuery Notes](/notes/jquery-recap/)
+- [jQuery Documentation](http://api.jquery.com/)

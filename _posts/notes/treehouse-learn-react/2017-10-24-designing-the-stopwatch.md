@@ -16,13 +16,13 @@ date: 2017-10-24
 
 {% include /globalSections/toc.html %}
 
-React provides several lifecycle hooks that can be very useful when building components that interact with other parts of your application. In this stage we’ll build a stopwatch component that will track time using JavaScript’s setInterval functionality.
+React provides several lifecycle hooks that can be very useful when building components that interact with other parts of your application. In this stage we’ll build a stopwatch component that will **track time using JavaScript’s setInterval functionality**.
 
 ## Designing the Stopwatch
 
 Adding the HTML for the stopwatch is relatively easy. There is nothing new here. You just need to create the Stopwatch using `React.createClass` and then add it into the header.
 
-{% highlight javascript linenos %}
+```javascript
 var PLAYERS = [
   {
     name: "Jim Hoskins",
@@ -232,13 +232,13 @@ var Application = React.createClass({
 });
 
 ReactDOM.render(<Application initialPlayers={PLAYERS}/>, document.getElementById('container'));
-{% endhighlight %}
+```
 
 ## Stopwatch State
 
 We want to make it so that the the stop button says stop when the timer is running and says start when it's not running.
 
-{% highlight javascript linenos %}
+```javascript
 var PLAYERS = [
   {
     name: "Jim Hoskins",
@@ -466,13 +466,13 @@ var Application = React.createClass({
 });  
 
 ReactDOM.render(<Application initialPlayers={PLAYERS}/>, document.getElementById('container'));
-{% endhighlight %}
+```
 
 ### Ternary Conditional Operator
 
 The following are equivalent:
 
-{% highlight javascript linenos %}
+```javascript
 var Stopwatch = React.createClass({
   getInitialState: function() {
     return {
@@ -490,9 +490,9 @@ var Stopwatch = React.createClass({
     );
   }  
 });
-{% endhighlight %}
+```
 
-{% highlight javascript linenos %}
+```javascript
 var Stopwatch = React.createClass({
   getInitialState: function() {
     return {
@@ -517,15 +517,15 @@ var Stopwatch = React.createClass({
     );
   }  
 });
-{% endhighlight %}
+```
 
-Ternary conditioning is actually a expression that returns a value which is why it is very valuable in React.
+>Ternary conditioning is actually a expression that returns a value which is why it is very valuable in React.
 
 ## Making the Stopwatch Tick
 
 In order to make the stopwatch tick we can use the `Date.now()` function as a start time.
 
-{% highlight javascript linenos %}
+```javascript
 var PLAYERS = [
   {
     name: "Jim Hoskins",
@@ -781,25 +781,29 @@ var Application = React.createClass({
 });  
 
 ReactDOM.render(<Application initialPlayers={PLAYERS}/>, document.getElementById('container'));
-{% endhighlight %}
+```
 
-#### Quiz
+#### Quiz:
 
-Question: It is acceptable to modify your state information in the `render()` method to maek it acceptable for display.
+---
 
-Answer: True
+**Question**: It is acceptable to modify your state information in the `render()` method to make it acceptable for display.
 
-Question: Which method should hold cleanup code that needs to be executed when the module is removed from the DOM?
+**Answer**: True
 
-Answer: `componentWillUnmount()`
+**Question**: Which method should hold cleanup code that needs to be executed when the module is removed from the DOM?
 
-Question: Which method should hold code that needs to be executed only when the module is first loaded into the DOM?
+**Answer**: `componentWillUnmount()`
 
-Answer: `componentDedMount()`
+**Question**: Which method should hold code that needs to be executed only when the module is first loaded into the DOM?
 
-Question: You can use if / else statements within JSX {} expressions.
+**Answer**: `componentDedMount()`
 
-Answer: False
+**Question**: You can use if / else statements within JSX {} expressions.
+
+**Answer**: False
+
+---
 
 ## Next Steps
 
@@ -807,38 +811,40 @@ We saw that the basic stateful functionality we can use in components. But you m
 
 We ended up just passing data and callbacks through intermediate composites. This is a result of the code state utilities built into React not being the most optimal strategies for application states in large React apps.
 
-This is where state management library like Redux can help. These state libraries take the patterns we used, but provide some very useful utilities for managing state across a large application.
+>This is where state management library like Redux can help. These state libraries take the patterns we used, but provide some very useful utilities for managing state across a large application.
 
-Another core topic in React is how we compile our JSX code into plain JavaScript. We have been using an in-browser compiler called Babel JS. This provides us an easy way to learn and experiment in JSX and React.
+Another core topic in React is how we compile our JSX code into plain JavaScript. We have been using an in-browser compiler called Babel JS. This provides us an easy way to learn and experiment in JSX and React. **But in the real world applications we will build, we want to use a build process that will compile our JSX for us before we deploy.**
 
-But in the real world application we will build, we want to use a build process that will compile our JSX for us before we deploy.
+>We typically will **use Babel to precompile our JSX in a production environment, and we may use tool kits like Grunt or Gulp to help us**. More complex and feature rich build tools like **Webpack** and **Browserfy** will not only help us by compiling our JSX, but will also provide a JavaScript module system similar to what we use in the Node.js platform.
 
-We typically will use Babel to precompile our JSX in a production environment, and we may use toolkits like Grunt or Gulp to help us. More complex and feature rich build tools like Webpack and Browserfy will not only help us by compiling our JSX, but will also provide a JavaScript module system similar to what we use in the Node.js platform.
-
-A module system helps us organize our code into modules and eliminates the work of importing many JavaScript files into our HTML pages by merging them into one.
+>A module system helps us organize our code into modules and eliminates the work of importing many JavaScript files into our HTML pages by merging them into one.
 
 We've been using React to build web applications. Now React started as a web-based library but the concepts of declarative markup and unidirectional data flow have proved so powerful that React has been extended into native mobile applications.
 
-Using React Native means we can author user interfaces on iPhone and Android using the JavaScript components just like we've been learning. However, instead of rendering our web pages to the DOM with elements like divs, it renders to the phone using the native user interface components for the platform.
+Using React Native means we can author user interfaces on iPhone and Android using the JavaScript components just like we've been learning. However, instead of rendering our web pages to the DOM with elements like `<div>`'s, it renders to the phone using the native user interface components for the platform.
 
-#### Quiz
+#### Quiz:
 
-Questions: Which of the following is a tool to help manage state in large React apps?
+---
 
-Answer: Redux
+**Questions**: Which of the following is a tool to help manage state in large React apps?
 
-Questions: JSX is required when writing React code.
+**Answer**: Redux
 
-Answer: False
+**Questions**: JSX is required when writing React code.
 
-Questions: React focuses on building user interfaces in what paradigm.
+**Answer**: False
 
-Answer: Declarative
+**Questions**: React focuses on building user interfaces in what paradigm.
 
-Questions: How do we pass data around a React application?
+**Answer**: Declarative
 
-Answer: Component Properties
+**Questions**: How do we pass data around a React application?
 
-Questions: Which is not true about Application State?
+**Answer**: Component Properties
 
-Answer: It is only stored in the component called Application
+**Questions**: Which is not true about Application State?
+
+**Answer**: It is only stored in the component called Application
+
+---
