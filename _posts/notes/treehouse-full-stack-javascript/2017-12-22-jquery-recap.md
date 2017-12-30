@@ -173,7 +173,7 @@ $('.profile-header').html('<strong>Matthew</strong>');
 
 ## Getting Values from Form Fields
 
-The `.html()` and `.text()` methods cannot be used to get information, or *values*, from form inputs. We can get it using jQuery's `.val()` methods.
+The `html()` and `text()` methods cannot be used to get information, or *values*, from form inputs. We can get it using jQuery's `val()` methods.
 
 Consider a form (class *blogNewPost) with an input element (id *blogTitleInput*), a textarea element (id *blogContentInput*), and a button element (id *previewButton*):
 
@@ -192,7 +192,7 @@ The goal is to add content of a blog post and make it so that you can preview sa
 <p id="blogContentPreview"></p>
 ```
 
-Using, the `.val()` method to obtain the values from the form elements, a click event can be added to the button such that it retrieves the content and appends it to the `h2` and `p` elements:
+Using, the `val()` method to obtain the values from the form elements, a click event can be added to the button such that it retrieves the content and appends it to the `h2` and `p` elements:
 
 ```javascript
 $('#previewButton').click(() => {
@@ -216,7 +216,7 @@ $('#previewButton').click(() => {
 
 #### Example Two
 
-Use the `.keyup()` method to preview the blog post content insteads of the `.click()` method:
+Use the `keyup()` method to preview the blog post content insteads of the `click()` method:
 
 ```javascript
 $('#blogTitleInput').keyup(() => {
@@ -243,7 +243,7 @@ previewContent('#blogTitleInput', '#blogTitlePreview');
 
 #### Example Three
 
-Select an input field with an ID of *name-input*, using the `.val()` method and change the text inside a paragraph tag with the class *profile-name*:
+Select an input field with an ID of *name-input*, using the `val()` method and change the text inside a paragraph tag with the class *profile-name*:
 
 ```javascript
 $('button').click(function() {
@@ -290,7 +290,7 @@ Unobtrusive JavaScript is basically three principles:
 
 >To create an element in jQuery, all that needs to be done is *passing valid HTML to the jQuery method*. jQuery then creates a new DOM element, that can have other jQuery methods called on it.
 
-The `.append()` method is used to add **HTML** to the *end* of a selected DOM element. The `.prepend()` method adds **HTML** to the *beginning* of a selected DOM element.
+The `append()` method is used to add **HTML** to the *end* of a selected DOM element. The `prepend()` method adds **HTML** to the *beginning* of a selected DOM element.
 
 ```javascript
 const $button = $('<button>Reveal Spoiler!</button>');
@@ -340,13 +340,13 @@ $('.student-list').append($newStudent);
 
 ## Using on() for Event Handling
 
-The `.click()` event is one of the most basic jQuery event handling events. There is also:
+The `click()` event is one of the most basic jQuery event handling events. There is also:
 
-- `.mouseover()`, for when a user mouses over an element, and 
-- `.keypress()`, for when a user presses a key in an input element, and 
-- `.focus()`, for when an input field captures focus, and more!
+- `mouseover()`, for when a user mouses over an element, and 
+- `keypress()`, for when a user presses a key in an input element, and 
+- `focus()`, for when an input field captures focus, and more!
 
-Methods such as these are fine for simple applications, but they are limited. For example, what if you wanted to have more than one event, *a mouseover or a click*, you would have duplicate code. Instead you can use the `.on()` method:
+Methods such as these are fine for simple applications, but they are limited. For example, what if you wanted to have more than one event, *a mouseover or a click*, you would have duplicate code. Instead you can use the `on()` method:
 
 ```javascript
 $('#element').on('click mouseover', () => {
@@ -356,7 +356,7 @@ $('#element').on('click mouseover', () => {
 
 #### Using Events with Dynamically Added Elements
 
-The order in which JavaScript is ran matters. For example, if the events were placed, in the code, before the elements were dynamically added the event wouldn't would not work because the elements aren't yet there. That's where **event delegation** on the `.on()` method comes in.
+The order in which JavaScript is ran matters. For example, if the events were placed, in the code, before the elements were dynamically added the event wouldn't would not work because the elements aren't yet there. That's where **event delegation** on the `on()` method comes in.
 
 >**Event delegation** means you're listening for an event on the parent element instead of on the child element.
 
@@ -369,7 +369,7 @@ $('.spoiler').on('click mouseleave', 'button', () => {
 });
 ```
 
-The second parameter of the `.on()` method is the element that the event is looking for. It is the child of the parent selector, in this example `$('.spoiler')`.
+The second parameter of the `on()` method is the element that the event is looking for. It is the child of the parent selector, in this example `$('.spoiler')`.
 
 Because we're listening for an event on the parent element, it doesn't matter whether the descendants exist in the DOM at the time of the page load, or are dynamically added later. This is called **event propagation**.
 
@@ -407,7 +407,7 @@ $('.spoiler').on('click mouseleave', 'button', e => {
 
 #### Example Two:
 
-Using the `.on()` method, attach an event handler to handle *click* events on the *ul* elements with the class of `.student-list`. Also, pass the *event* object to the callback function:
+Using the `on()` method, attach an event handler to handle *click* events on the *ul* elements with the class of `.student-list`. Also, pass the *event* object to the callback function:
 
 ```javascript
 $('.student-list').on('click', (event) => {
@@ -415,7 +415,7 @@ $('.student-list').on('click', (event) => {
 });
 ```
 
-Inside of the click handler, use jQuery to select `event.target`. Then call the `.hide()` method on your selection.
+Inside of the click handler, use jQuery to select `event.target`. Then call the `hide()` method on your selection.
 
 ```javascript
 $('.student-list').on('click', (event) => {
@@ -440,7 +440,7 @@ Consider the following unordered list:
 
 If this unordered list is selected through jQuery, the list items would be described as the unordered lists **children**. If the second list item is selected, the unordered list element is the **parent** element. Lastly, the first, third, and fourth list items are known as **siblings** to the selected list item.
 
->The `.eq()` or equals method allows you to find an element in a set of elements by index. For example:
+>The `eq()` or equals method allows you to find an element in a set of elements by index. For example:
 
 ```javascript
 $('li').eq(1).css({color: 'green'});
@@ -448,7 +448,7 @@ $('li').eq(1).css({color: 'green'});
 
 The above would turn the "Item Two" list item text color to green.
 
->The `.prev()` method can be used to select the previous sibling:
+>The `prev()` method can be used to select the previous sibling:
 
 ```javascript
 $('li').eq(1).prev().css({color: 'green'});
@@ -456,7 +456,7 @@ $('li').eq(1).prev().css({color: 'green'});
 
 The above would turn the "Item One" list item text color to green.
 
->The `.next()` method can be used to select the next sibling:
+>The `next()` method can be used to select the next sibling:
 
 ```javascript
 $('li').eq(1).next().css({color: 'green'});
@@ -472,7 +472,7 @@ $('li').eq(1).next().next().css({color: 'green'});
 
 The above would turn the "Item Four" list item text color to green.
 
-Keep in mind that if another `.next()` method was chained an *empty object would be returned* because a "Item Five" list item does not exist. Nothing turns green, but there is also *no error*.
+Keep in mind that if another `next()` method was chained an *empty object would be returned* because a "Item Five" list item does not exist. Nothing turns green, but there is also *no error*.
 
 #### Fixing the Spoiler Buttons
 
@@ -513,12 +513,10 @@ Given the following html:
 </ul>
 ```
 
-Using jQuery, select all of the list items on the page. Then, using the `.eq()` method, select "Wade Christensen" from the list of students.
-
 ```javascript
 $('li').eq(2);
 ```
-Use, `.next()` or `.prev()` to traverse from "Wade CHristensen" to "James McAvoy":
+Use, `next()` or `prev()` to traverse from "Wade CHristensen" to "James McAvoy":
 
 ```javascript
 $('li').eq(2).prev().prev();
@@ -547,9 +545,9 @@ $('li').eq(2).prev().prev();
 
 **Answer**: The event object
 
-**Question**: Which of the following best describes why you might use the `.on()` method?
+**Question**: Which of the following best describes why you might use the `on()` method?
 
-**Answer**: The `.on()` method allows you to assign an event handler to more than one event.
+**Answer**: The `on()` method allows you to assign an event handler to more than one event.
 
 **Question**: I've attached an event listener to `<ul>` that listens for clicks on the `<ul>`'s list item elements. This is an example of what?
 
@@ -563,3 +561,286 @@ $('li').eq(2).prev().prev();
 
 ## jQuery-Specific Selectors
 
+>There are two type of jQuery Selectors, 1. **CSS Selectors**, and 2. **jQuery Specific Selectors**.
+
+*Nearly any selector that you would use to select an element with CSS, you can use to select an element with jQuery*. This includes selecting an element or collection of elements directly by a **tag name** (`h1`, `p`, `img`, `a`, etc.), or selecting elements by **ID** ( `#footer`), **class** (`.profile`), and even selecting elements by some **pseudoclass** (`:first`, `:last`, etc.).
+
+Selectors have been added to jQuery to make some common types of selections easier, like selecting your **radio** (`:radio`), **checkbox** (`:checkbox`), or a **password field** (`:password`), **odd** (`:odd`), or **even** (`:even`) elements in a list, or selecting currently **visible** (`:visible`), or **hidden** (`:hidden`) elements. There are even more *jQuery specific selectors*.
+
+#### Example One:
+
+Given a list, select the odd anchor elements.
+
+```javascript
+const $odd = $('a:odd');
+```
+
+>Note that we don't need a `for` loop to cycle through all of the links and apply a method to each one. Many of jQuery's method's provide a kind of built-in looping feature.
+
+#### Example Two:
+
+Select the anchor elements whose href attribute starts with *"http://"* and change their text color to red.
+
+```javascript
+const $secureLinks = $('a[href^="http://"]').css({color: 'red'});
+```
+
+>The **^** selector selects elements that have the specified attribute with a value **beginning exactly with** a given string.
+
+#### Example Three:
+
+Use jQuery's ends with selector to select anchor elements linking to a pdf and change the background color to orange.
+
+```javascript
+const $pdf = $('a[href$=".pdf"]').css({background: 'orange'});
+```
+
+>The **$** selector selects elements that have the specific attribute with a value **ending exactly with** a given string.
+
+#### Example Four:
+
+Use jQuery's `:hidden` pseudo selector to select only the hidden list items then use the `show()` method to expose the hidden elements.
+
+```javascript
+$('li:hidden').show();
+```
+
+#### Learn More About jQuery Selectors:
+
+- [Special jQuery Selectors](https://api.jquery.com/category/selectors/jquery-selector-extensions/)
+- [jQuery "starts with" Selector](https://api.jquery.com/attribute-starts-with-selector/)
+- [jQuery "ends with" Selector](https://api.jquery.com/attribute-ends-with-selector/)
+- [Basic jQuery Selectors](https://api.jquery.com/category/selectors/basic-css-selectors/)
+
+## Changing Element Properties
+
+>The attribute method, `attr()` is handy for checking, adding, or changing an element's attributes.
+
+Just like the `text()` and `html()` methods attribute changing methods act as both **getters** and **setters**.
+
+```javascript
+$('#my-image').attr('alt'); // getter
+$('#my-image').attr('alt', 'Image of Billy being silly.'); // setter
+```
+
+#### Example One:
+
+Use the `attr()` method to add an attribute to all secure links (*links beginning with "https"*) so that they open up in a new tab or window when they're clicked, also change the color to a shade of green.
+
+```javascript
+$('a[href^="https://"]')
+  .attr({'target': '_blank'})
+  .css({'color': '#afa'});
+```
+
+>Note that you do not have to pass objects into these methods. If you only have one key value pair you do not need an object for the most part. Pay attention to colons and commas when switching between the two.
+
+```javascript
+$('a[href^="https://"]')
+  .attr('target', '_blank')
+  .css('color', '#afa');
+```
+
+#### Example Two:
+
+Add an attribute tag to any pdf links so that the file *downloads* instead of opening in a new tab. *Note that with Firefox the download attribute won't trigger if the PDF points to an external website.*
+
+```javascript
+$('a[href$=".pdf"]').attr('download', true);
+```
+
+>It's worth noting the `download` attribute is a bit tricky because it can be added to an anchor element without the `true` part: `<a href="file.pdf" download>`. So for `download` and attributes like it, any value passed as a second argument to the attribute method will trigger the appropriate behavior, because all the browser requires is for the attribute to be present.
+
+```javascript
+$('a[href$=".pdf"]').attr('download', 'just get it down dude..');
+```
+
+#### Learn More About jQuery attr() Method:
+
+- [`attr()` Method Documentation](http://api.jquery.com/attr/)
+- [`attr()` Method Example](https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_attr_set_func)
+
+## Changing Element Styles and Classes
+
+There are two ways to effect the styles of an element with jQuery.
+
+- Direct CSS manipulation, or
+- Adding or removing classes.
+
+The CSS method works like other methods, as a getter and a setter:
+
+```javascript
+$('element').css('background-color'); // getter
+$('element').css('background-color', 'green'); // setter
+```
+
+>To **add a class to an element** use the `addClass()` method. To **remove a class from an element** use the `removeClass()` method. Lastly, the `toggleClass()` method **toggles between adding and removing a class** on an element.
+
+#### Example One:
+
+Apply a background color of lightgray, text color of red, and font weight of bold, to every odd anchor element.
+
+```javascript
+$('a:odd').css({
+  'background-color': 'lightgrey',
+  'color': 'red',
+  'font-weight': 'bold',
+});
+```
+
+#### Example Two:
+
+For secure links, add an existing class of `secure`.
+
+```javascript
+$('a[href^="https://"]').addClass('secure');
+```
+
+For pdf files, add an existing class of `pdf`.
+
+```javascript
+$('a[href$=".pdf"]').addClass('pdf');
+```
+
+#### Example Three:
+
+Select a submit button with the class `submit-btn` and save it to a variable called `$submit` Then disable the button by adding a `disabled` attribute to it.
+
+```javascript
+let $submit = $('.submit-btn');
+$submit.attr('disabled', true);
+```
+
+Now, chain the appropriate jQuery method to add the class of `disabled` to the submit button.
+
+```javascript
+let $submit = $('.submit-btn');
+$submit.attr('disabled', true).addClass('disabled');
+```
+
+## Stopping the Browser's Default Behavior
+
+An example use of preventing default behavior is stopping a link from downloading a pdf file unless a button is checked to allow it. 
+
+>To prevent default behavior you call the `preventDefault()` method on the event object.
+
+```javascript
+$pdf.on('click', e => {
+  if ($(':checked').length === 0) {
+    e.preventDefault(); // prevent download of pdf document
+    alert("Please check the box to allow PDF downloads"); // alert the user
+  }
+});
+```
+
+Note that `:checked` returns a jQuery collection if nothing is checked. Expanding the collection you'll see the length is 0. When Checking the box the length will be 1.
+
+Lastly, since the "*allow PDF downloads*" checkbox only works if JavaScript is available it should be added with JavaScript as well to create **unobtrusive JavaScript**.
+
+```javascript
+$('#links').append("<label><input type='checkbox'> Allow PDF downloads</label>");
+```
+
+#### Learn More About event.preventDefault
+
+- [`event.preventDefault` Syntax and Examples](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
+
+## Looping Through a jQuery Collection
+
+The `each()` method removed much of the complexity of a typical `for` loop. There are many other looping methods as well.
+
+#### Example One:
+
+Log out the `href` of every link on a page.
+
+```javascript
+$('a').each((index, element) => {
+  console.log(index, $(element).attr('href'));
+});
+
+// 0 https://learn.jquery.com/
+// 1 http://treehouse-project-downloads.s3.amazonaws.com/jquery-basics/jquery_cheatsheet.pdf
+// 2 https://api.jquery.com/
+// 3 https://developer.mozilla.org/en-US/docs/Glossary/jQuery
+```
+
+#### Example Two:
+
+Consider the following HTML:
+
+```html
+<ul>
+  <li><a href='https://learn.jquery.com/'>Learn jQuery</a></li>
+  <li><a href='http://treehouse-project-downloads.s3.amazonaws.com/jquery-basics/jquery_cheatsheet.pdf'>jQuery Cheatsheet</a></li>
+  <li><a href='https://api.jquery.com/'>jQuery Documentation</a></li>
+  <li><a href='https://developer.mozilla.org/en-US/docs/Glossary/jQuery'>jQuery Glossary</a></li>
+</ul>
+```
+
+Instead of logging out the `href` display the `href` next to each link.
+
+```javascript
+$('a').each((index, link) => {
+  const url = $(link).attr('href');
+  $(link).parent().append(`(${url})`);
+});
+
+// <ul>
+//   <li><a href="https://learn.jquery.com/" class="secure">Learn jQuery</a>(https://learn.jquery.com/)</li>
+//   <li><a href="http://treehouse-project-downloads.s3.amazonaws.com/jquery-basics/jquery_cheatsheet.pdf" download="true" class="pdf">jQuery Cheatsheet</a>(http://treehouse-project-downloads.s3.amazonaws.com/jquery-basics/jquery_cheatsheet.pdf)</li>
+//   <li><a href="https://api.jquery.com/" class="secure">jQuery Documentation</a>(https://api.jquery.com/)</li>
+//   <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/jQuery" class="secure">jQuery Glossary</a>(https://developer.mozilla.org/en-US/docs/Glossary/jQuery)</li>
+// </ul>
+```
+
+Note that the parent in each of these anchor elements the parent is the list item element.
+
+>Note that it isn't necessary to explicitly reference the individual element in the function paths to each method call. Also, the index isn't even being used in the above example. Therefore, each of these can be removed and `this` keyword can be used instead. Recall that the arrow function isn't used now.
+
+```javascript
+$('a').each(function() {
+  $(this).parent().append(`(${$(this).attr('href')})`);
+});
+```
+
+#### Example Three:
+
+Select the list items inside a class named `favorite-things`. Then use the `prepend()` method to add `<input type="checkbox">` to the beginning of each list item. ALso, use the `this` keyword.
+
+```javascript
+$('.favorite-things li').each(function() {
+  $(this).prepend('<input type="checkbox">');
+});
+```
+
+#### Learn More About each() Method
+
+- [Iterating Over jQuery Objects](https://learn.jquery.com/using-jquery-core/iterating/)
+- [The `each()` Method](https://paulund.co.uk/using-jquery-each)
+- [Array Iteration Methods](/notes/javascript-array-iteration-and-manipulation-methods/)
+
+#### Quiz:
+
+---
+
+**Question**: What is not a reason to use `preventDefault()`?
+
+**Answer**: To prevent a window from closing when the user chooses "*cancel*".
+
+**Question**: What selector would you use to select every image on a page that ends with *.png*?
+
+**Answer**: `$("img[src$='.png']")`
+
+**Question**: What will set an elements dont to 1.5em?
+
+**Answer**: `$element.css('fontSize', '1.5em');`
+
+**Question**: Given an array named *characterList*, what `each()` loop would console.log the name of each book character?
+
+**Answer**: `characterList.each(function(index, character){console.log(character);});`
+
+**Question**: What might you use to set the alt attribute of an image element?
+
+**Answer**: `$element.attr('alt', 'Close up of a pile of Autumn leaves');`
+
+---
