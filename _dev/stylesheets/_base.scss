@@ -185,9 +185,12 @@ figcaption code {
   @include userSelect(none);
 }
 
-// add margin between code blocks when stacked
-.highlight > .highlight {
+// add margins to code blocks and padding inside blocks
+.highlight {
   margin: .5rem 0;
+  pre {
+    padding: .75rem;
+  }
 }
 
 /************************************************************
