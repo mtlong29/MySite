@@ -144,7 +144,7 @@ As you can see no errors arise. When we're assigning an instance of a reference 
 
 You've got to be careful about this. As you can see it's not as cut and dry when you say *variables can change, and constants cannot*. It really depends on whether your object is a **value type** or **reference type**.
 
-#### Quiz
+#### Quiz:
 
 ---
 
@@ -247,9 +247,9 @@ let square = Shape(x: 0, y: 0, width: 100, height: 100, color: .red)
 square.view.backgroundColor = .blue
 ```
 
-Remember, a view is a reference type. It's a class. And as long as we have a reference to it, we can change the values and nothing goes wrong because what is constant is the link to the object in memory, through reference and not the actual object.
+>Remember, a **view is a reference type**. It's a class. And as long as we have a reference to it, we can change the values and nothing goes wrong because what is constant is the link to the object in memory, through reference and not the actual object.
 
-Structs containing value types can lead to unexpected behaviors. You can mutate things as much as you want on the reference types and they don't trigger that copy behavior that we've come to expect in structs.
+Structures containing value types can lead to unexpected behaviors. You can mutate things as much as you want on the reference types and they don't trigger that copy behavior that we've come to expect in structures.
 
 ## Type Methods
 
@@ -392,7 +392,7 @@ Because this method is marked as final it knows that this is always the only imp
 
 Note that you can mark an entire class as final as well.
 
-#### Quiz
+#### Quiz:
 
 ---
 

@@ -7,7 +7,7 @@ title: "Swift Auto Layout"
 
 subtitle: "Treehouse - Beginner iOS Development"
 
-excerpt: "Auto Layout has evolved greatly since it's conception. It wasn't even a thing to begin with. Swift used hardcoded coordinates, springs, structs, frames, and more beforehand. This worked, but had repetitive code, and other headaches. Once new iOS sizes released this didn't really work. Now, Swift uses Auto Layout by default."
+excerpt: "Auto Layout has evolved greatly since it's conception. It wasn't even a thing to begin with. Swift used hard coded coordinates, springs, structs, frames, and more beforehand. This worked, but had repetitive code, and other headaches. Once new iOS sizes released this didn't really work. Now, Swift uses Auto Layout by default."
 
 categories: notes
 
@@ -16,107 +16,123 @@ date: 2017-12-01
 
 {% include /globalSections/toc.html %}
 
-Auto Layout has evolved greatly since it's conception. It wasn't even a thing to begin with. Swift used hardcoded coordinates, springs, struts, frames, and more beforehand. This worked, but had repetitive code, and other headaches. Once new iOS sizes released this didn't really work. Now, Swift uses Auto Layout by default.
+Auto Layout has evolved greatly since it's conception. It wasn't even a thing to begin with. **Swift used hard coded coordinates, springs, struts, frames, and more beforehand.** This worked, but had repetitive code, and other headaches. Once new iOS sizes released this didn't really work. Now, Swift uses Auto Layout by default.
 
-#### Quiz 1
+#### Quiz 1:
 
-Question: A view's frame, defined by a `CGRect` value, encapsulates information about only the view's origin.
+---
 
-Answer: False
+**Question**: A view's frame, defined by a `CGRect` value, encapsulates information about only the view's origin.
 
-Question: What is defined in terms of the superview's coordinate space?
+**Answer**: False
 
-Answer: Frame
+**Question**: What is defined in terms of the superview's coordinate space?
 
-Question: Frame is a computed property whose value depends on the view's bounds, center and transform amongst other values.
+**Answer**: Frame
 
-Answer: True
+**Question**: Frame is a computed property whose value depends on the view's bounds, center and transform amongst other values.
 
-Question: Priod to the introduction of Auto Layout, the layout and sizing mechanism in iOS development was known as ____.
+**Answer**: True
 
-Answer: Springs and Struts
+**Question**: Prior to the introduction of Auto Layout, the layout and sizing mechanism in iOS development was known as ____.
 
-Question: What is defined in terms of the view's own coordinate space?
+**Answer**: Springs and Struts
 
-Answer: Bounds
+**Question**: What is defined in terms of the view's own coordinate space?
 
-Question: What happens when we assign a value to a view's frame property?
+**Answer**: Bounds
 
-Answer: The computed property's setter recalculates the view's bounds and center
+**Question**: What happens when we assign a value to a view's frame property?
 
-#### Quiz 2
+**Answer**: The computed property's setter recalculates the view's bounds and center
 
-Question: When displaying a Right-To-Left language like Arabic, the trailing edge corresponds to the ____ attribute.
+---
 
-Answer: Left
+#### Quiz 2:
 
-Question: When we create a constraint that does not reference an attribute on another view, which attribute do we specify?
+---
 
-Answer: `NotAnAttribute`
+**Question**: When displaying a Right-To-Left language like Arabic, the trailing edge corresponds to the ____ attribute.
 
-Question: Auto Layout is based on what algorithm?
+**Answer**: Left
 
-Answer: Cassowary
+**Question**: When we create a constraint that does not reference an attribute on another view, which attribute do we specify?
 
-Question: The basic component of Auto Layout is a ____.
+**Answer**: `NotAnAttribute`
 
-Answer: Linear equation
+**Question**: Auto Layout is based on what algorithm?
 
-Question: When a constrain in Interface Builder is highlighted in red, it indicates what?
+**Answer**: Cassowary
 
-Answer: There is insufficient information to determine size andorigin
+**Question**: The basic component of Auto Layout is a ____.
 
-Question: What is the correct constraint equation?
+**Answer**: Linear equation
 
-Answer: `A1 = (M * A2) + C`
+**Question**: When a constrain in Interface Builder is highlighted in red, it indicates what?
 
-#### Quiz 3
+**Answer**: There is insufficient information to determine size and origin
 
-Question: Why do we not have to specify a height and a width constraint of a label that contains some simple text?
+**Question**: What is the correct constraint equation?
 
-Answer: Auto Layout can determine the size of views with content using their intrinsic content size
+**Answer**: `A1 = (M * A2) + C`
 
-Question: Suppose that view A has the following constrains applied to it. 1: Height constraing with a constant of 80 and a priority of 750. 2: Heigh constraint with a constant of 90 and a priority of 250. What is the resulting height of view A?
+---
 
-Answer: 80
+#### Quiz 3:
 
-Question: Content hugging refers to how much the view resists compressing its size to protect its content.
+---
 
-Answer: False
+**Question**: Why do we not have to specify a height and a width constraint of a label that contains some simple text?
 
-Question: Auto Layout uses a constraints priority value to determine how to resolve conflicts between two constraints.
+**Answer**: Auto Layout can determine the size of views with content using their intrinsic content size
 
-Answer: True
+**Question**: Suppose that view A has the following constrains applied to it. 1: Height constraint with a constant of 80 and a priority of 750. 2: Heigh constraint with a constant of 90 and a priority of 250. What is the resulting height of view A?
 
-#### Quiz 4
+**Answer**: 80
 
-Question: A size class can have two values ____ and ____.
+**Question**: Content hugging refers to how much the view resists compressing its size to protect its content.
 
-Answer: compact, regular
+**Answer**: False
 
-Question: In addition to size classes, what other trait(s) can we use to modify layouts?
+**Question**: Auto Layout uses a constraints priority value to determine how to resolve conflicts between two constraints.
 
-Answer: Display scale and user interface idiom
+**Answer**: True
 
-Question: A generic size class is represended by what combination?
+---
 
-Answer: Any width, any height
+#### Quiz 4:
 
-Question: Size classes correspond to exact device specifications or measurements.
+---
 
-Answer: False
+**Question**: A size class can have two values ____ and ____.
 
-Question: What size classes targets all iPhones in landscape?
+**Answer**: compact, regular
 
-Answer: Any width, compact height
+**Question**: In addition to size classes, what other trait(s) can we use to modify layouts?
 
-Question: Use size classes to make fine tuned changes to your interface.
+**Answer**: Display scale and user interface idiom
 
-Answer: False
+**Question**: A generic size class is represented by what combination?
+
+**Answer**: Any width, any height
+
+**Question**: Size classes correspond to exact device specifications or measurements.
+
+**Answer**: False
+
+**Question**: What size classes targets all iPhones in landscape?
+
+**Answer**: Any width, compact height
+
+**Question**: Use size classes to make fine tuned changes to your interface.
+
+**Answer**: False
+
+---
 
 ## NSLayoutConstraint
 
-Every constraint used in Interface Builder is an instance of `NSLayoutConstraint` class.
+>Every constraint used in Interface Builder is an instance of `NSLayoutConstraint` class.
 
 Why would you want to write layout in code instead of using Interface Builder? For starters, it is the preferred method for many developers. Especially those who work on teams and use source control to work on various aspects of the app at the same time.
 
@@ -124,25 +140,25 @@ When we specify layout in code, it allows us to build abstractions much like any
 
 There are some additions to Auto Layout that make adding constraints in code really fluid, easy to understand and simple to use. The first, is using Auto Layout APIs.
 
-Every constraint is created in Interface Builder what we're essentially doing is creating an instance of an `NSLayoutConstraint`. `NSLayoutConstraint` has properties for every aspect of the constraint equation that we create in Interface Builder. We have `priority`, `firstItem`, `firstAttribute`, `relation`, etc. We can use the properties to create or modify constraints in code at any point.
+Every constraint is created in Interface Builder what we're essentially doing is creating an instance of an `NSLayoutConstraint`. **`NSLayoutConstraint` has properties for every aspect of the constraint equation that we create in Interface Builder. We have `priority`, `firstItem`, `firstAttribute`, `relation`, etc. We can use the properties to create or modify constraints in code at any point.**
 
-Like you would control drag an element you can control drag a constraint to create an outlet. Navigate to the constraintof interest document outline within the storyboard file.
+Like you would control drag an element you can control drag a constraint to create an outlet. Navigate to the constraint of interest document outline within the storyboard file.
 
-{% highlight swift linenos %}
+```swift
 @IBOutlet weak var labelTrailingConstraint: NSLayoutConstraint!
 
 override func viewWillLayoutSubviews() {
     labelTrailingConstraint.constant = 50.0
 }
-{% endhighlight %}
+```
 
 It is important to note that this is an expensive operation so only modify constraints like this when you really need to. It's expensive because Interface Builder has to update all of the other frames.
 
 ## Adding Constraints in Code
 
-It is possible to add constraints in code:
+>It is possible to add constraints in code
 
-{% highlight swift linenos %}
+```swift
 import UIKit
 
 class ViewController: UIViewController {
@@ -179,11 +195,11 @@ class ViewController: UIViewController {
 
 
 }
-{% endhighlight %}
+```
 
 #### Another example:
 
-{% highlight swift linenos %}
+```swift
 class MyViewController: UIViewController {
   let sampleView = UIView()
 
@@ -209,28 +225,28 @@ class MyViewController: UIViewController {
     ])
   }
 }
-{% endhighlight %}
+```
 
 ## Layout Guides
 
-Prior to iOS, content could not go under the navigation bar or status bar. The reason for this behavior was that with flat interfaces, allowing the content to go under the navigation elements would create a perception of depth. But by allowign the content to go all the way to the edges of the interface, if we pin to the top margins, by default the content now sits under the status bar or a potential nav bar. To account for this, a manual solution would involve determinging what UI elements exist at the top of the screen, calculating the height of those elements, and then adding that height to your view offsets to position things correctly. This is nightmarishly inefficient.
+Prior to iOS, content could not go under the navigation bar or status bar. The reason for this behavior was that with flat interfaces, allowing the content to go under the navigation elements would create a perception of depth. But by allowing the content to go all the way to the edges of the interface, if we pin to the top margins, by default the content now sits under the status bar or a potential nav bar. To account for this, a manual solution would involve determining what UI elements exist at the top of the screen, calculating the height of those elements, and then adding that height to your view offsets to position things correctly. This is nightmarishly inefficient.
 
-Thankfully, apple introduced the concept of a <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/WorkingwithConstraintsinInterfaceBuidler.html#//apple_ref/doc/uid/TP40010853-CH10-SW3">layout guide</a>.
+Thankfully, apple introduced the concept of a [layout guide](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/WorkingwithConstraintsinInterfaceBuidler.html#//apple_ref/doc/uid/TP40010853-CH10-SW3).
 
-Note that you can only do this programmatically. This means you will have errors in Interface Builder. No fear. You can get rid of these errors by creating a restraint, but selecting "remove at build time". This will remove the errors.
+>Note that you can only do this programmatically. This means you will have errors in Interface Builder. No fear. You can get rid of these errors by creating a restraint, but selecting "remove at build time". This will remove the errors.
 
-Add the views as outlets by controll dragging in assistant editor and giving them a name. Something like:
+Add the views as outlets by control dragging in assistant editor and giving them a name. Something like:
 
-{% highlight swift linenos %}
+```swift
 @IBOutlet weak var firstView: UIView!
 @IBOutlet weak var secondView: UIView!
 @IBOutlet weak var thirdView: UIView!
 @IBOutlet weak var fourthView: UIView!
-{% endhighlight %}
+```
 
 In order to equally space out the views we will create "dummy" views that can be placed between the actual views and set the heights to be equal.
 
-{% highlight swift linenos %}
+```swift
 import UIKit
 
 class ViewController: UIViewController {
@@ -280,19 +296,19 @@ class ViewController: UIViewController {
       centerGuideHeightConstraint])
   }
 }
-{% endhighlight %}
+```
 
 Note that this is a TON of boilerplate code that is now "unnecessary".
 
 ## Layout Anchors 
 
-Creating constraints in code has many advantages, but at the end of the day it is quite verbose and cumbersome. A recent addition to the Auto Layout API makes creating constraints in code much easier using <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/">layout anchors</a>.
+**Creating constraints in code has many advantages, but at the end of the day it is quite verbose and cumbersome.** A recent addition to the Auto Layout API makes creating constraints in code much easier using [layout anchors](https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/).
 
-With the `NSLayoutAnchor` class, instead of creating constraints directly, as we've been doing with `NSLayoutConstraint` we use an anchor property exposed on a view, or layout guide to create a constraint.
+>With the `NSLayoutAnchor` class, instead of creating constraints directly, as we've been doing with `NSLayoutConstraint` we use an anchor property exposed on a view, or layout guide to create a constraint.
 
 This could look something like the following:
 
-{% highlight swift linenos %}
+```swift
 import UIKit
 
 class MyViewController: UIViewController {
@@ -327,19 +343,15 @@ class MyViewController: UIViewController {
     ])
   }
 }
-{% endhighlight %}
+```
 
 ## Views Dictionary and Format Strings
 
-Constraints in code make it very simple to layout our views, but it's still often more cumbersome than Interface Builder because we have to write out a line of code for every single constraint. 
+>Constraints in code make it very simple to layout our views, but it's still often more cumbersome than Interface Builder because we have to write out a line of code for every single constraint. 
 
-It's possible to write multiple constraints in one go using Auto Layout's visual format language.
+It's possible to write multiple constraints in one go using Auto Layout's visual format language. **Text based visual strings, or ASCII Art, is art made out of characters found in the ASCII standard. This method of writing constraints is known as a visual format language.** It uses a text string to describe a layout. Auto Layout will perform string substitution and replace this "ASCII Art" with values defined in dictionaries.
 
-Text based visual strings, or ASCII Art, is art made out of characters found in the ASCII standard. This method of writing constraints is known as a visual format language. It uses a text string to describe a layout.
-
-Auto Layout will perform string substitution and replace this "ASCII Art" with values defined in dictionaries.
-
-{% highlight swift linenos %}
+```swift
 import UIKit
 
 class ViewController: UIViewController {
@@ -392,43 +404,46 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 }
-{% endhighlight %}
+```
 
-To represent the `superView` in a format string, we use the pipe character, `|`. If the pipe is a the beginning, it refers to the leading edge, if it is at the end it represents the trailing edge.
+**To represent the `superView` in a format string, we use the pipe character, `|`. If the pipe is a the beginning, it refers to the leading edge, if it is at the end it represents the trailing edge.**
 
-The hyphen, `-`, on its own is used to represent standard spacing. Typically, when the relation is between two views, that spacing is eight points. If it is between a view and a super view, it is twenty points. A hyphen with a constant, explicitly declares non-standard spacing.
+**The hyphen, `-`, on its own is used to represent standard spacing.** Typically, when the relation is between two views, that spacing is eight points. If it is between a view and a super view, it is twenty points. A hyphen with a constant, explicitly declares non-standard spacing.
 
-The double equal sign, `==`, is used for equal widths or equal heights depending on the orientation of the format string. We can also use greater than or equals, `>=`, amd less than or equals, `<=`.
+**The double equal sign, `==`, is used for equal widths or equal heights depending on the orientation of the format string. We can also use greater than or equals, `>=`, amd less than or equals, `<=`.**
 
-We can also specify priorities on values by using `@`. Such as `[orangeView(>= 150@250)]`. In that example a low priority of 250 is set allowing Auto Layout to break it easily.
+**We can also specify priorities on values by using `@`.** Such as `[orangeView(>= 150@250)]`. In that example a low priority of 250 is set allowing Auto Layout to break it easily.
 
 Note that the options parameter specifies alignment and it does so in a manner perpendicular to the current layout orientation being defined by our format string.
 
-The Apple docs ysed to list the visual format language as the preferred way for laying out constraints but they don't anymore. This is for the best. While visual format strings are a great way of quickly laying views, the layout anchors is a lot easier.
+The Apple docs used to list the visual format language as the preferred way for laying out constraints but they don't anymore. This is for the best. **While visual format strings are a great way of quickly laying views, the layout anchors is a lot easier.**
 
 The other issue at least when starting out is that when our layout breaks or we have an ambiguous layout it's hard to debug things. Visual format strings create many constraints from the strings we provide. It's hard to understand what little mistakes we might be making that way.
 
-Most of all though, it's stringly types code, and as always it's prone to errors.
+>Most of all though, it's stringly typed code, and as always it's prone to errors.
 
-#### Quiz 5
+#### Quiz 5:
 
-Question: Auto Layout replaces components of the format string with views and values specified in the views and metrics dictionaries.
+---
 
-Answer: True
+**Question**: Auto Layout replaces components of the format string with views and values specified in the views and metrics dictionaries.
 
-Question: The standard offset value is always 8 points
+**Answer**: True
 
-Answer: False
+**Question**: The standard offset value is always 8 points
 
-Question: Using a visual format string, how do you specify constraints in the vertical orientation?
+**Answer**: False
 
-Answer: Starting the string with a "V"
+**Question**: Using a visual format string, how do you specify constraints in the vertical orientation?
 
-Question: What character represents the superview?
+**Answer**: Starting the string with a "V"
 
-Answer: "|"
+**Question**: What character represents the superview?
 
-Question: Given the following constraint, what is the width of the `blackView?` `"H:|-8-[blackView(==blueView@250)]-8-[blueView]-8-|"`
+**Answer**: "|"
 
-Answer: The width of the `blueView`.
+**Question**: Given the following constraint, what is the width of the `blackView?` `"H:|-8-[blackView(==blueView@250)]-8-[blueView]-8-|"`
 
+**Answer**: The width of the `blueView`.
+
+---
