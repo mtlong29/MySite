@@ -12,24 +12,28 @@ $(document).ready(() => {
     },
     frontEndDev: {
       name: 'Treehouse - Front End Web Development',
-      color: '#3079AB',
+      color: '#E44D26',
     },
     intermJS: {
       name: 'Treehouse - Full Stack JavaScript',
-      color: '#C25975',
+      color: '#F7DF1E',
     },
     react: {
       name: 'Treehouse - Learn React',
-      color: '#C25975',
+      color: '#61DAFB',
     },
     beginSwift: {
       name: 'Treehouse - Beginner iOS Development',
-      color:'#53BBB4',
+      color:'#F05138',
     },
     intermSwift: {
       name: 'Treehouse - Intermediate iOS Development',
-      color:'#53BBB4',
+      color:'#F05138',
     },
+    introCAndCPP: {
+      name: 'UofL - Intro to C and C++',
+      color: '#6799D4',
+    }
   }
 
   // initialize courseButtons string
