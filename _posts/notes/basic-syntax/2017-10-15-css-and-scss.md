@@ -1,13 +1,13 @@
 ---
 layout: article
 
-permalink: /notes/scss/
+permalink: /notes/css-and-scss/
 
-title: "SCSS"
+title: "CSS and SCSS"
 
 subtitle: "Basic Syntax"
 
-excerpt: "Basic Syntax for SCSS."
+excerpt: "Sassy Cascading Style Sheets (SCSS) is an extension of CSS that adds power and elegance to the basic language. It allows you to use variables, nested rules, mixins, inline imports, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized, and get small stylesheets up and running quickly. You can also write vanilla CSS inside a SCSS file with no issue."
 
 categories: notes
 
@@ -16,7 +16,7 @@ date: 2017-10-15
 
 {% include /globalSections/toc.html %}
 
-Sass is an extension of CSS that adds power and elegance to the basic language. It allows you to use variables, nested rules, mixins, inline imports, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized, and get small stylesheets up and running quickly...
+**Sassy Cascading Style Sheets (SCSS) is an extension of CSS that adds power and elegance to the basic language.** It allows you to use variables, nested rules, mixins, inline imports, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized, and get small stylesheets up and running quickly. **You can also write vanilla CSS inside a SCSS file with no issue.**
 
 ## Nesting
 
@@ -31,7 +31,7 @@ h1 {
 }
 ```
 
-### Nesting Parent Selectors
+#### Nesting Parent Selectors
 
 Sass allows you to reference the current parent selector(s) using the ampersand character, `&`.
 
@@ -197,7 +197,7 @@ Any CSS class can be extended. **Reference a class to be extended with `@extend`
 }
 ```
 
-## Learn More Links
+## Learn More About SCSS
 
 - [Getting Sassy with Sass (slideshow "course" of SCSS basics)](http://www.sassshop.com/#/)
 - [Sass Documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)

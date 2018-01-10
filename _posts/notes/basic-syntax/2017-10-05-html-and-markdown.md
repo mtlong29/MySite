@@ -1,26 +1,78 @@
 ---
 layout: article
 
-permalink: /notes/markdown/
+permalink: /notes/html-and-markdown/
 
-title: "Markdown"
+title: "HTML and Markdown"
 
 subtitle: "Basic Syntax"
 
-excerpt: "Basic Syntax for Markdown."
+excerpt: "HTML (Hypertext Markup Language) is the code that is used to structure a web page and its content. HTML is not a programming language; it is a markup language, and is used to tell your browser how to display the webpages you visit. Markdown is intended to be as easy-to-read and easy-to-write as is feasible. Readability, is emphasized above all else. A markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions. Markdown's syntax is comprised entirely of punctuation characters, which punctuation characters have been carefully chosen so as to look like what they mean."
 
 categories: notes
 
-date: 2017-12-17
+date: 2017-10-05
 ---
 
 {% include /globalSections/toc.html %}
 
-Markdown is intended to be as easy-to-read and easy-to-write as is feasible. Readibility, is emphasized above all else. A markdown-formatted document should be publishesable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions.
+***HTML* (Hypertext Markup Language) is the code that is used to structure a web page and its content.** HTML is not a programming language; it is a markup language, and is used to tell your browser how to display the webpages you visit. ***Markdown* is a lightweight markup language with plain text formatting syntax.** It is designed so that it can be converted to HTML.
 
-Markdown's syntax is comprised entirely of punctuation characters, which punchuation characters have been carefully chosen so as to look like what they mean.
+## HTML
 
-## Headings
+>Hypertext Markup Language is the standard markup language for creating web pages and web applications.
+
+### Basic Structure of an HTML Document
+
+Individual elements are combined to form an entire HTML page. These are "necessary".
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Basic HTML Structure</title>
+    <link rel="stylesheet" type="text/css" href="/assets/main.css">
+  </head>
+  <body>
+    <script type="text/javascript" src="/assets/main.js"></script>
+  </body>
+</html>
+```
+
+The `<link>` and `<script>` tags are not necessary, but this is where they are most often found in the basic HTML structure. The HTML syntax of HTML5 requires a DOCTYPE to be specified to ensure that the browser renders the page in standards mode.
+
+### Common Tags Needing Reference
+
+There are many HTML tags. Below are a few that many need looking up:
+
+#### <link>
+
+**`<link>` tags link to external stylesheets as well as other things.** You can use the `<style>` tag to write CSS directly in an HTML document.
+
+```html
+<link rel="stylesheet" type="text/css" href="/assets/main.css">
+```
+
+#### <script>
+
+**`<script>` tags can be used to link to external JavaScript.** You can also write JavaScript directly between `<script>` tags.
+
+```html
+<script type="text/javascript" src="/assets/main.js"></script>
+```
+
+### Learn More about HTML
+
+- [MDN HTML Basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
+
+## Markdown
+
+Markdown is intended to be as *easy-to-read* and *easy-to-write* as is feasible. **Readability, is emphasized above all else.** A markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions. 
+
+>**Markdown's syntax is comprised entirely of punctuation characters**, which punctuation characters have been carefully chosen so as to look like what they mean.
+
+### Headings
 
 The HTML `<h1>` through `<h6>` elements represent six levels of section headings. `<h1>` is the highest section and `<h6>` is the lowest.
 
@@ -46,9 +98,9 @@ The HTML `<h1>` through `<h6>` elements represent six levels of section headings
 <h6>Heading Six</h6>
 ```
 
-## Paragraphs and Line Breaks
+### Paragraphs and Line Breaks
 
-To create a paragraph just type with plain text. To add a line break without the space between the lines add two spaces at the end of the line.
+To create a paragraph just *type with plain text*. To add a line break without the space between the lines *add two spaces* at the end of the line.
 
 #### Markdown
 
@@ -59,7 +111,7 @@ Where you see empty space between blocks of text in your Markdown document, you 
 
 Haikus are easy.  
 But sometimes they don't make sense.  
-Refridgerator.  
+Refrigerator.  
 ```
 
 #### HTML
@@ -69,7 +121,7 @@ Refridgerator.
 <p>Where you see empty space between blocks of text in your Markdown document, you will see empty space separating those blocks of text in your formatted HTML document.</p>
 <p>Haikus are easy.<br>
 But sometimes they don’t make sense.<br>
-Refridgerator.</p>
+Refrigerator.</p>
 ```
 
 #### Rendered HTML
@@ -80,11 +132,11 @@ Where you see empty space between blocks of text in your Markdown document, you 
 
 Haikus are easy.  
 But sometimes they don't make sense.  
-Refridgerator.  
+Refrigerator.  
 
-## Emphasis and Bolding
+### Emphasis and Bolding
 
-Bold and emphasized text is a must for styling. Note that it is safer to styleusing a stylesheet.
+**Bold** and *emphasized* text is a must for styling. Note that it is safer to style using a stylesheet.
 
 #### Markdown
 
@@ -96,7 +148,7 @@ This **works**, to bold text.
 This ***works***, to bold and emphasize text.
 ```
 
-Note that underscores, `_` can be used in place of asterisks, `*`. However, `*` is best practice.
+Note that underscores, `_` can be used in place of asterisks, `*`. However, **`*` is best practice**.
 
 #### HTML
 
@@ -114,7 +166,7 @@ This **works**, to bold text.
 
 This ***works***, to bold and emphasize text.  
 
-## Blockquote
+### Blockquote
 
 The HTML `<blockquote>` element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation.
 
@@ -143,7 +195,7 @@ Note that to have multiple lined quotes you must use the `>` symbol on blank lin
 >
 >One way is to make it so simple that there are obviously no deficiencies. And the other way is to make it so complicated that there are no obvious deficiencies.
 
-## Horizontal Rule
+### Horizontal Rule
 
 The `<hr>` element represents a thematic break between paragraph-level elements (for example, a change of scene in a story, or a shift of topic with a section); historically, this has been presented as a horizontal rule or line.
 
@@ -155,7 +207,7 @@ ___
 ***
 ```
 
-Note that the hyphens, `-` are preferred over underscores, `_`, and asterisks, `*`.
+Note that the **hyphens, `-` are preferred** over underscores, `_`, and asterisks, `*`.
 
 #### HTML
 
@@ -171,7 +223,7 @@ ___
 ---
 ***
 
-## Lists
+### Lists
 
 Lists are used to group together related pieces of information so they are clearly associated with each other and easy to read. Lists are good from a structural point of view as they help create a well-structured, more accessible, easy-to-maintain document.
 
@@ -191,9 +243,7 @@ Lists are used to group together related pieces of information so they are clear
 
 Note that you don't even have to keep the numbers in order. Markdown will recognize it is a numbered list and fix the numbers for you. However, keeping the numbers in order makes most sense.
 
-Note that depending on what, where how, etc.. the Markdown is being rendered it is possible to go deeper in nesting.
-
-Note that you can combine lists with strong and emphasized text too such as `- Tyrion *Lannister*`.
+Note that depending on what, where how, etc.. the Markdown is being rendered it is possible to go deeper in nesting. Note that you can combine lists with strong and emphasized text too by typing `- Tyrion *Lannister*`, for example.
 
 #### HTML
 
@@ -232,7 +282,7 @@ Note that you can combine lists with strong and emphasized text too such as `- T
 3. House Targaryen
   - Daenerys Targaryen
 
-## Code
+### Code
 
 Highlight code is a must whenever adding code snippets to a site. You can highlight code with the backtick character, <code class="highlighter-rouge">`</code>. Code snippets can be added inline and block level.
 
@@ -270,7 +320,7 @@ let exampleFunction = () => {
 }
 ```
 
-## Links
+### Links
 
 There are numerous ways to use Markdown to add a link to a page.
 
@@ -299,7 +349,7 @@ Note that adding a title is optional.
 </p>
 ```
 
-## Images
+### Images
 
 Images work a lot like links. Think of images in a Markdown document as being referenced by your document, rather than embedded in your document.
 
@@ -339,13 +389,13 @@ Note that Markdown puts `<p>` tags around many elements.
 
 ![Mini "The Thing"](https://raw.githubusercontent.com/mtlong29/images/master/mini-the-thing.png "Image of a mini Thing")
 
-## Markdown Flavors
+### Markdown Flavors
 
 There are many different versions of Markdown; and there are also many additions to Markdown that various people use. However, vanilla Markdown is generally safe to assume wherever Markdown is used.
 
 Obviously, before writing Markdown somewhere make sure there is a parser to translate the Markdown into HTML tags.
 
-## Learn More
+### Learn More About Markdown
 
 - [Daring Fireball Markdown Guide](https://daringfireball.net/projects/markdown/)
 - [devhints.io Markdown Page](https://devhints.io/markdown)
