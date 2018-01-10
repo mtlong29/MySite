@@ -148,10 +148,10 @@ Many JavaScript developers turn to tools like [Babel](https://babeljs.io/) to ma
 
 Once we've selected an element in the DOM, we can read or affect it. We can replace or change the display, for example. Or we can create new nodes and insert them into the DOM. This post contains notes on that. If you want to get or set an elements class use `Element.className`. The below will store the value of the text input element with the id of linkName. It then sets that value of the `a` tag with ID of like to the text that was returned from inputValue.
 
-{% highlight javascript linenos %}
+```javascript
 let inputValue = document.querySelector('#linkName').value;
 document.querySelector('#link').innerHTML = inputValue;
-{% endhighlight %}
+```
 
 ## Styling Elements
 
@@ -184,6 +184,8 @@ addItemButton.addEventListener('click', () => {
   addItemInput.value = '';
 });
 ```
+
+There is also the `insertBefore()` method that inserts a node before the reference node as a child of a specified parent node. If the given child is a reference to an existing node in the document, `insertBefore()` moves it from its current position to the new position.
 
 ## Removing Elements from the DOM
 
@@ -429,7 +431,15 @@ To learn more about the event property ad the tagName property see their MDN pag
 
 Traversing is similar selecting an element. Basically you're selecting an element based off of other elements on the page.
 
-#### Parent Node Example
+After you have selected an element you can use DOM traversing properties to select another element. Some common properties are:
+
+- `firstElementChild` is a read-only property that returns the object's first child Element, or *null* if there are no child elements.
+- `lastElementChild` is a read-only property that returns the object's last child element, or *null* if there are no child elements.
+- `previousElementSibling` is a read-only property that returns the element immediately prior to the specified one in its parent's children list, or *null* if the specified element is the first one in the list.
+- `nextElementSibling` is a read-only property that returns the element immediately following the specified one in its parent's children list, or *null* if the specified element is the last one in the list.
+- `parentElement` is a read-only property that returns the DOM node's parent element, or *null* if the node either has no parent, or its parent isn't a DOM element.
+
+#### Parent Node Example:
 
 The below example shows how to traverse a DOM using the `parentNode` property.
 
@@ -456,6 +466,80 @@ parent.removeChild(removeMe);
     <script src="app.js"></script>
   </body>
 </html>
+```
+
+#### Traversal Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <title>Traversing the DOM</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Color Palette:</h1>
+      <div></div>
+      <ul class="list">
+        <li>
+          <span>Robin's Egg Blue</span>
+          #04c5e6
+        </li>
+        <li>
+          <span>Geyser</span>
+          #b7c7d0
+        </li>
+        <li>
+          <span>Jaffa</span>
+          #f36f49
+        </li>
+        <li>
+          <span>Shamrock</span>
+          #57d6ab
+        </li>
+      </ul>
+    </div>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
+```
+
+```javascript
+// STARTING POINT - select the <ul> with the class list
+const list = document.querySelector('.list');
+
+// 1: Store the first child of the `ul` in the variable `firstItem`
+const firstItem = list.firstElementChild;
+firstItem.style.backgroundColor = '#04c5e6';
+
+// 2: Using traversal, store the second list item in a variable named `nextItem`
+const nextItem = firstItem.nextElementSibling;
+nextItem.style.backgroundColor = '#b7c7d0';
+
+// 3: Store the last child of the `ul` in a variable named `lastItem`
+const lastItem = list.lastElementChild;
+lastItem.style.backgroundColor = '#57d6ab';
+
+// 4: Using traversal, store the second-to-last list item in a variable named `prevItem`
+const prevItem = lastItem.previousElementSibling;
+prevItem.style.backgroundColor = '#f36f49';
+
+// 5: Store the nested div in a variable named `banner`
+const banner = list.previousElementSibling;
+banner.className = 'banner';
+
+// 6: Using traversal, store the wrapper div in a variable named `wrapper`
+const wrapper = banner.parentElement;
+wrapper.style.backgroundColor = '#fcfcfc';
+
+// 7: Using traversal, store the body in a variable named `body`
+const body = wrapper.parentElement;
+body.style.backgroundColor = '#f8fdf3';
 ```
 
 #### Using previousElementSibling and insertBefore
