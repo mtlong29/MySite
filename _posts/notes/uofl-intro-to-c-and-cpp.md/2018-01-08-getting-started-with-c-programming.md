@@ -7,7 +7,7 @@ title: "Getting Started With C Programming"
 
 subtitle: "UofL - Intro to C and C++"
 
-excerpt: "These notes contain an introduction to C programming including primary data types."
+excerpt: "These notes contain an introduction to C programming including primary data types, and conditions."
 
 categories: notes
 
@@ -16,7 +16,7 @@ date: 2018-01-08
 
 {% include /globalSections/toc.html %}
 
-These notes contain an introduction to C programming including primary data types.
+These notes contain an introduction to C programming including primary data types, and conditions.
 
 ## Getting Started With C Programming
 
@@ -147,7 +147,7 @@ firstInitial = '\0';
 
 >Note that the character set `\0` is known as the `null` character. Single quotes are required when assigning data to the character data type.
 
-The `null` data types are a commonly used to initialize memory locations in programming languages, such as C, and relational databases, such as Oracle and SQL Server.
+The `null` data types are a commonly used to initialize memory locations in programming languages, such as C, and relational databases, such as Oracle and SQL Server. Null data is undefined.
 
 You can also initialize your variables while declaring them:
 
@@ -190,9 +190,11 @@ After initializing the variables, the `printf()` function and *conversion specif
 
 >Conversion specifiers are comprised of two characters: The first character is the percent sign, and the second is a special character that tells the program how to convert the data.
 
-- `%d`: Displays integer value
-- `%f`: Displays floating-point numbers
-- `%c`: Displays character
+- `%d`: Displays an integer value
+- `%f`: Displays a floating-point value
+- `%c`: Displays a character (or symbol)
+- `%lf`: Displays a double value
+- `%%`: Displays a % character
 
 #### Another Example:
 
@@ -318,3 +320,20 @@ main(){
 }
 ```
 
+#### Another Example:
+
+```c
+#include <stdio.h>
+
+int main() {
+  float cent, inch;
+
+  printf("Please enter length in centimeters: ");
+  scanf("%f", &cent);
+  printf("%.2f centimeters is equal to %.2f inches!\n", cent, cent/2.5);
+
+  return 0;
+}
+```
+
+## Conditions
