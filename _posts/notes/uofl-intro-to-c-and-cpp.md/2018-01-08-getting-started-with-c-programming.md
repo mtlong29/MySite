@@ -57,7 +57,7 @@ Many lines in C programs are considered *program statements*, which serve to con
 
 `printf()` is a function commonly used to display output to the computer screen. Like most functions, the `printf()` function takes a value as a parameter. Any text you want to display in the standard output must be enclosed by quotation marks.
 
-#### Escape Sequences
+### Escape Sequences
 
 >Escape sequences are specially sequenced characters used to format output.
 
@@ -186,7 +186,7 @@ main() {
 
 After initializing the variables, the `printf()` function and *conversion specifiers* are used to output each variable's contents to the screen.
 
-#### Conversion Specifiers
+### Conversion Specifiers
 
 >Conversion specifiers are comprised of two characters: The first character is the percent sign, and the second is a special character that tells the program how to convert the data.
 
@@ -196,7 +196,7 @@ After initializing the variables, the `printf()` function and *conversion specif
 - `%lf`: Displays a double value
 - `%%`: Displays a % character
 
-#### Another Example:
+#### Example
 
 ```c
 float result;
@@ -223,7 +223,7 @@ printf("\n%.6f", 3.123456);
 
 Note the included escape sequence `\n` in each preceding print statement so that the output isn't all on one line.
 
-#### Another Example:
+#### Example
 
 ```c
 char firstInitial, middleInitial, lastInitial; firstInitial = 'M';
@@ -267,7 +267,7 @@ The `scanf()` function is a way to receive input from users. It is another built
 
 The "conversion specifier" argument tells the `scanf()` function how to convert the incoming data. Recall, these are `%d`, `%f`, and `%c`.
 
-#### Example:
+#### Example
 
 ```c
 #include <stdio.h>
@@ -300,7 +300,7 @@ C enables programmers to perform all types of arithmetic. This includes the basi
 - `+`: addition.
 - `-`: subtraction.
 
-#### Another Example:
+#### Example
 
 ```c
 #include <stdio.h>
@@ -320,7 +320,7 @@ main(){
 }
 ```
 
-#### Another Example:
+#### Example
 
 ```c
 #include <stdio.h>
@@ -336,4 +336,410 @@ int main() {
 }
 ```
 
+---
+
+### Example Problems
+
+#### Example One
+
+Given a = 5, b = 1, x = 10, and y = 5. Output the result of the formula f = (a − b)(x − y) using a single printf() function.
+
+```c
+#include <stdio.h>
+
+int main() {
+  int a = 5;
+  int b = 1;
+  int x = 10;
+  int y = 5;
+  
+  printf("%d\n", (a-b)*(x-y));
+  
+  return 0;
+}
+```
+
+#### Example Two
+
+Create a program that uses the same formula above to output the result; this time, however, prompt the user for the values a, b, x, and y.
+
+```c
+#include <stdio.h>
+
+int main() {
+  int a, b, x, y;
+  
+  printf("Give an integer value for a: ");
+  scanf("%d", &a);
+  printf("Give an integer value for b: ");
+  scanf("%d", &b);
+  printf("Give an integer value for x: ");
+  scanf("%d", &x);
+  printf("Give an integer value for y: ");
+  scanf("%d", &y);
+  
+  printf("The equation (%d-%d)*(%d-%d) evaluates to %d.\n", a, b, x, y, (a-b)*(x-y));
+  
+  return 0;
+}
+```
+
+#### Example Three
+
+Create a new program that prompts a user for numbers and determines total revenue using the following formula: Total Revenue = Price * Quantity.
+
+```c
+#include <stdio.h>
+
+int main() {
+  float price, quantity;
+  
+  printf("What is the price of the product? ");
+  scanf("%f", &price);
+  printf("What is the number of products you\'re selling? ");
+  scanf("%f", &quantity);
+  
+  printf("The total revenue equals price times quantitiy.\ntotal revenue = price * quantity = $%.2f * %.0f = $%.2f.\n", price, quantity, price*quantity);
+  
+  return 0;
+}
+```
+
+#### Example Four
+
+Build a new program that prompts a user for data and determines a commission using the following formula: Commission = Rate * (Sales Price – Cost).
+
+```c
+#include <stdio.h>
+
+int main() {
+  float rate, salesPrice, cost;
+  
+  printf("Commission is calculated by Rate * (Sales Price - Cost).\n");
+  printf("Enter the rate: ");
+  scanf("%f", &rate);
+  printf("Enter the sales price: ");
+  scanf("%f", &salesPrice);
+  printf("Enter the cost: ");
+  scanf("%f", &cost);
+  
+  printf("The commission for this sale is %.2f * ($%.2f - $%.2f) = $%.2f\n", rate, salesPrice, cost, rate*(salesPrice-cost));
+  
+  return 0;
+}
+```
+
+---
+
 ## Conditions
+
+>Conditions (often called *program control*, *decisions*, or *expressions*) allow you to make decisions about program directions.
+
+Important conditional topics are
+
+- algorithms for conditions,
+- simple `if` structure,
+- nested `if` structure,
+- boolean algebra,
+- compound `if` structures and input validations,
+- the `switch` structure, and
+- random numbers.
+
+#### Algorithms for Conditions
+
+Algorithms are the foundation for computer science.
+
+Conditional operators are a key factor when building and evaluating expressions in pseudo code, flowcharts, or any programming language. Operators used in C:
+
+- `==`: Equal (two equal signs)
+- `!=`: Not equal
+- `>`: Greater than
+- `<`: Less than
+- `>=`: Greater than or equal to
+- `<=`: Less than or equal to
+
+>When conditional operators are used to build expressions (conditions), the result is either `true` or `false`.
+
+*Pseudo code* is frequently used by programmers to aid in developing algorithms.
+
+Consider the following problem statement: *Allow a customer to deposit or withdraw money from a bank account, and if a user elects to withdraw funds, ensure that sufficient monies exist*. Pseudo code can be used to assist in solving this problem:
+
+```
+if action == deposit
+  Deposit funds into account
+else
+  if balance < withdraw amount
+    Insufficient funds for transaction
+  else
+    Withdraw money
+  end if
+end if
+```
+
+Note that pseudo code may look slightly different based on the programming language that is to be used.
+
+Flowcharts are also popular among computing analysts, *flowcharts* use graphical symbols to depict an algorithm or program flow. [Learn more on flowcharts](https://www.edrawsoft.com/explain-algorithm-flowchart.php).
+
+### The If Structures
+
+The if structure in C is similar to the above pseudo code!
+
+```c
+#include <stdio.h>
+
+int main() {
+  int temperature = 80;
+  
+  if (temperature >= 80) {
+    // Turn AC on
+    printf("\nThe AC has been turned on!\n");
+  } else {
+    // Leave AC off
+    printf("\nThe AC will remain off!\n");
+  }
+ 
+  return 0;
+}
+```
+
+Like other languages, the condition is checks to be `true` of `false`. If `false`, the `else` clause is taken.
+
+#### Example
+
+```c
+#include <stdio.h>
+
+int main() {
+  int response = 0;
+  
+  printf("\n\tAC Control Unit\n");
+  printf("\n1\tTurn the AC on\n");
+  printf("2\tTurn the AC off\n");
+  printf("\nEnter your selection: ");
+  scanf("%d", &response);
+  
+  if (response == 1) 
+    printf("\nAC is now on\n");
+  if (response == 2) 
+    printf("\nAC is now off\n");
+  
+  return 0;
+}
+```
+
+>Note that if there are multiple statements inside the parent condition's `else` clause, curly braces are needed.
+
+#### Boolean Algebra
+
+Like other languages the `&&` operator implements the boolean operator `and`. Both sides must evaluate to `true` before the entire expression becomes `true`. The `||` operator implements the boolean operator `or` Either side of the condition must be `true` for the entire expression becomes `true`.
+
+#### Example
+
+Ask for a letter grade using the or operator check if a given response was either en upper or lowercase, A:
+
+```c
+#include <stdio.h>
+
+int main() {
+  char response = '\0';
+  printf("Please enter the letter grade you deserve: ");
+  scanf("%c", &response);
+  
+  if (response == 'A' || response == 'a') {
+    printf("The response was either \"a\" or \"A\"!\n");
+  } else {
+    printf("The response was neither \"a\" or \"A\"!\n");
+  }
+  
+  return 0;
+}
+```
+
+#### Example
+
+Check that a given response is between a range of 1 and 10:
+
+```c
+#include <stdio.h>
+
+int main() {
+  int numberValue = 0;
+  
+  printf("Please enter a number between 1 and 10: ");
+  scanf("%d", &numberValue);
+  
+  if (numberValue > 0 && numberValue < 11) {
+    printf("The value you gave was between 1 and 10!\n");
+  } else {
+    printf("The value you gave was not between 1 and 10!\n");
+  }
+  
+  return 0;
+}
+```
+
+#### isdigit() Function
+
+>The `isdigit()` function is part of the character-handling library `<ctype.h>` and is a wonder tool for aiding you in validating user input. This function returns `true` if the passed-in value evaluates to a digit, otherwise `false`.
+
+Using the `isdigit()` function:
+
+```c
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+  char cResponse = '\0';
+  
+  printf("\nPlease enter a letter or character not a digit: ");
+  scanf("%c", &cResponse);
+  
+  if ( isdigit(cResponse) == 0 ) printf("That is not a digit!\n");
+  else
+    printf("\nThat is a digit :(\n");
+}
+``` 
+
+### The Switch Structure
+
+The `switch` structure is another common language block used to evaluate conditions. It is most commonly implemented when programmers have a specific set of choices they are evaluating from a user's response, much like a menu.
+
+>The `switch` structure requires the use of curly braces.
+
+```c
+#include <stdio.h>
+
+int main() {
+  switch (x) {
+    case 1:
+      // x is 1
+    case 2:
+      // x is 2
+    case 3:
+      // x is 3
+    case 4:
+      // x is 4
+  }
+  
+  return 0;
+}
+```
+
+The number of `case` statements you decide to use depends on how many possibilities your `switch` variable contains.
+
+#### Example
+
+Switch over a menu that has four items, 1. sports, 2. geography, 3. music, and 4. world events.
+
+```c
+#include <stdio.h>
+
+int main() {
+  int response = 0;
+  
+  printf("\n1\tSports\n");
+  printf("2\tGeography\n");
+  printf("3\tMusic\n");
+  printf("4\tWorld Events\n");
+  printf("\nPlease select a category (1-4): ");
+  scanf("%d", &response);
+
+  switch (response) {
+    case 1:
+      printf("You chose sports!\n");
+      break;
+    case 2:
+      printf("You chose geography!\n");
+      break;
+    case 3:
+      printf("You chose music!\n");
+      break;
+    case 4:
+      printf("You chose world events!\n");
+      break;
+    default:
+      printf("That is not a valid selection..\n");
+      break;
+  }
+  
+  return 0;
+}
+```
+
+>Note that the `break` statement inside a `case` block, stops the `switch` statement from evaluating any further `case` statements. The `default` block can be used to catch any input that does not match the `case` statements.
+
+In addition to evaluating numbers, the `switch` structure is also popular when choosing between other characters, such as letters.
+
+#### Example
+
+Ask the user for a grade and display a statement indicating the grade they selected, using a switch statement.
+
+```c
+#include <stdio.h>
+
+int main() {
+  char response = '\0';
+  
+  printf("Please indicate the grade you think you deserve: ");
+  scanf("%c", &response);
+  
+  switch (response) {
+    case 'a': case 'A':
+      printf("You selected a grade of an A!\n");
+      break;
+    case 'b': case 'B':
+      printf("You selected a grade of a B!\n");
+      break;
+    case 'c': case 'C':
+      printf("You selected a grade of a C!\n");
+    default:
+      printf("Looks like you want to fail :(\n");
+  }
+  
+  return 0;
+}
+```
+
+#### Random Numbers
+
+The concept and application of random numbers can be observed in all types of systems, from encryption programs to games. The C standard library offers built-in functions for easily generating random numbers. The most notable is the `rand()` function, which generates a whole number from 0 to a library-defined number, generally at least 23,767.
+
+>To generate a specific random set of numbers, say between 1 and , you need to define a formula using `rand()` function:
+
+```c
+randomNumber = (rand() % 6) + 1;
+```
+
+`rand() % 6` will generate a random number between 0 and 5.
+
+#### Example
+
+Create a guessing program that will generate a random number between 1 and 10 and then ask for a guess. Inform the user if the guess is correct or not.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+  
+  int randomNumber = 0;
+  srand(time(NULL));
+  randomNumber = (rand() % 11) + 1;
+  
+  int userGuess = 0;
+  
+  printf("A random number has been generated between 1 and 10.\n\tPlease make a guess: ");
+  scanf("%d", &userGuess);
+  
+  if (randomNumber == userGuess) {
+    printf("Yes! %d was the correct guess!\n", randomNumber);
+  } else {
+    printf("Sorry, that was an incorrect guess. The correct number was %d.\n.", randomNumber);
+  }
+  
+  return 0;
+}
+```
+
+This could have been done with the simple `rand()` function. However, it produces the same sequence of random numbers repeatedly. This is where the `srand()` function comes in play. **`srand()` takes an integer number as its starting point for randomizing.** To give your program a true sense of randomizing, **pass the current time as a function using the `time()` function**. Also, note that the **`time()` function requires an argument, which can be `NULL`**. These functions can be **included from the libraries `<stdlib.h>` and `<time.h>`**.
