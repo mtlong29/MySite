@@ -7,7 +7,7 @@ title: "Getting Started With C Programming"
 
 subtitle: "UofL - Intro to C and C++"
 
-excerpt: "These notes contain an introduction to C programming including primary data types, and conditions."
+excerpt: "These notes contain an introduction to C programming including primary data types, conditions (if and switch statements), and looping structures(while, do while, and for loops)."
 
 categories: notes
 
@@ -16,7 +16,7 @@ date: 2018-01-08
 
 {% include /globalSections/toc.html %}
 
-These notes contain an introduction to C programming including primary data types, and conditions.
+These notes contain an introduction to C programming including primary data types, conditions (if and switch statements), and looping structures(while, do while, and for loops).
 
 ## Getting Started With C Programming
 
@@ -743,3 +743,284 @@ int main() {
 ```
 
 This could have been done with the simple `rand()` function. However, it produces the same sequence of random numbers repeatedly. This is where the `srand()` function comes in play. **`srand()` takes an integer number as its starting point for randomizing.** To give your program a true sense of randomizing, **pass the current time as a function using the `time()` function**. Also, note that the **`time()` function requires an argument, which can be `NULL`**. These functions can be **included from the libraries `<stdlib.h>` and `<time.h>`**.
+
+---
+### Example Problems
+
+#### Example One
+
+Build a number guessing game that uses input validation (isdigit() function) to verify that the user has entered a digit and not a non-digit (letter). Store a random number between 1 and 10 into a variable each time the program is run. Prompt the user to guess a number between 1 and 10 and alert the user if he was correct or not.
+
+```c
+#include <stdio.h>
+#include <stdlib.h> // for rand()
+#include <time.h> // for time()
+#include <ctype.h> // for isdigit()
+
+int main() {
+  int randomNumber;
+  char userGuess;
+  
+  srand(time(NULL)); // set seed for rand()
+  randomNumber = (rand() % 5) + 1; // generate random number using rand()
+
+  // get guess from user
+  printf("To make a guess, please enter a number between 1 and 10: ");
+  scanf("%c", &userGuess);
+
+  // determine if users guess is valid and then if its correct
+  if (isdigit(userGuess)) {
+    if ((userGuess - '0') == randomNumber) {
+      printf("Congratulations, %c is correct.\n", userGuess);
+    } else {
+      printf("Sorry, %c is incorrect.\n", userGuess);
+    }
+  } else {
+    printf("%c is not a valid guess.\n", userGuess);
+  }
+
+  return 0;
+}
+```
+
+>Note that `userGuess - '0'` is a way to get a number or integer representation of the character. This is because `'0'` is the first number. In other words `('9'-'0')=(57-48)=9`.
+
+#### Example Two
+
+Create a dice game that uses two six-sided dice. Each time the program runs, use random numbers to assign values to each die variable. Output a “player wins” message to the user if the sum of the two dice is 7 or 11. Otherwise output the sum of the two dice and thank the user for playing.
+
+```c
+#include <stdio.h>
+#include <stdlib.h> // for rand()
+#include <time.h> // for time()
+#include <ctype.h> // for isdigit()
+
+int main() {
+  int diceOne, diceTwo;
+  
+  srand(time(NULL)); // set seed for rand()
+  diceOne = (rand() % 6) + 1; // create first random number between 1 and 6
+  diceTwo = (rand() % 6) + 1; // create second random number between 1 and 6
+  
+  // determine if sum of two random numbers are 7 or 11. if so player wins
+  if (diceOne + diceTwo == 7 || diceOne + diceTwo == 11) {
+    printf("The player rolled %d and %d. Which sums to %d. Player wins!\n", diceOne, diceTwo, diceOne + diceTwo);
+  } else {
+    printf("The player rolled %d and %d. Which sums to %d. Player Loses! Thanks for playing.\n", diceOne, diceTwo, diceOne + diceTwo);
+  }
+  
+  return 0;
+}
+```
+
+---
+
+## Looping Structures
+
+Iteration is a fancy term for loops or looping, or in other words, it's how you build repetition into your programs.
+
+#### Operators
+
+The `++` operator is useful for incrementing number based variables by one, and the `--` operator is useful for decrementing number based variables by one.
+
+You can place the `++` or `--` first or last. Note that the `++x` operation is not guaranteed to occur first before the `x` and `x++` are processed
+
+```c
+#include <stdio.h>
+
+int main() {
+  int x = 0;
+  
+  printf("%d\n", x++ * 4); // 0
+  
+  x = 0; // reset x to 0
+  printf("%d\n", ++x * 4); // 4
+  
+  return 0;
+}
+```
+
+Like other languages the `+=` operator can be used to add a new value plus its current value. Also, the `-=` operator can used to subtract a new value from an existing one.
+
+### The While Loop
+
+The `while` loop structure is used to create iteration (loops) in your programs:
+
+```c
+#include <stdio.h>
+
+int main() {
+  int x = 0;
+  
+  while ( x < 10 ) {
+    printf("The value of x is %d\n", x);
+    x++;
+  }
+  
+  return 0;
+}
+```
+
+The while loop uses a condition (in the above case `x < 10`) that evaluates to either `true` or `false`. As long as the condition is `true`, the contents of the loop are executed.
+
+>Note that the **braces for any loop are required only when more than one statement is included in the loop's body**. If your `while` loop contains only one statement, no braces are required.
+
+**Infinite loops are loops that never end.** They are created when a loop's expression is never set to exit the loop.
+
+### The Do While Loop
+
+Similar to the `while` loop, the `do while` loop is used to build iteration in your programs. However, the `do while` loop's condition is at the bottom of the loop rather than the top. This means the content of the loop will be executed at least once.
+
+```c
+#include <stdio.h>
+
+int main() {
+  int x = 0;
+
+  do {
+    printf("The value of x is %d\n", x);
+    x++;
+  } while(x < 10);
+  
+  return 0;
+}
+```
+
+>In a `do while` loop's last statement, the ending brace comes before the `while` statement, and the `while` statement must end with a semicolon.
+
+### The For Loop
+
+The `for` loop is an important iteration technique in any programming language. 
+
+```c
+#include <stdio.h>
+
+int main() {
+  int x;
+  
+  for (x = 10; x > 5; x--)
+    printf("The value of x is %d\n", x);
+  
+  return 0;
+}
+```
+
+#### Example
+
+Quiz a user over basic multiplication problems, and let the user decide how many questions they want to answer.
+
+```c
+#include <stdio.h>
+#include <stdlib.h> // for rand()
+#include <time.h> // for time()
+#include <ctype.h> // for isdigit()
+
+int main() {
+  int x, numQuestions, response, randNum1, randNum2, product;
+  
+  srand(time(NULL)); // set random seed
+  
+  // ask user how many multiplication questions they want to answer
+  printf("\nEnter number of questions to ask: ");
+  scanf("%d", &numQuestions);
+  
+  // loop over numQuestions number of multiplication questions
+  for ( x = 0; x < numQuestions; x++ ) {
+    
+    randNum1 = rand() % 10 + 1; // generate first random number
+    randNum2 = rand() % 10 + 1; // generate second random number
+    product = randNum1 * randNum2; // multiple first and second number
+    
+    // ask user multiplication question
+    printf("\nWhat is %d x %d: ", randNum1, randNum2);
+    scanf("%d", &response);
+    
+    // determine if user answered the multiplication question correctly
+    if (response == product)
+      printf("\nCorrect!\n");
+    else
+      printf("\nThe correct answer was %d \n", product);
+  } // end for loop
+  
+  return 0;
+}
+```
+
+#### Break and Continue Statements
+
+The `break` and `continue` statements are used to manipulate program flow in structures such as loops. **When a `break` statement is executed in a loop, the loop is terminated** and program control returns to the next statement following the end of the loop. **When the `continue` statement is executed, any remaining statements in the loop are passed over and the next iteration of the loop begins.**
+
+#### System Calls
+
+Many programming languages provide at least one utility function for accessing operating system commands. C provides one such function, called `system()`.
+
+>The `system()` function can be used to call all types of UNIX or DOS commands from within C program code.
+
+Example commands:
+
+- `ls`: Lists the contents of a directory
+- `man`: Displays manual pages for various shell commands
+- `ps`: Displays process information
+- `pwd`: Prints working directory
+
+A good command to use is the `clear` command. This will clear the console each time your program is ran.
+
+```c
+#include <stdlib.h> // for system()
+
+int main() {
+  system("clear");
+  
+  return 0;
+}
+```
+
+---
+### Example Problems 
+
+#### Example One
+
+Create a counting program that counts backward from 100 to 1 in increments of 10.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  system("clear");
+
+  for (int i = 100; i >= 0; i -= 5) {
+    printf("%d\n", i);
+  }
+}
+```
+
+#### Example Two
+
+Create a counting program that prompts the user for three inputs (1. beginning number to start counting from, 2. ending number to stop counting at, and 3. increment number) that determine how and what to count. Use the acquired data to build your counting program with a for loop and display the results to the user.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  system("clear");
+
+  int startNum, incNum, lastNum;
+
+  printf("Please enter the starting number: ");
+  scanf("%d", &startNum);
+  printf("Please enter the last number: ");
+  scanf("%d", &lastNum);
+  printf("Please enter the increment number: ");
+  scanf("%d", &incNum);
+
+  for (int i = startNum; i <= lastNum; i += incNum) {
+    printf("%d\n", i);
+  }
+
+  return 0;
+}
+```
+
+---
