@@ -1,9 +1,9 @@
 ---
 layout: article
 
-permalink: /notes/getting-started-with-c-programming/
+permalink: /notes/data-types-conditions-and-looping-in-c/
 
-title: "Getting Started With C Programming"
+title: "Data Types, Conditions, and Looping in C"
 
 subtitle: "UofL - Intro to C and C++"
 
@@ -531,7 +531,7 @@ int main() {
 
 #### Boolean Algebra
 
-Like other languages the `&&` operator implements the boolean operator `and`. Both sides must evaluate to `true` before the entire expression becomes `true`. The `||` operator implements the boolean operator `or` Either side of the condition must be `true` for the entire expression becomes `true`.
+Like other languages the `&&` operator implements the boolean operator `and`. Both sides must evaluate to `true` before the entire expression becomes `true`. The `||` operator implements the boolean operator `or` Either side of the condition must be `true` for the entire expression becomes `true`. **Note that `&&` is higher precedence than `||`.**
 
 #### Example
 

@@ -68,7 +68,7 @@ console.log(`The character at index 0 is ${anyString.charAt()}.`);
 An array element, like objects, may end with a comma. This can make it easier to add new values without risking forgetting a comma:
 
 ```javascript
-var fruits = [
+const fruits = [
   'Apple',
   'Banana',
 ];
@@ -285,7 +285,8 @@ while (n < 3) {
 The `do...while` statement also repeats until a specified condition evaluates to false. **Statement executes once before the condition is checked.**
 
 ```javascript
-var i = 0;
+let i = 0;
+
 do {
   i += 1;
   console.log(i);
