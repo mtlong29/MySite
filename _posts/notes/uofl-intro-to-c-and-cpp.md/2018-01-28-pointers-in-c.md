@@ -201,7 +201,7 @@ void demoPassByReference(int *ptrX) {
 }
 ```
 
-To pass arguments by reference, you need to be aware of a few subtle differences in the previous code. THe first noticeable difference is in the function prototype:
+To pass arguments by reference, you need to be aware of a few subtle differences in the previous code. The first noticeable difference is in the function prototype:
 
 ```c
 void demoPassByReference(int *);
