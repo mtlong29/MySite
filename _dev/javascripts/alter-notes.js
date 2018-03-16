@@ -54,7 +54,7 @@ $(document).ready(() => {
     });
 
     // change notes border color based on colors defined in object
-    $(`.course h3:contains(${value.name})`).css({
+    $(`.subTitle h3:contains(${value.name})`).css({
       'border-color': `${value.color}`,
       'color': `${value.color}`,
     });
@@ -62,11 +62,11 @@ $(document).ready(() => {
     // add click event for buttons -- sort through notes based on button clicked
     $('#courseTags button').on('click', (e) => {
       if (e.target.innerHTML === 'All') {
-        $('.course h3').parentsUntil('.individualTile').show();
+        $('.subTitle h3').parentsUntil('.individualTile').show();
       } else if (e.target.innerHTML === value.name) {
-        $(`.course h3:contains(${e.target.innerHTML})`).parentsUntil('.individualTile').show();
+        $(`.subTitle h3:contains(${e.target.innerHTML})`).parentsUntil('.individualTile').show();
       } else {
-        $(`.course h3:not(:contains(${e.target.innerHTML}))`).parentsUntil('.individualTile').hide();
+        $(`.subTitle h3:not(:contains(${e.target.innerHTML}))`).parentsUntil('.individualTile').hide();
       }
     });
 
