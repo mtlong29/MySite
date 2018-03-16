@@ -5,6 +5,8 @@ permalink: /portfolio/random-collages/
 
 categories: portfolio
 
+front: true
+
 title: "Random Collages"
 
 subtitle: "Graphic Design"
@@ -18,8 +20,6 @@ image:
   teaser: photoshop-collage.png
   
 tags: [graphic design, photoshop, collage]
-
-featured: true
 ---
 
 {% include /globalSections/toc.html %}

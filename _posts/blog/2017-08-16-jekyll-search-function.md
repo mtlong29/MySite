@@ -11,6 +11,8 @@ excerpt: "There are numerous methods to create a jekyll search function. This po
 
 categories: blog
 
+front: true
+
 tags: [css, web development, jekyll, javascript, html, jquery]
 
 image:
@@ -18,8 +20,6 @@ image:
   teaser: searching.jpg
 
 date: 2017-08-16
-
-featured: true
 ---
 
 {% include /globalSections/toc.html %}

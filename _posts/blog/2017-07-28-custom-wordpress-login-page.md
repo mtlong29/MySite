@@ -11,6 +11,8 @@ excerpt: "That default WordPress login page could not be more boring. In fact, i
 
 categories: blog
 
+front: true
+
 tags: [wordpress, web development, php, javascript]
 
 image:
@@ -18,8 +20,6 @@ image:
   teaser: custom-wordpress-login.jpg
 
 date: 2017-07-28
-
-featured: true
 ---
 
 {% include /globalSections/toc.html %}

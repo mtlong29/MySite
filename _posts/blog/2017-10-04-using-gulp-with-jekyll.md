@@ -11,6 +11,8 @@ excerpt: "Jekyll amateur hour is over. It is time to gulpify your jekyll workflo
 
 categories: blog
 
+front: true
+
 tags: [web development, javascript, gulp, jekyll, optimization, performance]
 
 image:
@@ -18,10 +20,6 @@ image:
   teaser: gulp-drink.jpg
 
 modified: 2017-10-04
-
-featured: true
-
-published: true
 ---
 
 {% include /globalSections/toc.html %}

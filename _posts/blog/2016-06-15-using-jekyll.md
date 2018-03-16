@@ -11,6 +11,8 @@ excerpt: "I first started using Jekyll, a blog-aware, static site generator, ear
 
 categories: blog
 
+front: true
+
 tags: [jekyll, ruby, scss, web development, html]
 
 image:
@@ -18,8 +20,6 @@ image:
   teaser: using-jekyll.jpg
 
 date: 2016-06-15
-
-featured: true
 ---
 
 {% include /globalSections/toc.html %}

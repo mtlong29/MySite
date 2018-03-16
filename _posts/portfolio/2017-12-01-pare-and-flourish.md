@@ -5,6 +5,8 @@ permalink: /portfolio/pare-and-flourish/
 
 categories: portfolio
 
+front: true
+
 title: "Pare and Flourish"
 
 subtitle: "Web Development"
@@ -18,8 +20,6 @@ image:
   teaser: pandf-site.jpg
   
 tags: [web development, web design, html, scss, javascript, jquery, graphic design, photoshop, jekyll, bootstrap]
-
-featured: true
 ---
 
 {% include /globalSections/toc.html %}

@@ -5,6 +5,8 @@ permalink: /portfolio/brand-marketing/
 
 categories: portfolio
 
+front: true
+
 title: "Brand Marketing"
 
 subtitle: "Graphic Design"
@@ -18,8 +20,6 @@ image:
   teaser: brand-marketing.jpg
   
 tags: [web design, photoshop, graphic design, branding]
-
-featured: false
 ---
 
 {% include /globalSections/toc.html %}

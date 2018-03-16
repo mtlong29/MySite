@@ -5,6 +5,8 @@ permalink: /portfolio/senior-design/
 
 categories: portfolio
 
+front: true
+
 title: "Senior Design"
 
 subtitle: "Civil Engineering"
@@ -18,8 +20,6 @@ image:
   teaser: senior-design.jpg
 
 tags: [school work, civil engineering, poster, modeling, graphic design, photoshop]
-
-featured: true
 ---
 
 {% include /globalSections/toc.html %}

@@ -5,6 +5,8 @@ permalink: /portfolio/jb-long-and-son-body-shop/
 
 categories: portfolio
 
+front: true
+
 title: "JB Long and Son Body Shop"
 
 subtitle: "Web Development"
@@ -18,8 +20,6 @@ image:
   teaser: jbshop-site.jpg
   
 tags: [web development, web design, scss, html, graphic design, photoshop, bootstrap]
-
-featured: true
 ---
 
 {% include /globalSections/toc.html %}
