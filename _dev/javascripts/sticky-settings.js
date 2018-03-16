@@ -16,12 +16,12 @@ $(document).ready(() => {
   $('.sticky').on('sticky-start', () => {
     $('.toc').css('border-top', '0');
     $('.toc-tile').css({
-      'border-left': '8px solid #5C88C4',
+      'border-left': '8px solid #1c1c1c',
       'padding': '0 0 0 .75rem'
     });
   });
   $('.sticky').on('sticky-end', () => {
-    $('.toc').css('border-top', '8px solid #5C88C4');
+    $('.toc').css('border-top', '8px solid #1c1c1c');
     $('.toc-tile').css({
       'border-left': '0',
       'padding': '0'
