@@ -5,6 +5,8 @@ permalink: /portfolio/gis-analysis-project/
 
 categories: portfolio
 
+front: true
+
 title: "GIS Analysis Project"
 
 subtitle: "Civil Engineering"
@@ -18,8 +20,6 @@ image:
   teaser: gis-poster.jpg
   
 tags: [school work, gis, poster, civil engineering, graphic design]
-
-featured: false
 ---
 
 {% include /globalSections/toc.html %}
